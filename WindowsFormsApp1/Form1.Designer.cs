@@ -1,4 +1,4 @@
-﻿namespace CMPT291Project
+﻿namespace WindowsFormsApp1
 {
     partial class Form1
     {
