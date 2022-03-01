@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CMPT291Project.Properties
+namespace WindowsFormsApp1.Properties
 {
 
 
