@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Employee : Form
     {
-        public Form1()
+        public Employee()
         {
             InitializeComponent();
+        }
+
+        private void CustomerBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login f1 = new Login();
+            f1.ShowDialog();
+            this.Close();
         }
     }
 }
