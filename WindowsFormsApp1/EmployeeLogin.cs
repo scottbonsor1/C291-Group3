@@ -10,25 +10,27 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Employee : Form
+    public partial class EmployeeLogin : Form
     {
-        public Employee()
+        public EmployeeLogin()
         {
             InitializeComponent();
         }
 
-        private void CustomerBtn_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login f1 = new Login();
-            f1.ShowDialog();
-            this.Close();
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmployeeBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Report f1 = new Report();
+            Employee f1 = new Employee();
             f1.ShowDialog();
             this.Close();
         }

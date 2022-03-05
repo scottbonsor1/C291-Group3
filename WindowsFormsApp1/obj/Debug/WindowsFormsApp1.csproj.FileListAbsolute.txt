@@ -11,3 +11,5 @@ C:\Users\zswen\source\repos\C291-Group3\WindowsFormsApp1\obj\Debug\WindowsFormsA
 C:\Users\zswen\source\repos\C291-Group3\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\zswen\source\repos\C291-Group3\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Customers.resources
 C:\Users\zswen\source\repos\C291-Group3\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Employee.resources
+C:\Users\zswen\source\repos\C291-Group3\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.EmployeeLogin.resources
+C:\Users\zswen\source\repos\C291-Group3\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Report.resources
