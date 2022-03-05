@@ -34,6 +34,7 @@
             this.username_box = new System.Windows.Forms.TextBox();
             this.password_box = new System.Windows.Forms.TextBox();
             this.EmployeeBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Title
@@ -96,11 +97,24 @@
             this.EmployeeBtn.UseVisualStyleBackColor = true;
             this.EmployeeBtn.Click += new System.EventHandler(this.EmployeeBtn_Click);
             // 
+            // backBtn
+            // 
+            this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.Location = new System.Drawing.Point(17, 331);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(100, 40);
+            this.backBtn.TabIndex = 6;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // EmployeeLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 384);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.EmployeeBtn);
             this.Controls.Add(this.password_box);
             this.Controls.Add(this.username_box);
@@ -122,5 +136,6 @@
         private System.Windows.Forms.TextBox username_box;
         private System.Windows.Forms.TextBox password_box;
         private System.Windows.Forms.Button EmployeeBtn;
+        private System.Windows.Forms.Button backBtn;
     }
 }

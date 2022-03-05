@@ -32,6 +32,7 @@
             this.reportDropDown = new System.Windows.Forms.ComboBox();
             this.ReportLabel = new System.Windows.Forms.Label();
             this.executeReportBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             // executeReportBtn
             // 
             this.executeReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executeReportBtn.Location = new System.Drawing.Point(670, 12);
+            this.executeReportBtn.Location = new System.Drawing.Point(598, 12);
             this.executeReportBtn.Name = "executeReportBtn";
             this.executeReportBtn.Size = new System.Drawing.Size(170, 70);
             this.executeReportBtn.TabIndex = 3;
@@ -83,11 +84,24 @@
             this.executeReportBtn.UseVisualStyleBackColor = true;
             this.executeReportBtn.Click += new System.EventHandler(this.button1_Click);
             // 
+            // backBtn
+            // 
+            this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.Location = new System.Drawing.Point(798, 25);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(100, 40);
+            this.backBtn.TabIndex = 4;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 532);
+            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.executeReportBtn);
             this.Controls.Add(this.ReportLabel);
             this.Controls.Add(this.reportDropDown);
@@ -106,5 +120,6 @@
         private System.Windows.Forms.ComboBox reportDropDown;
         private System.Windows.Forms.Label ReportLabel;
         private System.Windows.Forms.Button executeReportBtn;
+        private System.Windows.Forms.Button backBtn;
     }
 }

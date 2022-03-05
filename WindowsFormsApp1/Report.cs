@@ -34,5 +34,13 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No Report Selected :(");
             }
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Employee f1 = new Employee();
+            f1.ShowDialog();
+            this.Close();
+        }
     }
 }
