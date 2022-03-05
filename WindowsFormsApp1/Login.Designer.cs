@@ -65,7 +65,7 @@
             this.Controls.Add(this.CustomerBtn);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Car Rental App";
             this.ResumeLayout(false);
 
         }

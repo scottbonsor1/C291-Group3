@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
         private void EmployeeBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Employee f1 = new Employee();
+            EmployeeLogin f1 = new EmployeeLogin();
             f1.ShowDialog();
             this.Close();
         }
