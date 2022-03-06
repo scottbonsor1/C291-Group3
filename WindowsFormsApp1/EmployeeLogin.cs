@@ -34,5 +34,13 @@ namespace WindowsFormsApp1
             f1.ShowDialog();
             this.Close();
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login f1 = new Login();
+            f1.ShowDialog();
+            this.Close();
+        }
     }
 }
