@@ -33,41 +33,40 @@
             this.carsTab = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.branch_refresh_but = new System.Windows.Forms.Button();
+            this.branch_id_LU_label = new System.Windows.Forms.Label();
+            this.branch_id_LU_txt = new System.Windows.Forms.TextBox();
+            this.branch_search_but = new System.Windows.Forms.Button();
+            this.branch_del_but = new System.Windows.Forms.Button();
+            this.branch_add_but = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.branch_id_txt = new System.Windows.Forms.TextBox();
+            this.branch_phone_num_txt = new System.Windows.Forms.TextBox();
+            this.branch_pCode_txt = new System.Windows.Forms.TextBox();
+            this.branch_province_txt = new System.Windows.Forms.TextBox();
+            this.branch_city_txt = new System.Windows.Forms.TextBox();
+            this.branch_street_add2_txt = new System.Windows.Forms.TextBox();
+            this.branch_street_add1_txt = new System.Windows.Forms.TextBox();
+            this.branch_descrip_txt = new System.Windows.Forms.TextBox();
+            this.branch_phone_num_label = new System.Windows.Forms.Label();
+            this.branch_pCode_label = new System.Windows.Forms.Label();
+            this.branch_province_label = new System.Windows.Forms.Label();
+            this.branch_city_label = new System.Windows.Forms.Label();
+            this.branch_street_add2_label = new System.Windows.Forms.Label();
+            this.branch_street_add1_label = new System.Windows.Forms.Label();
+            this.branch_dscrip_label = new System.Windows.Forms.Label();
+            this.branch_id_label = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.cust_custID_label = new System.Windows.Forms.Label();
-            this.cust_f_name_label = new System.Windows.Forms.Label();
-            this.cust_mid_name_label = new System.Windows.Forms.Label();
-            this.cust_last_name_label = new System.Windows.Forms.Label();
-            this.cust_street_add1_label = new System.Windows.Forms.Label();
-            this.cust_street_add2_label = new System.Windows.Forms.Label();
-            this.cust_city_label = new System.Windows.Forms.Label();
-            this.cust_province_label = new System.Windows.Forms.Label();
-            this.cust_pCode_label = new System.Windows.Forms.Label();
-            this.cust_dob_label = new System.Windows.Forms.Label();
-            this.cust_phone_num_label = new System.Windows.Forms.Label();
-            this.cust_insurance_label = new System.Windows.Forms.Label();
-            this.cust_drivers_label = new System.Windows.Forms.Label();
-            this.cust_memStat_label = new System.Windows.Forms.Label();
-            this.cust_custID_txt = new System.Windows.Forms.TextBox();
-            this.cust_f_name_txt = new System.Windows.Forms.TextBox();
-            this.cust_m_name_txt = new System.Windows.Forms.TextBox();
-            this.cust_l_name_txt = new System.Windows.Forms.TextBox();
-            this.cust_street_add1_txt = new System.Windows.Forms.TextBox();
-            this.cust_street_add2_txt = new System.Windows.Forms.TextBox();
-            this.cust_city_txt = new System.Windows.Forms.TextBox();
-            this.cust_prov_txt = new System.Windows.Forms.TextBox();
-            this.cust_pCode_txt = new System.Windows.Forms.TextBox();
-            this.cust_dob_txt = new System.Windows.Forms.TextBox();
-            this.cust_phone_num_txt = new System.Windows.Forms.TextBox();
-            this.cust_insurance_txt = new System.Windows.Forms.TextBox();
-            this.cust_drivers_txt = new System.Windows.Forms.TextBox();
-            this.cust_memStat_txt = new System.Windows.Forms.TextBox();
-            this.cust_add_but = new System.Windows.Forms.Button();
-            this.cust_del_but = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cust_refresh_but = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,42 +81,88 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.branch_id_label = new System.Windows.Forms.Label();
-            this.branch_dscrip_label = new System.Windows.Forms.Label();
-            this.branch_street_add1_label = new System.Windows.Forms.Label();
-            this.branch_street_add2_label = new System.Windows.Forms.Label();
-            this.branch_city_label = new System.Windows.Forms.Label();
-            this.branch_province_label = new System.Windows.Forms.Label();
-            this.branch_pCode_label = new System.Windows.Forms.Label();
-            this.branch_phone_num_label = new System.Windows.Forms.Label();
-            this.branch_descrip_txt = new System.Windows.Forms.TextBox();
-            this.branch_street_add1_txt = new System.Windows.Forms.TextBox();
-            this.branch_street_add2_txt = new System.Windows.Forms.TextBox();
-            this.branch_city_txt = new System.Windows.Forms.TextBox();
-            this.branch_province_txt = new System.Windows.Forms.TextBox();
-            this.branch_pCode_txt = new System.Windows.Forms.TextBox();
-            this.branch_phone_num_txt = new System.Windows.Forms.TextBox();
-            this.branch_id_txt = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.branch_add_but = new System.Windows.Forms.Button();
-            this.branch_del_but = new System.Windows.Forms.Button();
-            this.branch_search_but = new System.Windows.Forms.Button();
-            this.branch_id_LU_txt = new System.Windows.Forms.TextBox();
-            this.branch_id_LU_label = new System.Windows.Forms.Label();
-            this.branch_refresh_but = new System.Windows.Forms.Button();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cust_del_but = new System.Windows.Forms.Button();
+            this.cust_add_but = new System.Windows.Forms.Button();
+            this.cust_memStat_txt = new System.Windows.Forms.TextBox();
+            this.cust_drivers_txt = new System.Windows.Forms.TextBox();
+            this.cust_insurance_txt = new System.Windows.Forms.TextBox();
+            this.cust_phone_num_txt = new System.Windows.Forms.TextBox();
+            this.cust_dob_txt = new System.Windows.Forms.TextBox();
+            this.cust_pCode_txt = new System.Windows.Forms.TextBox();
+            this.cust_prov_txt = new System.Windows.Forms.TextBox();
+            this.cust_city_txt = new System.Windows.Forms.TextBox();
+            this.cust_street_add2_txt = new System.Windows.Forms.TextBox();
+            this.cust_street_add1_txt = new System.Windows.Forms.TextBox();
+            this.cust_l_name_txt = new System.Windows.Forms.TextBox();
+            this.cust_m_name_txt = new System.Windows.Forms.TextBox();
+            this.cust_f_name_txt = new System.Windows.Forms.TextBox();
+            this.cust_custID_txt = new System.Windows.Forms.TextBox();
+            this.cust_memStat_label = new System.Windows.Forms.Label();
+            this.cust_drivers_label = new System.Windows.Forms.Label();
+            this.cust_insurance_label = new System.Windows.Forms.Label();
+            this.cust_phone_num_label = new System.Windows.Forms.Label();
+            this.cust_dob_label = new System.Windows.Forms.Label();
+            this.cust_pCode_label = new System.Windows.Forms.Label();
+            this.cust_province_label = new System.Windows.Forms.Label();
+            this.cust_city_label = new System.Windows.Forms.Label();
+            this.cust_street_add2_label = new System.Windows.Forms.Label();
+            this.cust_street_add1_label = new System.Windows.Forms.Label();
+            this.cust_last_name_label = new System.Windows.Forms.Label();
+            this.cust_mid_name_label = new System.Windows.Forms.Label();
+            this.cust_f_name_label = new System.Windows.Forms.Label();
+            this.cust_custID_label = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.carTypeLabel = new System.Windows.Forms.Label();
+            this.vinText = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.vin = new System.Windows.Forms.Label();
+            this.modelNameLabel = new System.Windows.Forms.Label();
+            this.modelYearLabel = new System.Windows.Forms.Label();
+            this.bodyStyleLabel = new System.Windows.Forms.Label();
+            this.colourLabel = new System.Windows.Forms.Label();
+            this.noSeatsLabel = new System.Windows.Forms.Label();
+            this.fuelTypeLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.VIN_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAR_TYPE_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODEL_NAME_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODEL_YEAR_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BODY_STYLE_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COLOUR_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO_SEATS_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FUEL_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.vinSLabel = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.addCarBut = new System.Windows.Forms.Button();
+            this.searchCarBut = new System.Windows.Forms.Button();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.modelNameSLabel = new System.Windows.Forms.Label();
+            this.noSeatsSLabel = new System.Windows.Forms.Label();
+            this.carTypeSLabel = new System.Windows.Forms.Label();
+            this.fuelTypeSLabel = new System.Windows.Forms.Label();
+            this.bodySLabel = new System.Windows.Forms.Label();
+            this.colourSLabel = new System.Windows.Forms.Label();
+            this.modelYearSLabel = new System.Windows.Forms.Label();
             this.Tabs.SuspendLayout();
+            this.carsTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // CustomerBtn
@@ -146,14 +191,50 @@
             // 
             // carsTab
             // 
+            this.carsTab.Controls.Add(this.modelYearSLabel);
+            this.carsTab.Controls.Add(this.colourSLabel);
+            this.carsTab.Controls.Add(this.bodySLabel);
+            this.carsTab.Controls.Add(this.fuelTypeSLabel);
+            this.carsTab.Controls.Add(this.carTypeSLabel);
+            this.carsTab.Controls.Add(this.noSeatsSLabel);
+            this.carsTab.Controls.Add(this.modelNameSLabel);
+            this.carsTab.Controls.Add(this.comboBox8);
+            this.carsTab.Controls.Add(this.searchCarBut);
+            this.carsTab.Controls.Add(this.addCarBut);
+            this.carsTab.Controls.Add(this.comboBox7);
+            this.carsTab.Controls.Add(this.comboBox6);
+            this.carsTab.Controls.Add(this.comboBox5);
+            this.carsTab.Controls.Add(this.comboBox4);
+            this.carsTab.Controls.Add(this.comboBox3);
+            this.carsTab.Controls.Add(this.comboBox2);
+            this.carsTab.Controls.Add(this.vinSLabel);
+            this.carsTab.Controls.Add(this.textBox7);
+            this.carsTab.Controls.Add(this.dataGridView3);
+            this.carsTab.Controls.Add(this.textBox6);
+            this.carsTab.Controls.Add(this.textBox5);
+            this.carsTab.Controls.Add(this.textBox4);
+            this.carsTab.Controls.Add(this.textBox3);
+            this.carsTab.Controls.Add(this.textBox2);
+            this.carsTab.Controls.Add(this.textBox1);
+            this.carsTab.Controls.Add(this.fuelTypeLabel);
+            this.carsTab.Controls.Add(this.noSeatsLabel);
+            this.carsTab.Controls.Add(this.colourLabel);
+            this.carsTab.Controls.Add(this.bodyStyleLabel);
+            this.carsTab.Controls.Add(this.modelYearLabel);
+            this.carsTab.Controls.Add(this.modelNameLabel);
+            this.carsTab.Controls.Add(this.vin);
+            this.carsTab.Controls.Add(this.comboBox1);
+            this.carsTab.Controls.Add(this.vinText);
+            this.carsTab.Controls.Add(this.carTypeLabel);
             this.carsTab.Location = new System.Drawing.Point(4, 22);
             this.carsTab.Margin = new System.Windows.Forms.Padding(2);
             this.carsTab.Name = "carsTab";
             this.carsTab.Padding = new System.Windows.Forms.Padding(2);
-            this.carsTab.Size = new System.Drawing.Size(1050, 586);
+            this.carsTab.Size = new System.Drawing.Size(1375, 586);
             this.carsTab.TabIndex = 0;
             this.carsTab.Text = "Cars";
             this.carsTab.UseVisualStyleBackColor = true;
+            this.carsTab.Click += new System.EventHandler(this.carsTab_Click);
             // 
             // tabPage2
             // 
@@ -161,7 +242,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(1050, 586);
+            this.tabPage2.Size = new System.Drawing.Size(1375, 586);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Car Type";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -199,6 +280,244 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Branches";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // branch_refresh_but
+            // 
+            this.branch_refresh_but.Location = new System.Drawing.Point(1183, 510);
+            this.branch_refresh_but.Name = "branch_refresh_but";
+            this.branch_refresh_but.Size = new System.Drawing.Size(96, 59);
+            this.branch_refresh_but.TabIndex = 22;
+            this.branch_refresh_but.Text = "Refresh";
+            this.branch_refresh_but.UseVisualStyleBackColor = true;
+            // 
+            // branch_id_LU_label
+            // 
+            this.branch_id_LU_label.AutoSize = true;
+            this.branch_id_LU_label.Location = new System.Drawing.Point(429, 487);
+            this.branch_id_LU_label.Name = "branch_id_LU_label";
+            this.branch_id_LU_label.Size = new System.Drawing.Size(90, 13);
+            this.branch_id_LU_label.TabIndex = 21;
+            this.branch_id_LU_label.Text = "Branch ID lookup";
+            this.branch_id_LU_label.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // branch_id_LU_txt
+            // 
+            this.branch_id_LU_txt.Location = new System.Drawing.Point(548, 487);
+            this.branch_id_LU_txt.Name = "branch_id_LU_txt";
+            this.branch_id_LU_txt.Size = new System.Drawing.Size(100, 20);
+            this.branch_id_LU_txt.TabIndex = 20;
+            // 
+            // branch_search_but
+            // 
+            this.branch_search_but.Location = new System.Drawing.Point(432, 514);
+            this.branch_search_but.Name = "branch_search_but";
+            this.branch_search_but.Size = new System.Drawing.Size(96, 56);
+            this.branch_search_but.TabIndex = 19;
+            this.branch_search_but.Text = "Search";
+            this.branch_search_but.UseVisualStyleBackColor = true;
+            // 
+            // branch_del_but
+            // 
+            this.branch_del_but.Location = new System.Drawing.Point(548, 513);
+            this.branch_del_but.Name = "branch_del_but";
+            this.branch_del_but.Size = new System.Drawing.Size(98, 59);
+            this.branch_del_but.TabIndex = 18;
+            this.branch_del_but.Text = "Delete";
+            this.branch_del_but.UseVisualStyleBackColor = true;
+            // 
+            // branch_add_but
+            // 
+            this.branch_add_but.Location = new System.Drawing.Point(196, 461);
+            this.branch_add_but.Name = "branch_add_but";
+            this.branch_add_but.Size = new System.Drawing.Size(95, 62);
+            this.branch_add_but.TabIndex = 17;
+            this.branch_add_but.Text = "Add";
+            this.branch_add_but.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22});
+            this.dataGridView2.Location = new System.Drawing.Point(432, 22);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(847, 435);
+            this.dataGridView2.TabIndex = 16;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Branch ID";
+            this.Column15.Name = "Column15";
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Description";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Street Address 1";
+            this.Column17.Name = "Column17";
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "Street Address 2";
+            this.Column18.Name = "Column18";
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "City";
+            this.Column19.Name = "Column19";
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Province";
+            this.Column20.Name = "Column20";
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Postal Code";
+            this.Column21.Name = "Column21";
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "Phone Number";
+            this.Column22.Name = "Column22";
+            // 
+            // branch_id_txt
+            // 
+            this.branch_id_txt.Location = new System.Drawing.Point(169, 33);
+            this.branch_id_txt.Name = "branch_id_txt";
+            this.branch_id_txt.Size = new System.Drawing.Size(122, 20);
+            this.branch_id_txt.TabIndex = 15;
+            // 
+            // branch_phone_num_txt
+            // 
+            this.branch_phone_num_txt.Location = new System.Drawing.Point(169, 405);
+            this.branch_phone_num_txt.Name = "branch_phone_num_txt";
+            this.branch_phone_num_txt.Size = new System.Drawing.Size(122, 20);
+            this.branch_phone_num_txt.TabIndex = 14;
+            // 
+            // branch_pCode_txt
+            // 
+            this.branch_pCode_txt.Location = new System.Drawing.Point(169, 344);
+            this.branch_pCode_txt.Name = "branch_pCode_txt";
+            this.branch_pCode_txt.Size = new System.Drawing.Size(122, 20);
+            this.branch_pCode_txt.TabIndex = 13;
+            // 
+            // branch_province_txt
+            // 
+            this.branch_province_txt.Location = new System.Drawing.Point(169, 288);
+            this.branch_province_txt.Name = "branch_province_txt";
+            this.branch_province_txt.Size = new System.Drawing.Size(122, 20);
+            this.branch_province_txt.TabIndex = 12;
+            // 
+            // branch_city_txt
+            // 
+            this.branch_city_txt.Location = new System.Drawing.Point(169, 231);
+            this.branch_city_txt.Name = "branch_city_txt";
+            this.branch_city_txt.Size = new System.Drawing.Size(122, 20);
+            this.branch_city_txt.TabIndex = 11;
+            // 
+            // branch_street_add2_txt
+            // 
+            this.branch_street_add2_txt.Location = new System.Drawing.Point(169, 177);
+            this.branch_street_add2_txt.Name = "branch_street_add2_txt";
+            this.branch_street_add2_txt.Size = new System.Drawing.Size(122, 20);
+            this.branch_street_add2_txt.TabIndex = 10;
+            // 
+            // branch_street_add1_txt
+            // 
+            this.branch_street_add1_txt.Location = new System.Drawing.Point(169, 124);
+            this.branch_street_add1_txt.Name = "branch_street_add1_txt";
+            this.branch_street_add1_txt.Size = new System.Drawing.Size(122, 20);
+            this.branch_street_add1_txt.TabIndex = 9;
+            // 
+            // branch_descrip_txt
+            // 
+            this.branch_descrip_txt.Location = new System.Drawing.Point(169, 73);
+            this.branch_descrip_txt.Name = "branch_descrip_txt";
+            this.branch_descrip_txt.Size = new System.Drawing.Size(122, 20);
+            this.branch_descrip_txt.TabIndex = 8;
+            // 
+            // branch_phone_num_label
+            // 
+            this.branch_phone_num_label.AutoSize = true;
+            this.branch_phone_num_label.Location = new System.Drawing.Point(50, 405);
+            this.branch_phone_num_label.Name = "branch_phone_num_label";
+            this.branch_phone_num_label.Size = new System.Drawing.Size(78, 13);
+            this.branch_phone_num_label.TabIndex = 7;
+            this.branch_phone_num_label.Text = "Phone Number";
+            // 
+            // branch_pCode_label
+            // 
+            this.branch_pCode_label.AutoSize = true;
+            this.branch_pCode_label.Location = new System.Drawing.Point(50, 344);
+            this.branch_pCode_label.Name = "branch_pCode_label";
+            this.branch_pCode_label.Size = new System.Drawing.Size(64, 13);
+            this.branch_pCode_label.TabIndex = 6;
+            this.branch_pCode_label.Text = "Postal Code";
+            // 
+            // branch_province_label
+            // 
+            this.branch_province_label.AutoSize = true;
+            this.branch_province_label.Location = new System.Drawing.Point(50, 288);
+            this.branch_province_label.Name = "branch_province_label";
+            this.branch_province_label.Size = new System.Drawing.Size(49, 13);
+            this.branch_province_label.TabIndex = 5;
+            this.branch_province_label.Text = "Province";
+            // 
+            // branch_city_label
+            // 
+            this.branch_city_label.AutoSize = true;
+            this.branch_city_label.Location = new System.Drawing.Point(50, 231);
+            this.branch_city_label.Name = "branch_city_label";
+            this.branch_city_label.Size = new System.Drawing.Size(24, 13);
+            this.branch_city_label.TabIndex = 4;
+            this.branch_city_label.Text = "City";
+            // 
+            // branch_street_add2_label
+            // 
+            this.branch_street_add2_label.AutoSize = true;
+            this.branch_street_add2_label.Location = new System.Drawing.Point(50, 177);
+            this.branch_street_add2_label.Name = "branch_street_add2_label";
+            this.branch_street_add2_label.Size = new System.Drawing.Size(85, 13);
+            this.branch_street_add2_label.TabIndex = 3;
+            this.branch_street_add2_label.Text = "Street Address 2";
+            // 
+            // branch_street_add1_label
+            // 
+            this.branch_street_add1_label.AutoSize = true;
+            this.branch_street_add1_label.Location = new System.Drawing.Point(50, 124);
+            this.branch_street_add1_label.Name = "branch_street_add1_label";
+            this.branch_street_add1_label.Size = new System.Drawing.Size(80, 13);
+            this.branch_street_add1_label.TabIndex = 2;
+            this.branch_street_add1_label.Text = "Street Addres 1";
+            // 
+            // branch_dscrip_label
+            // 
+            this.branch_dscrip_label.AutoSize = true;
+            this.branch_dscrip_label.Location = new System.Drawing.Point(50, 73);
+            this.branch_dscrip_label.Name = "branch_dscrip_label";
+            this.branch_dscrip_label.Size = new System.Drawing.Size(60, 13);
+            this.branch_dscrip_label.TabIndex = 1;
+            this.branch_dscrip_label.Text = "Description";
+            // 
+            // branch_id_label
+            // 
+            this.branch_id_label.AutoSize = true;
+            this.branch_id_label.Location = new System.Drawing.Point(50, 33);
+            this.branch_id_label.Name = "branch_id_label";
+            this.branch_id_label.Size = new System.Drawing.Size(55, 13);
+            this.branch_id_label.TabIndex = 0;
+            this.branch_id_label.Text = "Branch ID";
             // 
             // tabPage3
             // 
@@ -244,271 +563,14 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // button1
+            // cust_refresh_but
             // 
-            this.button1.Location = new System.Drawing.Point(1393, 481);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 52);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Report";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1393, 282);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 52);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Rent";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // cust_custID_label
-            // 
-            this.cust_custID_label.AutoSize = true;
-            this.cust_custID_label.Location = new System.Drawing.Point(5, 30);
-            this.cust_custID_label.Name = "cust_custID_label";
-            this.cust_custID_label.Size = new System.Drawing.Size(65, 13);
-            this.cust_custID_label.TabIndex = 0;
-            this.cust_custID_label.Text = "Customer ID";
-            this.cust_custID_label.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // cust_f_name_label
-            // 
-            this.cust_f_name_label.AutoSize = true;
-            this.cust_f_name_label.Location = new System.Drawing.Point(5, 67);
-            this.cust_f_name_label.Name = "cust_f_name_label";
-            this.cust_f_name_label.Size = new System.Drawing.Size(57, 13);
-            this.cust_f_name_label.TabIndex = 1;
-            this.cust_f_name_label.Text = "First Name";
-            // 
-            // cust_mid_name_label
-            // 
-            this.cust_mid_name_label.AutoSize = true;
-            this.cust_mid_name_label.Location = new System.Drawing.Point(5, 104);
-            this.cust_mid_name_label.Name = "cust_mid_name_label";
-            this.cust_mid_name_label.Size = new System.Drawing.Size(69, 13);
-            this.cust_mid_name_label.TabIndex = 2;
-            this.cust_mid_name_label.Text = "Middle Name";
-            // 
-            // cust_last_name_label
-            // 
-            this.cust_last_name_label.AutoSize = true;
-            this.cust_last_name_label.Location = new System.Drawing.Point(5, 140);
-            this.cust_last_name_label.Name = "cust_last_name_label";
-            this.cust_last_name_label.Size = new System.Drawing.Size(58, 13);
-            this.cust_last_name_label.TabIndex = 3;
-            this.cust_last_name_label.Text = "Last Name";
-            // 
-            // cust_street_add1_label
-            // 
-            this.cust_street_add1_label.AutoSize = true;
-            this.cust_street_add1_label.Location = new System.Drawing.Point(5, 177);
-            this.cust_street_add1_label.Name = "cust_street_add1_label";
-            this.cust_street_add1_label.Size = new System.Drawing.Size(85, 13);
-            this.cust_street_add1_label.TabIndex = 4;
-            this.cust_street_add1_label.Text = "Street Address 1";
-            // 
-            // cust_street_add2_label
-            // 
-            this.cust_street_add2_label.AutoSize = true;
-            this.cust_street_add2_label.Location = new System.Drawing.Point(5, 216);
-            this.cust_street_add2_label.Name = "cust_street_add2_label";
-            this.cust_street_add2_label.Size = new System.Drawing.Size(85, 13);
-            this.cust_street_add2_label.TabIndex = 5;
-            this.cust_street_add2_label.Text = "Street Address 2";
-            // 
-            // cust_city_label
-            // 
-            this.cust_city_label.AutoSize = true;
-            this.cust_city_label.Location = new System.Drawing.Point(5, 249);
-            this.cust_city_label.Name = "cust_city_label";
-            this.cust_city_label.Size = new System.Drawing.Size(24, 13);
-            this.cust_city_label.TabIndex = 6;
-            this.cust_city_label.Text = "City";
-            // 
-            // cust_province_label
-            // 
-            this.cust_province_label.AutoSize = true;
-            this.cust_province_label.Location = new System.Drawing.Point(5, 287);
-            this.cust_province_label.Name = "cust_province_label";
-            this.cust_province_label.Size = new System.Drawing.Size(49, 13);
-            this.cust_province_label.TabIndex = 7;
-            this.cust_province_label.Text = "Province";
-            // 
-            // cust_pCode_label
-            // 
-            this.cust_pCode_label.AutoSize = true;
-            this.cust_pCode_label.Location = new System.Drawing.Point(5, 323);
-            this.cust_pCode_label.Name = "cust_pCode_label";
-            this.cust_pCode_label.Size = new System.Drawing.Size(64, 13);
-            this.cust_pCode_label.TabIndex = 8;
-            this.cust_pCode_label.Text = "Postal Code";
-            // 
-            // cust_dob_label
-            // 
-            this.cust_dob_label.AutoSize = true;
-            this.cust_dob_label.Location = new System.Drawing.Point(5, 366);
-            this.cust_dob_label.Name = "cust_dob_label";
-            this.cust_dob_label.Size = new System.Drawing.Size(30, 13);
-            this.cust_dob_label.TabIndex = 9;
-            this.cust_dob_label.Text = "DOB";
-            // 
-            // cust_phone_num_label
-            // 
-            this.cust_phone_num_label.AutoSize = true;
-            this.cust_phone_num_label.Location = new System.Drawing.Point(5, 404);
-            this.cust_phone_num_label.Name = "cust_phone_num_label";
-            this.cust_phone_num_label.Size = new System.Drawing.Size(78, 13);
-            this.cust_phone_num_label.TabIndex = 10;
-            this.cust_phone_num_label.Text = "Phone Number";
-            // 
-            // cust_insurance_label
-            // 
-            this.cust_insurance_label.AutoSize = true;
-            this.cust_insurance_label.Location = new System.Drawing.Point(5, 444);
-            this.cust_insurance_label.Name = "cust_insurance_label";
-            this.cust_insurance_label.Size = new System.Drawing.Size(54, 13);
-            this.cust_insurance_label.TabIndex = 11;
-            this.cust_insurance_label.Text = "Insurance";
-            // 
-            // cust_drivers_label
-            // 
-            this.cust_drivers_label.AutoSize = true;
-            this.cust_drivers_label.Location = new System.Drawing.Point(5, 480);
-            this.cust_drivers_label.Name = "cust_drivers_label";
-            this.cust_drivers_label.Size = new System.Drawing.Size(85, 13);
-            this.cust_drivers_label.TabIndex = 12;
-            this.cust_drivers_label.Text = "Driver License #";
-            // 
-            // cust_memStat_label
-            // 
-            this.cust_memStat_label.AutoSize = true;
-            this.cust_memStat_label.Location = new System.Drawing.Point(5, 520);
-            this.cust_memStat_label.Name = "cust_memStat_label";
-            this.cust_memStat_label.Size = new System.Drawing.Size(86, 13);
-            this.cust_memStat_label.TabIndex = 13;
-            this.cust_memStat_label.Text = "Membership Stat";
-            this.cust_memStat_label.Click += new System.EventHandler(this.cust_memStat_label_Click);
-            // 
-            // cust_custID_txt
-            // 
-            this.cust_custID_txt.Location = new System.Drawing.Point(97, 30);
-            this.cust_custID_txt.Name = "cust_custID_txt";
-            this.cust_custID_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_custID_txt.TabIndex = 14;
-            // 
-            // cust_f_name_txt
-            // 
-            this.cust_f_name_txt.Location = new System.Drawing.Point(97, 67);
-            this.cust_f_name_txt.Name = "cust_f_name_txt";
-            this.cust_f_name_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_f_name_txt.TabIndex = 15;
-            // 
-            // cust_m_name_txt
-            // 
-            this.cust_m_name_txt.Location = new System.Drawing.Point(97, 101);
-            this.cust_m_name_txt.Name = "cust_m_name_txt";
-            this.cust_m_name_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_m_name_txt.TabIndex = 16;
-            // 
-            // cust_l_name_txt
-            // 
-            this.cust_l_name_txt.Location = new System.Drawing.Point(97, 137);
-            this.cust_l_name_txt.Name = "cust_l_name_txt";
-            this.cust_l_name_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_l_name_txt.TabIndex = 17;
-            // 
-            // cust_street_add1_txt
-            // 
-            this.cust_street_add1_txt.Location = new System.Drawing.Point(97, 177);
-            this.cust_street_add1_txt.Name = "cust_street_add1_txt";
-            this.cust_street_add1_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_street_add1_txt.TabIndex = 18;
-            // 
-            // cust_street_add2_txt
-            // 
-            this.cust_street_add2_txt.Location = new System.Drawing.Point(97, 213);
-            this.cust_street_add2_txt.Name = "cust_street_add2_txt";
-            this.cust_street_add2_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_street_add2_txt.TabIndex = 19;
-            // 
-            // cust_city_txt
-            // 
-            this.cust_city_txt.Location = new System.Drawing.Point(97, 246);
-            this.cust_city_txt.Name = "cust_city_txt";
-            this.cust_city_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_city_txt.TabIndex = 20;
-            // 
-            // cust_prov_txt
-            // 
-            this.cust_prov_txt.Location = new System.Drawing.Point(97, 284);
-            this.cust_prov_txt.Name = "cust_prov_txt";
-            this.cust_prov_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_prov_txt.TabIndex = 21;
-            // 
-            // cust_pCode_txt
-            // 
-            this.cust_pCode_txt.Location = new System.Drawing.Point(97, 323);
-            this.cust_pCode_txt.Name = "cust_pCode_txt";
-            this.cust_pCode_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_pCode_txt.TabIndex = 22;
-            // 
-            // cust_dob_txt
-            // 
-            this.cust_dob_txt.Location = new System.Drawing.Point(97, 363);
-            this.cust_dob_txt.Name = "cust_dob_txt";
-            this.cust_dob_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_dob_txt.TabIndex = 23;
-            // 
-            // cust_phone_num_txt
-            // 
-            this.cust_phone_num_txt.Location = new System.Drawing.Point(97, 404);
-            this.cust_phone_num_txt.Name = "cust_phone_num_txt";
-            this.cust_phone_num_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_phone_num_txt.TabIndex = 24;
-            // 
-            // cust_insurance_txt
-            // 
-            this.cust_insurance_txt.Location = new System.Drawing.Point(97, 444);
-            this.cust_insurance_txt.Name = "cust_insurance_txt";
-            this.cust_insurance_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_insurance_txt.TabIndex = 25;
-            // 
-            // cust_drivers_txt
-            // 
-            this.cust_drivers_txt.Location = new System.Drawing.Point(97, 480);
-            this.cust_drivers_txt.Name = "cust_drivers_txt";
-            this.cust_drivers_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_drivers_txt.TabIndex = 26;
-            // 
-            // cust_memStat_txt
-            // 
-            this.cust_memStat_txt.Location = new System.Drawing.Point(97, 520);
-            this.cust_memStat_txt.Name = "cust_memStat_txt";
-            this.cust_memStat_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_memStat_txt.TabIndex = 27;
-            // 
-            // cust_add_but
-            // 
-            this.cust_add_but.Location = new System.Drawing.Point(593, 506);
-            this.cust_add_but.Name = "cust_add_but";
-            this.cust_add_but.Size = new System.Drawing.Size(105, 61);
-            this.cust_add_but.TabIndex = 28;
-            this.cust_add_but.Text = "Add";
-            this.cust_add_but.UseVisualStyleBackColor = true;
-            // 
-            // cust_del_but
-            // 
-            this.cust_del_but.Location = new System.Drawing.Point(747, 507);
-            this.cust_del_but.Name = "cust_del_but";
-            this.cust_del_but.Size = new System.Drawing.Size(95, 60);
-            this.cust_del_but.TabIndex = 29;
-            this.cust_del_but.Text = "Delete";
-            this.cust_del_but.UseVisualStyleBackColor = true;
-            this.cust_del_but.Click += new System.EventHandler(this.button4_Click);
+            this.cust_refresh_but.Location = new System.Drawing.Point(896, 506);
+            this.cust_refresh_but.Name = "cust_refresh_but";
+            this.cust_refresh_but.Size = new System.Drawing.Size(95, 61);
+            this.cust_refresh_but.TabIndex = 31;
+            this.cust_refresh_but.Text = "Refresh";
+            this.cust_refresh_but.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -533,15 +595,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1167, 470);
             this.dataGridView1.TabIndex = 30;
-            // 
-            // cust_refresh_but
-            // 
-            this.cust_refresh_but.Location = new System.Drawing.Point(896, 506);
-            this.cust_refresh_but.Name = "cust_refresh_but";
-            this.cust_refresh_but.Size = new System.Drawing.Size(95, 61);
-            this.cust_refresh_but.TabIndex = 31;
-            this.cust_refresh_but.Text = "Refresh";
-            this.cust_refresh_but.UseVisualStyleBackColor = true;
             // 
             // Column2
             // 
@@ -613,249 +666,637 @@
             this.Column14.HeaderText = "Membership Status";
             this.Column14.Name = "Column14";
             // 
-            // branch_id_label
+            // cust_del_but
             // 
-            this.branch_id_label.AutoSize = true;
-            this.branch_id_label.Location = new System.Drawing.Point(50, 33);
-            this.branch_id_label.Name = "branch_id_label";
-            this.branch_id_label.Size = new System.Drawing.Size(55, 13);
-            this.branch_id_label.TabIndex = 0;
-            this.branch_id_label.Text = "Branch ID";
+            this.cust_del_but.Location = new System.Drawing.Point(747, 507);
+            this.cust_del_but.Name = "cust_del_but";
+            this.cust_del_but.Size = new System.Drawing.Size(95, 60);
+            this.cust_del_but.TabIndex = 29;
+            this.cust_del_but.Text = "Delete";
+            this.cust_del_but.UseVisualStyleBackColor = true;
+            this.cust_del_but.Click += new System.EventHandler(this.button4_Click);
             // 
-            // branch_dscrip_label
+            // cust_add_but
             // 
-            this.branch_dscrip_label.AutoSize = true;
-            this.branch_dscrip_label.Location = new System.Drawing.Point(50, 73);
-            this.branch_dscrip_label.Name = "branch_dscrip_label";
-            this.branch_dscrip_label.Size = new System.Drawing.Size(60, 13);
-            this.branch_dscrip_label.TabIndex = 1;
-            this.branch_dscrip_label.Text = "Description";
+            this.cust_add_but.Location = new System.Drawing.Point(593, 506);
+            this.cust_add_but.Name = "cust_add_but";
+            this.cust_add_but.Size = new System.Drawing.Size(105, 61);
+            this.cust_add_but.TabIndex = 28;
+            this.cust_add_but.Text = "Add";
+            this.cust_add_but.UseVisualStyleBackColor = true;
             // 
-            // branch_street_add1_label
+            // cust_memStat_txt
             // 
-            this.branch_street_add1_label.AutoSize = true;
-            this.branch_street_add1_label.Location = new System.Drawing.Point(50, 124);
-            this.branch_street_add1_label.Name = "branch_street_add1_label";
-            this.branch_street_add1_label.Size = new System.Drawing.Size(80, 13);
-            this.branch_street_add1_label.TabIndex = 2;
-            this.branch_street_add1_label.Text = "Street Addres 1";
+            this.cust_memStat_txt.Location = new System.Drawing.Point(97, 520);
+            this.cust_memStat_txt.Name = "cust_memStat_txt";
+            this.cust_memStat_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_memStat_txt.TabIndex = 27;
             // 
-            // branch_street_add2_label
+            // cust_drivers_txt
             // 
-            this.branch_street_add2_label.AutoSize = true;
-            this.branch_street_add2_label.Location = new System.Drawing.Point(50, 177);
-            this.branch_street_add2_label.Name = "branch_street_add2_label";
-            this.branch_street_add2_label.Size = new System.Drawing.Size(85, 13);
-            this.branch_street_add2_label.TabIndex = 3;
-            this.branch_street_add2_label.Text = "Street Address 2";
+            this.cust_drivers_txt.Location = new System.Drawing.Point(97, 480);
+            this.cust_drivers_txt.Name = "cust_drivers_txt";
+            this.cust_drivers_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_drivers_txt.TabIndex = 26;
             // 
-            // branch_city_label
+            // cust_insurance_txt
             // 
-            this.branch_city_label.AutoSize = true;
-            this.branch_city_label.Location = new System.Drawing.Point(50, 231);
-            this.branch_city_label.Name = "branch_city_label";
-            this.branch_city_label.Size = new System.Drawing.Size(24, 13);
-            this.branch_city_label.TabIndex = 4;
-            this.branch_city_label.Text = "City";
+            this.cust_insurance_txt.Location = new System.Drawing.Point(97, 444);
+            this.cust_insurance_txt.Name = "cust_insurance_txt";
+            this.cust_insurance_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_insurance_txt.TabIndex = 25;
             // 
-            // branch_province_label
+            // cust_phone_num_txt
             // 
-            this.branch_province_label.AutoSize = true;
-            this.branch_province_label.Location = new System.Drawing.Point(50, 288);
-            this.branch_province_label.Name = "branch_province_label";
-            this.branch_province_label.Size = new System.Drawing.Size(49, 13);
-            this.branch_province_label.TabIndex = 5;
-            this.branch_province_label.Text = "Province";
+            this.cust_phone_num_txt.Location = new System.Drawing.Point(97, 404);
+            this.cust_phone_num_txt.Name = "cust_phone_num_txt";
+            this.cust_phone_num_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_phone_num_txt.TabIndex = 24;
             // 
-            // branch_pCode_label
+            // cust_dob_txt
             // 
-            this.branch_pCode_label.AutoSize = true;
-            this.branch_pCode_label.Location = new System.Drawing.Point(50, 344);
-            this.branch_pCode_label.Name = "branch_pCode_label";
-            this.branch_pCode_label.Size = new System.Drawing.Size(64, 13);
-            this.branch_pCode_label.TabIndex = 6;
-            this.branch_pCode_label.Text = "Postal Code";
+            this.cust_dob_txt.Location = new System.Drawing.Point(97, 363);
+            this.cust_dob_txt.Name = "cust_dob_txt";
+            this.cust_dob_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_dob_txt.TabIndex = 23;
             // 
-            // branch_phone_num_label
+            // cust_pCode_txt
             // 
-            this.branch_phone_num_label.AutoSize = true;
-            this.branch_phone_num_label.Location = new System.Drawing.Point(50, 405);
-            this.branch_phone_num_label.Name = "branch_phone_num_label";
-            this.branch_phone_num_label.Size = new System.Drawing.Size(78, 13);
-            this.branch_phone_num_label.TabIndex = 7;
-            this.branch_phone_num_label.Text = "Phone Number";
+            this.cust_pCode_txt.Location = new System.Drawing.Point(97, 323);
+            this.cust_pCode_txt.Name = "cust_pCode_txt";
+            this.cust_pCode_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_pCode_txt.TabIndex = 22;
             // 
-            // branch_descrip_txt
+            // cust_prov_txt
             // 
-            this.branch_descrip_txt.Location = new System.Drawing.Point(169, 73);
-            this.branch_descrip_txt.Name = "branch_descrip_txt";
-            this.branch_descrip_txt.Size = new System.Drawing.Size(122, 20);
-            this.branch_descrip_txt.TabIndex = 8;
+            this.cust_prov_txt.Location = new System.Drawing.Point(97, 284);
+            this.cust_prov_txt.Name = "cust_prov_txt";
+            this.cust_prov_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_prov_txt.TabIndex = 21;
             // 
-            // branch_street_add1_txt
+            // cust_city_txt
             // 
-            this.branch_street_add1_txt.Location = new System.Drawing.Point(169, 124);
-            this.branch_street_add1_txt.Name = "branch_street_add1_txt";
-            this.branch_street_add1_txt.Size = new System.Drawing.Size(122, 20);
-            this.branch_street_add1_txt.TabIndex = 9;
+            this.cust_city_txt.Location = new System.Drawing.Point(97, 246);
+            this.cust_city_txt.Name = "cust_city_txt";
+            this.cust_city_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_city_txt.TabIndex = 20;
             // 
-            // branch_street_add2_txt
+            // cust_street_add2_txt
             // 
-            this.branch_street_add2_txt.Location = new System.Drawing.Point(169, 177);
-            this.branch_street_add2_txt.Name = "branch_street_add2_txt";
-            this.branch_street_add2_txt.Size = new System.Drawing.Size(122, 20);
-            this.branch_street_add2_txt.TabIndex = 10;
+            this.cust_street_add2_txt.Location = new System.Drawing.Point(97, 213);
+            this.cust_street_add2_txt.Name = "cust_street_add2_txt";
+            this.cust_street_add2_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_street_add2_txt.TabIndex = 19;
             // 
-            // branch_city_txt
+            // cust_street_add1_txt
             // 
-            this.branch_city_txt.Location = new System.Drawing.Point(169, 231);
-            this.branch_city_txt.Name = "branch_city_txt";
-            this.branch_city_txt.Size = new System.Drawing.Size(122, 20);
-            this.branch_city_txt.TabIndex = 11;
+            this.cust_street_add1_txt.Location = new System.Drawing.Point(97, 177);
+            this.cust_street_add1_txt.Name = "cust_street_add1_txt";
+            this.cust_street_add1_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_street_add1_txt.TabIndex = 18;
             // 
-            // branch_province_txt
+            // cust_l_name_txt
             // 
-            this.branch_province_txt.Location = new System.Drawing.Point(169, 288);
-            this.branch_province_txt.Name = "branch_province_txt";
-            this.branch_province_txt.Size = new System.Drawing.Size(122, 20);
-            this.branch_province_txt.TabIndex = 12;
+            this.cust_l_name_txt.Location = new System.Drawing.Point(97, 137);
+            this.cust_l_name_txt.Name = "cust_l_name_txt";
+            this.cust_l_name_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_l_name_txt.TabIndex = 17;
             // 
-            // branch_pCode_txt
+            // cust_m_name_txt
             // 
-            this.branch_pCode_txt.Location = new System.Drawing.Point(169, 344);
-            this.branch_pCode_txt.Name = "branch_pCode_txt";
-            this.branch_pCode_txt.Size = new System.Drawing.Size(122, 20);
-            this.branch_pCode_txt.TabIndex = 13;
+            this.cust_m_name_txt.Location = new System.Drawing.Point(97, 101);
+            this.cust_m_name_txt.Name = "cust_m_name_txt";
+            this.cust_m_name_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_m_name_txt.TabIndex = 16;
             // 
-            // branch_phone_num_txt
+            // cust_f_name_txt
             // 
-            this.branch_phone_num_txt.Location = new System.Drawing.Point(169, 405);
-            this.branch_phone_num_txt.Name = "branch_phone_num_txt";
-            this.branch_phone_num_txt.Size = new System.Drawing.Size(122, 20);
-            this.branch_phone_num_txt.TabIndex = 14;
+            this.cust_f_name_txt.Location = new System.Drawing.Point(97, 67);
+            this.cust_f_name_txt.Name = "cust_f_name_txt";
+            this.cust_f_name_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_f_name_txt.TabIndex = 15;
             // 
-            // branch_id_txt
+            // cust_custID_txt
             // 
-            this.branch_id_txt.Location = new System.Drawing.Point(169, 33);
-            this.branch_id_txt.Name = "branch_id_txt";
-            this.branch_id_txt.Size = new System.Drawing.Size(122, 20);
-            this.branch_id_txt.TabIndex = 15;
+            this.cust_custID_txt.Location = new System.Drawing.Point(97, 30);
+            this.cust_custID_txt.Name = "cust_custID_txt";
+            this.cust_custID_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_custID_txt.TabIndex = 14;
             // 
-            // dataGridView2
+            // cust_memStat_label
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22});
-            this.dataGridView2.Location = new System.Drawing.Point(432, 22);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(847, 435);
-            this.dataGridView2.TabIndex = 16;
+            this.cust_memStat_label.AutoSize = true;
+            this.cust_memStat_label.Location = new System.Drawing.Point(5, 520);
+            this.cust_memStat_label.Name = "cust_memStat_label";
+            this.cust_memStat_label.Size = new System.Drawing.Size(86, 13);
+            this.cust_memStat_label.TabIndex = 13;
+            this.cust_memStat_label.Text = "Membership Stat";
+            this.cust_memStat_label.Click += new System.EventHandler(this.cust_memStat_label_Click);
             // 
-            // branch_add_but
+            // cust_drivers_label
             // 
-            this.branch_add_but.Location = new System.Drawing.Point(196, 461);
-            this.branch_add_but.Name = "branch_add_but";
-            this.branch_add_but.Size = new System.Drawing.Size(95, 62);
-            this.branch_add_but.TabIndex = 17;
-            this.branch_add_but.Text = "Add";
-            this.branch_add_but.UseVisualStyleBackColor = true;
+            this.cust_drivers_label.AutoSize = true;
+            this.cust_drivers_label.Location = new System.Drawing.Point(5, 480);
+            this.cust_drivers_label.Name = "cust_drivers_label";
+            this.cust_drivers_label.Size = new System.Drawing.Size(85, 13);
+            this.cust_drivers_label.TabIndex = 12;
+            this.cust_drivers_label.Text = "Driver License #";
             // 
-            // branch_del_but
+            // cust_insurance_label
             // 
-            this.branch_del_but.Location = new System.Drawing.Point(548, 513);
-            this.branch_del_but.Name = "branch_del_but";
-            this.branch_del_but.Size = new System.Drawing.Size(98, 59);
-            this.branch_del_but.TabIndex = 18;
-            this.branch_del_but.Text = "Delete";
-            this.branch_del_but.UseVisualStyleBackColor = true;
+            this.cust_insurance_label.AutoSize = true;
+            this.cust_insurance_label.Location = new System.Drawing.Point(5, 444);
+            this.cust_insurance_label.Name = "cust_insurance_label";
+            this.cust_insurance_label.Size = new System.Drawing.Size(54, 13);
+            this.cust_insurance_label.TabIndex = 11;
+            this.cust_insurance_label.Text = "Insurance";
             // 
-            // branch_search_but
+            // cust_phone_num_label
             // 
-            this.branch_search_but.Location = new System.Drawing.Point(432, 514);
-            this.branch_search_but.Name = "branch_search_but";
-            this.branch_search_but.Size = new System.Drawing.Size(96, 56);
-            this.branch_search_but.TabIndex = 19;
-            this.branch_search_but.Text = "Search";
-            this.branch_search_but.UseVisualStyleBackColor = true;
+            this.cust_phone_num_label.AutoSize = true;
+            this.cust_phone_num_label.Location = new System.Drawing.Point(5, 404);
+            this.cust_phone_num_label.Name = "cust_phone_num_label";
+            this.cust_phone_num_label.Size = new System.Drawing.Size(78, 13);
+            this.cust_phone_num_label.TabIndex = 10;
+            this.cust_phone_num_label.Text = "Phone Number";
             // 
-            // branch_id_LU_txt
+            // cust_dob_label
             // 
-            this.branch_id_LU_txt.Location = new System.Drawing.Point(548, 487);
-            this.branch_id_LU_txt.Name = "branch_id_LU_txt";
-            this.branch_id_LU_txt.Size = new System.Drawing.Size(100, 20);
-            this.branch_id_LU_txt.TabIndex = 20;
+            this.cust_dob_label.AutoSize = true;
+            this.cust_dob_label.Location = new System.Drawing.Point(5, 366);
+            this.cust_dob_label.Name = "cust_dob_label";
+            this.cust_dob_label.Size = new System.Drawing.Size(30, 13);
+            this.cust_dob_label.TabIndex = 9;
+            this.cust_dob_label.Text = "DOB";
             // 
-            // branch_id_LU_label
+            // cust_pCode_label
             // 
-            this.branch_id_LU_label.AutoSize = true;
-            this.branch_id_LU_label.Location = new System.Drawing.Point(429, 487);
-            this.branch_id_LU_label.Name = "branch_id_LU_label";
-            this.branch_id_LU_label.Size = new System.Drawing.Size(90, 13);
-            this.branch_id_LU_label.TabIndex = 21;
-            this.branch_id_LU_label.Text = "Branch ID lookup";
-            this.branch_id_LU_label.Click += new System.EventHandler(this.label9_Click);
+            this.cust_pCode_label.AutoSize = true;
+            this.cust_pCode_label.Location = new System.Drawing.Point(5, 323);
+            this.cust_pCode_label.Name = "cust_pCode_label";
+            this.cust_pCode_label.Size = new System.Drawing.Size(64, 13);
+            this.cust_pCode_label.TabIndex = 8;
+            this.cust_pCode_label.Text = "Postal Code";
             // 
-            // branch_refresh_but
+            // cust_province_label
             // 
-            this.branch_refresh_but.Location = new System.Drawing.Point(1183, 510);
-            this.branch_refresh_but.Name = "branch_refresh_but";
-            this.branch_refresh_but.Size = new System.Drawing.Size(96, 59);
-            this.branch_refresh_but.TabIndex = 22;
-            this.branch_refresh_but.Text = "Refresh";
-            this.branch_refresh_but.UseVisualStyleBackColor = true;
+            this.cust_province_label.AutoSize = true;
+            this.cust_province_label.Location = new System.Drawing.Point(5, 287);
+            this.cust_province_label.Name = "cust_province_label";
+            this.cust_province_label.Size = new System.Drawing.Size(49, 13);
+            this.cust_province_label.TabIndex = 7;
+            this.cust_province_label.Text = "Province";
             // 
-            // Column15
+            // cust_city_label
             // 
-            this.Column15.HeaderText = "Branch ID";
-            this.Column15.Name = "Column15";
+            this.cust_city_label.AutoSize = true;
+            this.cust_city_label.Location = new System.Drawing.Point(5, 249);
+            this.cust_city_label.Name = "cust_city_label";
+            this.cust_city_label.Size = new System.Drawing.Size(24, 13);
+            this.cust_city_label.TabIndex = 6;
+            this.cust_city_label.Text = "City";
             // 
-            // Column16
+            // cust_street_add2_label
             // 
-            this.Column16.HeaderText = "Description";
-            this.Column16.Name = "Column16";
+            this.cust_street_add2_label.AutoSize = true;
+            this.cust_street_add2_label.Location = new System.Drawing.Point(5, 216);
+            this.cust_street_add2_label.Name = "cust_street_add2_label";
+            this.cust_street_add2_label.Size = new System.Drawing.Size(85, 13);
+            this.cust_street_add2_label.TabIndex = 5;
+            this.cust_street_add2_label.Text = "Street Address 2";
             // 
-            // Column17
+            // cust_street_add1_label
             // 
-            this.Column17.HeaderText = "Street Address 1";
-            this.Column17.Name = "Column17";
+            this.cust_street_add1_label.AutoSize = true;
+            this.cust_street_add1_label.Location = new System.Drawing.Point(5, 177);
+            this.cust_street_add1_label.Name = "cust_street_add1_label";
+            this.cust_street_add1_label.Size = new System.Drawing.Size(85, 13);
+            this.cust_street_add1_label.TabIndex = 4;
+            this.cust_street_add1_label.Text = "Street Address 1";
             // 
-            // Column18
+            // cust_last_name_label
             // 
-            this.Column18.HeaderText = "Street Address 2";
-            this.Column18.Name = "Column18";
+            this.cust_last_name_label.AutoSize = true;
+            this.cust_last_name_label.Location = new System.Drawing.Point(5, 140);
+            this.cust_last_name_label.Name = "cust_last_name_label";
+            this.cust_last_name_label.Size = new System.Drawing.Size(58, 13);
+            this.cust_last_name_label.TabIndex = 3;
+            this.cust_last_name_label.Text = "Last Name";
             // 
-            // Column19
+            // cust_mid_name_label
             // 
-            this.Column19.HeaderText = "City";
-            this.Column19.Name = "Column19";
+            this.cust_mid_name_label.AutoSize = true;
+            this.cust_mid_name_label.Location = new System.Drawing.Point(5, 104);
+            this.cust_mid_name_label.Name = "cust_mid_name_label";
+            this.cust_mid_name_label.Size = new System.Drawing.Size(69, 13);
+            this.cust_mid_name_label.TabIndex = 2;
+            this.cust_mid_name_label.Text = "Middle Name";
             // 
-            // Column20
+            // cust_f_name_label
             // 
-            this.Column20.HeaderText = "Province";
-            this.Column20.Name = "Column20";
+            this.cust_f_name_label.AutoSize = true;
+            this.cust_f_name_label.Location = new System.Drawing.Point(5, 67);
+            this.cust_f_name_label.Name = "cust_f_name_label";
+            this.cust_f_name_label.Size = new System.Drawing.Size(57, 13);
+            this.cust_f_name_label.TabIndex = 1;
+            this.cust_f_name_label.Text = "First Name";
             // 
-            // Column21
+            // cust_custID_label
             // 
-            this.Column21.HeaderText = "Postal Code";
-            this.Column21.Name = "Column21";
+            this.cust_custID_label.AutoSize = true;
+            this.cust_custID_label.Location = new System.Drawing.Point(5, 30);
+            this.cust_custID_label.Name = "cust_custID_label";
+            this.cust_custID_label.Size = new System.Drawing.Size(65, 13);
+            this.cust_custID_label.TabIndex = 0;
+            this.cust_custID_label.Text = "Customer ID";
+            this.cust_custID_label.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Column22
+            // button1
             // 
-            this.Column22.HeaderText = "Phone Number";
-            this.Column22.Name = "Column22";
+            this.button1.Location = new System.Drawing.Point(1393, 481);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 52);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Report";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1393, 282);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 52);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Rent";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // carTypeLabel
+            // 
+            this.carTypeLabel.AutoSize = true;
+            this.carTypeLabel.Location = new System.Drawing.Point(225, 63);
+            this.carTypeLabel.Name = "carTypeLabel";
+            this.carTypeLabel.Size = new System.Drawing.Size(50, 13);
+            this.carTypeLabel.TabIndex = 1;
+            this.carTypeLabel.Text = "Car Type";
+            this.carTypeLabel.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // vinText
+            // 
+            this.vinText.Location = new System.Drawing.Point(84, 60);
+            this.vinText.Name = "vinText";
+            this.vinText.Size = new System.Drawing.Size(121, 20);
+            this.vinText.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(294, 60);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.Tag = "carTypeOptions";
+            // 
+            // vin
+            // 
+            this.vin.AutoSize = true;
+            this.vin.Location = new System.Drawing.Point(3, 60);
+            this.vin.Name = "vin";
+            this.vin.Size = new System.Drawing.Size(25, 13);
+            this.vin.TabIndex = 4;
+            this.vin.Text = "VIN";
+            this.vin.Click += new System.EventHandler(this.vin_Click);
+            // 
+            // modelNameLabel
+            // 
+            this.modelNameLabel.AutoSize = true;
+            this.modelNameLabel.Location = new System.Drawing.Point(3, 102);
+            this.modelNameLabel.Name = "modelNameLabel";
+            this.modelNameLabel.Size = new System.Drawing.Size(67, 13);
+            this.modelNameLabel.TabIndex = 5;
+            this.modelNameLabel.Text = "Model Name";
+            this.modelNameLabel.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // modelYearLabel
+            // 
+            this.modelYearLabel.AutoSize = true;
+            this.modelYearLabel.Location = new System.Drawing.Point(225, 105);
+            this.modelYearLabel.Name = "modelYearLabel";
+            this.modelYearLabel.Size = new System.Drawing.Size(61, 13);
+            this.modelYearLabel.TabIndex = 6;
+            this.modelYearLabel.Text = "Model Year";
+            // 
+            // bodyStyleLabel
+            // 
+            this.bodyStyleLabel.AutoSize = true;
+            this.bodyStyleLabel.Location = new System.Drawing.Point(5, 141);
+            this.bodyStyleLabel.Name = "bodyStyleLabel";
+            this.bodyStyleLabel.Size = new System.Drawing.Size(57, 13);
+            this.bodyStyleLabel.TabIndex = 7;
+            this.bodyStyleLabel.Text = "Body Style";
+            // 
+            // colourLabel
+            // 
+            this.colourLabel.AutoSize = true;
+            this.colourLabel.Location = new System.Drawing.Point(225, 141);
+            this.colourLabel.Name = "colourLabel";
+            this.colourLabel.Size = new System.Drawing.Size(37, 13);
+            this.colourLabel.TabIndex = 8;
+            this.colourLabel.Text = "Colour";
+            // 
+            // noSeatsLabel
+            // 
+            this.noSeatsLabel.AutoSize = true;
+            this.noSeatsLabel.Location = new System.Drawing.Point(3, 181);
+            this.noSeatsLabel.Name = "noSeatsLabel";
+            this.noSeatsLabel.Size = new System.Drawing.Size(86, 13);
+            this.noSeatsLabel.TabIndex = 9;
+            this.noSeatsLabel.Text = "Number of Seats";
+            // 
+            // fuelTypeLabel
+            // 
+            this.fuelTypeLabel.AutoSize = true;
+            this.fuelTypeLabel.Location = new System.Drawing.Point(225, 181);
+            this.fuelTypeLabel.Name = "fuelTypeLabel";
+            this.fuelTypeLabel.Size = new System.Drawing.Size(54, 13);
+            this.fuelTypeLabel.TabIndex = 10;
+            this.fuelTypeLabel.Text = "Fuel Type";
+            this.fuelTypeLabel.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(84, 102);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(294, 102);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(121, 20);
+            this.textBox2.TabIndex = 12;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(84, 138);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.TabIndex = 13;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(294, 141);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(121, 20);
+            this.textBox4.TabIndex = 14;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(84, 178);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(121, 20);
+            this.textBox5.TabIndex = 15;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(294, 174);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(121, 20);
+            this.textBox6.TabIndex = 16;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VIN_COL,
+            this.CAR_TYPE_COL,
+            this.MODEL_NAME_COL,
+            this.MODEL_YEAR_COL,
+            this.BODY_STYLE_COL,
+            this.COLOUR_COL,
+            this.NO_SEATS_COL,
+            this.FUEL_COL});
+            this.dataGridView3.Location = new System.Drawing.Point(513, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(841, 522);
+            this.dataGridView3.TabIndex = 17;
+            // 
+            // VIN_COL
+            // 
+            this.VIN_COL.HeaderText = "VIN";
+            this.VIN_COL.Name = "VIN_COL";
+            this.VIN_COL.ReadOnly = true;
+            // 
+            // CAR_TYPE_COL
+            // 
+            this.CAR_TYPE_COL.HeaderText = "Car Type";
+            this.CAR_TYPE_COL.Name = "CAR_TYPE_COL";
+            this.CAR_TYPE_COL.ReadOnly = true;
+            // 
+            // MODEL_NAME_COL
+            // 
+            this.MODEL_NAME_COL.HeaderText = "Model Name";
+            this.MODEL_NAME_COL.Name = "MODEL_NAME_COL";
+            this.MODEL_NAME_COL.ReadOnly = true;
+            // 
+            // MODEL_YEAR_COL
+            // 
+            this.MODEL_YEAR_COL.HeaderText = "Model Year";
+            this.MODEL_YEAR_COL.Name = "MODEL_YEAR_COL";
+            this.MODEL_YEAR_COL.ReadOnly = true;
+            // 
+            // BODY_STYLE_COL
+            // 
+            this.BODY_STYLE_COL.HeaderText = "Body Style";
+            this.BODY_STYLE_COL.Name = "BODY_STYLE_COL";
+            this.BODY_STYLE_COL.ReadOnly = true;
+            // 
+            // COLOUR_COL
+            // 
+            this.COLOUR_COL.HeaderText = "Colour";
+            this.COLOUR_COL.Name = "COLOUR_COL";
+            this.COLOUR_COL.ReadOnly = true;
+            // 
+            // NO_SEATS_COL
+            // 
+            this.NO_SEATS_COL.HeaderText = "Number of Seats";
+            this.NO_SEATS_COL.Name = "NO_SEATS_COL";
+            this.NO_SEATS_COL.ReadOnly = true;
+            // 
+            // FUEL_COL
+            // 
+            this.FUEL_COL.HeaderText = "Fuel Type";
+            this.FUEL_COL.Name = "FUEL_COL";
+            this.FUEL_COL.ReadOnly = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(84, 337);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(121, 20);
+            this.textBox7.TabIndex = 18;
+            // 
+            // vinSLabel
+            // 
+            this.vinSLabel.AutoSize = true;
+            this.vinSLabel.Location = new System.Drawing.Point(5, 341);
+            this.vinSLabel.Name = "vinSLabel";
+            this.vinSLabel.Size = new System.Drawing.Size(25, 13);
+            this.vinSLabel.TabIndex = 20;
+            this.vinSLabel.Text = "VIN";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(294, 336);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 21;
+            this.comboBox2.Tag = "carTypeOptions";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(84, 487);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 22;
+            this.comboBox3.Tag = "carTypeOptions";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(294, 436);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 23;
+            this.comboBox4.Tag = "carTypeOptions";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(84, 436);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(121, 21);
+            this.comboBox5.TabIndex = 24;
+            this.comboBox5.Tag = "carTypeOptions";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(294, 385);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 21);
+            this.comboBox6.TabIndex = 25;
+            this.comboBox6.Tag = "carTypeOptions";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(84, 385);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(121, 21);
+            this.comboBox7.TabIndex = 26;
+            this.comboBox7.Tag = "carTypeOptions";
+            // 
+            // addCarBut
+            // 
+            this.addCarBut.Location = new System.Drawing.Point(181, 16);
+            this.addCarBut.Name = "addCarBut";
+            this.addCarBut.Size = new System.Drawing.Size(94, 23);
+            this.addCarBut.TabIndex = 27;
+            this.addCarBut.Text = "Add New Car";
+            this.addCarBut.UseVisualStyleBackColor = true;
+            // 
+            // searchCarBut
+            // 
+            this.searchCarBut.Location = new System.Drawing.Point(181, 281);
+            this.searchCarBut.Name = "searchCarBut";
+            this.searchCarBut.Size = new System.Drawing.Size(94, 23);
+            this.searchCarBut.TabIndex = 28;
+            this.searchCarBut.Text = "Search For Car";
+            this.searchCarBut.UseVisualStyleBackColor = true;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(294, 487);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(121, 21);
+            this.comboBox8.TabIndex = 29;
+            this.comboBox8.Tag = "carTypeOptions";
+            // 
+            // modelNameSLabel
+            // 
+            this.modelNameSLabel.AutoSize = true;
+            this.modelNameSLabel.Location = new System.Drawing.Point(5, 388);
+            this.modelNameSLabel.Name = "modelNameSLabel";
+            this.modelNameSLabel.Size = new System.Drawing.Size(67, 13);
+            this.modelNameSLabel.TabIndex = 30;
+            this.modelNameSLabel.Text = "Model Name";
+            // 
+            // noSeatsSLabel
+            // 
+            this.noSeatsSLabel.AutoSize = true;
+            this.noSeatsSLabel.Location = new System.Drawing.Point(5, 495);
+            this.noSeatsSLabel.Name = "noSeatsSLabel";
+            this.noSeatsSLabel.Size = new System.Drawing.Size(86, 13);
+            this.noSeatsSLabel.TabIndex = 31;
+            this.noSeatsSLabel.Text = "Number of Seats";
+            // 
+            // carTypeSLabel
+            // 
+            this.carTypeSLabel.AutoSize = true;
+            this.carTypeSLabel.Location = new System.Drawing.Point(234, 339);
+            this.carTypeSLabel.Name = "carTypeSLabel";
+            this.carTypeSLabel.Size = new System.Drawing.Size(50, 13);
+            this.carTypeSLabel.TabIndex = 32;
+            this.carTypeSLabel.Text = "Car Type";
+            // 
+            // fuelTypeSLabel
+            // 
+            this.fuelTypeSLabel.AutoSize = true;
+            this.fuelTypeSLabel.Location = new System.Drawing.Point(234, 487);
+            this.fuelTypeSLabel.Name = "fuelTypeSLabel";
+            this.fuelTypeSLabel.Size = new System.Drawing.Size(54, 13);
+            this.fuelTypeSLabel.TabIndex = 33;
+            this.fuelTypeSLabel.Text = "Fuel Type";
+            this.fuelTypeSLabel.Click += new System.EventHandler(this.fuelTypeSLabel_Click);
+            // 
+            // bodySLabel
+            // 
+            this.bodySLabel.AutoSize = true;
+            this.bodySLabel.Location = new System.Drawing.Point(5, 439);
+            this.bodySLabel.Name = "bodySLabel";
+            this.bodySLabel.Size = new System.Drawing.Size(57, 13);
+            this.bodySLabel.TabIndex = 34;
+            this.bodySLabel.Text = "Body Style";
+            // 
+            // colourSLabel
+            // 
+            this.colourSLabel.AutoSize = true;
+            this.colourSLabel.Location = new System.Drawing.Point(234, 439);
+            this.colourSLabel.Name = "colourSLabel";
+            this.colourSLabel.Size = new System.Drawing.Size(37, 13);
+            this.colourSLabel.TabIndex = 35;
+            this.colourSLabel.Text = "Colour";
+            // 
+            // modelYearSLabel
+            // 
+            this.modelYearSLabel.AutoSize = true;
+            this.modelYearSLabel.Location = new System.Drawing.Point(234, 388);
+            this.modelYearSLabel.Name = "modelYearSLabel";
+            this.modelYearSLabel.Size = new System.Drawing.Size(61, 13);
+            this.modelYearSLabel.TabIndex = 36;
+            this.modelYearSLabel.Text = "Model Year";
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1483, 647);
+            this.ClientSize = new System.Drawing.Size(1370, 647);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Tabs);
@@ -864,12 +1305,15 @@
             this.Name = "Employee";
             this.Text = "Form1";
             this.Tabs.ResumeLayout(false);
+            this.carsTab.ResumeLayout(false);
+            this.carsTab.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -961,5 +1405,48 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.Label carTypeLabel;
+        private System.Windows.Forms.Label vin;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox vinText;
+        private System.Windows.Forms.Label fuelTypeLabel;
+        private System.Windows.Forms.Label noSeatsLabel;
+        private System.Windows.Forms.Label colourLabel;
+        private System.Windows.Forms.Label bodyStyleLabel;
+        private System.Windows.Forms.Label modelYearLabel;
+        private System.Windows.Forms.Label modelNameLabel;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VIN_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CAR_TYPE_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MODEL_NAME_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MODEL_YEAR_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BODY_STYLE_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COLOUR_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO_SEATS_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FUEL_COL;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label vinSLabel;
+        private System.Windows.Forms.Label modelYearSLabel;
+        private System.Windows.Forms.Label colourSLabel;
+        private System.Windows.Forms.Label bodySLabel;
+        private System.Windows.Forms.Label fuelTypeSLabel;
+        private System.Windows.Forms.Label carTypeSLabel;
+        private System.Windows.Forms.Label noSeatsSLabel;
+        private System.Windows.Forms.Label modelNameSLabel;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.Button searchCarBut;
+        private System.Windows.Forms.Button addCarBut;
     }
 }
