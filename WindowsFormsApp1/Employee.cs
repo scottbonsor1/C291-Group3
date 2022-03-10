@@ -7,14 +7,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
     public partial class Employee : Form
     {
+        public SqlConnection myConnection;
+        public SqlCommand myCommand;
+        public SqlDataReader myReader;
         public Employee()
         {
             InitializeComponent();
+
+            //Change the server here for your guys' own servers
+            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+
+
+            /* Starting the connection */
+            /*  SqlConnection myConnection = new SqlConnection("user id=temp2;" + // Username
+                                         "password=adminadmin;" + // Password
+                                         "server=localhost;" + // IP for the server
+                                                               //"Trusted_Connection=yes;" +
+                                         "database=ConnectTutorial; " + // Database to connect to
+                                         "connection timeout=30"); // Timeout in seconds */
+
+            SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
+
+            try
+            {
+                myConnection.Open(); // Open connection
+                myCommand = new SqlCommand();
+                myCommand.Connection = myConnection; // Link the command stream to the connection
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Error");
+                this.Close();
+            }
         }
 
         private void CustomerBtn_Click(object sender, EventArgs e)
@@ -99,6 +129,35 @@ namespace WindowsFormsApp1
         }
 
         private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void branch_refresh_but_Click(object sender, EventArgs e)
+        {
+            myCommand.CommandText = "select * from Branch";
+
+            try
+            {
+                MessageBox.Show(myCommand.CommandText);
+                myReader = myCommand.ExecuteReader();
+
+                branch_view.Rows.Clear();
+                while (myReader.Read())
+                {
+                    branch_view.Rows.Add(myReader["BID"].ToString(), myReader["Description"].ToString(), myReader["Street_Address1"].ToString(), myReader["Street_Address2"].ToString(), myReader["City"].ToString(), myReader["Province"].ToString(), myReader["Postal_Code"].ToString(), myReader["Phone_Number"].ToString());
+                }
+
+                myReader.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+        }
+
+        private void branch_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
