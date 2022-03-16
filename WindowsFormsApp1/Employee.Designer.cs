@@ -175,7 +175,10 @@
             this.cust_f_name_label = new System.Windows.Forms.Label();
             this.cust_custID_label = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.branch_edit_but = new System.Windows.Forms.Button();
+            this.branch_search_label = new System.Windows.Forms.Label();
+            this.branch_search_box = new System.Windows.Forms.ComboBox();
+            this.branch_search_text_box = new System.Windows.Forms.TextBox();
             this.Tabs.SuspendLayout();
             this.carsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -190,10 +193,9 @@
             // CustomerBtn
             // 
             this.CustomerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerBtn.Location = new System.Drawing.Point(1859, 68);
-            this.CustomerBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.CustomerBtn.Location = new System.Drawing.Point(1280, 657);
             this.CustomerBtn.Name = "CustomerBtn";
-            this.CustomerBtn.Size = new System.Drawing.Size(100, 39);
+            this.CustomerBtn.Size = new System.Drawing.Size(75, 32);
             this.CustomerBtn.TabIndex = 2;
             this.CustomerBtn.Text = "Logout";
             this.CustomerBtn.UseVisualStyleBackColor = true;
@@ -205,11 +207,11 @@
             this.Tabs.Controls.Add(this.tabPage2);
             this.Tabs.Controls.Add(this.tabPage1);
             this.Tabs.Controls.Add(this.tabPage3);
-            this.Tabs.Location = new System.Drawing.Point(13, 14);
-            this.Tabs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Tabs.Location = new System.Drawing.Point(10, 11);
+            this.Tabs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
-            this.Tabs.Size = new System.Drawing.Size(1844, 753);
+            this.Tabs.Size = new System.Drawing.Size(1383, 612);
             this.Tabs.TabIndex = 3;
             // 
             // carsTab
@@ -249,11 +251,11 @@
             this.carsTab.Controls.Add(this.comboBox1);
             this.carsTab.Controls.Add(this.vinText);
             this.carsTab.Controls.Add(this.carTypeLabel);
-            this.carsTab.Location = new System.Drawing.Point(4, 25);
-            this.carsTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.carsTab.Location = new System.Drawing.Point(4, 22);
+            this.carsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.carsTab.Name = "carsTab";
-            this.carsTab.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.carsTab.Size = new System.Drawing.Size(1836, 724);
+            this.carsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carsTab.Size = new System.Drawing.Size(1375, 586);
             this.carsTab.TabIndex = 0;
             this.carsTab.Text = "Cars";
             this.carsTab.UseVisualStyleBackColor = true;
@@ -262,40 +264,36 @@
             // modelYearSLabel
             // 
             this.modelYearSLabel.AutoSize = true;
-            this.modelYearSLabel.Location = new System.Drawing.Point(312, 478);
-            this.modelYearSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.modelYearSLabel.Location = new System.Drawing.Point(234, 388);
             this.modelYearSLabel.Name = "modelYearSLabel";
-            this.modelYearSLabel.Size = new System.Drawing.Size(77, 16);
+            this.modelYearSLabel.Size = new System.Drawing.Size(61, 13);
             this.modelYearSLabel.TabIndex = 36;
             this.modelYearSLabel.Text = "Model Year";
             // 
             // colourSLabel
             // 
             this.colourSLabel.AutoSize = true;
-            this.colourSLabel.Location = new System.Drawing.Point(312, 540);
-            this.colourSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.colourSLabel.Location = new System.Drawing.Point(234, 439);
             this.colourSLabel.Name = "colourSLabel";
-            this.colourSLabel.Size = new System.Drawing.Size(46, 16);
+            this.colourSLabel.Size = new System.Drawing.Size(37, 13);
             this.colourSLabel.TabIndex = 35;
             this.colourSLabel.Text = "Colour";
             // 
             // bodySLabel
             // 
             this.bodySLabel.AutoSize = true;
-            this.bodySLabel.Location = new System.Drawing.Point(7, 540);
-            this.bodySLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bodySLabel.Location = new System.Drawing.Point(5, 439);
             this.bodySLabel.Name = "bodySLabel";
-            this.bodySLabel.Size = new System.Drawing.Size(72, 16);
+            this.bodySLabel.Size = new System.Drawing.Size(57, 13);
             this.bodySLabel.TabIndex = 34;
             this.bodySLabel.Text = "Body Style";
             // 
             // fuelTypeSLabel
             // 
             this.fuelTypeSLabel.AutoSize = true;
-            this.fuelTypeSLabel.Location = new System.Drawing.Point(312, 599);
-            this.fuelTypeSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.fuelTypeSLabel.Location = new System.Drawing.Point(234, 487);
             this.fuelTypeSLabel.Name = "fuelTypeSLabel";
-            this.fuelTypeSLabel.Size = new System.Drawing.Size(68, 16);
+            this.fuelTypeSLabel.Size = new System.Drawing.Size(54, 13);
             this.fuelTypeSLabel.TabIndex = 33;
             this.fuelTypeSLabel.Text = "Fuel Type";
             this.fuelTypeSLabel.Click += new System.EventHandler(this.fuelTypeSLabel_Click);
@@ -303,59 +301,53 @@
             // carTypeSLabel
             // 
             this.carTypeSLabel.AutoSize = true;
-            this.carTypeSLabel.Location = new System.Drawing.Point(312, 417);
-            this.carTypeSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.carTypeSLabel.Location = new System.Drawing.Point(234, 339);
             this.carTypeSLabel.Name = "carTypeSLabel";
-            this.carTypeSLabel.Size = new System.Drawing.Size(63, 16);
+            this.carTypeSLabel.Size = new System.Drawing.Size(50, 13);
             this.carTypeSLabel.TabIndex = 32;
             this.carTypeSLabel.Text = "Car Type";
             // 
             // noSeatsSLabel
             // 
             this.noSeatsSLabel.AutoSize = true;
-            this.noSeatsSLabel.Location = new System.Drawing.Point(7, 609);
-            this.noSeatsSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.noSeatsSLabel.Location = new System.Drawing.Point(5, 495);
             this.noSeatsSLabel.Name = "noSeatsSLabel";
-            this.noSeatsSLabel.Size = new System.Drawing.Size(107, 16);
+            this.noSeatsSLabel.Size = new System.Drawing.Size(86, 13);
             this.noSeatsSLabel.TabIndex = 31;
             this.noSeatsSLabel.Text = "Number of Seats";
             // 
             // modelNameSLabel
             // 
             this.modelNameSLabel.AutoSize = true;
-            this.modelNameSLabel.Location = new System.Drawing.Point(7, 478);
-            this.modelNameSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.modelNameSLabel.Location = new System.Drawing.Point(5, 388);
             this.modelNameSLabel.Name = "modelNameSLabel";
-            this.modelNameSLabel.Size = new System.Drawing.Size(85, 16);
+            this.modelNameSLabel.Size = new System.Drawing.Size(67, 13);
             this.modelNameSLabel.TabIndex = 30;
             this.modelNameSLabel.Text = "Model Name";
             // 
             // comboBox8
             // 
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(392, 599);
-            this.comboBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox8.Location = new System.Drawing.Point(294, 487);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(160, 24);
+            this.comboBox8.Size = new System.Drawing.Size(121, 21);
             this.comboBox8.TabIndex = 29;
             this.comboBox8.Tag = "carTypeOptions";
             // 
             // searchCarBut
             // 
-            this.searchCarBut.Location = new System.Drawing.Point(241, 346);
-            this.searchCarBut.Margin = new System.Windows.Forms.Padding(4);
+            this.searchCarBut.Location = new System.Drawing.Point(181, 281);
             this.searchCarBut.Name = "searchCarBut";
-            this.searchCarBut.Size = new System.Drawing.Size(125, 28);
+            this.searchCarBut.Size = new System.Drawing.Size(94, 23);
             this.searchCarBut.TabIndex = 28;
             this.searchCarBut.Text = "Search For Car";
             this.searchCarBut.UseVisualStyleBackColor = true;
             // 
             // addCarBut
             // 
-            this.addCarBut.Location = new System.Drawing.Point(241, 20);
-            this.addCarBut.Margin = new System.Windows.Forms.Padding(4);
+            this.addCarBut.Location = new System.Drawing.Point(181, 16);
             this.addCarBut.Name = "addCarBut";
-            this.addCarBut.Size = new System.Drawing.Size(125, 28);
+            this.addCarBut.Size = new System.Drawing.Size(94, 23);
             this.addCarBut.TabIndex = 27;
             this.addCarBut.Text = "Add New Car";
             this.addCarBut.UseVisualStyleBackColor = true;
@@ -363,79 +355,71 @@
             // comboBox7
             // 
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(112, 474);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox7.Location = new System.Drawing.Point(84, 385);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(160, 24);
+            this.comboBox7.Size = new System.Drawing.Size(121, 21);
             this.comboBox7.TabIndex = 26;
             this.comboBox7.Tag = "carTypeOptions";
             // 
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(392, 474);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox6.Location = new System.Drawing.Point(294, 385);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(160, 24);
+            this.comboBox6.Size = new System.Drawing.Size(121, 21);
             this.comboBox6.TabIndex = 25;
             this.comboBox6.Tag = "carTypeOptions";
             // 
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(112, 537);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox5.Location = new System.Drawing.Point(84, 436);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(160, 24);
+            this.comboBox5.Size = new System.Drawing.Size(121, 21);
             this.comboBox5.TabIndex = 24;
             this.comboBox5.Tag = "carTypeOptions";
             // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(392, 537);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox4.Location = new System.Drawing.Point(294, 436);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(160, 24);
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
             this.comboBox4.TabIndex = 23;
             this.comboBox4.Tag = "carTypeOptions";
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(112, 599);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox3.Location = new System.Drawing.Point(84, 487);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(160, 24);
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 22;
             this.comboBox3.Tag = "carTypeOptions";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(392, 414);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox2.Location = new System.Drawing.Point(294, 336);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 24);
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 21;
             this.comboBox2.Tag = "carTypeOptions";
             // 
             // vinSLabel
             // 
             this.vinSLabel.AutoSize = true;
-            this.vinSLabel.Location = new System.Drawing.Point(7, 420);
-            this.vinSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.vinSLabel.Location = new System.Drawing.Point(5, 341);
             this.vinSLabel.Name = "vinSLabel";
-            this.vinSLabel.Size = new System.Drawing.Size(29, 16);
+            this.vinSLabel.Size = new System.Drawing.Size(25, 13);
             this.vinSLabel.TabIndex = 20;
             this.vinSLabel.Text = "VIN";
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(112, 415);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox7.Location = new System.Drawing.Point(84, 337);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(160, 22);
+            this.textBox7.Size = new System.Drawing.Size(121, 20);
             this.textBox7.TabIndex = 18;
             // 
             // dataGridView3
@@ -450,11 +434,10 @@
             this.COLOUR_COL,
             this.NO_SEATS_COL,
             this.FUEL_COL});
-            this.dataGridView3.Location = new System.Drawing.Point(684, 0);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView3.Location = new System.Drawing.Point(513, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.Size = new System.Drawing.Size(1121, 642);
+            this.dataGridView3.Size = new System.Drawing.Size(841, 522);
             this.dataGridView3.TabIndex = 17;
             // 
             // VIN_COL
@@ -523,59 +506,52 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(392, 214);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Location = new System.Drawing.Point(294, 174);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(160, 22);
+            this.textBox6.Size = new System.Drawing.Size(121, 20);
             this.textBox6.TabIndex = 16;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(112, 219);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox5.Location = new System.Drawing.Point(84, 178);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(160, 22);
+            this.textBox5.Size = new System.Drawing.Size(121, 20);
             this.textBox5.TabIndex = 15;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(392, 174);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Location = new System.Drawing.Point(294, 141);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 22);
+            this.textBox4.Size = new System.Drawing.Size(121, 20);
             this.textBox4.TabIndex = 14;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(112, 170);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Location = new System.Drawing.Point(84, 138);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 22);
+            this.textBox3.Size = new System.Drawing.Size(121, 20);
             this.textBox3.TabIndex = 13;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(392, 126);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Location = new System.Drawing.Point(294, 102);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 22);
+            this.textBox2.Size = new System.Drawing.Size(121, 20);
             this.textBox2.TabIndex = 12;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 126);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(84, 102);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 22);
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 11;
             // 
             // fuelTypeLabel
             // 
             this.fuelTypeLabel.AutoSize = true;
-            this.fuelTypeLabel.Location = new System.Drawing.Point(300, 223);
-            this.fuelTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.fuelTypeLabel.Location = new System.Drawing.Point(225, 181);
             this.fuelTypeLabel.Name = "fuelTypeLabel";
-            this.fuelTypeLabel.Size = new System.Drawing.Size(68, 16);
+            this.fuelTypeLabel.Size = new System.Drawing.Size(54, 13);
             this.fuelTypeLabel.TabIndex = 10;
             this.fuelTypeLabel.Text = "Fuel Type";
             this.fuelTypeLabel.Click += new System.EventHandler(this.label7_Click);
@@ -583,50 +559,45 @@
             // noSeatsLabel
             // 
             this.noSeatsLabel.AutoSize = true;
-            this.noSeatsLabel.Location = new System.Drawing.Point(4, 223);
-            this.noSeatsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.noSeatsLabel.Location = new System.Drawing.Point(3, 181);
             this.noSeatsLabel.Name = "noSeatsLabel";
-            this.noSeatsLabel.Size = new System.Drawing.Size(107, 16);
+            this.noSeatsLabel.Size = new System.Drawing.Size(86, 13);
             this.noSeatsLabel.TabIndex = 9;
             this.noSeatsLabel.Text = "Number of Seats";
             // 
             // colourLabel
             // 
             this.colourLabel.AutoSize = true;
-            this.colourLabel.Location = new System.Drawing.Point(300, 174);
-            this.colourLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.colourLabel.Location = new System.Drawing.Point(225, 141);
             this.colourLabel.Name = "colourLabel";
-            this.colourLabel.Size = new System.Drawing.Size(46, 16);
+            this.colourLabel.Size = new System.Drawing.Size(37, 13);
             this.colourLabel.TabIndex = 8;
             this.colourLabel.Text = "Colour";
             // 
             // bodyStyleLabel
             // 
             this.bodyStyleLabel.AutoSize = true;
-            this.bodyStyleLabel.Location = new System.Drawing.Point(7, 174);
-            this.bodyStyleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bodyStyleLabel.Location = new System.Drawing.Point(5, 141);
             this.bodyStyleLabel.Name = "bodyStyleLabel";
-            this.bodyStyleLabel.Size = new System.Drawing.Size(72, 16);
+            this.bodyStyleLabel.Size = new System.Drawing.Size(57, 13);
             this.bodyStyleLabel.TabIndex = 7;
             this.bodyStyleLabel.Text = "Body Style";
             // 
             // modelYearLabel
             // 
             this.modelYearLabel.AutoSize = true;
-            this.modelYearLabel.Location = new System.Drawing.Point(300, 129);
-            this.modelYearLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.modelYearLabel.Location = new System.Drawing.Point(225, 105);
             this.modelYearLabel.Name = "modelYearLabel";
-            this.modelYearLabel.Size = new System.Drawing.Size(77, 16);
+            this.modelYearLabel.Size = new System.Drawing.Size(61, 13);
             this.modelYearLabel.TabIndex = 6;
             this.modelYearLabel.Text = "Model Year";
             // 
             // modelNameLabel
             // 
             this.modelNameLabel.AutoSize = true;
-            this.modelNameLabel.Location = new System.Drawing.Point(4, 126);
-            this.modelNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.modelNameLabel.Location = new System.Drawing.Point(3, 102);
             this.modelNameLabel.Name = "modelNameLabel";
-            this.modelNameLabel.Size = new System.Drawing.Size(85, 16);
+            this.modelNameLabel.Size = new System.Drawing.Size(67, 13);
             this.modelNameLabel.TabIndex = 5;
             this.modelNameLabel.Text = "Model Name";
             this.modelNameLabel.Click += new System.EventHandler(this.label2_Click_1);
@@ -634,10 +605,9 @@
             // vin
             // 
             this.vin.AutoSize = true;
-            this.vin.Location = new System.Drawing.Point(4, 74);
-            this.vin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.vin.Location = new System.Drawing.Point(3, 60);
             this.vin.Name = "vin";
-            this.vin.Size = new System.Drawing.Size(29, 16);
+            this.vin.Size = new System.Drawing.Size(25, 13);
             this.vin.TabIndex = 4;
             this.vin.Text = "VIN";
             this.vin.Click += new System.EventHandler(this.vin_Click);
@@ -645,28 +615,25 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(392, 74);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(294, 60);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Tag = "carTypeOptions";
             // 
             // vinText
             // 
-            this.vinText.Location = new System.Drawing.Point(112, 74);
-            this.vinText.Margin = new System.Windows.Forms.Padding(4);
+            this.vinText.Location = new System.Drawing.Point(84, 60);
             this.vinText.Name = "vinText";
-            this.vinText.Size = new System.Drawing.Size(160, 22);
+            this.vinText.Size = new System.Drawing.Size(121, 20);
             this.vinText.TabIndex = 2;
             // 
             // carTypeLabel
             // 
             this.carTypeLabel.AutoSize = true;
-            this.carTypeLabel.Location = new System.Drawing.Point(300, 78);
-            this.carTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.carTypeLabel.Location = new System.Drawing.Point(225, 63);
             this.carTypeLabel.Name = "carTypeLabel";
-            this.carTypeLabel.Size = new System.Drawing.Size(63, 16);
+            this.carTypeLabel.Size = new System.Drawing.Size(50, 13);
             this.carTypeLabel.TabIndex = 1;
             this.carTypeLabel.Text = "Car Type";
             this.carTypeLabel.Click += new System.EventHandler(this.label2_Click);
@@ -688,143 +655,129 @@
             this.tabPage2.Controls.Add(this.carTypeSBut);
             this.tabPage2.Controls.Add(this.addCarTypeBut);
             this.tabPage2.Controls.Add(this.dataGridView4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1836, 724);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(1375, 586);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Car Type";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // modelS
             // 
-            this.modelS.Location = new System.Drawing.Point(43, 356);
-            this.modelS.Margin = new System.Windows.Forms.Padding(4);
+            this.modelS.Location = new System.Drawing.Point(32, 289);
             this.modelS.Name = "modelS";
-            this.modelS.Size = new System.Drawing.Size(132, 22);
+            this.modelS.Size = new System.Drawing.Size(100, 20);
             this.modelS.TabIndex = 14;
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(428, 130);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox10.Location = new System.Drawing.Point(321, 106);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(132, 22);
+            this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 13;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(233, 130);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox9.Location = new System.Drawing.Point(175, 106);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(132, 22);
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 12;
             // 
             // ModelText
             // 
-            this.ModelText.Location = new System.Drawing.Point(43, 130);
-            this.ModelText.Margin = new System.Windows.Forms.Padding(4);
+            this.ModelText.Location = new System.Drawing.Point(32, 106);
             this.ModelText.Name = "ModelText";
-            this.ModelText.Size = new System.Drawing.Size(132, 22);
+            this.ModelText.Size = new System.Drawing.Size(100, 20);
             this.ModelText.TabIndex = 11;
             // 
             // rentalCostS
             // 
             this.rentalCostS.FormattingEnabled = true;
-            this.rentalCostS.Location = new System.Drawing.Point(413, 356);
-            this.rentalCostS.Margin = new System.Windows.Forms.Padding(4);
+            this.rentalCostS.Location = new System.Drawing.Point(310, 289);
             this.rentalCostS.Name = "rentalCostS";
-            this.rentalCostS.Size = new System.Drawing.Size(160, 24);
+            this.rentalCostS.Size = new System.Drawing.Size(121, 21);
             this.rentalCostS.TabIndex = 10;
             this.rentalCostS.SelectedIndexChanged += new System.EventHandler(this.comboBox10_SelectedIndexChanged);
             // 
             // rentalClassS
             // 
             this.rentalClassS.FormattingEnabled = true;
-            this.rentalClassS.Location = new System.Drawing.Point(205, 354);
-            this.rentalClassS.Margin = new System.Windows.Forms.Padding(4);
+            this.rentalClassS.Location = new System.Drawing.Point(154, 288);
             this.rentalClassS.Name = "rentalClassS";
-            this.rentalClassS.Size = new System.Drawing.Size(160, 24);
+            this.rentalClassS.Size = new System.Drawing.Size(121, 21);
             this.rentalClassS.TabIndex = 9;
             // 
             // rentalCostSLabel
             // 
             this.rentalCostSLabel.AutoSize = true;
-            this.rentalCostSLabel.Location = new System.Drawing.Point(451, 319);
-            this.rentalCostSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.rentalCostSLabel.Location = new System.Drawing.Point(338, 259);
             this.rentalCostSLabel.Name = "rentalCostSLabel";
-            this.rentalCostSLabel.Size = new System.Drawing.Size(76, 16);
+            this.rentalCostSLabel.Size = new System.Drawing.Size(62, 13);
             this.rentalCostSLabel.TabIndex = 8;
             this.rentalCostSLabel.Text = "Rental Cost";
             // 
             // rentalClassSLabel
             // 
             this.rentalClassSLabel.AutoSize = true;
-            this.rentalClassSLabel.Location = new System.Drawing.Point(261, 319);
-            this.rentalClassSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.rentalClassSLabel.Location = new System.Drawing.Point(196, 259);
             this.rentalClassSLabel.Name = "rentalClassSLabel";
-            this.rentalClassSLabel.Size = new System.Drawing.Size(83, 16);
+            this.rentalClassSLabel.Size = new System.Drawing.Size(66, 13);
             this.rentalClassSLabel.TabIndex = 7;
             this.rentalClassSLabel.Text = "Rental Class";
             // 
             // modelSLabel
             // 
             this.modelSLabel.AutoSize = true;
-            this.modelSLabel.Location = new System.Drawing.Point(84, 319);
-            this.modelSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.modelSLabel.Location = new System.Drawing.Point(63, 259);
             this.modelSLabel.Name = "modelSLabel";
-            this.modelSLabel.Size = new System.Drawing.Size(61, 16);
+            this.modelSLabel.Size = new System.Drawing.Size(50, 13);
             this.modelSLabel.TabIndex = 6;
             this.modelSLabel.Text = "Model ID";
             // 
             // rentalCostLabel
             // 
             this.rentalCostLabel.AutoSize = true;
-            this.rentalCostLabel.Location = new System.Drawing.Point(451, 91);
-            this.rentalCostLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.rentalCostLabel.Location = new System.Drawing.Point(338, 74);
             this.rentalCostLabel.Name = "rentalCostLabel";
-            this.rentalCostLabel.Size = new System.Drawing.Size(76, 16);
+            this.rentalCostLabel.Size = new System.Drawing.Size(62, 13);
             this.rentalCostLabel.TabIndex = 5;
             this.rentalCostLabel.Text = "Rental Cost";
             // 
             // rentalClassLabel
             // 
             this.rentalClassLabel.AutoSize = true;
-            this.rentalClassLabel.Location = new System.Drawing.Point(261, 91);
-            this.rentalClassLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.rentalClassLabel.Location = new System.Drawing.Point(196, 74);
             this.rentalClassLabel.Name = "rentalClassLabel";
-            this.rentalClassLabel.Size = new System.Drawing.Size(83, 16);
+            this.rentalClassLabel.Size = new System.Drawing.Size(66, 13);
             this.rentalClassLabel.TabIndex = 4;
             this.rentalClassLabel.Text = "Rental Class";
             // 
             // ModelLabel
             // 
             this.ModelLabel.AutoSize = true;
-            this.ModelLabel.Location = new System.Drawing.Point(84, 91);
-            this.ModelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ModelLabel.Location = new System.Drawing.Point(63, 74);
             this.ModelLabel.Name = "ModelLabel";
-            this.ModelLabel.Size = new System.Drawing.Size(61, 16);
+            this.ModelLabel.Size = new System.Drawing.Size(50, 13);
             this.ModelLabel.TabIndex = 3;
             this.ModelLabel.Text = "Model ID";
             this.ModelLabel.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // carTypeSBut
             // 
-            this.carTypeSBut.Location = new System.Drawing.Point(631, 352);
-            this.carTypeSBut.Margin = new System.Windows.Forms.Padding(4);
+            this.carTypeSBut.Location = new System.Drawing.Point(473, 286);
             this.carTypeSBut.Name = "carTypeSBut";
-            this.carTypeSBut.Size = new System.Drawing.Size(127, 28);
+            this.carTypeSBut.Size = new System.Drawing.Size(95, 23);
             this.carTypeSBut.TabIndex = 2;
             this.carTypeSBut.Text = "Search Car Type";
             this.carTypeSBut.UseVisualStyleBackColor = true;
             // 
             // addCarTypeBut
             // 
-            this.addCarTypeBut.Location = new System.Drawing.Point(645, 130);
-            this.addCarTypeBut.Margin = new System.Windows.Forms.Padding(4);
+            this.addCarTypeBut.Location = new System.Drawing.Point(484, 106);
             this.addCarTypeBut.Name = "addCarTypeBut";
-            this.addCarTypeBut.Size = new System.Drawing.Size(112, 28);
+            this.addCarTypeBut.Size = new System.Drawing.Size(84, 23);
             this.addCarTypeBut.TabIndex = 1;
             this.addCarTypeBut.Text = "Add Car Type";
             this.addCarTypeBut.UseVisualStyleBackColor = true;
@@ -838,11 +791,10 @@
             this.DAILY_RENTAL_COST_COL,
             this.WEEKLY_RENTAL_COST_COL,
             this.MONTHLY_RENTAL_COST_COL});
-            this.dataGridView4.Location = new System.Drawing.Point(837, 6);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView4.Location = new System.Drawing.Point(628, 5);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.Size = new System.Drawing.Size(725, 455);
+            this.dataGridView4.Size = new System.Drawing.Size(544, 370);
             this.dataGridView4.TabIndex = 0;
             // 
             // MODEL_ID_COL
@@ -887,6 +839,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.branch_search_text_box);
+            this.tabPage1.Controls.Add(this.branch_search_box);
+            this.tabPage1.Controls.Add(this.branch_search_label);
+            this.tabPage1.Controls.Add(this.branch_edit_but);
             this.tabPage1.Controls.Add(this.branch_refresh_but);
             this.tabPage1.Controls.Add(this.branch_id_LU_label);
             this.tabPage1.Controls.Add(this.branch_id_LU_txt);
@@ -910,74 +866,78 @@
             this.tabPage1.Controls.Add(this.branch_street_add1_label);
             this.tabPage1.Controls.Add(this.branch_dscrip_label);
             this.tabPage1.Controls.Add(this.branch_id_label);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1836, 724);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1375, 586);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Branches";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // branch_refresh_but
             // 
-            this.branch_refresh_but.Location = new System.Drawing.Point(1577, 628);
-            this.branch_refresh_but.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_refresh_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_refresh_but.Location = new System.Drawing.Point(1185, 496);
             this.branch_refresh_but.Name = "branch_refresh_but";
-            this.branch_refresh_but.Size = new System.Drawing.Size(128, 73);
+            this.branch_refresh_but.Size = new System.Drawing.Size(96, 59);
             this.branch_refresh_but.TabIndex = 22;
-            this.branch_refresh_but.Text = "Query";
+            this.branch_refresh_but.Text = "Refresh";
             this.branch_refresh_but.UseVisualStyleBackColor = true;
             this.branch_refresh_but.Click += new System.EventHandler(this.branch_refresh_but_Click);
             // 
             // branch_id_LU_label
             // 
             this.branch_id_LU_label.AutoSize = true;
-            this.branch_id_LU_label.Location = new System.Drawing.Point(572, 599);
-            this.branch_id_LU_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.branch_id_LU_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_id_LU_label.Location = new System.Drawing.Point(848, 485);
             this.branch_id_LU_label.Name = "branch_id_LU_label";
-            this.branch_id_LU_label.Size = new System.Drawing.Size(109, 16);
+            this.branch_id_LU_label.Size = new System.Drawing.Size(125, 16);
             this.branch_id_LU_label.TabIndex = 21;
-            this.branch_id_LU_label.Text = "Branch ID lookup";
+            this.branch_id_LU_label.Text = "Branch ID to Delete:";
             this.branch_id_LU_label.Click += new System.EventHandler(this.label9_Click);
             // 
             // branch_id_LU_txt
             // 
-            this.branch_id_LU_txt.Location = new System.Drawing.Point(731, 599);
-            this.branch_id_LU_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_id_LU_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_id_LU_txt.Location = new System.Drawing.Point(979, 482);
             this.branch_id_LU_txt.Name = "branch_id_LU_txt";
-            this.branch_id_LU_txt.Size = new System.Drawing.Size(132, 22);
+            this.branch_id_LU_txt.Size = new System.Drawing.Size(100, 22);
             this.branch_id_LU_txt.TabIndex = 20;
             // 
             // branch_search_but
             // 
-            this.branch_search_but.Location = new System.Drawing.Point(576, 633);
-            this.branch_search_but.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_search_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_search_but.Location = new System.Drawing.Point(669, 513);
             this.branch_search_but.Name = "branch_search_but";
-            this.branch_search_but.Size = new System.Drawing.Size(128, 69);
+            this.branch_search_but.Size = new System.Drawing.Size(96, 56);
             this.branch_search_but.TabIndex = 19;
             this.branch_search_but.Text = "Search";
             this.branch_search_but.UseVisualStyleBackColor = true;
+            this.branch_search_but.Click += new System.EventHandler(this.branch_search_but_Click);
             // 
             // branch_del_but
             // 
-            this.branch_del_but.Location = new System.Drawing.Point(731, 631);
-            this.branch_del_but.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_del_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_del_but.Location = new System.Drawing.Point(979, 510);
             this.branch_del_but.Name = "branch_del_but";
-            this.branch_del_but.Size = new System.Drawing.Size(131, 73);
+            this.branch_del_but.Size = new System.Drawing.Size(98, 59);
             this.branch_del_but.TabIndex = 18;
             this.branch_del_but.Text = "Delete";
             this.branch_del_but.UseVisualStyleBackColor = true;
+            this.branch_del_but.Click += new System.EventHandler(this.branch_del_but_Click);
             // 
             // branch_add_but
             // 
-            this.branch_add_but.Location = new System.Drawing.Point(261, 567);
-            this.branch_add_but.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_add_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_add_but.Location = new System.Drawing.Point(38, 462);
             this.branch_add_but.Name = "branch_add_but";
-            this.branch_add_but.Size = new System.Drawing.Size(127, 76);
+            this.branch_add_but.Size = new System.Drawing.Size(95, 62);
             this.branch_add_but.TabIndex = 17;
             this.branch_add_but.Text = "Add";
             this.branch_add_but.UseVisualStyleBackColor = true;
+            this.branch_add_but.Click += new System.EventHandler(this.branch_add_but_Click);
             // 
             // branch_view
             // 
@@ -991,11 +951,10 @@
             this.Column20,
             this.Column21,
             this.Column22});
-            this.branch_view.Location = new System.Drawing.Point(576, 27);
-            this.branch_view.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_view.Location = new System.Drawing.Point(308, 22);
             this.branch_view.Name = "branch_view";
             this.branch_view.RowHeadersWidth = 51;
-            this.branch_view.Size = new System.Drawing.Size(1129, 535);
+            this.branch_view.Size = new System.Drawing.Size(1014, 435);
             this.branch_view.TabIndex = 16;
             this.branch_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.branch_view_CellContentClick);
             // 
@@ -1057,147 +1016,148 @@
             // 
             // branch_id_txt
             // 
-            this.branch_id_txt.Location = new System.Drawing.Point(225, 41);
-            this.branch_id_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_id_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_id_txt.Location = new System.Drawing.Point(150, 33);
             this.branch_id_txt.Name = "branch_id_txt";
-            this.branch_id_txt.Size = new System.Drawing.Size(161, 22);
+            this.branch_id_txt.Size = new System.Drawing.Size(152, 23);
             this.branch_id_txt.TabIndex = 15;
             // 
             // branch_phone_num_txt
             // 
-            this.branch_phone_num_txt.Location = new System.Drawing.Point(225, 498);
-            this.branch_phone_num_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_phone_num_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_phone_num_txt.Location = new System.Drawing.Point(150, 405);
             this.branch_phone_num_txt.Name = "branch_phone_num_txt";
-            this.branch_phone_num_txt.Size = new System.Drawing.Size(161, 22);
+            this.branch_phone_num_txt.Size = new System.Drawing.Size(152, 23);
             this.branch_phone_num_txt.TabIndex = 14;
             // 
             // branch_pCode_txt
             // 
-            this.branch_pCode_txt.Location = new System.Drawing.Point(225, 423);
-            this.branch_pCode_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_pCode_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_pCode_txt.Location = new System.Drawing.Point(150, 344);
             this.branch_pCode_txt.Name = "branch_pCode_txt";
-            this.branch_pCode_txt.Size = new System.Drawing.Size(161, 22);
+            this.branch_pCode_txt.Size = new System.Drawing.Size(152, 23);
             this.branch_pCode_txt.TabIndex = 13;
             // 
             // branch_province_txt
             // 
-            this.branch_province_txt.Location = new System.Drawing.Point(225, 354);
-            this.branch_province_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_province_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_province_txt.Location = new System.Drawing.Point(150, 288);
             this.branch_province_txt.Name = "branch_province_txt";
-            this.branch_province_txt.Size = new System.Drawing.Size(161, 22);
+            this.branch_province_txt.Size = new System.Drawing.Size(152, 23);
             this.branch_province_txt.TabIndex = 12;
             // 
             // branch_city_txt
             // 
-            this.branch_city_txt.Location = new System.Drawing.Point(225, 284);
-            this.branch_city_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_city_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_city_txt.Location = new System.Drawing.Point(150, 231);
             this.branch_city_txt.Name = "branch_city_txt";
-            this.branch_city_txt.Size = new System.Drawing.Size(161, 22);
+            this.branch_city_txt.Size = new System.Drawing.Size(152, 23);
             this.branch_city_txt.TabIndex = 11;
             // 
             // branch_street_add2_txt
             // 
-            this.branch_street_add2_txt.Location = new System.Drawing.Point(225, 218);
-            this.branch_street_add2_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_street_add2_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_street_add2_txt.Location = new System.Drawing.Point(150, 177);
             this.branch_street_add2_txt.Name = "branch_street_add2_txt";
-            this.branch_street_add2_txt.Size = new System.Drawing.Size(161, 22);
+            this.branch_street_add2_txt.Size = new System.Drawing.Size(152, 23);
             this.branch_street_add2_txt.TabIndex = 10;
             // 
             // branch_street_add1_txt
             // 
-            this.branch_street_add1_txt.Location = new System.Drawing.Point(225, 153);
-            this.branch_street_add1_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_street_add1_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_street_add1_txt.Location = new System.Drawing.Point(150, 124);
             this.branch_street_add1_txt.Name = "branch_street_add1_txt";
-            this.branch_street_add1_txt.Size = new System.Drawing.Size(161, 22);
+            this.branch_street_add1_txt.Size = new System.Drawing.Size(152, 23);
             this.branch_street_add1_txt.TabIndex = 9;
             // 
             // branch_descrip_txt
             // 
-            this.branch_descrip_txt.Location = new System.Drawing.Point(225, 90);
-            this.branch_descrip_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.branch_descrip_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_descrip_txt.Location = new System.Drawing.Point(150, 73);
             this.branch_descrip_txt.Name = "branch_descrip_txt";
-            this.branch_descrip_txt.Size = new System.Drawing.Size(161, 22);
+            this.branch_descrip_txt.Size = new System.Drawing.Size(152, 23);
             this.branch_descrip_txt.TabIndex = 8;
             // 
             // branch_phone_num_label
             // 
             this.branch_phone_num_label.AutoSize = true;
-            this.branch_phone_num_label.Location = new System.Drawing.Point(67, 498);
-            this.branch_phone_num_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.branch_phone_num_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_phone_num_label.Location = new System.Drawing.Point(30, 405);
             this.branch_phone_num_label.Name = "branch_phone_num_label";
-            this.branch_phone_num_label.Size = new System.Drawing.Size(97, 16);
+            this.branch_phone_num_label.Size = new System.Drawing.Size(103, 17);
             this.branch_phone_num_label.TabIndex = 7;
             this.branch_phone_num_label.Text = "Phone Number";
             // 
             // branch_pCode_label
             // 
             this.branch_pCode_label.AutoSize = true;
-            this.branch_pCode_label.Location = new System.Drawing.Point(67, 423);
-            this.branch_pCode_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.branch_pCode_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_pCode_label.Location = new System.Drawing.Point(30, 344);
             this.branch_pCode_label.Name = "branch_pCode_label";
-            this.branch_pCode_label.Size = new System.Drawing.Size(81, 16);
+            this.branch_pCode_label.Size = new System.Drawing.Size(84, 17);
             this.branch_pCode_label.TabIndex = 6;
             this.branch_pCode_label.Text = "Postal Code";
             // 
             // branch_province_label
             // 
             this.branch_province_label.AutoSize = true;
-            this.branch_province_label.Location = new System.Drawing.Point(67, 354);
-            this.branch_province_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.branch_province_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_province_label.Location = new System.Drawing.Point(30, 288);
             this.branch_province_label.Name = "branch_province_label";
-            this.branch_province_label.Size = new System.Drawing.Size(60, 16);
+            this.branch_province_label.Size = new System.Drawing.Size(116, 17);
             this.branch_province_label.TabIndex = 5;
-            this.branch_province_label.Text = "Province";
+            this.branch_province_label.Text = "Province Abbrev.";
             // 
             // branch_city_label
             // 
             this.branch_city_label.AutoSize = true;
-            this.branch_city_label.Location = new System.Drawing.Point(67, 284);
-            this.branch_city_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.branch_city_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_city_label.Location = new System.Drawing.Point(30, 231);
             this.branch_city_label.Name = "branch_city_label";
-            this.branch_city_label.Size = new System.Drawing.Size(29, 16);
+            this.branch_city_label.Size = new System.Drawing.Size(31, 17);
             this.branch_city_label.TabIndex = 4;
             this.branch_city_label.Text = "City";
             // 
             // branch_street_add2_label
             // 
             this.branch_street_add2_label.AutoSize = true;
-            this.branch_street_add2_label.Location = new System.Drawing.Point(67, 218);
-            this.branch_street_add2_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.branch_street_add2_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_street_add2_label.Location = new System.Drawing.Point(30, 177);
             this.branch_street_add2_label.Name = "branch_street_add2_label";
-            this.branch_street_add2_label.Size = new System.Drawing.Size(106, 16);
+            this.branch_street_add2_label.Size = new System.Drawing.Size(114, 17);
             this.branch_street_add2_label.TabIndex = 3;
             this.branch_street_add2_label.Text = "Street Address 2";
             // 
             // branch_street_add1_label
             // 
             this.branch_street_add1_label.AutoSize = true;
-            this.branch_street_add1_label.Location = new System.Drawing.Point(67, 153);
-            this.branch_street_add1_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.branch_street_add1_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_street_add1_label.Location = new System.Drawing.Point(30, 124);
             this.branch_street_add1_label.Name = "branch_street_add1_label";
-            this.branch_street_add1_label.Size = new System.Drawing.Size(99, 16);
+            this.branch_street_add1_label.Size = new System.Drawing.Size(107, 17);
             this.branch_street_add1_label.TabIndex = 2;
             this.branch_street_add1_label.Text = "Street Addres 1";
             // 
             // branch_dscrip_label
             // 
             this.branch_dscrip_label.AutoSize = true;
-            this.branch_dscrip_label.Location = new System.Drawing.Point(67, 90);
-            this.branch_dscrip_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.branch_dscrip_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_dscrip_label.Location = new System.Drawing.Point(30, 73);
             this.branch_dscrip_label.Name = "branch_dscrip_label";
-            this.branch_dscrip_label.Size = new System.Drawing.Size(75, 16);
+            this.branch_dscrip_label.Size = new System.Drawing.Size(79, 17);
             this.branch_dscrip_label.TabIndex = 1;
             this.branch_dscrip_label.Text = "Description";
             // 
             // branch_id_label
             // 
             this.branch_id_label.AutoSize = true;
-            this.branch_id_label.Location = new System.Drawing.Point(67, 41);
-            this.branch_id_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.branch_id_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_id_label.Location = new System.Drawing.Point(30, 33);
             this.branch_id_label.Name = "branch_id_label";
-            this.branch_id_label.Size = new System.Drawing.Size(65, 16);
+            this.branch_id_label.Size = new System.Drawing.Size(70, 17);
             this.branch_id_label.TabIndex = 0;
             this.branch_id_label.Text = "Branch ID";
+            this.branch_id_label.Click += new System.EventHandler(this.branch_id_label_Click);
             // 
             // tabPage3
             // 
@@ -1233,11 +1193,11 @@
             this.tabPage3.Controls.Add(this.cust_mid_name_label);
             this.tabPage3.Controls.Add(this.cust_f_name_label);
             this.tabPage3.Controls.Add(this.cust_custID_label);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1836, 724);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Size = new System.Drawing.Size(1375, 586);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Customers";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1245,10 +1205,9 @@
             // 
             // cust_refresh_but
             // 
-            this.cust_refresh_but.Location = new System.Drawing.Point(1195, 623);
-            this.cust_refresh_but.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_refresh_but.Location = new System.Drawing.Point(896, 506);
             this.cust_refresh_but.Name = "cust_refresh_but";
-            this.cust_refresh_but.Size = new System.Drawing.Size(127, 75);
+            this.cust_refresh_but.Size = new System.Drawing.Size(95, 61);
             this.cust_refresh_but.TabIndex = 31;
             this.cust_refresh_but.Text = "Refresh";
             this.cust_refresh_but.UseVisualStyleBackColor = true;
@@ -1272,11 +1231,10 @@
             this.Column12,
             this.Column13,
             this.Column14});
-            this.dataGridView1.Location = new System.Drawing.Point(283, 37);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(212, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1556, 578);
+            this.dataGridView1.Size = new System.Drawing.Size(1167, 470);
             this.dataGridView1.TabIndex = 30;
             // 
             // Column2
@@ -1379,10 +1337,9 @@
             // 
             // cust_del_but
             // 
-            this.cust_del_but.Location = new System.Drawing.Point(996, 624);
-            this.cust_del_but.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_del_but.Location = new System.Drawing.Point(747, 507);
             this.cust_del_but.Name = "cust_del_but";
-            this.cust_del_but.Size = new System.Drawing.Size(127, 74);
+            this.cust_del_but.Size = new System.Drawing.Size(95, 60);
             this.cust_del_but.TabIndex = 29;
             this.cust_del_but.Text = "Delete";
             this.cust_del_but.UseVisualStyleBackColor = true;
@@ -1390,133 +1347,117 @@
             // 
             // cust_add_but
             // 
-            this.cust_add_but.Location = new System.Drawing.Point(791, 623);
-            this.cust_add_but.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_add_but.Location = new System.Drawing.Point(593, 506);
             this.cust_add_but.Name = "cust_add_but";
-            this.cust_add_but.Size = new System.Drawing.Size(140, 75);
+            this.cust_add_but.Size = new System.Drawing.Size(105, 61);
             this.cust_add_but.TabIndex = 28;
             this.cust_add_but.Text = "Add";
             this.cust_add_but.UseVisualStyleBackColor = true;
             // 
             // cust_memStat_txt
             // 
-            this.cust_memStat_txt.Location = new System.Drawing.Point(129, 640);
-            this.cust_memStat_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_memStat_txt.Location = new System.Drawing.Point(97, 520);
             this.cust_memStat_txt.Name = "cust_memStat_txt";
-            this.cust_memStat_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_memStat_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_memStat_txt.TabIndex = 27;
             // 
             // cust_drivers_txt
             // 
-            this.cust_drivers_txt.Location = new System.Drawing.Point(129, 591);
-            this.cust_drivers_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_drivers_txt.Location = new System.Drawing.Point(97, 480);
             this.cust_drivers_txt.Name = "cust_drivers_txt";
-            this.cust_drivers_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_drivers_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_drivers_txt.TabIndex = 26;
             // 
             // cust_insurance_txt
             // 
-            this.cust_insurance_txt.Location = new System.Drawing.Point(129, 546);
-            this.cust_insurance_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_insurance_txt.Location = new System.Drawing.Point(97, 444);
             this.cust_insurance_txt.Name = "cust_insurance_txt";
-            this.cust_insurance_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_insurance_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_insurance_txt.TabIndex = 25;
             // 
             // cust_phone_num_txt
             // 
-            this.cust_phone_num_txt.Location = new System.Drawing.Point(129, 497);
-            this.cust_phone_num_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_phone_num_txt.Location = new System.Drawing.Point(97, 404);
             this.cust_phone_num_txt.Name = "cust_phone_num_txt";
-            this.cust_phone_num_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_phone_num_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_phone_num_txt.TabIndex = 24;
             // 
             // cust_dob_txt
             // 
-            this.cust_dob_txt.Location = new System.Drawing.Point(129, 447);
-            this.cust_dob_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_dob_txt.Location = new System.Drawing.Point(97, 363);
             this.cust_dob_txt.Name = "cust_dob_txt";
-            this.cust_dob_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_dob_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_dob_txt.TabIndex = 23;
             // 
             // cust_pCode_txt
             // 
-            this.cust_pCode_txt.Location = new System.Drawing.Point(129, 398);
-            this.cust_pCode_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_pCode_txt.Location = new System.Drawing.Point(97, 323);
             this.cust_pCode_txt.Name = "cust_pCode_txt";
-            this.cust_pCode_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_pCode_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_pCode_txt.TabIndex = 22;
             // 
             // cust_prov_txt
             // 
-            this.cust_prov_txt.Location = new System.Drawing.Point(129, 350);
-            this.cust_prov_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_prov_txt.Location = new System.Drawing.Point(97, 284);
             this.cust_prov_txt.Name = "cust_prov_txt";
-            this.cust_prov_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_prov_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_prov_txt.TabIndex = 21;
             // 
             // cust_city_txt
             // 
-            this.cust_city_txt.Location = new System.Drawing.Point(129, 303);
-            this.cust_city_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_city_txt.Location = new System.Drawing.Point(97, 246);
             this.cust_city_txt.Name = "cust_city_txt";
-            this.cust_city_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_city_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_city_txt.TabIndex = 20;
             // 
             // cust_street_add2_txt
             // 
-            this.cust_street_add2_txt.Location = new System.Drawing.Point(129, 262);
-            this.cust_street_add2_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_street_add2_txt.Location = new System.Drawing.Point(97, 213);
             this.cust_street_add2_txt.Name = "cust_street_add2_txt";
-            this.cust_street_add2_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_street_add2_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_street_add2_txt.TabIndex = 19;
             // 
             // cust_street_add1_txt
             // 
-            this.cust_street_add1_txt.Location = new System.Drawing.Point(129, 218);
-            this.cust_street_add1_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_street_add1_txt.Location = new System.Drawing.Point(97, 177);
             this.cust_street_add1_txt.Name = "cust_street_add1_txt";
-            this.cust_street_add1_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_street_add1_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_street_add1_txt.TabIndex = 18;
             // 
             // cust_l_name_txt
             // 
-            this.cust_l_name_txt.Location = new System.Drawing.Point(129, 169);
-            this.cust_l_name_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_l_name_txt.Location = new System.Drawing.Point(97, 137);
             this.cust_l_name_txt.Name = "cust_l_name_txt";
-            this.cust_l_name_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_l_name_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_l_name_txt.TabIndex = 17;
             // 
             // cust_m_name_txt
             // 
-            this.cust_m_name_txt.Location = new System.Drawing.Point(129, 124);
-            this.cust_m_name_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_m_name_txt.Location = new System.Drawing.Point(97, 101);
             this.cust_m_name_txt.Name = "cust_m_name_txt";
-            this.cust_m_name_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_m_name_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_m_name_txt.TabIndex = 16;
             // 
             // cust_f_name_txt
             // 
-            this.cust_f_name_txt.Location = new System.Drawing.Point(129, 82);
-            this.cust_f_name_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_f_name_txt.Location = new System.Drawing.Point(97, 67);
             this.cust_f_name_txt.Name = "cust_f_name_txt";
-            this.cust_f_name_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_f_name_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_f_name_txt.TabIndex = 15;
             // 
             // cust_custID_txt
             // 
-            this.cust_custID_txt.Location = new System.Drawing.Point(129, 37);
-            this.cust_custID_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.cust_custID_txt.Location = new System.Drawing.Point(97, 30);
             this.cust_custID_txt.Name = "cust_custID_txt";
-            this.cust_custID_txt.Size = new System.Drawing.Size(144, 22);
+            this.cust_custID_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_custID_txt.TabIndex = 14;
             // 
             // cust_memStat_label
             // 
             this.cust_memStat_label.AutoSize = true;
-            this.cust_memStat_label.Location = new System.Drawing.Point(7, 640);
-            this.cust_memStat_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_memStat_label.Location = new System.Drawing.Point(5, 520);
             this.cust_memStat_label.Name = "cust_memStat_label";
-            this.cust_memStat_label.Size = new System.Drawing.Size(108, 16);
+            this.cust_memStat_label.Size = new System.Drawing.Size(86, 13);
             this.cust_memStat_label.TabIndex = 13;
             this.cust_memStat_label.Text = "Membership Stat";
             this.cust_memStat_label.Click += new System.EventHandler(this.cust_memStat_label_Click);
@@ -1524,165 +1465,190 @@
             // cust_drivers_label
             // 
             this.cust_drivers_label.AutoSize = true;
-            this.cust_drivers_label.Location = new System.Drawing.Point(7, 591);
-            this.cust_drivers_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_drivers_label.Location = new System.Drawing.Point(5, 480);
             this.cust_drivers_label.Name = "cust_drivers_label";
-            this.cust_drivers_label.Size = new System.Drawing.Size(103, 16);
+            this.cust_drivers_label.Size = new System.Drawing.Size(85, 13);
             this.cust_drivers_label.TabIndex = 12;
             this.cust_drivers_label.Text = "Driver License #";
             // 
             // cust_insurance_label
             // 
             this.cust_insurance_label.AutoSize = true;
-            this.cust_insurance_label.Location = new System.Drawing.Point(7, 546);
-            this.cust_insurance_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_insurance_label.Location = new System.Drawing.Point(5, 444);
             this.cust_insurance_label.Name = "cust_insurance_label";
-            this.cust_insurance_label.Size = new System.Drawing.Size(65, 16);
+            this.cust_insurance_label.Size = new System.Drawing.Size(54, 13);
             this.cust_insurance_label.TabIndex = 11;
             this.cust_insurance_label.Text = "Insurance";
             // 
             // cust_phone_num_label
             // 
             this.cust_phone_num_label.AutoSize = true;
-            this.cust_phone_num_label.Location = new System.Drawing.Point(7, 497);
-            this.cust_phone_num_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_phone_num_label.Location = new System.Drawing.Point(5, 404);
             this.cust_phone_num_label.Name = "cust_phone_num_label";
-            this.cust_phone_num_label.Size = new System.Drawing.Size(97, 16);
+            this.cust_phone_num_label.Size = new System.Drawing.Size(78, 13);
             this.cust_phone_num_label.TabIndex = 10;
             this.cust_phone_num_label.Text = "Phone Number";
             // 
             // cust_dob_label
             // 
             this.cust_dob_label.AutoSize = true;
-            this.cust_dob_label.Location = new System.Drawing.Point(7, 450);
-            this.cust_dob_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_dob_label.Location = new System.Drawing.Point(5, 366);
             this.cust_dob_label.Name = "cust_dob_label";
-            this.cust_dob_label.Size = new System.Drawing.Size(36, 16);
+            this.cust_dob_label.Size = new System.Drawing.Size(30, 13);
             this.cust_dob_label.TabIndex = 9;
             this.cust_dob_label.Text = "DOB";
             // 
             // cust_pCode_label
             // 
             this.cust_pCode_label.AutoSize = true;
-            this.cust_pCode_label.Location = new System.Drawing.Point(7, 398);
-            this.cust_pCode_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_pCode_label.Location = new System.Drawing.Point(5, 323);
             this.cust_pCode_label.Name = "cust_pCode_label";
-            this.cust_pCode_label.Size = new System.Drawing.Size(81, 16);
+            this.cust_pCode_label.Size = new System.Drawing.Size(64, 13);
             this.cust_pCode_label.TabIndex = 8;
             this.cust_pCode_label.Text = "Postal Code";
             // 
             // cust_province_label
             // 
             this.cust_province_label.AutoSize = true;
-            this.cust_province_label.Location = new System.Drawing.Point(7, 353);
-            this.cust_province_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_province_label.Location = new System.Drawing.Point(5, 287);
             this.cust_province_label.Name = "cust_province_label";
-            this.cust_province_label.Size = new System.Drawing.Size(60, 16);
+            this.cust_province_label.Size = new System.Drawing.Size(49, 13);
             this.cust_province_label.TabIndex = 7;
             this.cust_province_label.Text = "Province";
             // 
             // cust_city_label
             // 
             this.cust_city_label.AutoSize = true;
-            this.cust_city_label.Location = new System.Drawing.Point(7, 306);
-            this.cust_city_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_city_label.Location = new System.Drawing.Point(5, 249);
             this.cust_city_label.Name = "cust_city_label";
-            this.cust_city_label.Size = new System.Drawing.Size(29, 16);
+            this.cust_city_label.Size = new System.Drawing.Size(24, 13);
             this.cust_city_label.TabIndex = 6;
             this.cust_city_label.Text = "City";
             // 
             // cust_street_add2_label
             // 
             this.cust_street_add2_label.AutoSize = true;
-            this.cust_street_add2_label.Location = new System.Drawing.Point(7, 266);
-            this.cust_street_add2_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_street_add2_label.Location = new System.Drawing.Point(5, 216);
             this.cust_street_add2_label.Name = "cust_street_add2_label";
-            this.cust_street_add2_label.Size = new System.Drawing.Size(106, 16);
+            this.cust_street_add2_label.Size = new System.Drawing.Size(85, 13);
             this.cust_street_add2_label.TabIndex = 5;
             this.cust_street_add2_label.Text = "Street Address 2";
             // 
             // cust_street_add1_label
             // 
             this.cust_street_add1_label.AutoSize = true;
-            this.cust_street_add1_label.Location = new System.Drawing.Point(7, 218);
-            this.cust_street_add1_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_street_add1_label.Location = new System.Drawing.Point(5, 177);
             this.cust_street_add1_label.Name = "cust_street_add1_label";
-            this.cust_street_add1_label.Size = new System.Drawing.Size(106, 16);
+            this.cust_street_add1_label.Size = new System.Drawing.Size(85, 13);
             this.cust_street_add1_label.TabIndex = 4;
             this.cust_street_add1_label.Text = "Street Address 1";
             // 
             // cust_last_name_label
             // 
             this.cust_last_name_label.AutoSize = true;
-            this.cust_last_name_label.Location = new System.Drawing.Point(7, 172);
-            this.cust_last_name_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_last_name_label.Location = new System.Drawing.Point(5, 140);
             this.cust_last_name_label.Name = "cust_last_name_label";
-            this.cust_last_name_label.Size = new System.Drawing.Size(72, 16);
+            this.cust_last_name_label.Size = new System.Drawing.Size(58, 13);
             this.cust_last_name_label.TabIndex = 3;
             this.cust_last_name_label.Text = "Last Name";
             // 
             // cust_mid_name_label
             // 
             this.cust_mid_name_label.AutoSize = true;
-            this.cust_mid_name_label.Location = new System.Drawing.Point(7, 128);
-            this.cust_mid_name_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_mid_name_label.Location = new System.Drawing.Point(5, 104);
             this.cust_mid_name_label.Name = "cust_mid_name_label";
-            this.cust_mid_name_label.Size = new System.Drawing.Size(88, 16);
+            this.cust_mid_name_label.Size = new System.Drawing.Size(69, 13);
             this.cust_mid_name_label.TabIndex = 2;
             this.cust_mid_name_label.Text = "Middle Name";
             // 
             // cust_f_name_label
             // 
             this.cust_f_name_label.AutoSize = true;
-            this.cust_f_name_label.Location = new System.Drawing.Point(7, 82);
-            this.cust_f_name_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_f_name_label.Location = new System.Drawing.Point(5, 67);
             this.cust_f_name_label.Name = "cust_f_name_label";
-            this.cust_f_name_label.Size = new System.Drawing.Size(72, 16);
+            this.cust_f_name_label.Size = new System.Drawing.Size(57, 13);
             this.cust_f_name_label.TabIndex = 1;
             this.cust_f_name_label.Text = "First Name";
             // 
             // cust_custID_label
             // 
             this.cust_custID_label.AutoSize = true;
-            this.cust_custID_label.Location = new System.Drawing.Point(7, 37);
-            this.cust_custID_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cust_custID_label.Location = new System.Drawing.Point(5, 30);
             this.cust_custID_label.Name = "cust_custID_label";
-            this.cust_custID_label.Size = new System.Drawing.Size(80, 16);
+            this.cust_custID_label.Size = new System.Drawing.Size(65, 13);
             this.cust_custID_label.TabIndex = 0;
             this.cust_custID_label.Text = "Customer ID";
             this.cust_custID_label.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1857, 592);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(14, 637);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 64);
+            this.button1.Size = new System.Drawing.Size(75, 52);
             this.button1.TabIndex = 4;
             this.button1.Text = "Report";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // branch_edit_but
             // 
-            this.button2.Location = new System.Drawing.Point(1857, 347);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 64);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Rent";
-            this.button2.UseVisualStyleBackColor = true;
+            this.branch_edit_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_edit_but.Location = new System.Drawing.Point(191, 461);
+            this.branch_edit_but.Name = "branch_edit_but";
+            this.branch_edit_but.Size = new System.Drawing.Size(95, 62);
+            this.branch_edit_but.TabIndex = 23;
+            this.branch_edit_but.Text = "Edit";
+            this.branch_edit_but.UseVisualStyleBackColor = true;
+            this.branch_edit_but.Click += new System.EventHandler(this.branch_edit_but_Click);
+            // 
+            // branch_search_label
+            // 
+            this.branch_search_label.AutoSize = true;
+            this.branch_search_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_search_label.Location = new System.Drawing.Point(382, 482);
+            this.branch_search_label.Name = "branch_search_label";
+            this.branch_search_label.Size = new System.Drawing.Size(71, 16);
+            this.branch_search_label.TabIndex = 24;
+            this.branch_search_label.Text = "Search by:";
+            // 
+            // branch_search_box
+            // 
+            this.branch_search_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_search_box.FormattingEnabled = true;
+            this.branch_search_box.Items.AddRange(new object[] {
+            "Branch ID",
+            "Description",
+            "Street Address 1",
+            "Street Address 2",
+            "City",
+            "Province",
+            "Postal Code",
+            "Phone Number"});
+            this.branch_search_box.Location = new System.Drawing.Point(460, 479);
+            this.branch_search_box.Name = "branch_search_box";
+            this.branch_search_box.Size = new System.Drawing.Size(172, 24);
+            this.branch_search_box.TabIndex = 25;
+            this.branch_search_box.Text = "--- Select ---";
+            // 
+            // branch_search_text_box
+            // 
+            this.branch_search_text_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_search_text_box.Location = new System.Drawing.Point(652, 479);
+            this.branch_search_text_box.Name = "branch_search_text_box";
+            this.branch_search_text_box.Size = new System.Drawing.Size(126, 22);
+            this.branch_search_text_box.TabIndex = 26;
             // 
             // Employee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1827, 796);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(1367, 700);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Tabs);
             this.Controls.Add(this.CustomerBtn);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Employee";
             this.Text = "Form1";
             this.Tabs.ResumeLayout(false);
@@ -1709,7 +1675,6 @@
         private System.Windows.Forms.TabPage carsTab;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label cust_memStat_label;
@@ -1852,5 +1817,9 @@
         private System.Windows.Forms.TextBox ModelText;
         private System.Windows.Forms.ComboBox rentalCostS;
         private System.Windows.Forms.ComboBox rentalClassS;
+        private System.Windows.Forms.Button branch_edit_but;
+        private System.Windows.Forms.TextBox branch_search_text_box;
+        private System.Windows.Forms.ComboBox branch_search_box;
+        private System.Windows.Forms.Label branch_search_label;
     }
 }
