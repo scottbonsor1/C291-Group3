@@ -76,7 +76,7 @@
             this.carTypeLabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.modelS = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.DailyRentText = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.ModelText = new System.Windows.Forms.TextBox();
             this.rentalCostS = new System.Windows.Forms.ComboBox();
@@ -96,6 +96,10 @@
             this.WEEKLY_RENTAL_COST_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MONTHLY_RENTAL_COST_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.branch_search_text_box = new System.Windows.Forms.TextBox();
+            this.branch_search_box = new System.Windows.Forms.ComboBox();
+            this.branch_search_label = new System.Windows.Forms.Label();
+            this.branch_edit_but = new System.Windows.Forms.Button();
             this.branch_refresh_but = new System.Windows.Forms.Button();
             this.branch_id_LU_label = new System.Windows.Forms.Label();
             this.branch_id_LU_txt = new System.Windows.Forms.TextBox();
@@ -175,10 +179,11 @@
             this.cust_f_name_label = new System.Windows.Forms.Label();
             this.cust_custID_label = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.branch_edit_but = new System.Windows.Forms.Button();
-            this.branch_search_label = new System.Windows.Forms.Label();
-            this.branch_search_box = new System.Windows.Forms.ComboBox();
-            this.branch_search_text_box = new System.Windows.Forms.TextBox();
+            this.WeeklyRentText = new System.Windows.Forms.TextBox();
+            this.MonthlyRentText = new System.Windows.Forms.TextBox();
+            this.MonthlyRentLabel = new System.Windows.Forms.Label();
+            this.WeeklyRentLabel = new System.Windows.Forms.Label();
+            this.DailyRentLabel = new System.Windows.Forms.Label();
             this.Tabs.SuspendLayout();
             this.carsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -208,7 +213,7 @@
             this.Tabs.Controls.Add(this.tabPage1);
             this.Tabs.Controls.Add(this.tabPage3);
             this.Tabs.Location = new System.Drawing.Point(10, 11);
-            this.Tabs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tabs.Margin = new System.Windows.Forms.Padding(2);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
             this.Tabs.Size = new System.Drawing.Size(1383, 612);
@@ -252,9 +257,9 @@
             this.carsTab.Controls.Add(this.vinText);
             this.carsTab.Controls.Add(this.carTypeLabel);
             this.carsTab.Location = new System.Drawing.Point(4, 22);
-            this.carsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carsTab.Margin = new System.Windows.Forms.Padding(2);
             this.carsTab.Name = "carsTab";
-            this.carsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carsTab.Padding = new System.Windows.Forms.Padding(2);
             this.carsTab.Size = new System.Drawing.Size(1375, 586);
             this.carsTab.TabIndex = 0;
             this.carsTab.Text = "Cars";
@@ -640,8 +645,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.DailyRentLabel);
+            this.tabPage2.Controls.Add(this.WeeklyRentLabel);
+            this.tabPage2.Controls.Add(this.MonthlyRentLabel);
+            this.tabPage2.Controls.Add(this.MonthlyRentText);
+            this.tabPage2.Controls.Add(this.WeeklyRentText);
             this.tabPage2.Controls.Add(this.modelS);
-            this.tabPage2.Controls.Add(this.textBox10);
+            this.tabPage2.Controls.Add(this.DailyRentText);
             this.tabPage2.Controls.Add(this.textBox9);
             this.tabPage2.Controls.Add(this.ModelText);
             this.tabPage2.Controls.Add(this.rentalCostS);
@@ -656,9 +666,9 @@
             this.tabPage2.Controls.Add(this.addCarTypeBut);
             this.tabPage2.Controls.Add(this.dataGridView4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(1375, 586);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Car Type";
@@ -666,28 +676,28 @@
             // 
             // modelS
             // 
-            this.modelS.Location = new System.Drawing.Point(32, 289);
+            this.modelS.Location = new System.Drawing.Point(21, 433);
             this.modelS.Name = "modelS";
             this.modelS.Size = new System.Drawing.Size(100, 20);
             this.modelS.TabIndex = 14;
             // 
-            // textBox10
+            // DailyRentText
             // 
-            this.textBox10.Location = new System.Drawing.Point(321, 106);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 13;
+            this.DailyRentText.Location = new System.Drawing.Point(32, 194);
+            this.DailyRentText.Name = "DailyRentText";
+            this.DailyRentText.Size = new System.Drawing.Size(100, 20);
+            this.DailyRentText.TabIndex = 13;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(175, 106);
+            this.textBox9.Location = new System.Drawing.Point(299, 47);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 12;
             // 
             // ModelText
             // 
-            this.ModelText.Location = new System.Drawing.Point(32, 106);
+            this.ModelText.Location = new System.Drawing.Point(94, 47);
             this.ModelText.Name = "ModelText";
             this.ModelText.Size = new System.Drawing.Size(100, 20);
             this.ModelText.TabIndex = 11;
@@ -695,7 +705,7 @@
             // rentalCostS
             // 
             this.rentalCostS.FormattingEnabled = true;
-            this.rentalCostS.Location = new System.Drawing.Point(310, 289);
+            this.rentalCostS.Location = new System.Drawing.Point(348, 432);
             this.rentalCostS.Name = "rentalCostS";
             this.rentalCostS.Size = new System.Drawing.Size(121, 21);
             this.rentalCostS.TabIndex = 10;
@@ -704,7 +714,7 @@
             // rentalClassS
             // 
             this.rentalClassS.FormattingEnabled = true;
-            this.rentalClassS.Location = new System.Drawing.Point(154, 288);
+            this.rentalClassS.Location = new System.Drawing.Point(180, 432);
             this.rentalClassS.Name = "rentalClassS";
             this.rentalClassS.Size = new System.Drawing.Size(121, 21);
             this.rentalClassS.TabIndex = 9;
@@ -712,7 +722,7 @@
             // rentalCostSLabel
             // 
             this.rentalCostSLabel.AutoSize = true;
-            this.rentalCostSLabel.Location = new System.Drawing.Point(338, 259);
+            this.rentalCostSLabel.Location = new System.Drawing.Point(379, 391);
             this.rentalCostSLabel.Name = "rentalCostSLabel";
             this.rentalCostSLabel.Size = new System.Drawing.Size(62, 13);
             this.rentalCostSLabel.TabIndex = 8;
@@ -721,7 +731,7 @@
             // rentalClassSLabel
             // 
             this.rentalClassSLabel.AutoSize = true;
-            this.rentalClassSLabel.Location = new System.Drawing.Point(196, 259);
+            this.rentalClassSLabel.Location = new System.Drawing.Point(214, 391);
             this.rentalClassSLabel.Name = "rentalClassSLabel";
             this.rentalClassSLabel.Size = new System.Drawing.Size(66, 13);
             this.rentalClassSLabel.TabIndex = 7;
@@ -730,7 +740,7 @@
             // modelSLabel
             // 
             this.modelSLabel.AutoSize = true;
-            this.modelSLabel.Location = new System.Drawing.Point(63, 259);
+            this.modelSLabel.Location = new System.Drawing.Point(47, 391);
             this.modelSLabel.Name = "modelSLabel";
             this.modelSLabel.Size = new System.Drawing.Size(50, 13);
             this.modelSLabel.TabIndex = 6;
@@ -739,16 +749,16 @@
             // rentalCostLabel
             // 
             this.rentalCostLabel.AutoSize = true;
-            this.rentalCostLabel.Location = new System.Drawing.Point(338, 74);
+            this.rentalCostLabel.Location = new System.Drawing.Point(218, 111);
             this.rentalCostLabel.Name = "rentalCostLabel";
-            this.rentalCostLabel.Size = new System.Drawing.Size(62, 13);
+            this.rentalCostLabel.Size = new System.Drawing.Size(70, 13);
             this.rentalCostLabel.TabIndex = 5;
-            this.rentalCostLabel.Text = "Rental Cost";
+            this.rentalCostLabel.Text = "Rental Costs:";
             // 
             // rentalClassLabel
             // 
             this.rentalClassLabel.AutoSize = true;
-            this.rentalClassLabel.Location = new System.Drawing.Point(196, 74);
+            this.rentalClassLabel.Location = new System.Drawing.Point(317, 17);
             this.rentalClassLabel.Name = "rentalClassLabel";
             this.rentalClassLabel.Size = new System.Drawing.Size(66, 13);
             this.rentalClassLabel.TabIndex = 4;
@@ -757,7 +767,7 @@
             // ModelLabel
             // 
             this.ModelLabel.AutoSize = true;
-            this.ModelLabel.Location = new System.Drawing.Point(63, 74);
+            this.ModelLabel.Location = new System.Drawing.Point(116, 17);
             this.ModelLabel.Name = "ModelLabel";
             this.ModelLabel.Size = new System.Drawing.Size(50, 13);
             this.ModelLabel.TabIndex = 3;
@@ -766,7 +776,7 @@
             // 
             // carTypeSBut
             // 
-            this.carTypeSBut.Location = new System.Drawing.Point(473, 286);
+            this.carTypeSBut.Location = new System.Drawing.Point(193, 505);
             this.carTypeSBut.Name = "carTypeSBut";
             this.carTypeSBut.Size = new System.Drawing.Size(95, 23);
             this.carTypeSBut.TabIndex = 2;
@@ -775,7 +785,7 @@
             // 
             // addCarTypeBut
             // 
-            this.addCarTypeBut.Location = new System.Drawing.Point(484, 106);
+            this.addCarTypeBut.Location = new System.Drawing.Point(217, 289);
             this.addCarTypeBut.Name = "addCarTypeBut";
             this.addCarTypeBut.Size = new System.Drawing.Size(84, 23);
             this.addCarTypeBut.TabIndex = 1;
@@ -791,11 +801,12 @@
             this.DAILY_RENTAL_COST_COL,
             this.WEEKLY_RENTAL_COST_COL,
             this.MONTHLY_RENTAL_COST_COL});
-            this.dataGridView4.Location = new System.Drawing.Point(628, 5);
+            this.dataGridView4.Location = new System.Drawing.Point(594, 34);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.Size = new System.Drawing.Size(544, 370);
+            this.dataGridView4.Size = new System.Drawing.Size(679, 547);
             this.dataGridView4.TabIndex = 0;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // MODEL_ID_COL
             // 
@@ -869,12 +880,60 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1375, 586);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Branches";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // branch_search_text_box
+            // 
+            this.branch_search_text_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_search_text_box.Location = new System.Drawing.Point(652, 479);
+            this.branch_search_text_box.Name = "branch_search_text_box";
+            this.branch_search_text_box.Size = new System.Drawing.Size(126, 22);
+            this.branch_search_text_box.TabIndex = 26;
+            // 
+            // branch_search_box
+            // 
+            this.branch_search_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_search_box.FormattingEnabled = true;
+            this.branch_search_box.Items.AddRange(new object[] {
+            "Branch ID",
+            "Description",
+            "Street Address 1",
+            "Street Address 2",
+            "City",
+            "Province",
+            "Postal Code",
+            "Phone Number"});
+            this.branch_search_box.Location = new System.Drawing.Point(460, 479);
+            this.branch_search_box.Name = "branch_search_box";
+            this.branch_search_box.Size = new System.Drawing.Size(172, 24);
+            this.branch_search_box.TabIndex = 25;
+            this.branch_search_box.Text = "--- Select ---";
+            // 
+            // branch_search_label
+            // 
+            this.branch_search_label.AutoSize = true;
+            this.branch_search_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_search_label.Location = new System.Drawing.Point(382, 482);
+            this.branch_search_label.Name = "branch_search_label";
+            this.branch_search_label.Size = new System.Drawing.Size(71, 16);
+            this.branch_search_label.TabIndex = 24;
+            this.branch_search_label.Text = "Search by:";
+            // 
+            // branch_edit_but
+            // 
+            this.branch_edit_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch_edit_but.Location = new System.Drawing.Point(191, 461);
+            this.branch_edit_but.Name = "branch_edit_but";
+            this.branch_edit_but.Size = new System.Drawing.Size(95, 62);
+            this.branch_edit_but.TabIndex = 23;
+            this.branch_edit_but.Text = "Edit";
+            this.branch_edit_but.UseVisualStyleBackColor = true;
+            this.branch_edit_but.Click += new System.EventHandler(this.branch_edit_but_Click);
             // 
             // branch_refresh_but
             // 
@@ -1194,9 +1253,9 @@
             this.tabPage3.Controls.Add(this.cust_f_name_label);
             this.tabPage3.Controls.Add(this.cust_custID_label);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(1375, 586);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Customers";
@@ -1584,7 +1643,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(14, 637);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 52);
             this.button1.TabIndex = 4;
@@ -1592,53 +1651,46 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // branch_edit_but
+            // WeeklyRentText
             // 
-            this.branch_edit_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branch_edit_but.Location = new System.Drawing.Point(191, 461);
-            this.branch_edit_but.Name = "branch_edit_but";
-            this.branch_edit_but.Size = new System.Drawing.Size(95, 62);
-            this.branch_edit_but.TabIndex = 23;
-            this.branch_edit_but.Text = "Edit";
-            this.branch_edit_but.UseVisualStyleBackColor = true;
-            this.branch_edit_but.Click += new System.EventHandler(this.branch_edit_but_Click);
+            this.WeeklyRentText.Location = new System.Drawing.Point(201, 194);
+            this.WeeklyRentText.Name = "WeeklyRentText";
+            this.WeeklyRentText.Size = new System.Drawing.Size(100, 20);
+            this.WeeklyRentText.TabIndex = 15;
             // 
-            // branch_search_label
+            // MonthlyRentText
             // 
-            this.branch_search_label.AutoSize = true;
-            this.branch_search_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branch_search_label.Location = new System.Drawing.Point(382, 482);
-            this.branch_search_label.Name = "branch_search_label";
-            this.branch_search_label.Size = new System.Drawing.Size(71, 16);
-            this.branch_search_label.TabIndex = 24;
-            this.branch_search_label.Text = "Search by:";
+            this.MonthlyRentText.Location = new System.Drawing.Point(370, 194);
+            this.MonthlyRentText.Name = "MonthlyRentText";
+            this.MonthlyRentText.Size = new System.Drawing.Size(100, 20);
+            this.MonthlyRentText.TabIndex = 16;
             // 
-            // branch_search_box
+            // MonthlyRentLabel
             // 
-            this.branch_search_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branch_search_box.FormattingEnabled = true;
-            this.branch_search_box.Items.AddRange(new object[] {
-            "Branch ID",
-            "Description",
-            "Street Address 1",
-            "Street Address 2",
-            "City",
-            "Province",
-            "Postal Code",
-            "Phone Number"});
-            this.branch_search_box.Location = new System.Drawing.Point(460, 479);
-            this.branch_search_box.Name = "branch_search_box";
-            this.branch_search_box.Size = new System.Drawing.Size(172, 24);
-            this.branch_search_box.TabIndex = 25;
-            this.branch_search_box.Text = "--- Select ---";
+            this.MonthlyRentLabel.AutoSize = true;
+            this.MonthlyRentLabel.Location = new System.Drawing.Point(367, 150);
+            this.MonthlyRentLabel.Name = "MonthlyRentLabel";
+            this.MonthlyRentLabel.Size = new System.Drawing.Size(102, 13);
+            this.MonthlyRentLabel.TabIndex = 17;
+            this.MonthlyRentLabel.Text = "Monthly Rental Cost";
             // 
-            // branch_search_text_box
+            // WeeklyRentLabel
             // 
-            this.branch_search_text_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branch_search_text_box.Location = new System.Drawing.Point(652, 479);
-            this.branch_search_text_box.Name = "branch_search_text_box";
-            this.branch_search_text_box.Size = new System.Drawing.Size(126, 22);
-            this.branch_search_text_box.TabIndex = 26;
+            this.WeeklyRentLabel.AutoSize = true;
+            this.WeeklyRentLabel.Location = new System.Drawing.Point(200, 150);
+            this.WeeklyRentLabel.Name = "WeeklyRentLabel";
+            this.WeeklyRentLabel.Size = new System.Drawing.Size(101, 13);
+            this.WeeklyRentLabel.TabIndex = 18;
+            this.WeeklyRentLabel.Text = "Weekly Rental Cost";
+            // 
+            // DailyRentLabel
+            // 
+            this.DailyRentLabel.AutoSize = true;
+            this.DailyRentLabel.Location = new System.Drawing.Point(47, 150);
+            this.DailyRentLabel.Name = "DailyRentLabel";
+            this.DailyRentLabel.Size = new System.Drawing.Size(88, 13);
+            this.DailyRentLabel.TabIndex = 19;
+            this.DailyRentLabel.Text = "Daily Rental Cost";
             // 
             // Employee
             // 
@@ -1648,7 +1700,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Tabs);
             this.Controls.Add(this.CustomerBtn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Employee";
             this.Text = "Form1";
             this.Tabs.ResumeLayout(false);
@@ -1812,7 +1864,7 @@
         private System.Windows.Forms.Label rentalClassLabel;
         private System.Windows.Forms.Label ModelLabel;
         private System.Windows.Forms.TextBox modelS;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox DailyRentText;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox ModelText;
         private System.Windows.Forms.ComboBox rentalCostS;
@@ -1821,5 +1873,10 @@
         private System.Windows.Forms.TextBox branch_search_text_box;
         private System.Windows.Forms.ComboBox branch_search_box;
         private System.Windows.Forms.Label branch_search_label;
+        private System.Windows.Forms.Label DailyRentLabel;
+        private System.Windows.Forms.Label WeeklyRentLabel;
+        private System.Windows.Forms.Label MonthlyRentLabel;
+        private System.Windows.Forms.TextBox MonthlyRentText;
+        private System.Windows.Forms.TextBox WeeklyRentText;
     }
 }

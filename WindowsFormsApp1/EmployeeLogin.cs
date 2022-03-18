@@ -42,5 +42,10 @@ namespace WindowsFormsApp1
             f1.ShowDialog();
             this.Close();
         }
+
+        private void EmployeeLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

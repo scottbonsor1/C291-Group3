@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+            String connectionString = "Server = LAPTOP-DSBFVL6U; Database = 291_RentalDatabase; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -377,6 +377,11 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("No Valid BID to Delete Entered");
             }
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
