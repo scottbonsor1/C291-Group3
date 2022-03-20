@@ -41,9 +41,10 @@
             // 
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(12, 9);
+            this.Title.Location = new System.Drawing.Point(9, 7);
+            this.Title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(209, 29);
+            this.Title.Size = new System.Drawing.Size(168, 24);
             this.Title.TabIndex = 0;
             this.Title.Text = "Employee Login:";
             // 
@@ -51,9 +52,10 @@
             // 
             this.user_label.AutoSize = true;
             this.user_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user_label.Location = new System.Drawing.Point(60, 140);
+            this.user_label.Location = new System.Drawing.Point(45, 114);
+            this.user_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.user_label.Name = "user_label";
-            this.user_label.Size = new System.Drawing.Size(130, 29);
+            this.user_label.Size = new System.Drawing.Size(102, 24);
             this.user_label.TabIndex = 1;
             this.user_label.Text = "Username:";
             this.user_label.Click += new System.EventHandler(this.label1_Click);
@@ -62,9 +64,10 @@
             // 
             this.pass_label.AutoSize = true;
             this.pass_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass_label.Location = new System.Drawing.Point(64, 222);
+            this.pass_label.Location = new System.Drawing.Point(48, 180);
+            this.pass_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pass_label.Name = "pass_label";
-            this.pass_label.Size = new System.Drawing.Size(126, 29);
+            this.pass_label.Size = new System.Drawing.Size(97, 24);
             this.pass_label.TabIndex = 2;
             this.pass_label.Text = "Password:";
             this.pass_label.Click += new System.EventHandler(this.label2_Click);
@@ -72,26 +75,27 @@
             // username_box
             // 
             this.username_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username_box.Location = new System.Drawing.Point(229, 140);
+            this.username_box.Location = new System.Drawing.Point(172, 114);
+            this.username_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.username_box.Name = "username_box";
-            this.username_box.Size = new System.Drawing.Size(214, 34);
+            this.username_box.Size = new System.Drawing.Size(162, 28);
             this.username_box.TabIndex = 3;
             // 
             // password_box
             // 
             this.password_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password_box.Location = new System.Drawing.Point(229, 222);
+            this.password_box.Location = new System.Drawing.Point(172, 180);
+            this.password_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.password_box.Name = "password_box";
-            this.password_box.Size = new System.Drawing.Size(214, 34);
+            this.password_box.Size = new System.Drawing.Size(162, 28);
             this.password_box.TabIndex = 4;
             // 
             // EmployeeBtn
             // 
             this.EmployeeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeBtn.Location = new System.Drawing.Point(349, 305);
-            this.EmployeeBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.EmployeeBtn.Location = new System.Drawing.Point(262, 248);
             this.EmployeeBtn.Name = "EmployeeBtn";
-            this.EmployeeBtn.Size = new System.Drawing.Size(94, 49);
+            this.EmployeeBtn.Size = new System.Drawing.Size(70, 40);
             this.EmployeeBtn.TabIndex = 5;
             this.EmployeeBtn.Text = "Login";
             this.EmployeeBtn.UseVisualStyleBackColor = true;
@@ -100,10 +104,9 @@
             // backBtn
             // 
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.Location = new System.Drawing.Point(17, 331);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backBtn.Location = new System.Drawing.Point(13, 269);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(100, 40);
+            this.backBtn.Size = new System.Drawing.Size(75, 32);
             this.backBtn.TabIndex = 6;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
@@ -111,9 +114,9 @@
             // 
             // EmployeeLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 384);
+            this.ClientSize = new System.Drawing.Size(384, 312);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.EmployeeBtn);
             this.Controls.Add(this.password_box);
@@ -121,8 +124,10 @@
             this.Controls.Add(this.pass_label);
             this.Controls.Add(this.user_label);
             this.Controls.Add(this.Title);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EmployeeLogin";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.EmployeeLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
