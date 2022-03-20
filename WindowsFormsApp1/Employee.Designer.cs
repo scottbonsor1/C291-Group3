@@ -74,22 +74,27 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.vinText = new System.Windows.Forms.TextBox();
             this.carTypeLabel = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.carTypeTab = new System.Windows.Forms.TabPage();
+            this.DailyRentLabel = new System.Windows.Forms.Label();
+            this.WeeklyRentLabel = new System.Windows.Forms.Label();
+            this.MonthlyRentLabel = new System.Windows.Forms.Label();
+            this.mRent = new System.Windows.Forms.TextBox();
+            this.wRent = new System.Windows.Forms.TextBox();
             this.modelS = new System.Windows.Forms.TextBox();
-            this.DailyRentText = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.ModelText = new System.Windows.Forms.TextBox();
-            this.rentalCostS = new System.Windows.Forms.ComboBox();
-            this.rentalClassS = new System.Windows.Forms.ComboBox();
+            this.dRent = new System.Windows.Forms.TextBox();
+            this.typeDesc = new System.Windows.Forms.TextBox();
+            this.modelID = new System.Windows.Forms.TextBox();
+            this.rCostS = new System.Windows.Forms.ComboBox();
+            this.typeDescS = new System.Windows.Forms.ComboBox();
             this.rentalCostSLabel = new System.Windows.Forms.Label();
-            this.rentalClassSLabel = new System.Windows.Forms.Label();
+            this.typeSDescLabel = new System.Windows.Forms.Label();
             this.modelSLabel = new System.Windows.Forms.Label();
             this.rentalCostLabel = new System.Windows.Forms.Label();
-            this.rentalClassLabel = new System.Windows.Forms.Label();
+            this.typeDescLabel = new System.Windows.Forms.Label();
             this.ModelLabel = new System.Windows.Forms.Label();
-            this.carTypeSBut = new System.Windows.Forms.Button();
-            this.addCarTypeBut = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.typeSBut = new System.Windows.Forms.Button();
+            this.addTypeBut = new System.Windows.Forms.Button();
+            this.carTypeView = new System.Windows.Forms.DataGridView();
             this.MODEL_ID_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RENTAL_CLASS_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DAILY_RENTAL_COST_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -179,16 +184,13 @@
             this.cust_f_name_label = new System.Windows.Forms.Label();
             this.cust_custID_label = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.WeeklyRentText = new System.Windows.Forms.TextBox();
-            this.MonthlyRentText = new System.Windows.Forms.TextBox();
-            this.MonthlyRentLabel = new System.Windows.Forms.Label();
-            this.WeeklyRentLabel = new System.Windows.Forms.Label();
-            this.DailyRentLabel = new System.Windows.Forms.Label();
+            this.delTypeBut = new System.Windows.Forms.Button();
+            this.editTypeBut = new System.Windows.Forms.Button();
             this.Tabs.SuspendLayout();
             this.carsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.carTypeTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carTypeView)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.branch_view)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -209,7 +211,7 @@
             // Tabs
             // 
             this.Tabs.Controls.Add(this.carsTab);
-            this.Tabs.Controls.Add(this.tabPage2);
+            this.Tabs.Controls.Add(this.carTypeTab);
             this.Tabs.Controls.Add(this.tabPage1);
             this.Tabs.Controls.Add(this.tabPage3);
             this.Tabs.Location = new System.Drawing.Point(10, 11);
@@ -643,36 +645,79 @@
             this.carTypeLabel.Text = "Car Type";
             this.carTypeLabel.Click += new System.EventHandler(this.label2_Click);
             // 
-            // tabPage2
+            // carTypeTab
             // 
-            this.tabPage2.Controls.Add(this.DailyRentLabel);
-            this.tabPage2.Controls.Add(this.WeeklyRentLabel);
-            this.tabPage2.Controls.Add(this.MonthlyRentLabel);
-            this.tabPage2.Controls.Add(this.MonthlyRentText);
-            this.tabPage2.Controls.Add(this.WeeklyRentText);
-            this.tabPage2.Controls.Add(this.modelS);
-            this.tabPage2.Controls.Add(this.DailyRentText);
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Controls.Add(this.ModelText);
-            this.tabPage2.Controls.Add(this.rentalCostS);
-            this.tabPage2.Controls.Add(this.rentalClassS);
-            this.tabPage2.Controls.Add(this.rentalCostSLabel);
-            this.tabPage2.Controls.Add(this.rentalClassSLabel);
-            this.tabPage2.Controls.Add(this.modelSLabel);
-            this.tabPage2.Controls.Add(this.rentalCostLabel);
-            this.tabPage2.Controls.Add(this.rentalClassLabel);
-            this.tabPage2.Controls.Add(this.ModelLabel);
-            this.tabPage2.Controls.Add(this.carTypeSBut);
-            this.tabPage2.Controls.Add(this.addCarTypeBut);
-            this.tabPage2.Controls.Add(this.dataGridView4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(1375, 586);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Car Type";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.carTypeTab.Controls.Add(this.editTypeBut);
+            this.carTypeTab.Controls.Add(this.delTypeBut);
+            this.carTypeTab.Controls.Add(this.DailyRentLabel);
+            this.carTypeTab.Controls.Add(this.WeeklyRentLabel);
+            this.carTypeTab.Controls.Add(this.MonthlyRentLabel);
+            this.carTypeTab.Controls.Add(this.mRent);
+            this.carTypeTab.Controls.Add(this.wRent);
+            this.carTypeTab.Controls.Add(this.modelS);
+            this.carTypeTab.Controls.Add(this.dRent);
+            this.carTypeTab.Controls.Add(this.typeDesc);
+            this.carTypeTab.Controls.Add(this.modelID);
+            this.carTypeTab.Controls.Add(this.rCostS);
+            this.carTypeTab.Controls.Add(this.typeDescS);
+            this.carTypeTab.Controls.Add(this.rentalCostSLabel);
+            this.carTypeTab.Controls.Add(this.typeSDescLabel);
+            this.carTypeTab.Controls.Add(this.modelSLabel);
+            this.carTypeTab.Controls.Add(this.rentalCostLabel);
+            this.carTypeTab.Controls.Add(this.typeDescLabel);
+            this.carTypeTab.Controls.Add(this.ModelLabel);
+            this.carTypeTab.Controls.Add(this.typeSBut);
+            this.carTypeTab.Controls.Add(this.addTypeBut);
+            this.carTypeTab.Controls.Add(this.carTypeView);
+            this.carTypeTab.Location = new System.Drawing.Point(4, 22);
+            this.carTypeTab.Margin = new System.Windows.Forms.Padding(2);
+            this.carTypeTab.Name = "carTypeTab";
+            this.carTypeTab.Padding = new System.Windows.Forms.Padding(2);
+            this.carTypeTab.Size = new System.Drawing.Size(1375, 586);
+            this.carTypeTab.TabIndex = 1;
+            this.carTypeTab.Text = "Car Type";
+            this.carTypeTab.UseVisualStyleBackColor = true;
+            // 
+            // DailyRentLabel
+            // 
+            this.DailyRentLabel.AutoSize = true;
+            this.DailyRentLabel.Location = new System.Drawing.Point(47, 150);
+            this.DailyRentLabel.Name = "DailyRentLabel";
+            this.DailyRentLabel.Size = new System.Drawing.Size(88, 13);
+            this.DailyRentLabel.TabIndex = 19;
+            this.DailyRentLabel.Text = "Daily Rental Cost";
+            // 
+            // WeeklyRentLabel
+            // 
+            this.WeeklyRentLabel.AutoSize = true;
+            this.WeeklyRentLabel.Location = new System.Drawing.Point(200, 150);
+            this.WeeklyRentLabel.Name = "WeeklyRentLabel";
+            this.WeeklyRentLabel.Size = new System.Drawing.Size(101, 13);
+            this.WeeklyRentLabel.TabIndex = 18;
+            this.WeeklyRentLabel.Text = "Weekly Rental Cost";
+            // 
+            // MonthlyRentLabel
+            // 
+            this.MonthlyRentLabel.AutoSize = true;
+            this.MonthlyRentLabel.Location = new System.Drawing.Point(367, 150);
+            this.MonthlyRentLabel.Name = "MonthlyRentLabel";
+            this.MonthlyRentLabel.Size = new System.Drawing.Size(102, 13);
+            this.MonthlyRentLabel.TabIndex = 17;
+            this.MonthlyRentLabel.Text = "Monthly Rental Cost";
+            // 
+            // mRent
+            // 
+            this.mRent.Location = new System.Drawing.Point(370, 194);
+            this.mRent.Name = "mRent";
+            this.mRent.Size = new System.Drawing.Size(100, 20);
+            this.mRent.TabIndex = 16;
+            // 
+            // wRent
+            // 
+            this.wRent.Location = new System.Drawing.Point(201, 194);
+            this.wRent.Name = "wRent";
+            this.wRent.Size = new System.Drawing.Size(100, 20);
+            this.wRent.TabIndex = 15;
             // 
             // modelS
             // 
@@ -681,43 +726,43 @@
             this.modelS.Size = new System.Drawing.Size(100, 20);
             this.modelS.TabIndex = 14;
             // 
-            // DailyRentText
+            // dRent
             // 
-            this.DailyRentText.Location = new System.Drawing.Point(32, 194);
-            this.DailyRentText.Name = "DailyRentText";
-            this.DailyRentText.Size = new System.Drawing.Size(100, 20);
-            this.DailyRentText.TabIndex = 13;
+            this.dRent.Location = new System.Drawing.Point(32, 194);
+            this.dRent.Name = "dRent";
+            this.dRent.Size = new System.Drawing.Size(100, 20);
+            this.dRent.TabIndex = 13;
             // 
-            // textBox9
+            // typeDesc
             // 
-            this.textBox9.Location = new System.Drawing.Point(299, 47);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 12;
+            this.typeDesc.Location = new System.Drawing.Point(299, 47);
+            this.typeDesc.Name = "typeDesc";
+            this.typeDesc.Size = new System.Drawing.Size(100, 20);
+            this.typeDesc.TabIndex = 12;
             // 
-            // ModelText
+            // modelID
             // 
-            this.ModelText.Location = new System.Drawing.Point(94, 47);
-            this.ModelText.Name = "ModelText";
-            this.ModelText.Size = new System.Drawing.Size(100, 20);
-            this.ModelText.TabIndex = 11;
+            this.modelID.Location = new System.Drawing.Point(94, 47);
+            this.modelID.Name = "modelID";
+            this.modelID.Size = new System.Drawing.Size(100, 20);
+            this.modelID.TabIndex = 11;
             // 
-            // rentalCostS
+            // rCostS
             // 
-            this.rentalCostS.FormattingEnabled = true;
-            this.rentalCostS.Location = new System.Drawing.Point(348, 432);
-            this.rentalCostS.Name = "rentalCostS";
-            this.rentalCostS.Size = new System.Drawing.Size(121, 21);
-            this.rentalCostS.TabIndex = 10;
-            this.rentalCostS.SelectedIndexChanged += new System.EventHandler(this.comboBox10_SelectedIndexChanged);
+            this.rCostS.FormattingEnabled = true;
+            this.rCostS.Location = new System.Drawing.Point(348, 432);
+            this.rCostS.Name = "rCostS";
+            this.rCostS.Size = new System.Drawing.Size(121, 21);
+            this.rCostS.TabIndex = 10;
+            this.rCostS.SelectedIndexChanged += new System.EventHandler(this.comboBox10_SelectedIndexChanged);
             // 
-            // rentalClassS
+            // typeDescS
             // 
-            this.rentalClassS.FormattingEnabled = true;
-            this.rentalClassS.Location = new System.Drawing.Point(180, 432);
-            this.rentalClassS.Name = "rentalClassS";
-            this.rentalClassS.Size = new System.Drawing.Size(121, 21);
-            this.rentalClassS.TabIndex = 9;
+            this.typeDescS.FormattingEnabled = true;
+            this.typeDescS.Location = new System.Drawing.Point(180, 432);
+            this.typeDescS.Name = "typeDescS";
+            this.typeDescS.Size = new System.Drawing.Size(121, 21);
+            this.typeDescS.TabIndex = 9;
             // 
             // rentalCostSLabel
             // 
@@ -728,14 +773,15 @@
             this.rentalCostSLabel.TabIndex = 8;
             this.rentalCostSLabel.Text = "Rental Cost";
             // 
-            // rentalClassSLabel
+            // typeSDescLabel
             // 
-            this.rentalClassSLabel.AutoSize = true;
-            this.rentalClassSLabel.Location = new System.Drawing.Point(214, 391);
-            this.rentalClassSLabel.Name = "rentalClassSLabel";
-            this.rentalClassSLabel.Size = new System.Drawing.Size(66, 13);
-            this.rentalClassSLabel.TabIndex = 7;
-            this.rentalClassSLabel.Text = "Rental Class";
+            this.typeSDescLabel.AutoSize = true;
+            this.typeSDescLabel.Location = new System.Drawing.Point(214, 391);
+            this.typeSDescLabel.Name = "typeSDescLabel";
+            this.typeSDescLabel.Size = new System.Drawing.Size(60, 13);
+            this.typeSDescLabel.TabIndex = 7;
+            this.typeSDescLabel.Text = "Description";
+            this.typeSDescLabel.Click += new System.EventHandler(this.rentalClassSLabel_Click);
             // 
             // modelSLabel
             // 
@@ -755,14 +801,14 @@
             this.rentalCostLabel.TabIndex = 5;
             this.rentalCostLabel.Text = "Rental Costs:";
             // 
-            // rentalClassLabel
+            // typeDescLabel
             // 
-            this.rentalClassLabel.AutoSize = true;
-            this.rentalClassLabel.Location = new System.Drawing.Point(317, 17);
-            this.rentalClassLabel.Name = "rentalClassLabel";
-            this.rentalClassLabel.Size = new System.Drawing.Size(66, 13);
-            this.rentalClassLabel.TabIndex = 4;
-            this.rentalClassLabel.Text = "Rental Class";
+            this.typeDescLabel.AutoSize = true;
+            this.typeDescLabel.Location = new System.Drawing.Point(317, 17);
+            this.typeDescLabel.Name = "typeDescLabel";
+            this.typeDescLabel.Size = new System.Drawing.Size(60, 13);
+            this.typeDescLabel.TabIndex = 4;
+            this.typeDescLabel.Text = "Description";
             // 
             // ModelLabel
             // 
@@ -774,39 +820,40 @@
             this.ModelLabel.Text = "Model ID";
             this.ModelLabel.Click += new System.EventHandler(this.label1_Click_2);
             // 
-            // carTypeSBut
+            // typeSBut
             // 
-            this.carTypeSBut.Location = new System.Drawing.Point(193, 505);
-            this.carTypeSBut.Name = "carTypeSBut";
-            this.carTypeSBut.Size = new System.Drawing.Size(95, 23);
-            this.carTypeSBut.TabIndex = 2;
-            this.carTypeSBut.Text = "Search Car Type";
-            this.carTypeSBut.UseVisualStyleBackColor = true;
+            this.typeSBut.Location = new System.Drawing.Point(193, 505);
+            this.typeSBut.Name = "typeSBut";
+            this.typeSBut.Size = new System.Drawing.Size(95, 23);
+            this.typeSBut.TabIndex = 2;
+            this.typeSBut.Text = "Search Car Type";
+            this.typeSBut.UseVisualStyleBackColor = true;
             // 
-            // addCarTypeBut
+            // addTypeBut
             // 
-            this.addCarTypeBut.Location = new System.Drawing.Point(217, 289);
-            this.addCarTypeBut.Name = "addCarTypeBut";
-            this.addCarTypeBut.Size = new System.Drawing.Size(84, 23);
-            this.addCarTypeBut.TabIndex = 1;
-            this.addCarTypeBut.Text = "Add Car Type";
-            this.addCarTypeBut.UseVisualStyleBackColor = true;
+            this.addTypeBut.Location = new System.Drawing.Point(32, 272);
+            this.addTypeBut.Name = "addTypeBut";
+            this.addTypeBut.Size = new System.Drawing.Size(84, 23);
+            this.addTypeBut.TabIndex = 1;
+            this.addTypeBut.Text = "Add Car Type";
+            this.addTypeBut.UseVisualStyleBackColor = true;
+            this.addTypeBut.Click += new System.EventHandler(this.addCarTypeButClick);
             // 
-            // dataGridView4
+            // carTypeView
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.carTypeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.carTypeView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MODEL_ID_COL,
             this.RENTAL_CLASS_COL,
             this.DAILY_RENTAL_COST_COL,
             this.WEEKLY_RENTAL_COST_COL,
             this.MONTHLY_RENTAL_COST_COL});
-            this.dataGridView4.Location = new System.Drawing.Point(594, 34);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.Size = new System.Drawing.Size(679, 547);
-            this.dataGridView4.TabIndex = 0;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
+            this.carTypeView.Location = new System.Drawing.Point(594, 34);
+            this.carTypeView.Name = "carTypeView";
+            this.carTypeView.RowHeadersWidth = 51;
+            this.carTypeView.Size = new System.Drawing.Size(679, 547);
+            this.carTypeView.TabIndex = 0;
+            this.carTypeView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // MODEL_ID_COL
             // 
@@ -1651,46 +1698,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // WeeklyRentText
+            // delTypeBut
             // 
-            this.WeeklyRentText.Location = new System.Drawing.Point(201, 194);
-            this.WeeklyRentText.Name = "WeeklyRentText";
-            this.WeeklyRentText.Size = new System.Drawing.Size(100, 20);
-            this.WeeklyRentText.TabIndex = 15;
+            this.delTypeBut.Location = new System.Drawing.Point(201, 272);
+            this.delTypeBut.Name = "delTypeBut";
+            this.delTypeBut.Size = new System.Drawing.Size(100, 23);
+            this.delTypeBut.TabIndex = 21;
+            this.delTypeBut.Text = "Delete Car Type";
+            this.delTypeBut.UseVisualStyleBackColor = true;
+            this.delTypeBut.Click += new System.EventHandler(this.delCarTypeButClick);
             // 
-            // MonthlyRentText
+            // editTypeBut
             // 
-            this.MonthlyRentText.Location = new System.Drawing.Point(370, 194);
-            this.MonthlyRentText.Name = "MonthlyRentText";
-            this.MonthlyRentText.Size = new System.Drawing.Size(100, 20);
-            this.MonthlyRentText.TabIndex = 16;
-            // 
-            // MonthlyRentLabel
-            // 
-            this.MonthlyRentLabel.AutoSize = true;
-            this.MonthlyRentLabel.Location = new System.Drawing.Point(367, 150);
-            this.MonthlyRentLabel.Name = "MonthlyRentLabel";
-            this.MonthlyRentLabel.Size = new System.Drawing.Size(102, 13);
-            this.MonthlyRentLabel.TabIndex = 17;
-            this.MonthlyRentLabel.Text = "Monthly Rental Cost";
-            // 
-            // WeeklyRentLabel
-            // 
-            this.WeeklyRentLabel.AutoSize = true;
-            this.WeeklyRentLabel.Location = new System.Drawing.Point(200, 150);
-            this.WeeklyRentLabel.Name = "WeeklyRentLabel";
-            this.WeeklyRentLabel.Size = new System.Drawing.Size(101, 13);
-            this.WeeklyRentLabel.TabIndex = 18;
-            this.WeeklyRentLabel.Text = "Weekly Rental Cost";
-            // 
-            // DailyRentLabel
-            // 
-            this.DailyRentLabel.AutoSize = true;
-            this.DailyRentLabel.Location = new System.Drawing.Point(47, 150);
-            this.DailyRentLabel.Name = "DailyRentLabel";
-            this.DailyRentLabel.Size = new System.Drawing.Size(88, 13);
-            this.DailyRentLabel.TabIndex = 19;
-            this.DailyRentLabel.Text = "Daily Rental Cost";
+            this.editTypeBut.Location = new System.Drawing.Point(381, 272);
+            this.editTypeBut.Name = "editTypeBut";
+            this.editTypeBut.Size = new System.Drawing.Size(88, 23);
+            this.editTypeBut.TabIndex = 22;
+            this.editTypeBut.Text = "Edit Car Type";
+            this.editTypeBut.UseVisualStyleBackColor = true;
+            this.editTypeBut.Click += new System.EventHandler(this.editCarTypeButClick);
             // 
             // Employee
             // 
@@ -1707,9 +1733,9 @@
             this.carsTab.ResumeLayout(false);
             this.carsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.carTypeTab.ResumeLayout(false);
+            this.carTypeTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carTypeView)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.branch_view)).EndInit();
@@ -1725,7 +1751,7 @@
         private System.Windows.Forms.Button CustomerBtn;
         private System.Windows.Forms.TabControl Tabs;
         private System.Windows.Forms.TabPage carsTab;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage carTypeTab;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
@@ -1849,26 +1875,26 @@
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Button searchCarBut;
         private System.Windows.Forms.Button addCarBut;
-        private System.Windows.Forms.Button carTypeSBut;
-        private System.Windows.Forms.Button addCarTypeBut;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Button typeSBut;
+        private System.Windows.Forms.Button addTypeBut;
+        private System.Windows.Forms.DataGridView carTypeView;
         private System.Windows.Forms.DataGridViewTextBoxColumn MODEL_ID_COL;
         private System.Windows.Forms.DataGridViewTextBoxColumn RENTAL_CLASS_COL;
         private System.Windows.Forms.DataGridViewTextBoxColumn DAILY_RENTAL_COST_COL;
         private System.Windows.Forms.DataGridViewTextBoxColumn WEEKLY_RENTAL_COST_COL;
         private System.Windows.Forms.DataGridViewTextBoxColumn MONTHLY_RENTAL_COST_COL;
         private System.Windows.Forms.Label rentalCostSLabel;
-        private System.Windows.Forms.Label rentalClassSLabel;
+        private System.Windows.Forms.Label typeSDescLabel;
         private System.Windows.Forms.Label modelSLabel;
         private System.Windows.Forms.Label rentalCostLabel;
-        private System.Windows.Forms.Label rentalClassLabel;
+        private System.Windows.Forms.Label typeDescLabel;
         private System.Windows.Forms.Label ModelLabel;
         private System.Windows.Forms.TextBox modelS;
-        private System.Windows.Forms.TextBox DailyRentText;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox ModelText;
-        private System.Windows.Forms.ComboBox rentalCostS;
-        private System.Windows.Forms.ComboBox rentalClassS;
+        private System.Windows.Forms.TextBox dRent;
+        private System.Windows.Forms.TextBox typeDesc;
+        private System.Windows.Forms.TextBox modelID;
+        private System.Windows.Forms.ComboBox rCostS;
+        private System.Windows.Forms.ComboBox typeDescS;
         private System.Windows.Forms.Button branch_edit_but;
         private System.Windows.Forms.TextBox branch_search_text_box;
         private System.Windows.Forms.ComboBox branch_search_box;
@@ -1876,7 +1902,9 @@
         private System.Windows.Forms.Label DailyRentLabel;
         private System.Windows.Forms.Label WeeklyRentLabel;
         private System.Windows.Forms.Label MonthlyRentLabel;
-        private System.Windows.Forms.TextBox MonthlyRentText;
-        private System.Windows.Forms.TextBox WeeklyRentText;
+        private System.Windows.Forms.TextBox mRent;
+        private System.Windows.Forms.TextBox wRent;
+        private System.Windows.Forms.Button editTypeBut;
+        private System.Windows.Forms.Button delTypeBut;
     }
 }

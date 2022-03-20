@@ -39,6 +39,7 @@ namespace WindowsFormsApp1
                 myConnection.Open(); // Open connection
                 myCommand = new SqlCommand();
                 myCommand.Connection = myConnection; // Link the command stream to the connection
+                refreshCarType();
             }
             catch (Exception e)
             {
@@ -62,6 +63,145 @@ namespace WindowsFormsApp1
             f1.ShowDialog();
             this.Close();
         }
+
+        //**********************
+        //Start of Car Types Tab
+        //**********************
+
+        //refreshCarType (re)populates the data view with entries from the Car_Type database table
+        private void refreshCarType()
+        {
+            myCommand.CommandText = "select * from Car_Type";
+
+            try
+            { 
+                myReader = myCommand.ExecuteReader();
+
+                carTypeView.Rows.Clear();
+                while (myReader.Read())
+                {
+                    carTypeView.Rows.Add(myReader["Car_Type_ID"].ToString(), myReader["Description"].ToString(), myReader["Daily_Rate"].ToString(), myReader["Weekly_Rate"].ToString(), myReader["Monthly_Rate"].ToString());
+                }
+
+                myReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+        }
+
+        //add new Car Type to Car_Type database table
+        private void addCarTypeButClick(object sender, EventArgs e)
+        {
+            if (modelID.Text.Length > 0 && typeDesc.Text.Length > 0 && dRent.Text.Length > 0
+                && wRent.Text.Length > 0 && mRent.Text.Length > 0)
+            {
+                try
+                {
+                    myCommand.CommandText = "insert into Car_Type values (" + modelID.Text + ",' " +
+                        typeDesc.Text + "',' " + dRent.Text + "',' " + wRent.Text + "',' " +
+                        mRent.Text + "')";
+                    MessageBox.Show(myCommand.CommandText);
+
+                    myCommand.ExecuteNonQuery();
+                    refreshCarType();
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Required Fields Missing or Incorrect");
+            }
+
+        }
+
+        //delete car type from Car_Type database table
+        private void delCarTypeButClick(object sender, EventArgs e)
+        {
+
+            if (modelID.Text.Length > 0 )
+            {
+                myCommand.CommandText = "delete from Car_Type where Car_Type_ID = " + modelID.Text;
+
+                try
+                {
+                    MessageBox.Show(myCommand.CommandText);
+                    myCommand.ExecuteNonQuery();
+                    refreshCarType();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Valid Car Type ID to Delete Entered");
+            }
+
+        }
+
+        //edit car type from Car_Type database table
+        private void editCarTypeButClick(object sender, EventArgs e)
+        {
+            if (modelID.Text.Length > 0)
+            {
+                int check = 0;
+                myCommand.CommandText = "update Car_Type set ";
+
+                if (typeDesc.Text.Length > 0)
+                {
+                    myCommand.CommandText += "Description = '" + typeDesc.Text + "'";
+                    check = 1;
+                }
+                if (dRent.Text.Length > 0)
+                {
+                    if (check == 1) { myCommand.CommandText += ", ";  }
+                    myCommand.CommandText += "Daily_Rate = " + dRent.Text;
+                    check = 1;
+                }
+                if (wRent.Text.Length > 0)
+                {
+                    if (check == 1) { myCommand.CommandText += ", "; }
+                    myCommand.CommandText += "Weekly_Rate = " + wRent.Text;
+                    check = 1;
+                }
+                if (mRent.Text.Length > 0)
+                {
+                    if (check == 1) { myCommand.CommandText += ", "; }
+                    myCommand.CommandText += "Monthly_Rate = " + mRent.Text;
+                    check = 1;
+                }
+
+                myCommand.CommandText += " where Car_Type_ID = " + modelID.Text + ";";
+
+                if (check == 0)
+                {
+                    MessageBox.Show("No edit fields entered");
+                }
+
+                else
+                {
+                    try
+                    {
+                        MessageBox.Show(myCommand.CommandText);
+                        myCommand.ExecuteNonQuery();
+                        refreshCarType();
+                    }
+
+                    catch (Exception e2)
+                    {
+                        MessageBox.Show("Invalid value(s) entered");
+                    }
+                }
+            }
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -133,6 +273,7 @@ namespace WindowsFormsApp1
 
         }
 
+
         private void branch_refresh_but_Click(object sender, EventArgs e)
         {
             myCommand.CommandText = "select * from Branch";
@@ -149,7 +290,7 @@ namespace WindowsFormsApp1
                 }
 
                 myReader.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -172,6 +313,7 @@ namespace WindowsFormsApp1
 
         }
 
+
         private void branch_add_but_Click(object sender, EventArgs e)
         {
             if (branch_id_txt.Text.Length > 0 && branch_descrip_txt.Text.Length > 0 && branch_street_add1_txt.Text.Length > 0 &&
@@ -193,7 +335,9 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show(e2.ToString(), "Error");
                 }
-            } else {
+            }
+            else
+            {
                 MessageBox.Show("Required Fields Missing or Incorrect");
             }
         }
@@ -205,12 +349,12 @@ namespace WindowsFormsApp1
             {
                 myCommand.CommandText = "update Branch set ";
 
-                if(branch_descrip_txt.Text.Length > 0)
+                if (branch_descrip_txt.Text.Length > 0)
                 {
                     myCommand.CommandText += "Description = '" + branch_descrip_txt.Text + "'";
                     add = 1;
                 }
-                if(branch_street_add1_txt.Text.Length > 0)
+                if (branch_street_add1_txt.Text.Length > 0)
                 {
                     if (add == 1) { myCommand.CommandText += ","; }
                     myCommand.CommandText += "Street_Address1 = '" + branch_street_add1_txt.Text + "'";
@@ -255,7 +399,8 @@ namespace WindowsFormsApp1
 
                     myCommand.ExecuteNonQuery();
                     branch_refresh_but.PerformClick();
-                } else
+                }
+                else
                 {
                     MessageBox.Show("No Fields Edited");
                 }
@@ -282,7 +427,7 @@ namespace WindowsFormsApp1
                     invalid = 2;
                     MessageBox.Show("BID Must be Integer");
                 }
-            } 
+            }
             else if (branch_search_box.Text.Equals("Description"))
             {
                 myCommand.CommandText += "Description = ";
@@ -380,6 +525,16 @@ namespace WindowsFormsApp1
         }
 
         private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rentalClassSLabel_Click(object sender, EventArgs e)
         {
 
         }
