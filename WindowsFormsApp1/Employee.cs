@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         public Employee()
         {
             InitializeComponent();
+            
 
             //Change the server here for your guys' own servers
             String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDataBase; Trusted_Connection = yes;";
@@ -46,6 +47,13 @@ namespace WindowsFormsApp1
                 MessageBox.Show(e.ToString(), "Error");
                 this.Close();
             }
+
+            //Populate Cars tab combo boxes with available Branch_ID's, Car_Type_ID's and VIN's
+            Fill_Cars_BranchID();
+            Fill_Cars_Car_Type_ID();
+            Fill_Cars_Delete_VIN();
+            refresh_cars();
+
         }
 
         private void CustomerBtn_Click(object sender, EventArgs e)
@@ -107,6 +115,7 @@ namespace WindowsFormsApp1
 
                     myCommand.ExecuteNonQuery();
                     refreshCarType();
+                    Fill_Cars_Car_Type_ID(); // Update Car Type ID dropdown box in Cars tab with new Car type
                 }
                 catch (Exception e2)
                 {
@@ -133,6 +142,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show(myCommand.CommandText);
                     myCommand.ExecuteNonQuery();
                     refreshCarType();
+                    Fill_Cars_Car_Type_ID();    // Update Car Type ID dropdown box in Cars tab with removed branch.
                 }
                 catch (Exception ex)
                 {
@@ -235,7 +245,7 @@ namespace WindowsFormsApp1
 
         private void carsTab_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -330,6 +340,7 @@ namespace WindowsFormsApp1
 
                     myCommand.ExecuteNonQuery();
                     branch_refresh_but.PerformClick();
+                    Fill_Cars_BranchID();   // Update Branch ID dropdown box in Cars tab with new branch available.
                 }
                 catch (Exception e2)
                 {
@@ -512,6 +523,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show(myCommand.CommandText);
                     myCommand.ExecuteNonQuery();
                     branch_refresh_but.PerformClick();
+                    Fill_Cars_BranchID();   // Update Branch ID dropdown box in Cars tab with removed branch.
                 }
                 catch (Exception ex)
                 {
@@ -826,5 +838,356 @@ namespace WindowsFormsApp1
                 MessageBox.Show(ex.ToString(), "Error");
             }
         }
+
+
+        private void cars_branch_id_dropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //************************************************
+        // Cars Tab
+        //************************************************
+
+
+        //Populate Cars Branch ID combo box with all available branch ID's in the Branch table
+        void Fill_Cars_BranchID()
+        {
+            myCommand.CommandText = "select * from Branch";
+
+            try
+            {
+                cars_branch_id_dropdown.Items.Clear();
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    String branch_id = myReader["BID"].ToString();
+                    cars_branch_id_dropdown.Items.Add(branch_id);
+                }
+                myReader.Close();
+                
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+        }
+
+        //Populate Cars Car Type ID combo box with all available Car Type ID's in the Car Types table
+        void Fill_Cars_Car_Type_ID()
+        {
+            myCommand.CommandText = "select * from Car_Type";
+
+            try
+            {
+                cars_car_type_id_dropdown.Items.Clear();
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    String car_type_id = myReader["Car_Type_ID"].ToString();
+                    cars_car_type_id_dropdown.Items.Add(car_type_id);
+                }
+                myReader.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+        }
+        
+        //Populate Cars Delete VIN combo box with all available Car VINs in the Cars table
+        void Fill_Cars_Delete_VIN()
+        {
+            myCommand.CommandText = "select * from Car";
+
+            try
+            {
+                cars_delete_dropdown.Items.Clear();
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    String car_vin = myReader["VIN"].ToString();
+                    cars_delete_dropdown.Items.Add(car_vin);
+                }
+                cars_delete_dropdown.Text = "";
+                myReader.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+
+        }
+
+
+        //Refresh Cars tab DataGridView with all records in Car table
+        private void refresh_cars()
+        {
+            myCommand.CommandText = "select * from Car";
+
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+                cars_view.Rows.Clear();
+                while (myReader.Read())
+                {
+                    cars_view.Rows.Add(myReader["VIN"].ToString(), myReader["Make"].ToString(), myReader["Model"].ToString(), myReader["Year"].ToString(),
+                        myReader["No_of_Seats"].ToString(), myReader["Colour"].ToString(), myReader["Insurance_No"].ToString(), myReader["Odometer_No"].ToString(),
+                        myReader["Branch_ID"].ToString(), myReader["Car_Type_ID"].ToString());
+                }
+                myReader.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+
+        }
+
+
+        //Add Car to Car Table
+        private void btn_cars_add_Click(object sender, EventArgs e)
+        {
+
+            if (cars_vin_text.TextLength > 0 && cars_make_txt.TextLength > 0 && cars_model_txt.TextLength > 0 && cars_year_txt.TextLength > 0 
+                && cars_no_seats_txt.TextLength > 0 && cars_colour_txt.TextLength > 0 && cars_insurance_no_txt.TextLength > 0 
+                && cars_odometer_no_txt.TextLength > 0 && cars_branch_id_dropdown.Text.Length > 0 && cars_car_type_id_dropdown.Text.Length > 0)
+            {
+                try
+                {
+                    myCommand.CommandText = "insert into Car values (" + cars_vin_text.Text + ",'" + cars_make_txt.Text + "','" + cars_model_txt.Text +
+                        "','" + cars_year_txt.Text + "','" + cars_no_seats_txt.Text + "','" + cars_colour_txt.Text + "','" + cars_insurance_no_txt.Text + "','" +
+                        cars_odometer_no_txt.Text + "','" + cars_branch_id_dropdown.Text + "','" + cars_car_type_id_dropdown.Text + "')";
+
+                    myCommand.ExecuteNonQuery();
+                    refresh_cars();
+                    Fill_Cars_Delete_VIN();
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Required Fields Missing or Incorrect");
+            }
+        }
+
+        //Refresh Cars tab DataGridView when Show All button is clicked
+        private void btn_cars_show_all_Click(object sender, EventArgs e)
+        {
+            refresh_cars();
+        }
+
+        // Delete Car from Car table
+        private void btn_cars_delete_Click(object sender, EventArgs e)
+        {
+            if (cars_delete_dropdown.Text.Length > 0)
+            {
+                myCommand.CommandText = "delete from Car where VIN = " + cars_delete_dropdown.Text;
+
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                    refresh_cars();
+                    Fill_Cars_Delete_VIN();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select a VIN to Delete");
+            }
+        }
+
+        //Edit a Car in the Cars table
+        private void btn_cars_edit_Click(object sender, EventArgs e)
+        {
+            int editFlag = 0;
+
+            try
+            {
+                myCommand.CommandText = "update Car set ";
+
+                if (cars_vin_text.Text.Length > 0)
+                {
+                    if (cars_make_txt.TextLength > 0)
+                    {
+                        myCommand.CommandText += "Make = '" + cars_make_txt.Text + "'";
+                        editFlag = 1;
+                    }
+
+                    if (cars_model_txt.TextLength > 0)
+                    {
+                        if (editFlag == 1) { myCommand.CommandText += ","; }
+                        myCommand.CommandText += "Model = '" + cars_model_txt.Text + "'";
+                        editFlag = 1;
+                    }
+
+                    if (cars_year_txt.TextLength > 0)
+                    {
+                        if (editFlag == 1) { myCommand.CommandText += ","; }
+                        myCommand.CommandText += "Year = '" + cars_year_txt.Text + "'";
+                        editFlag = 1;
+                    }
+
+                    if (cars_no_seats_txt.TextLength > 0)
+                    {
+                        if (editFlag == 1) { myCommand.CommandText += ","; }
+                        myCommand.CommandText += "No_of_Seats = '" + cars_no_seats_txt.Text + "'";
+                        editFlag = 1;
+                    }
+
+                    if (cars_colour_txt.TextLength > 0)
+                    {
+                        if (editFlag == 1) { myCommand.CommandText += ","; }
+                        myCommand.CommandText += "Colour = '" + cars_colour_txt.Text + "'";
+                        editFlag = 1;
+                    }
+
+                    if (cars_insurance_no_txt.TextLength > 0)
+                    {
+                        if (editFlag == 1) { myCommand.CommandText += ","; }
+                        myCommand.CommandText += "Insurance_No = '" + cars_insurance_no_txt.Text + "'";
+                        editFlag = 1;
+                    }
+
+                    if (cars_odometer_no_txt.TextLength > 0)
+                    {
+                        if (editFlag == 1) { myCommand.CommandText += ","; }
+                        myCommand.CommandText += "Odometer_No = '" + cars_odometer_no_txt.Text + "'";
+                        editFlag = 1;
+                    }
+
+
+                    if (cars_branch_id_dropdown.Text.Length > 0)
+                    {
+                        if (editFlag == 1) { myCommand.CommandText += ","; }
+                        myCommand.CommandText += "Branch_ID = '" + cars_branch_id_dropdown.Text + "'";
+                        editFlag = 1;
+                    }
+
+                    if (cars_car_type_id_dropdown.Text.Length > 0)
+                    {
+                        if (editFlag == 1) { myCommand.CommandText += ","; }
+                        myCommand.CommandText += "Car_Type_ID = '" + cars_car_type_id_dropdown.Text + "'";
+                        editFlag = 1;
+                    }
+
+                    
+                    if (editFlag == 1)
+                    {
+                        MessageBox.Show(myCommand.CommandText);
+                        myCommand.CommandText += "where VIN = " + cars_vin_text.Text + ";";
+                        myCommand.ExecuteNonQuery();
+                        refresh_cars();
+                        Fill_Cars_Delete_VIN();
+                    }
+                    else if (editFlag == 0)
+                    {
+                        MessageBox.Show("No Fields Edited");
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Enter a Valid VIN");
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+
+        }
+
+        //Update Car DataGridView with records matching the selected search parameters
+        private void btn_cars_search_Click(object sender, EventArgs e)
+        {
+            if (cars_search_dropdown.Text.Length > 0)
+            {
+
+                myCommand.CommandText = "select * from Car where " + cars_search_attribute_dropdown.Text + " = '" + cars_search_dropdown.Text + "';";
+
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+                    cars_view.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        cars_view.Rows.Add(myReader["VIN"].ToString(), myReader["Make"].ToString(), myReader["Model"].ToString(), myReader["Year"].ToString(),
+                        myReader["No_of_Seats"].ToString(), myReader["Colour"].ToString(), myReader["Insurance_No"].ToString(), myReader["Odometer_No"].ToString(),
+                        myReader["Branch_ID"].ToString(), myReader["Car_Type_ID"].ToString());
+                    }
+                    myReader.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+
+            }
+        }
+
+        //Fill Cars - Search combo box with all items available based on the selected search attribute
+        void Fill_Cars_Search_Dropdown(String search_attribute)
+        {
+            myCommand.CommandText = "select * from Car";
+
+            try
+            {
+                cars_search_dropdown.Items.Clear();
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    String val = myReader[search_attribute].ToString();
+                    
+                    if (!cars_search_dropdown.Items.Contains(val)) 
+                    { 
+                        cars_search_dropdown.Items.Add(val); 
+                    } 
+                   
+                }
+                myReader.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+        }
+
+        //Fill Cars search box with all available data when the selected attribute changes
+        private void cars_search_attribute_dropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cars_search_attribute_dropdown.Text != "--- Select ---")
+            {
+                Fill_Cars_Search_Dropdown(cars_search_attribute_dropdown.Text);
+                cars_search_dropdown.Text = "";
+            }
+
+        }
     }
+
+
+
+
 }
