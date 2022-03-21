@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -377,6 +377,44 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("No Valid BID to Delete Entered");
             }
+        }
+
+        private void label1_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_add_car_Click(object sender, EventArgs e)
+        {
+            /*
+            myCommand.CommandText = "insert into Car values (" + cars_vin_txt.Text + ",'" + cars_make_txt.Text + "','" + cars_model_txt.Text + "','"
+                + cars_year_txt.Text + "','" + cars_no_seats_txt.Text + "','" + cars_colour_txt.Text + "','" + cars_insurance_no_txt.Text + "','" + int.Parse(cars_odometer_txt.Text) + "','"
+                + int.Parse(cars_branch_id_txt.Text) + "','" + int.Parse(cars_car_type_drop_down.Text) + "')";
+
+            try
+            {
+                myCommand.ExecuteNonQuery();
+
+            }
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+            
+            */
+
+           //MessageBox.Show("Car Added Successfully");
+
         }
     }
 }
