@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = DESKTOP-N349OTM; Database = master; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDataBase; Trusted_Connection = yes;";
 
 
             /* Starting the connection */

@@ -31,33 +31,9 @@
             this.CustomerBtn = new System.Windows.Forms.Button();
             this.Tabs = new System.Windows.Forms.TabControl();
             this.carsTab = new System.Windows.Forms.TabPage();
-            this.modelYearSLabel = new System.Windows.Forms.Label();
-            this.colourSLabel = new System.Windows.Forms.Label();
-            this.bodySLabel = new System.Windows.Forms.Label();
-            this.fuelTypeSLabel = new System.Windows.Forms.Label();
-            this.carTypeSLabel = new System.Windows.Forms.Label();
-            this.noSeatsSLabel = new System.Windows.Forms.Label();
-            this.modelNameSLabel = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.searchCarBut = new System.Windows.Forms.Button();
             this.addCarBut = new System.Windows.Forms.Button();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.vinSLabel = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.VIN_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAR_TYPE_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MODEL_NAME_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MODEL_YEAR_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BODY_STYLE_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COLOUR_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NO_SEATS_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FUEL_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -139,7 +115,15 @@
             this.branch_dscrip_label = new System.Windows.Forms.Label();
             this.branch_id_label = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cust_del_but = new System.Windows.Forms.Button();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.cust_id_search_label = new System.Windows.Forms.Label();
+            this.cust_id_LU_txt = new System.Windows.Forms.TextBox();
+            this.cust_search_box_txt = new System.Windows.Forms.TextBox();
+            this.cust_search_box = new System.Windows.Forms.Label();
+            this.cust_search_but = new System.Windows.Forms.Button();
             this.cust_refresh_but = new System.Windows.Forms.Button();
+            this.cust_edit_but = new System.Windows.Forms.Button();
             this.customer_view = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -185,14 +169,27 @@
             this.cust_f_name_label = new System.Windows.Forms.Label();
             this.cust_custID_label = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.cust_edit_but = new System.Windows.Forms.Button();
-            this.cust_search_but = new System.Windows.Forms.Button();
-            this.cust_search_box = new System.Windows.Forms.Label();
-            this.cust_search_box_txt = new System.Windows.Forms.TextBox();
-            this.cust_id_LU_txt = new System.Windows.Forms.TextBox();
-            this.cust_id_search_label = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.cust_del_but = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.VIN_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKE_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODEL_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.YEAR_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NO_SEATS_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COLOUR_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INSURANCE_NO_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ODOMETER_NO_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BRANCH_ID_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAR_TYPE_ID_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tabs.SuspendLayout();
             this.carsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -230,24 +227,19 @@
             // 
             // carsTab
             // 
-            this.carsTab.Controls.Add(this.modelYearSLabel);
-            this.carsTab.Controls.Add(this.colourSLabel);
-            this.carsTab.Controls.Add(this.bodySLabel);
-            this.carsTab.Controls.Add(this.fuelTypeSLabel);
-            this.carsTab.Controls.Add(this.carTypeSLabel);
-            this.carsTab.Controls.Add(this.noSeatsSLabel);
-            this.carsTab.Controls.Add(this.modelNameSLabel);
-            this.carsTab.Controls.Add(this.comboBox8);
+            this.carsTab.Controls.Add(this.button4);
+            this.carsTab.Controls.Add(this.button3);
+            this.carsTab.Controls.Add(this.comboBox4);
+            this.carsTab.Controls.Add(this.textBox8);
+            this.carsTab.Controls.Add(this.comboBox3);
+            this.carsTab.Controls.Add(this.label3);
+            this.carsTab.Controls.Add(this.button2);
+            this.carsTab.Controls.Add(this.comboBox2);
+            this.carsTab.Controls.Add(this.label2);
+            this.carsTab.Controls.Add(this.label1);
+            this.carsTab.Controls.Add(this.textBox7);
             this.carsTab.Controls.Add(this.searchCarBut);
             this.carsTab.Controls.Add(this.addCarBut);
-            this.carsTab.Controls.Add(this.comboBox7);
-            this.carsTab.Controls.Add(this.comboBox6);
-            this.carsTab.Controls.Add(this.comboBox5);
-            this.carsTab.Controls.Add(this.comboBox4);
-            this.carsTab.Controls.Add(this.comboBox3);
-            this.carsTab.Controls.Add(this.comboBox2);
-            this.carsTab.Controls.Add(this.vinSLabel);
-            this.carsTab.Controls.Add(this.textBox7);
             this.carsTab.Controls.Add(this.dataGridView3);
             this.carsTab.Controls.Add(this.textBox6);
             this.carsTab.Controls.Add(this.textBox5);
@@ -275,381 +267,195 @@
             this.carsTab.UseVisualStyleBackColor = true;
             this.carsTab.Click += new System.EventHandler(this.carsTab_Click);
             // 
-            // modelYearSLabel
-            // 
-            this.modelYearSLabel.AutoSize = true;
-            this.modelYearSLabel.Location = new System.Drawing.Point(234, 388);
-            this.modelYearSLabel.Name = "modelYearSLabel";
-            this.modelYearSLabel.Size = new System.Drawing.Size(61, 13);
-            this.modelYearSLabel.TabIndex = 36;
-            this.modelYearSLabel.Text = "Model Year";
-            // 
-            // colourSLabel
-            // 
-            this.colourSLabel.AutoSize = true;
-            this.colourSLabel.Location = new System.Drawing.Point(234, 439);
-            this.colourSLabel.Name = "colourSLabel";
-            this.colourSLabel.Size = new System.Drawing.Size(37, 13);
-            this.colourSLabel.TabIndex = 35;
-            this.colourSLabel.Text = "Colour";
-            // 
-            // bodySLabel
-            // 
-            this.bodySLabel.AutoSize = true;
-            this.bodySLabel.Location = new System.Drawing.Point(5, 439);
-            this.bodySLabel.Name = "bodySLabel";
-            this.bodySLabel.Size = new System.Drawing.Size(57, 13);
-            this.bodySLabel.TabIndex = 34;
-            this.bodySLabel.Text = "Body Style";
-            // 
-            // fuelTypeSLabel
-            // 
-            this.fuelTypeSLabel.AutoSize = true;
-            this.fuelTypeSLabel.Location = new System.Drawing.Point(234, 487);
-            this.fuelTypeSLabel.Name = "fuelTypeSLabel";
-            this.fuelTypeSLabel.Size = new System.Drawing.Size(54, 13);
-            this.fuelTypeSLabel.TabIndex = 33;
-            this.fuelTypeSLabel.Text = "Fuel Type";
-            this.fuelTypeSLabel.Click += new System.EventHandler(this.fuelTypeSLabel_Click);
-            // 
-            // carTypeSLabel
-            // 
-            this.carTypeSLabel.AutoSize = true;
-            this.carTypeSLabel.Location = new System.Drawing.Point(234, 339);
-            this.carTypeSLabel.Name = "carTypeSLabel";
-            this.carTypeSLabel.Size = new System.Drawing.Size(50, 13);
-            this.carTypeSLabel.TabIndex = 32;
-            this.carTypeSLabel.Text = "Car Type";
-            // 
-            // noSeatsSLabel
-            // 
-            this.noSeatsSLabel.AutoSize = true;
-            this.noSeatsSLabel.Location = new System.Drawing.Point(5, 495);
-            this.noSeatsSLabel.Name = "noSeatsSLabel";
-            this.noSeatsSLabel.Size = new System.Drawing.Size(86, 13);
-            this.noSeatsSLabel.TabIndex = 31;
-            this.noSeatsSLabel.Text = "Number of Seats";
-            // 
-            // modelNameSLabel
-            // 
-            this.modelNameSLabel.AutoSize = true;
-            this.modelNameSLabel.Location = new System.Drawing.Point(5, 388);
-            this.modelNameSLabel.Name = "modelNameSLabel";
-            this.modelNameSLabel.Size = new System.Drawing.Size(67, 13);
-            this.modelNameSLabel.TabIndex = 30;
-            this.modelNameSLabel.Text = "Model Name";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(294, 487);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 21);
-            this.comboBox8.TabIndex = 29;
-            this.comboBox8.Tag = "carTypeOptions";
-            // 
             // searchCarBut
             // 
-            this.searchCarBut.Location = new System.Drawing.Point(181, 281);
+            this.searchCarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchCarBut.Location = new System.Drawing.Point(579, 533);
             this.searchCarBut.Name = "searchCarBut";
-            this.searchCarBut.Size = new System.Drawing.Size(94, 23);
+            this.searchCarBut.Size = new System.Drawing.Size(94, 30);
             this.searchCarBut.TabIndex = 28;
-            this.searchCarBut.Text = "Search For Car";
+            this.searchCarBut.Text = "Search";
             this.searchCarBut.UseVisualStyleBackColor = true;
             // 
             // addCarBut
             // 
-            this.addCarBut.Location = new System.Drawing.Point(181, 16);
+            this.addCarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCarBut.Location = new System.Drawing.Point(19, 453);
             this.addCarBut.Name = "addCarBut";
-            this.addCarBut.Size = new System.Drawing.Size(94, 23);
+            this.addCarBut.Size = new System.Drawing.Size(94, 34);
             this.addCarBut.TabIndex = 27;
-            this.addCarBut.Text = "Add New Car";
+            this.addCarBut.Text = "Add Car";
             this.addCarBut.UseVisualStyleBackColor = true;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(84, 385);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 21);
-            this.comboBox7.TabIndex = 26;
-            this.comboBox7.Tag = "carTypeOptions";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(294, 385);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 21);
-            this.comboBox6.TabIndex = 25;
-            this.comboBox6.Tag = "carTypeOptions";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(84, 436);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 24;
-            this.comboBox5.Tag = "carTypeOptions";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(294, 436);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 23;
-            this.comboBox4.Tag = "carTypeOptions";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(84, 487);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 22;
-            this.comboBox3.Tag = "carTypeOptions";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(294, 336);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 21;
-            this.comboBox2.Tag = "carTypeOptions";
-            // 
-            // vinSLabel
-            // 
-            this.vinSLabel.AutoSize = true;
-            this.vinSLabel.Location = new System.Drawing.Point(5, 341);
-            this.vinSLabel.Name = "vinSLabel";
-            this.vinSLabel.Size = new System.Drawing.Size(25, 13);
-            this.vinSLabel.TabIndex = 20;
-            this.vinSLabel.Text = "VIN";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(84, 337);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 20);
-            this.textBox7.TabIndex = 18;
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.VIN_COL,
-            this.CAR_TYPE_COL,
-            this.MODEL_NAME_COL,
-            this.MODEL_YEAR_COL,
-            this.BODY_STYLE_COL,
-            this.COLOUR_COL,
+            this.MAKE_COL,
+            this.MODEL_COL,
+            this.YEAR_COL,
             this.NO_SEATS_COL,
-            this.FUEL_COL});
-            this.dataGridView3.Location = new System.Drawing.Point(513, 0);
+            this.COLOUR_COL,
+            this.INSURANCE_NO_COL,
+            this.ODOMETER_NO_COL,
+            this.BRANCH_ID_COL,
+            this.CAR_TYPE_ID_COL});
+            this.dataGridView3.Location = new System.Drawing.Point(256, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.Size = new System.Drawing.Size(841, 522);
+            this.dataGridView3.Size = new System.Drawing.Size(1085, 487);
             this.dataGridView3.TabIndex = 17;
-            // 
-            // VIN_COL
-            // 
-            this.VIN_COL.HeaderText = "VIN";
-            this.VIN_COL.MinimumWidth = 6;
-            this.VIN_COL.Name = "VIN_COL";
-            this.VIN_COL.ReadOnly = true;
-            this.VIN_COL.Width = 125;
-            // 
-            // CAR_TYPE_COL
-            // 
-            this.CAR_TYPE_COL.HeaderText = "Car Type";
-            this.CAR_TYPE_COL.MinimumWidth = 6;
-            this.CAR_TYPE_COL.Name = "CAR_TYPE_COL";
-            this.CAR_TYPE_COL.ReadOnly = true;
-            this.CAR_TYPE_COL.Width = 125;
-            // 
-            // MODEL_NAME_COL
-            // 
-            this.MODEL_NAME_COL.HeaderText = "Model Name";
-            this.MODEL_NAME_COL.MinimumWidth = 6;
-            this.MODEL_NAME_COL.Name = "MODEL_NAME_COL";
-            this.MODEL_NAME_COL.ReadOnly = true;
-            this.MODEL_NAME_COL.Width = 125;
-            // 
-            // MODEL_YEAR_COL
-            // 
-            this.MODEL_YEAR_COL.HeaderText = "Model Year";
-            this.MODEL_YEAR_COL.MinimumWidth = 6;
-            this.MODEL_YEAR_COL.Name = "MODEL_YEAR_COL";
-            this.MODEL_YEAR_COL.ReadOnly = true;
-            this.MODEL_YEAR_COL.Width = 125;
-            // 
-            // BODY_STYLE_COL
-            // 
-            this.BODY_STYLE_COL.HeaderText = "Body Style";
-            this.BODY_STYLE_COL.MinimumWidth = 6;
-            this.BODY_STYLE_COL.Name = "BODY_STYLE_COL";
-            this.BODY_STYLE_COL.ReadOnly = true;
-            this.BODY_STYLE_COL.Width = 125;
-            // 
-            // COLOUR_COL
-            // 
-            this.COLOUR_COL.HeaderText = "Colour";
-            this.COLOUR_COL.MinimumWidth = 6;
-            this.COLOUR_COL.Name = "COLOUR_COL";
-            this.COLOUR_COL.ReadOnly = true;
-            this.COLOUR_COL.Width = 125;
-            // 
-            // NO_SEATS_COL
-            // 
-            this.NO_SEATS_COL.HeaderText = "Number of Seats";
-            this.NO_SEATS_COL.MinimumWidth = 6;
-            this.NO_SEATS_COL.Name = "NO_SEATS_COL";
-            this.NO_SEATS_COL.ReadOnly = true;
-            this.NO_SEATS_COL.Width = 125;
-            // 
-            // FUEL_COL
-            // 
-            this.FUEL_COL.HeaderText = "Fuel Type";
-            this.FUEL_COL.MinimumWidth = 6;
-            this.FUEL_COL.Name = "FUEL_COL";
-            this.FUEL_COL.ReadOnly = true;
-            this.FUEL_COL.Width = 125;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(294, 174);
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(129, 315);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(121, 20);
+            this.textBox6.Size = new System.Drawing.Size(121, 23);
             this.textBox6.TabIndex = 16;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(84, 178);
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(129, 195);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 20);
+            this.textBox5.Size = new System.Drawing.Size(121, 23);
             this.textBox5.TabIndex = 15;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(294, 141);
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(129, 235);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
+            this.textBox4.Size = new System.Drawing.Size(121, 23);
             this.textBox4.TabIndex = 14;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(84, 138);
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(129, 275);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.Size = new System.Drawing.Size(121, 23);
             this.textBox3.TabIndex = 13;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(294, 102);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(129, 155);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
+            this.textBox2.Size = new System.Drawing.Size(121, 23);
             this.textBox2.TabIndex = 12;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 102);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(129, 115);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.Size = new System.Drawing.Size(121, 23);
             this.textBox1.TabIndex = 11;
             // 
             // fuelTypeLabel
             // 
             this.fuelTypeLabel.AutoSize = true;
-            this.fuelTypeLabel.Location = new System.Drawing.Point(225, 181);
+            this.fuelTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fuelTypeLabel.Location = new System.Drawing.Point(16, 318);
             this.fuelTypeLabel.Name = "fuelTypeLabel";
-            this.fuelTypeLabel.Size = new System.Drawing.Size(54, 13);
+            this.fuelTypeLabel.Size = new System.Drawing.Size(97, 17);
             this.fuelTypeLabel.TabIndex = 10;
-            this.fuelTypeLabel.Text = "Fuel Type";
+            this.fuelTypeLabel.Text = "Odometer No.";
             this.fuelTypeLabel.Click += new System.EventHandler(this.label7_Click);
             // 
             // noSeatsLabel
             // 
             this.noSeatsLabel.AutoSize = true;
-            this.noSeatsLabel.Location = new System.Drawing.Point(3, 181);
+            this.noSeatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noSeatsLabel.Location = new System.Drawing.Point(16, 198);
             this.noSeatsLabel.Name = "noSeatsLabel";
-            this.noSeatsLabel.Size = new System.Drawing.Size(86, 13);
+            this.noSeatsLabel.Size = new System.Drawing.Size(86, 17);
             this.noSeatsLabel.TabIndex = 9;
-            this.noSeatsLabel.Text = "Number of Seats";
+            this.noSeatsLabel.Text = "No. of Seats";
             // 
             // colourLabel
             // 
             this.colourLabel.AutoSize = true;
-            this.colourLabel.Location = new System.Drawing.Point(225, 141);
+            this.colourLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colourLabel.Location = new System.Drawing.Point(16, 238);
             this.colourLabel.Name = "colourLabel";
-            this.colourLabel.Size = new System.Drawing.Size(37, 13);
+            this.colourLabel.Size = new System.Drawing.Size(49, 17);
             this.colourLabel.TabIndex = 8;
             this.colourLabel.Text = "Colour";
             // 
             // bodyStyleLabel
             // 
             this.bodyStyleLabel.AutoSize = true;
-            this.bodyStyleLabel.Location = new System.Drawing.Point(5, 141);
+            this.bodyStyleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bodyStyleLabel.Location = new System.Drawing.Point(16, 278);
             this.bodyStyleLabel.Name = "bodyStyleLabel";
-            this.bodyStyleLabel.Size = new System.Drawing.Size(57, 13);
+            this.bodyStyleLabel.Size = new System.Drawing.Size(96, 17);
             this.bodyStyleLabel.TabIndex = 7;
-            this.bodyStyleLabel.Text = "Body Style";
+            this.bodyStyleLabel.Text = "Insurance No.";
             // 
             // modelYearLabel
             // 
             this.modelYearLabel.AutoSize = true;
-            this.modelYearLabel.Location = new System.Drawing.Point(225, 105);
+            this.modelYearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modelYearLabel.Location = new System.Drawing.Point(16, 158);
             this.modelYearLabel.Name = "modelYearLabel";
-            this.modelYearLabel.Size = new System.Drawing.Size(61, 13);
+            this.modelYearLabel.Size = new System.Drawing.Size(38, 17);
             this.modelYearLabel.TabIndex = 6;
-            this.modelYearLabel.Text = "Model Year";
+            this.modelYearLabel.Text = "Year";
             // 
             // modelNameLabel
             // 
             this.modelNameLabel.AutoSize = true;
-            this.modelNameLabel.Location = new System.Drawing.Point(3, 102);
+            this.modelNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modelNameLabel.Location = new System.Drawing.Point(16, 118);
             this.modelNameLabel.Name = "modelNameLabel";
-            this.modelNameLabel.Size = new System.Drawing.Size(67, 13);
+            this.modelNameLabel.Size = new System.Drawing.Size(46, 17);
             this.modelNameLabel.TabIndex = 5;
-            this.modelNameLabel.Text = "Model Name";
+            this.modelNameLabel.Text = "Model";
             this.modelNameLabel.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // vin
             // 
             this.vin.AutoSize = true;
-            this.vin.Location = new System.Drawing.Point(3, 60);
+            this.vin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vin.Location = new System.Drawing.Point(16, 38);
             this.vin.Name = "vin";
-            this.vin.Size = new System.Drawing.Size(25, 13);
+            this.vin.Size = new System.Drawing.Size(30, 17);
             this.vin.TabIndex = 4;
             this.vin.Text = "VIN";
             this.vin.Click += new System.EventHandler(this.vin_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(294, 60);
+            this.comboBox1.Location = new System.Drawing.Point(129, 355);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Tag = "carTypeOptions";
             // 
             // vinText
             // 
-            this.vinText.Location = new System.Drawing.Point(84, 60);
+            this.vinText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vinText.Location = new System.Drawing.Point(129, 35);
             this.vinText.Name = "vinText";
-            this.vinText.Size = new System.Drawing.Size(121, 20);
+            this.vinText.Size = new System.Drawing.Size(121, 23);
             this.vinText.TabIndex = 2;
             // 
             // carTypeLabel
             // 
             this.carTypeLabel.AutoSize = true;
-            this.carTypeLabel.Location = new System.Drawing.Point(225, 63);
+            this.carTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carTypeLabel.Location = new System.Drawing.Point(16, 358);
             this.carTypeLabel.Name = "carTypeLabel";
-            this.carTypeLabel.Size = new System.Drawing.Size(50, 13);
+            this.carTypeLabel.Size = new System.Drawing.Size(70, 17);
             this.carTypeLabel.TabIndex = 1;
-            this.carTypeLabel.Text = "Car Type";
+            this.carTypeLabel.Text = "Branch ID";
             this.carTypeLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // carTypeTab
@@ -1343,6 +1149,81 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // cust_del_but
+            // 
+            this.cust_del_but.Location = new System.Drawing.Point(718, 528);
+            this.cust_del_but.Name = "cust_del_but";
+            this.cust_del_but.Size = new System.Drawing.Size(100, 53);
+            this.cust_del_but.TabIndex = 35;
+            this.cust_del_but.Text = "Delete";
+            this.cust_del_but.UseVisualStyleBackColor = true;
+            this.cust_del_but.Click += new System.EventHandler(this.cust_del_but_Click);
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Items.AddRange(new object[] {
+            "Customer ID",
+            "First Name",
+            "Middle Name",
+            "Last Name",
+            "Street Address 1",
+            "Street Address 2",
+            "City",
+            "Province",
+            "Postal Code",
+            "DOB",
+            "Phone Number",
+            "Insurance",
+            "Driving License",
+            "Membership Status"});
+            this.comboBox9.Location = new System.Drawing.Point(346, 492);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(121, 21);
+            this.comboBox9.TabIndex = 5;
+            // 
+            // cust_id_search_label
+            // 
+            this.cust_id_search_label.AutoSize = true;
+            this.cust_id_search_label.Location = new System.Drawing.Point(641, 489);
+            this.cust_id_search_label.Name = "cust_id_search_label";
+            this.cust_id_search_label.Size = new System.Drawing.Size(62, 13);
+            this.cust_id_search_label.TabIndex = 34;
+            this.cust_id_search_label.Text = "CustomerID";
+            // 
+            // cust_id_LU_txt
+            // 
+            this.cust_id_LU_txt.Location = new System.Drawing.Point(718, 493);
+            this.cust_id_LU_txt.Name = "cust_id_LU_txt";
+            this.cust_id_LU_txt.Size = new System.Drawing.Size(100, 20);
+            this.cust_id_LU_txt.TabIndex = 33;
+            // 
+            // cust_search_box_txt
+            // 
+            this.cust_search_box_txt.Location = new System.Drawing.Point(490, 492);
+            this.cust_search_box_txt.Name = "cust_search_box_txt";
+            this.cust_search_box_txt.Size = new System.Drawing.Size(100, 20);
+            this.cust_search_box_txt.TabIndex = 32;
+            // 
+            // cust_search_box
+            // 
+            this.cust_search_box.AutoSize = true;
+            this.cust_search_box.Location = new System.Drawing.Point(284, 492);
+            this.cust_search_box.Name = "cust_search_box";
+            this.cust_search_box.Size = new System.Drawing.Size(56, 13);
+            this.cust_search_box.TabIndex = 5;
+            this.cust_search_box.Text = "Search By";
+            // 
+            // cust_search_but
+            // 
+            this.cust_search_but.Location = new System.Drawing.Point(490, 528);
+            this.cust_search_but.Name = "cust_search_but";
+            this.cust_search_but.Size = new System.Drawing.Size(100, 55);
+            this.cust_search_but.TabIndex = 6;
+            this.cust_search_but.Text = "Search";
+            this.cust_search_but.UseVisualStyleBackColor = true;
+            this.cust_search_but.Click += new System.EventHandler(this.cust_search_but_Click);
+            // 
             // cust_refresh_but
             // 
             this.cust_refresh_but.Location = new System.Drawing.Point(1230, 511);
@@ -1352,6 +1233,16 @@
             this.cust_refresh_but.Text = "Refresh";
             this.cust_refresh_but.UseVisualStyleBackColor = true;
             this.cust_refresh_but.Click += new System.EventHandler(this.cust_refresh_but_Click);
+            // 
+            // cust_edit_but
+            // 
+            this.cust_edit_but.Location = new System.Drawing.Point(113, 517);
+            this.cust_edit_but.Name = "cust_edit_but";
+            this.cust_edit_but.Size = new System.Drawing.Size(82, 49);
+            this.cust_edit_but.TabIndex = 5;
+            this.cust_edit_but.Text = "Edit";
+            this.cust_edit_but.UseVisualStyleBackColor = true;
+            this.cust_edit_but.Click += new System.EventHandler(this.cust_edit_but_Click);
             // 
             // customer_view
             // 
@@ -1723,90 +1614,179 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cust_edit_but
+            // label1
             // 
-            this.cust_edit_but.Location = new System.Drawing.Point(113, 517);
-            this.cust_edit_but.Name = "cust_edit_but";
-            this.cust_edit_but.Size = new System.Drawing.Size(82, 49);
-            this.cust_edit_but.TabIndex = 5;
-            this.cust_edit_but.Text = "Edit";
-            this.cust_edit_but.UseVisualStyleBackColor = true;
-            this.cust_edit_but.Click += new System.EventHandler(this.cust_edit_but_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 17);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Make";
             // 
-            // cust_search_but
+            // textBox7
             // 
-            this.cust_search_but.Location = new System.Drawing.Point(490, 528);
-            this.cust_search_but.Name = "cust_search_but";
-            this.cust_search_but.Size = new System.Drawing.Size(100, 55);
-            this.cust_search_but.TabIndex = 6;
-            this.cust_search_but.Text = "Search";
-            this.cust_search_but.UseVisualStyleBackColor = true;
-            this.cust_search_but.Click += new System.EventHandler(this.cust_search_but_Click);
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(129, 75);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(121, 23);
+            this.textBox7.TabIndex = 29;
             // 
-            // cust_search_box
+            // comboBox2
             // 
-            this.cust_search_box.AutoSize = true;
-            this.cust_search_box.Location = new System.Drawing.Point(284, 492);
-            this.cust_search_box.Name = "cust_search_box";
-            this.cust_search_box.Size = new System.Drawing.Size(56, 13);
-            this.cust_search_box.TabIndex = 5;
-            this.cust_search_box.Text = "Search By";
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(129, 396);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.TabIndex = 32;
+            this.comboBox2.Tag = "carTypeOptions";
             // 
-            // cust_search_box_txt
+            // label2
             // 
-            this.cust_search_box_txt.Location = new System.Drawing.Point(490, 492);
-            this.cust_search_box_txt.Name = "cust_search_box_txt";
-            this.cust_search_box_txt.Size = new System.Drawing.Size(100, 20);
-            this.cust_search_box_txt.TabIndex = 32;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 398);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Car Type ID";
             // 
-            // cust_id_LU_txt
+            // button2
             // 
-            this.cust_id_LU_txt.Location = new System.Drawing.Point(718, 493);
-            this.cust_id_LU_txt.Name = "cust_id_LU_txt";
-            this.cust_id_LU_txt.Size = new System.Drawing.Size(100, 20);
-            this.cust_id_LU_txt.TabIndex = 33;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(129, 453);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 34);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Edit Car";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // cust_id_search_label
+            // comboBox3
             // 
-            this.cust_id_search_label.AutoSize = true;
-            this.cust_id_search_label.Location = new System.Drawing.Point(641, 489);
-            this.cust_id_search_label.Name = "cust_id_search_label";
-            this.cust_id_search_label.Size = new System.Drawing.Size(62, 13);
-            this.cust_id_search_label.TabIndex = 34;
-            this.cust_id_search_label.Text = "CustomerID";
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(424, 503);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 24);
+            this.comboBox3.TabIndex = 35;
+            this.comboBox3.Tag = "carTypeOptions";
+            this.comboBox3.Text = "--- Select ---";
             // 
-            // comboBox9
+            // label3
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Items.AddRange(new object[] {
-            "Customer ID",
-            "First Name",
-            "Middle Name",
-            "Last Name",
-            "Street Address 1",
-            "Street Address 2",
-            "City",
-            "Province",
-            "Postal Code",
-            "DOB",
-            "Phone Number",
-            "Insurance",
-            "Driving License",
-            "Membership Status"});
-            this.comboBox9.Location = new System.Drawing.Point(346, 492);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 21);
-            this.comboBox9.TabIndex = 5;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(341, 506);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 17);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Search By:";
             // 
-            // cust_del_but
+            // textBox8
             // 
-            this.cust_del_but.Location = new System.Drawing.Point(718, 528);
-            this.cust_del_but.Name = "cust_del_but";
-            this.cust_del_but.Size = new System.Drawing.Size(100, 53);
-            this.cust_del_but.TabIndex = 35;
-            this.cust_del_but.Text = "Delete";
-            this.cust_del_but.UseVisualStyleBackColor = true;
-            this.cust_del_but.Click += new System.EventHandler(this.cust_del_but_Click);
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(566, 504);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(121, 23);
+            this.textBox8.TabIndex = 36;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(949, 503);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 24);
+            this.comboBox4.TabIndex = 37;
+            this.comboBox4.Tag = "carTypeOptions";
+            this.comboBox4.Text = "--- Select ---";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(961, 533);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 30);
+            this.button3.TabIndex = 38;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(1229, 518);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 30);
+            this.button4.TabIndex = 39;
+            this.button4.Text = "Show All";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // VIN_COL
+            // 
+            this.VIN_COL.HeaderText = "VIN";
+            this.VIN_COL.MinimumWidth = 6;
+            this.VIN_COL.Name = "VIN_COL";
+            this.VIN_COL.ReadOnly = true;
+            // 
+            // MAKE_COL
+            // 
+            this.MAKE_COL.HeaderText = "Make";
+            this.MAKE_COL.MinimumWidth = 6;
+            this.MAKE_COL.Name = "MAKE_COL";
+            this.MAKE_COL.ReadOnly = true;
+            // 
+            // MODEL_COL
+            // 
+            this.MODEL_COL.HeaderText = "Model";
+            this.MODEL_COL.MinimumWidth = 6;
+            this.MODEL_COL.Name = "MODEL_COL";
+            this.MODEL_COL.ReadOnly = true;
+            // 
+            // YEAR_COL
+            // 
+            this.YEAR_COL.HeaderText = "Year";
+            this.YEAR_COL.MinimumWidth = 6;
+            this.YEAR_COL.Name = "YEAR_COL";
+            this.YEAR_COL.ReadOnly = true;
+            // 
+            // NO_SEATS_COL
+            // 
+            this.NO_SEATS_COL.HeaderText = "No. of Seats";
+            this.NO_SEATS_COL.MinimumWidth = 6;
+            this.NO_SEATS_COL.Name = "NO_SEATS_COL";
+            this.NO_SEATS_COL.ReadOnly = true;
+            // 
+            // COLOUR_COL
+            // 
+            this.COLOUR_COL.HeaderText = "Colour";
+            this.COLOUR_COL.MinimumWidth = 6;
+            this.COLOUR_COL.Name = "COLOUR_COL";
+            this.COLOUR_COL.ReadOnly = true;
+            // 
+            // INSURANCE_NO_COL
+            // 
+            this.INSURANCE_NO_COL.HeaderText = "Insurance No.";
+            this.INSURANCE_NO_COL.MinimumWidth = 6;
+            this.INSURANCE_NO_COL.Name = "INSURANCE_NO_COL";
+            this.INSURANCE_NO_COL.ReadOnly = true;
+            // 
+            // ODOMETER_NO_COL
+            // 
+            this.ODOMETER_NO_COL.HeaderText = "Odometer No.";
+            this.ODOMETER_NO_COL.MinimumWidth = 6;
+            this.ODOMETER_NO_COL.Name = "ODOMETER_NO_COL";
+            this.ODOMETER_NO_COL.ReadOnly = true;
+            // 
+            // BRANCH_ID_COL
+            // 
+            this.BRANCH_ID_COL.HeaderText = "Branch ID";
+            this.BRANCH_ID_COL.Name = "BRANCH_ID_COL";
+            // 
+            // CAR_TYPE_ID_COL
+            // 
+            this.CAR_TYPE_ID_COL.HeaderText = "Car Type ID";
+            this.CAR_TYPE_ID_COL.Name = "CAR_TYPE_ID_COL";
             // 
             // Employee
             // 
@@ -1938,30 +1918,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VIN_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CAR_TYPE_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MODEL_NAME_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MODEL_YEAR_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BODY_STYLE_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COLOUR_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NO_SEATS_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FUEL_COL;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label vinSLabel;
-        private System.Windows.Forms.Label modelYearSLabel;
-        private System.Windows.Forms.Label colourSLabel;
-        private System.Windows.Forms.Label bodySLabel;
-        private System.Windows.Forms.Label fuelTypeSLabel;
-        private System.Windows.Forms.Label carTypeSLabel;
-        private System.Windows.Forms.Label noSeatsSLabel;
-        private System.Windows.Forms.Label modelNameSLabel;
-        private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Button searchCarBut;
         private System.Windows.Forms.Button addCarBut;
         private System.Windows.Forms.Button typeSBut;
@@ -2003,5 +1959,26 @@
         private System.Windows.Forms.Button cust_search_but;
         private System.Windows.Forms.Button cust_edit_but;
         private System.Windows.Forms.Button cust_del_but;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VIN_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAKE_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MODEL_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn YEAR_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NO_SEATS_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COLOUR_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn INSURANCE_NO_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ODOMETER_NO_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BRANCH_ID_COL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CAR_TYPE_ID_COL;
     }
 }
