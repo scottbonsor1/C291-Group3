@@ -75,6 +75,8 @@
             this.vinText = new System.Windows.Forms.TextBox();
             this.carTypeLabel = new System.Windows.Forms.Label();
             this.carTypeTab = new System.Windows.Forms.TabPage();
+            this.editTypeBut = new System.Windows.Forms.Button();
+            this.delTypeBut = new System.Windows.Forms.Button();
             this.DailyRentLabel = new System.Windows.Forms.Label();
             this.WeeklyRentLabel = new System.Windows.Forms.Label();
             this.MonthlyRentLabel = new System.Windows.Forms.Label();
@@ -138,7 +140,7 @@
             this.branch_id_label = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.cust_refresh_but = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.customer_view = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -153,7 +155,6 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cust_del_but = new System.Windows.Forms.Button();
             this.cust_add_but = new System.Windows.Forms.Button();
             this.cust_memStat_txt = new System.Windows.Forms.TextBox();
             this.cust_drivers_txt = new System.Windows.Forms.TextBox();
@@ -165,9 +166,9 @@
             this.cust_city_txt = new System.Windows.Forms.TextBox();
             this.cust_street_add2_txt = new System.Windows.Forms.TextBox();
             this.cust_street_add1_txt = new System.Windows.Forms.TextBox();
-            this.cust_l_name_txt = new System.Windows.Forms.TextBox();
-            this.cust_m_name_txt = new System.Windows.Forms.TextBox();
-            this.cust_f_name_txt = new System.Windows.Forms.TextBox();
+            this.cust_last_name_txt = new System.Windows.Forms.TextBox();
+            this.cust_mid_name_txt = new System.Windows.Forms.TextBox();
+            this.cust_first_name_txt = new System.Windows.Forms.TextBox();
             this.cust_custID_txt = new System.Windows.Forms.TextBox();
             this.cust_memStat_label = new System.Windows.Forms.Label();
             this.cust_drivers_label = new System.Windows.Forms.Label();
@@ -184,8 +185,14 @@
             this.cust_f_name_label = new System.Windows.Forms.Label();
             this.cust_custID_label = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.delTypeBut = new System.Windows.Forms.Button();
-            this.editTypeBut = new System.Windows.Forms.Button();
+            this.cust_edit_but = new System.Windows.Forms.Button();
+            this.cust_search_but = new System.Windows.Forms.Button();
+            this.cust_search_box = new System.Windows.Forms.Label();
+            this.cust_search_box_txt = new System.Windows.Forms.TextBox();
+            this.cust_id_LU_txt = new System.Windows.Forms.TextBox();
+            this.cust_id_search_label = new System.Windows.Forms.Label();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.cust_del_but = new System.Windows.Forms.Button();
             this.Tabs.SuspendLayout();
             this.carsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -194,7 +201,7 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.branch_view)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customer_view)).BeginInit();
             this.SuspendLayout();
             // 
             // CustomerBtn
@@ -677,6 +684,26 @@
             this.carTypeTab.TabIndex = 1;
             this.carTypeTab.Text = "Car Type";
             this.carTypeTab.UseVisualStyleBackColor = true;
+            // 
+            // editTypeBut
+            // 
+            this.editTypeBut.Location = new System.Drawing.Point(381, 272);
+            this.editTypeBut.Name = "editTypeBut";
+            this.editTypeBut.Size = new System.Drawing.Size(88, 23);
+            this.editTypeBut.TabIndex = 22;
+            this.editTypeBut.Text = "Edit Car Type";
+            this.editTypeBut.UseVisualStyleBackColor = true;
+            this.editTypeBut.Click += new System.EventHandler(this.editCarTypeButClick);
+            // 
+            // delTypeBut
+            // 
+            this.delTypeBut.Location = new System.Drawing.Point(201, 272);
+            this.delTypeBut.Name = "delTypeBut";
+            this.delTypeBut.Size = new System.Drawing.Size(100, 23);
+            this.delTypeBut.TabIndex = 21;
+            this.delTypeBut.Text = "Delete Car Type";
+            this.delTypeBut.UseVisualStyleBackColor = true;
+            this.delTypeBut.Click += new System.EventHandler(this.delCarTypeButClick);
             // 
             // DailyRentLabel
             // 
@@ -1267,9 +1294,16 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.cust_refresh_but);
-            this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.cust_del_but);
+            this.tabPage3.Controls.Add(this.comboBox9);
+            this.tabPage3.Controls.Add(this.cust_id_search_label);
+            this.tabPage3.Controls.Add(this.cust_id_LU_txt);
+            this.tabPage3.Controls.Add(this.cust_search_box_txt);
+            this.tabPage3.Controls.Add(this.cust_search_box);
+            this.tabPage3.Controls.Add(this.cust_search_but);
+            this.tabPage3.Controls.Add(this.cust_refresh_but);
+            this.tabPage3.Controls.Add(this.cust_edit_but);
+            this.tabPage3.Controls.Add(this.customer_view);
             this.tabPage3.Controls.Add(this.cust_add_but);
             this.tabPage3.Controls.Add(this.cust_memStat_txt);
             this.tabPage3.Controls.Add(this.cust_drivers_txt);
@@ -1281,9 +1315,9 @@
             this.tabPage3.Controls.Add(this.cust_city_txt);
             this.tabPage3.Controls.Add(this.cust_street_add2_txt);
             this.tabPage3.Controls.Add(this.cust_street_add1_txt);
-            this.tabPage3.Controls.Add(this.cust_l_name_txt);
-            this.tabPage3.Controls.Add(this.cust_m_name_txt);
-            this.tabPage3.Controls.Add(this.cust_f_name_txt);
+            this.tabPage3.Controls.Add(this.cust_last_name_txt);
+            this.tabPage3.Controls.Add(this.cust_mid_name_txt);
+            this.tabPage3.Controls.Add(this.cust_first_name_txt);
             this.tabPage3.Controls.Add(this.cust_custID_txt);
             this.tabPage3.Controls.Add(this.cust_memStat_label);
             this.tabPage3.Controls.Add(this.cust_drivers_label);
@@ -1311,18 +1345,18 @@
             // 
             // cust_refresh_but
             // 
-            this.cust_refresh_but.Location = new System.Drawing.Point(896, 506);
+            this.cust_refresh_but.Location = new System.Drawing.Point(1230, 511);
             this.cust_refresh_but.Name = "cust_refresh_but";
             this.cust_refresh_but.Size = new System.Drawing.Size(95, 61);
             this.cust_refresh_but.TabIndex = 31;
             this.cust_refresh_but.Text = "Refresh";
             this.cust_refresh_but.UseVisualStyleBackColor = true;
+            this.cust_refresh_but.Click += new System.EventHandler(this.cust_refresh_but_Click);
             // 
-            // dataGridView1
+            // customer_view
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customer_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customer_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
             this.Column3,
             this.Column4,
@@ -1337,11 +1371,11 @@
             this.Column12,
             this.Column13,
             this.Column14});
-            this.dataGridView1.Location = new System.Drawing.Point(212, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1167, 470);
-            this.dataGridView1.TabIndex = 30;
+            this.customer_view.Location = new System.Drawing.Point(213, 13);
+            this.customer_view.Name = "customer_view";
+            this.customer_view.RowHeadersWidth = 51;
+            this.customer_view.Size = new System.Drawing.Size(1167, 470);
+            this.customer_view.TabIndex = 30;
             // 
             // Column2
             // 
@@ -1441,119 +1475,110 @@
             this.Column14.Name = "Column14";
             this.Column14.Width = 125;
             // 
-            // cust_del_but
-            // 
-            this.cust_del_but.Location = new System.Drawing.Point(747, 507);
-            this.cust_del_but.Name = "cust_del_but";
-            this.cust_del_but.Size = new System.Drawing.Size(95, 60);
-            this.cust_del_but.TabIndex = 29;
-            this.cust_del_but.Text = "Delete";
-            this.cust_del_but.UseVisualStyleBackColor = true;
-            this.cust_del_but.Click += new System.EventHandler(this.button4_Click);
-            // 
             // cust_add_but
             // 
-            this.cust_add_but.Location = new System.Drawing.Point(593, 506);
+            this.cust_add_but.Location = new System.Drawing.Point(8, 517);
             this.cust_add_but.Name = "cust_add_but";
-            this.cust_add_but.Size = new System.Drawing.Size(105, 61);
+            this.cust_add_but.Size = new System.Drawing.Size(83, 50);
             this.cust_add_but.TabIndex = 28;
             this.cust_add_but.Text = "Add";
             this.cust_add_but.UseVisualStyleBackColor = true;
+            this.cust_add_but.Click += new System.EventHandler(this.cust_add_but_Click);
             // 
             // cust_memStat_txt
             // 
-            this.cust_memStat_txt.Location = new System.Drawing.Point(97, 520);
+            this.cust_memStat_txt.Location = new System.Drawing.Point(98, 446);
             this.cust_memStat_txt.Name = "cust_memStat_txt";
             this.cust_memStat_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_memStat_txt.TabIndex = 27;
             // 
             // cust_drivers_txt
             // 
-            this.cust_drivers_txt.Location = new System.Drawing.Point(97, 480);
+            this.cust_drivers_txt.Location = new System.Drawing.Point(96, 414);
             this.cust_drivers_txt.Name = "cust_drivers_txt";
             this.cust_drivers_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_drivers_txt.TabIndex = 26;
             // 
             // cust_insurance_txt
             // 
-            this.cust_insurance_txt.Location = new System.Drawing.Point(97, 444);
+            this.cust_insurance_txt.Location = new System.Drawing.Point(96, 383);
             this.cust_insurance_txt.Name = "cust_insurance_txt";
             this.cust_insurance_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_insurance_txt.TabIndex = 25;
             // 
             // cust_phone_num_txt
             // 
-            this.cust_phone_num_txt.Location = new System.Drawing.Point(97, 404);
+            this.cust_phone_num_txt.Location = new System.Drawing.Point(96, 351);
             this.cust_phone_num_txt.Name = "cust_phone_num_txt";
             this.cust_phone_num_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_phone_num_txt.TabIndex = 24;
             // 
             // cust_dob_txt
             // 
-            this.cust_dob_txt.Location = new System.Drawing.Point(97, 363);
+            this.cust_dob_txt.Location = new System.Drawing.Point(97, 317);
             this.cust_dob_txt.Name = "cust_dob_txt";
             this.cust_dob_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_dob_txt.TabIndex = 23;
             // 
             // cust_pCode_txt
             // 
-            this.cust_pCode_txt.Location = new System.Drawing.Point(97, 323);
+            this.cust_pCode_txt.Location = new System.Drawing.Point(96, 285);
             this.cust_pCode_txt.Name = "cust_pCode_txt";
             this.cust_pCode_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_pCode_txt.TabIndex = 22;
             // 
             // cust_prov_txt
             // 
-            this.cust_prov_txt.Location = new System.Drawing.Point(97, 284);
+            this.cust_prov_txt.Location = new System.Drawing.Point(96, 252);
             this.cust_prov_txt.Name = "cust_prov_txt";
             this.cust_prov_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_prov_txt.TabIndex = 21;
             // 
             // cust_city_txt
             // 
-            this.cust_city_txt.Location = new System.Drawing.Point(97, 246);
+            this.cust_city_txt.Location = new System.Drawing.Point(96, 221);
             this.cust_city_txt.Name = "cust_city_txt";
             this.cust_city_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_city_txt.TabIndex = 20;
             // 
             // cust_street_add2_txt
             // 
-            this.cust_street_add2_txt.Location = new System.Drawing.Point(97, 213);
+            this.cust_street_add2_txt.Location = new System.Drawing.Point(96, 186);
             this.cust_street_add2_txt.Name = "cust_street_add2_txt";
             this.cust_street_add2_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_street_add2_txt.TabIndex = 19;
             // 
             // cust_street_add1_txt
             // 
-            this.cust_street_add1_txt.Location = new System.Drawing.Point(97, 177);
+            this.cust_street_add1_txt.Location = new System.Drawing.Point(97, 153);
             this.cust_street_add1_txt.Name = "cust_street_add1_txt";
             this.cust_street_add1_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_street_add1_txt.TabIndex = 18;
             // 
-            // cust_l_name_txt
+            // cust_last_name_txt
             // 
-            this.cust_l_name_txt.Location = new System.Drawing.Point(97, 137);
-            this.cust_l_name_txt.Name = "cust_l_name_txt";
-            this.cust_l_name_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_l_name_txt.TabIndex = 17;
+            this.cust_last_name_txt.Location = new System.Drawing.Point(97, 117);
+            this.cust_last_name_txt.Name = "cust_last_name_txt";
+            this.cust_last_name_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_last_name_txt.TabIndex = 17;
             // 
-            // cust_m_name_txt
+            // cust_mid_name_txt
             // 
-            this.cust_m_name_txt.Location = new System.Drawing.Point(97, 101);
-            this.cust_m_name_txt.Name = "cust_m_name_txt";
-            this.cust_m_name_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_m_name_txt.TabIndex = 16;
+            this.cust_mid_name_txt.Location = new System.Drawing.Point(97, 81);
+            this.cust_mid_name_txt.Name = "cust_mid_name_txt";
+            this.cust_mid_name_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_mid_name_txt.TabIndex = 16;
             // 
-            // cust_f_name_txt
+            // cust_first_name_txt
             // 
-            this.cust_f_name_txt.Location = new System.Drawing.Point(97, 67);
-            this.cust_f_name_txt.Name = "cust_f_name_txt";
-            this.cust_f_name_txt.Size = new System.Drawing.Size(109, 20);
-            this.cust_f_name_txt.TabIndex = 15;
+            this.cust_first_name_txt.Location = new System.Drawing.Point(97, 46);
+            this.cust_first_name_txt.Name = "cust_first_name_txt";
+            this.cust_first_name_txt.Size = new System.Drawing.Size(109, 20);
+            this.cust_first_name_txt.TabIndex = 15;
             // 
             // cust_custID_txt
             // 
-            this.cust_custID_txt.Location = new System.Drawing.Point(97, 30);
+            this.cust_custID_txt.Location = new System.Drawing.Point(97, 13);
             this.cust_custID_txt.Name = "cust_custID_txt";
             this.cust_custID_txt.Size = new System.Drawing.Size(109, 20);
             this.cust_custID_txt.TabIndex = 14;
@@ -1561,7 +1586,7 @@
             // cust_memStat_label
             // 
             this.cust_memStat_label.AutoSize = true;
-            this.cust_memStat_label.Location = new System.Drawing.Point(5, 520);
+            this.cust_memStat_label.Location = new System.Drawing.Point(5, 446);
             this.cust_memStat_label.Name = "cust_memStat_label";
             this.cust_memStat_label.Size = new System.Drawing.Size(86, 13);
             this.cust_memStat_label.TabIndex = 13;
@@ -1571,7 +1596,7 @@
             // cust_drivers_label
             // 
             this.cust_drivers_label.AutoSize = true;
-            this.cust_drivers_label.Location = new System.Drawing.Point(5, 480);
+            this.cust_drivers_label.Location = new System.Drawing.Point(5, 414);
             this.cust_drivers_label.Name = "cust_drivers_label";
             this.cust_drivers_label.Size = new System.Drawing.Size(85, 13);
             this.cust_drivers_label.TabIndex = 12;
@@ -1580,7 +1605,7 @@
             // cust_insurance_label
             // 
             this.cust_insurance_label.AutoSize = true;
-            this.cust_insurance_label.Location = new System.Drawing.Point(5, 444);
+            this.cust_insurance_label.Location = new System.Drawing.Point(5, 383);
             this.cust_insurance_label.Name = "cust_insurance_label";
             this.cust_insurance_label.Size = new System.Drawing.Size(54, 13);
             this.cust_insurance_label.TabIndex = 11;
@@ -1589,7 +1614,7 @@
             // cust_phone_num_label
             // 
             this.cust_phone_num_label.AutoSize = true;
-            this.cust_phone_num_label.Location = new System.Drawing.Point(5, 404);
+            this.cust_phone_num_label.Location = new System.Drawing.Point(5, 351);
             this.cust_phone_num_label.Name = "cust_phone_num_label";
             this.cust_phone_num_label.Size = new System.Drawing.Size(78, 13);
             this.cust_phone_num_label.TabIndex = 10;
@@ -1598,7 +1623,7 @@
             // cust_dob_label
             // 
             this.cust_dob_label.AutoSize = true;
-            this.cust_dob_label.Location = new System.Drawing.Point(5, 366);
+            this.cust_dob_label.Location = new System.Drawing.Point(5, 317);
             this.cust_dob_label.Name = "cust_dob_label";
             this.cust_dob_label.Size = new System.Drawing.Size(30, 13);
             this.cust_dob_label.TabIndex = 9;
@@ -1607,7 +1632,7 @@
             // cust_pCode_label
             // 
             this.cust_pCode_label.AutoSize = true;
-            this.cust_pCode_label.Location = new System.Drawing.Point(5, 323);
+            this.cust_pCode_label.Location = new System.Drawing.Point(5, 285);
             this.cust_pCode_label.Name = "cust_pCode_label";
             this.cust_pCode_label.Size = new System.Drawing.Size(64, 13);
             this.cust_pCode_label.TabIndex = 8;
@@ -1616,7 +1641,7 @@
             // cust_province_label
             // 
             this.cust_province_label.AutoSize = true;
-            this.cust_province_label.Location = new System.Drawing.Point(5, 287);
+            this.cust_province_label.Location = new System.Drawing.Point(5, 252);
             this.cust_province_label.Name = "cust_province_label";
             this.cust_province_label.Size = new System.Drawing.Size(49, 13);
             this.cust_province_label.TabIndex = 7;
@@ -1625,7 +1650,7 @@
             // cust_city_label
             // 
             this.cust_city_label.AutoSize = true;
-            this.cust_city_label.Location = new System.Drawing.Point(5, 249);
+            this.cust_city_label.Location = new System.Drawing.Point(5, 221);
             this.cust_city_label.Name = "cust_city_label";
             this.cust_city_label.Size = new System.Drawing.Size(24, 13);
             this.cust_city_label.TabIndex = 6;
@@ -1634,7 +1659,7 @@
             // cust_street_add2_label
             // 
             this.cust_street_add2_label.AutoSize = true;
-            this.cust_street_add2_label.Location = new System.Drawing.Point(5, 216);
+            this.cust_street_add2_label.Location = new System.Drawing.Point(5, 186);
             this.cust_street_add2_label.Name = "cust_street_add2_label";
             this.cust_street_add2_label.Size = new System.Drawing.Size(85, 13);
             this.cust_street_add2_label.TabIndex = 5;
@@ -1643,7 +1668,7 @@
             // cust_street_add1_label
             // 
             this.cust_street_add1_label.AutoSize = true;
-            this.cust_street_add1_label.Location = new System.Drawing.Point(5, 177);
+            this.cust_street_add1_label.Location = new System.Drawing.Point(5, 153);
             this.cust_street_add1_label.Name = "cust_street_add1_label";
             this.cust_street_add1_label.Size = new System.Drawing.Size(85, 13);
             this.cust_street_add1_label.TabIndex = 4;
@@ -1652,7 +1677,7 @@
             // cust_last_name_label
             // 
             this.cust_last_name_label.AutoSize = true;
-            this.cust_last_name_label.Location = new System.Drawing.Point(5, 140);
+            this.cust_last_name_label.Location = new System.Drawing.Point(5, 117);
             this.cust_last_name_label.Name = "cust_last_name_label";
             this.cust_last_name_label.Size = new System.Drawing.Size(58, 13);
             this.cust_last_name_label.TabIndex = 3;
@@ -1661,7 +1686,7 @@
             // cust_mid_name_label
             // 
             this.cust_mid_name_label.AutoSize = true;
-            this.cust_mid_name_label.Location = new System.Drawing.Point(5, 104);
+            this.cust_mid_name_label.Location = new System.Drawing.Point(5, 81);
             this.cust_mid_name_label.Name = "cust_mid_name_label";
             this.cust_mid_name_label.Size = new System.Drawing.Size(69, 13);
             this.cust_mid_name_label.TabIndex = 2;
@@ -1670,7 +1695,7 @@
             // cust_f_name_label
             // 
             this.cust_f_name_label.AutoSize = true;
-            this.cust_f_name_label.Location = new System.Drawing.Point(5, 67);
+            this.cust_f_name_label.Location = new System.Drawing.Point(5, 46);
             this.cust_f_name_label.Name = "cust_f_name_label";
             this.cust_f_name_label.Size = new System.Drawing.Size(57, 13);
             this.cust_f_name_label.TabIndex = 1;
@@ -1679,7 +1704,7 @@
             // cust_custID_label
             // 
             this.cust_custID_label.AutoSize = true;
-            this.cust_custID_label.Location = new System.Drawing.Point(5, 30);
+            this.cust_custID_label.Location = new System.Drawing.Point(5, 13);
             this.cust_custID_label.Name = "cust_custID_label";
             this.cust_custID_label.Size = new System.Drawing.Size(65, 13);
             this.cust_custID_label.TabIndex = 0;
@@ -1698,25 +1723,90 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // delTypeBut
+            // cust_edit_but
             // 
-            this.delTypeBut.Location = new System.Drawing.Point(201, 272);
-            this.delTypeBut.Name = "delTypeBut";
-            this.delTypeBut.Size = new System.Drawing.Size(100, 23);
-            this.delTypeBut.TabIndex = 21;
-            this.delTypeBut.Text = "Delete Car Type";
-            this.delTypeBut.UseVisualStyleBackColor = true;
-            this.delTypeBut.Click += new System.EventHandler(this.delCarTypeButClick);
+            this.cust_edit_but.Location = new System.Drawing.Point(113, 517);
+            this.cust_edit_but.Name = "cust_edit_but";
+            this.cust_edit_but.Size = new System.Drawing.Size(82, 49);
+            this.cust_edit_but.TabIndex = 5;
+            this.cust_edit_but.Text = "Edit";
+            this.cust_edit_but.UseVisualStyleBackColor = true;
+            this.cust_edit_but.Click += new System.EventHandler(this.cust_edit_but_Click);
             // 
-            // editTypeBut
+            // cust_search_but
             // 
-            this.editTypeBut.Location = new System.Drawing.Point(381, 272);
-            this.editTypeBut.Name = "editTypeBut";
-            this.editTypeBut.Size = new System.Drawing.Size(88, 23);
-            this.editTypeBut.TabIndex = 22;
-            this.editTypeBut.Text = "Edit Car Type";
-            this.editTypeBut.UseVisualStyleBackColor = true;
-            this.editTypeBut.Click += new System.EventHandler(this.editCarTypeButClick);
+            this.cust_search_but.Location = new System.Drawing.Point(490, 528);
+            this.cust_search_but.Name = "cust_search_but";
+            this.cust_search_but.Size = new System.Drawing.Size(100, 55);
+            this.cust_search_but.TabIndex = 6;
+            this.cust_search_but.Text = "Search";
+            this.cust_search_but.UseVisualStyleBackColor = true;
+            this.cust_search_but.Click += new System.EventHandler(this.cust_search_but_Click);
+            // 
+            // cust_search_box
+            // 
+            this.cust_search_box.AutoSize = true;
+            this.cust_search_box.Location = new System.Drawing.Point(284, 492);
+            this.cust_search_box.Name = "cust_search_box";
+            this.cust_search_box.Size = new System.Drawing.Size(56, 13);
+            this.cust_search_box.TabIndex = 5;
+            this.cust_search_box.Text = "Search By";
+            // 
+            // cust_search_box_txt
+            // 
+            this.cust_search_box_txt.Location = new System.Drawing.Point(490, 492);
+            this.cust_search_box_txt.Name = "cust_search_box_txt";
+            this.cust_search_box_txt.Size = new System.Drawing.Size(100, 20);
+            this.cust_search_box_txt.TabIndex = 32;
+            // 
+            // cust_id_LU_txt
+            // 
+            this.cust_id_LU_txt.Location = new System.Drawing.Point(718, 493);
+            this.cust_id_LU_txt.Name = "cust_id_LU_txt";
+            this.cust_id_LU_txt.Size = new System.Drawing.Size(100, 20);
+            this.cust_id_LU_txt.TabIndex = 33;
+            // 
+            // cust_id_search_label
+            // 
+            this.cust_id_search_label.AutoSize = true;
+            this.cust_id_search_label.Location = new System.Drawing.Point(641, 489);
+            this.cust_id_search_label.Name = "cust_id_search_label";
+            this.cust_id_search_label.Size = new System.Drawing.Size(62, 13);
+            this.cust_id_search_label.TabIndex = 34;
+            this.cust_id_search_label.Text = "CustomerID";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Items.AddRange(new object[] {
+            "Customer ID",
+            "First Name",
+            "Middle Name",
+            "Last Name",
+            "Street Address 1",
+            "Street Address 2",
+            "City",
+            "Province",
+            "Postal Code",
+            "DOB",
+            "Phone Number",
+            "Insurance",
+            "Driving License",
+            "Membership Status"});
+            this.comboBox9.Location = new System.Drawing.Point(346, 492);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(121, 21);
+            this.comboBox9.TabIndex = 5;
+            // 
+            // cust_del_but
+            // 
+            this.cust_del_but.Location = new System.Drawing.Point(718, 528);
+            this.cust_del_but.Name = "cust_del_but";
+            this.cust_del_but.Size = new System.Drawing.Size(100, 53);
+            this.cust_del_but.TabIndex = 35;
+            this.cust_del_but.Text = "Delete";
+            this.cust_del_but.UseVisualStyleBackColor = true;
+            this.cust_del_but.Click += new System.EventHandler(this.cust_del_but_Click);
             // 
             // Employee
             // 
@@ -1741,7 +1831,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.branch_view)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customer_view)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1779,14 +1869,13 @@
         private System.Windows.Forms.TextBox cust_city_txt;
         private System.Windows.Forms.TextBox cust_street_add2_txt;
         private System.Windows.Forms.TextBox cust_street_add1_txt;
-        private System.Windows.Forms.TextBox cust_l_name_txt;
-        private System.Windows.Forms.TextBox cust_m_name_txt;
-        private System.Windows.Forms.TextBox cust_f_name_txt;
+        private System.Windows.Forms.TextBox cust_last_name_txt;
+        private System.Windows.Forms.TextBox cust_mid_name_txt;
+        private System.Windows.Forms.TextBox cust_first_name_txt;
         private System.Windows.Forms.TextBox cust_custID_txt;
-        private System.Windows.Forms.Button cust_del_but;
         private System.Windows.Forms.Button cust_add_but;
         private System.Windows.Forms.Button cust_refresh_but;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView customer_view;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
@@ -1906,5 +1995,13 @@
         private System.Windows.Forms.TextBox wRent;
         private System.Windows.Forms.Button editTypeBut;
         private System.Windows.Forms.Button delTypeBut;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.Label cust_id_search_label;
+        private System.Windows.Forms.TextBox cust_id_LU_txt;
+        private System.Windows.Forms.TextBox cust_search_box_txt;
+        private System.Windows.Forms.Label cust_search_box;
+        private System.Windows.Forms.Button cust_search_but;
+        private System.Windows.Forms.Button cust_edit_but;
+        private System.Windows.Forms.Button cust_del_but;
     }
 }

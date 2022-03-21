@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = LAPTOP-DSBFVL6U; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-N349OTM; Database = master; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -537,6 +537,294 @@ namespace WindowsFormsApp1
         private void rentalClassSLabel_Click(object sender, EventArgs e)
         {
 
+        }
+        //Customer Add button
+        private void cust_add_but_Click(object sender, EventArgs e)
+        {
+            if (cust_custID_txt.Text.Length > 0 && cust_first_name_txt.Text.Length > 0 && cust_street_add1_txt.Text.Length > 0 &&
+                cust_city_txt.Text.Length > 0 && cust_prov_txt.Text.Length > 0 && cust_pCode_txt.Text.Length > 0 && cust_phone_num_txt.Text.Length > 0 &&
+                cust_insurance_txt.Text.Length > 0 && cust_drivers_txt.Text.Length > 0 && cust_memStat_txt.Text.Length > 0)
+            {
+                try
+                {
+                    myCommand.CommandText = "insert into Customer Values (" + cust_custID_txt.Text + ",'" + cust_first_name_txt.Text + "','" +
+                        cust_mid_name_txt.Text + "','" + cust_last_name_txt.Text + "','" + cust_street_add1_txt.Text + "','" + cust_street_add2_txt.Text + "','" +
+                        cust_city_txt.Text + "','" + cust_prov_txt.Text + "','" + cust_pCode_txt.Text + "','" + cust_dob_txt.Text + "','" + cust_phone_num_txt.Text + "','" +
+                        cust_insurance_txt.Text + "','" + cust_drivers_txt.Text + "','" + cust_memStat_txt.Text + "')";
+                    MessageBox.Show(myCommand.CommandText);
+
+                    myCommand.ExecuteNonQuery();
+                    cust_refresh_but.PerformClick();
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Required Fields Missing or Incorrect");
+            }
+        }
+        //customer edit button
+        private void cust_edit_but_Click(object sender, EventArgs e)
+        {
+            int add = 0;
+            try
+            {
+                myCommand.CommandText = "update Customer set";
+
+                if (cust_first_name_txt.Text.Length > 0)
+                {
+                    myCommand.CommandText += "First_Name = '" + cust_first_name_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_mid_name_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Middle_Name = '" + cust_mid_name_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_last_name_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Last_Name = '" + cust_last_name_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_street_add1_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Street_address1 = '" + cust_street_add1_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_street_add2_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Street_address1 = '" + cust_street_add2_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_city_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "City = '" + cust_city_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_prov_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Province = '" + cust_prov_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_pCode_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Postal_Code = '" + cust_pCode_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_dob_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Date_of_Birth = '" + cust_dob_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_phone_num_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Phone_Number = '" + cust_phone_num_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_insurance_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Insurance = '" + cust_insurance_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_drivers_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Drivers_License = '" + cust_drivers_txt.Text + "'";
+                    add = 1;
+                }
+                if (cust_memStat_txt.Text.Length > 0)
+                {
+                    if (add == 1) { myCommand.CommandText += ","; }
+                    myCommand.CommandText += "Memebership_Status = '" + cust_memStat_txt.Text + "'";
+                    add = 1;
+                }
+                myCommand.CommandText += "where Customer_ID = " + cust_custID_txt.Text + ";";
+
+                if (add == 1 && cust_custID_txt.Text.Length > 0)
+                {
+                    MessageBox.Show(myCommand.CommandText);
+
+                    myCommand.ExecuteNonQuery();
+                    cust_refresh_but.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("No fields Edited");
+                }
+            }
+            catch (Exception e2)
+            {
+                MessageBox.Show(e2.ToString(), "Error");
+            }
+        }
+        //customer search button
+        private void cust_search_but_Click(object sender, EventArgs e)
+        {
+            int invalid = 0;
+            int cid = 0;
+            int result;
+            myCommand.CommandText = "select * from Customer where";
+
+            if (cust_search_box.Text.Equals("Customer ID"))
+            {
+                myCommand.CommandText += "Customer_ID = ";
+                cid = 1;
+                if (cust_search_box_txt.Text.Length > 0 && !int.TryParse(cust_search_box_txt.Text.ToString(), out result))
+                {
+                    invalid = 2;
+                    MessageBox.Show("CustomerID Must Be integer");
+                }
+            }
+            else if (cust_search_box.Text.Equals("First Name"))
+            {
+                myCommand.CommandText += "First_Name = ";
+            }
+            else if (cust_search_box.Text.Equals("Middle Name"))
+            {
+                myCommand.CommandText += "Middle_Name = ";
+            }
+            else if (cust_search_box.Text.Equals("Last Name"))
+            {
+                myCommand.CommandText += "Last_Name = ";
+            }
+            else if (cust_search_box.Text.Equals("Street Address 1"))
+            {
+                myCommand.CommandText += "Street_Address1 = ";
+            }
+            else if (cust_search_box.Text.Equals("Street Address 2"))
+            {
+                myCommand.CommandText += "Street_Address2 = ";
+            }
+            else if (cust_search_box.Text.Equals("City"))
+            {
+                myCommand.CommandText += "City = ";
+            }
+            else if (cust_search_box.Text.Equals("Province"))
+            {
+                myCommand.CommandText += "Province = ";
+            }
+            else if (cust_search_box.Text.Equals("Postal Code"))
+            {
+                myCommand.CommandText += "Postal_Code = ";
+            }
+            else if (cust_search_box.Text.Equals("DOB"))
+            {
+                myCommand.CommandText += "Date_of_Birth = ";
+            }
+            else if (cust_search_box.Text.Equals("Phone Number"))
+            {
+                myCommand.CommandText += "Phone_Number = ";
+            }
+            else if (cust_search_box.Text.Equals("Insurance"))
+            {
+                myCommand.CommandText += "Insurance = ";
+            }
+            else if (cust_search_box.Text.Equals("Driving License"))
+            {
+                myCommand.CommandText += "Drivers_License = ";
+            }
+            else if (cust_search_box.Text.Equals("Membership Status"))
+            {
+                myCommand.CommandText += "MemberShip_Status = ";
+            }
+            else
+            {
+                MessageBox.Show("No Search Field Selected");
+                invalid = 1;
+            }
+            if (cust_search_box_txt.Text.Length > 0 && invalid == 0)
+            {
+                if (cid != 1)
+                {
+                    myCommand.CommandText += "'" + cust_search_box_txt.Text + "';";
+                }
+                else
+                {
+                    myCommand.CommandText += cust_search_box_txt.Text + ";";
+                }
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+                    customer_view.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        customer_view.Rows.Add(myReader["Customer_ID"].ToString(), myReader["First_Name"].ToString(), myReader["Middle_Name"].ToString(), myReader["Last_Name"].ToString(), myReader["Street_Address1"].ToString(), myReader["Street_Address2"].ToString(), myReader["City"].ToString(), myReader["Province"].ToString(), myReader["Postal_Code"].ToString(), myReader["Date_of_Birth"].ToString(), myReader["Phone_Number"].ToString(), myReader["Insurance"].ToString(), myReader["Drivers_License"].ToString(), myReader["Membership_Status"].ToString());
+                    }
+                    myReader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
+            else
+            {
+                if (invalid != 2)
+                {
+                    MessageBox.Show("No Search Text Entered");
+                }
+            }
+        }
+        //customer delete button
+        private void cust_del_but_Click(object sender, EventArgs e)
+        {
+            int result;
+            if (cust_id_LU_txt.Text.Length > 0 && !int.TryParse(branch_search_text_box.Text.ToString(), out result))
+            {
+                myCommand.CommandText = "delete from Customer where Customer_ID = " + cust_id_LU_txt.Text;
+
+                try
+                {
+                    MessageBox.Show(myCommand.CommandText);
+                    myCommand.ExecuteNonQuery();
+                    cust_refresh_but.PerformClick();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Valid CustomerID to delete");
+            }
+        }
+        //customer refresh button
+        private void cust_refresh_but_Click(object sender, EventArgs e)
+        {
+            myCommand.CommandText = "select * from Customer";
+
+            try
+            {
+                //MessageBox.Show(myCommand.CommandText);  
+                myReader = myCommand.ExecuteReader();
+
+                customer_view.Rows.Clear();
+                while (myReader.Read())
+                {
+                    customer_view.Rows.Add(myReader["Customer_ID"].ToString(), myReader["First_Name"].ToString(), myReader["Middle_Name"].ToString(), myReader["Last_Name"].ToString(), myReader["Street_Address1"].ToString(), myReader["Street_Address2"].ToString(), myReader["City"].ToString(), myReader["Province"].ToString(), myReader["Postal_Code"].ToString(), myReader["Date_of_Birth"].ToString(), myReader["Phone_Number"].ToString(), myReader["Insurance"].ToString(), myReader["Drivers_License"].ToString(), myReader["Membership_Status"].ToString());
+                }
+
+                myReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
         }
     }
 }
