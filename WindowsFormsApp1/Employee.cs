@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDataBase; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-N349OTM; Database = master; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -584,7 +584,7 @@ namespace WindowsFormsApp1
             int add = 0;
             try
             {
-                myCommand.CommandText = "update Customer set";
+                myCommand.CommandText = "update Customer set ";
 
                 if (cust_first_name_txt.Text.Length > 0)
                 {
@@ -606,13 +606,13 @@ namespace WindowsFormsApp1
                 if (cust_street_add1_txt.Text.Length > 0)
                 {
                     if (add == 1) { myCommand.CommandText += ","; }
-                    myCommand.CommandText += "Street_address1 = '" + cust_street_add1_txt.Text + "'";
+                    myCommand.CommandText += "Street_Address1 = '" + cust_street_add1_txt.Text + "'";
                     add = 1;
                 }
                 if (cust_street_add2_txt.Text.Length > 0)
                 {
                     if (add == 1) { myCommand.CommandText += ","; }
-                    myCommand.CommandText += "Street_address1 = '" + cust_street_add2_txt.Text + "'";
+                    myCommand.CommandText += "Street_Address2 = '" + cust_street_add2_txt.Text + "'";
                     add = 1;
                 }
                 if (cust_city_txt.Text.Length > 0)
@@ -663,6 +663,7 @@ namespace WindowsFormsApp1
                     myCommand.CommandText += "Memebership_Status = '" + cust_memStat_txt.Text + "'";
                     add = 1;
                 }
+
                 myCommand.CommandText += "where Customer_ID = " + cust_custID_txt.Text + ";";
 
                 if (add == 1 && cust_custID_txt.Text.Length > 0)
@@ -688,69 +689,69 @@ namespace WindowsFormsApp1
             int invalid = 0;
             int cid = 0;
             int result;
-            myCommand.CommandText = "select * from Customer where";
+            myCommand.CommandText = "select * from Customer where ";
 
-            if (cust_search_box.Text.Equals("Customer ID"))
+            if (cust_box_search.Text.Equals("Customer ID"))
             {
                 myCommand.CommandText += "Customer_ID = ";
                 cid = 1;
                 if (cust_search_box_txt.Text.Length > 0 && !int.TryParse(cust_search_box_txt.Text.ToString(), out result))
                 {
                     invalid = 2;
-                    MessageBox.Show("CustomerID Must Be integer");
+                    MessageBox.Show("Customer_ID Must Be Integer");
                 }
             }
-            else if (cust_search_box.Text.Equals("First Name"))
+            else if (cust_box_search.Text.Equals("First Name"))
             {
                 myCommand.CommandText += "First_Name = ";
             }
-            else if (cust_search_box.Text.Equals("Middle Name"))
+            else if (cust_box_search.Text.Equals("Middle Name"))
             {
                 myCommand.CommandText += "Middle_Name = ";
             }
-            else if (cust_search_box.Text.Equals("Last Name"))
+            else if (cust_box_search.Text.Equals("Last Name"))
             {
                 myCommand.CommandText += "Last_Name = ";
             }
-            else if (cust_search_box.Text.Equals("Street Address 1"))
+            else if (cust_box_search.Text.Equals("Street Address 1"))
             {
                 myCommand.CommandText += "Street_Address1 = ";
             }
-            else if (cust_search_box.Text.Equals("Street Address 2"))
+            else if (cust_box_search.Text.Equals("Street Address 2"))
             {
                 myCommand.CommandText += "Street_Address2 = ";
             }
-            else if (cust_search_box.Text.Equals("City"))
+            else if (cust_box_search.Text.Equals("City"))
             {
                 myCommand.CommandText += "City = ";
             }
-            else if (cust_search_box.Text.Equals("Province"))
+            else if (cust_box_search.Text.Equals("Province"))
             {
                 myCommand.CommandText += "Province = ";
             }
-            else if (cust_search_box.Text.Equals("Postal Code"))
+            else if (cust_box_search.Text.Equals("Postal Code"))
             {
                 myCommand.CommandText += "Postal_Code = ";
             }
-            else if (cust_search_box.Text.Equals("DOB"))
+            else if (cust_box_search.Text.Equals("DOB"))
             {
                 myCommand.CommandText += "Date_of_Birth = ";
             }
-            else if (cust_search_box.Text.Equals("Phone Number"))
+            else if (cust_box_search.Text.Equals("Phone Number"))
             {
                 myCommand.CommandText += "Phone_Number = ";
             }
-            else if (cust_search_box.Text.Equals("Insurance"))
+            else if (cust_box_search.Text.Equals("Insurance"))
             {
                 myCommand.CommandText += "Insurance = ";
             }
-            else if (cust_search_box.Text.Equals("Driving License"))
+            else if (cust_box_search.Text.Equals("Drivers_License"))
             {
                 myCommand.CommandText += "Drivers_License = ";
             }
-            else if (cust_search_box.Text.Equals("Membership Status"))
+            else if (cust_box_search.Text.Equals("Membership Status"))
             {
-                myCommand.CommandText += "MemberShip_Status = ";
+                myCommand.CommandText += "Membership_Status = ";
             }
             else
             {
