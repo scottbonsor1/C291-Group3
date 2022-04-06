@@ -84,8 +84,6 @@
             this.dRent = new System.Windows.Forms.TextBox();
             this.typeDesc = new System.Windows.Forms.TextBox();
             this.modelID = new System.Windows.Forms.TextBox();
-            this.rCostS = new System.Windows.Forms.ComboBox();
-            this.typeDescS = new System.Windows.Forms.ComboBox();
             this.rentalCostSLabel = new System.Windows.Forms.Label();
             this.typeSDescLabel = new System.Windows.Forms.Label();
             this.modelSLabel = new System.Windows.Forms.Label();
@@ -147,6 +145,20 @@
             this.cust_refresh_but = new System.Windows.Forms.Button();
             this.cust_edit_but = new System.Windows.Forms.Button();
             this.customer_view = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cust_add_but = new System.Windows.Forms.Button();
             this.cust_memStat_txt = new System.Windows.Forms.TextBox();
             this.cust_drivers_txt = new System.Windows.Forms.TextBox();
@@ -177,20 +189,16 @@
             this.cust_f_name_label = new System.Windows.Forms.Label();
             this.cust_custID_label = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descS = new System.Windows.Forms.TextBox();
+            this.dCostS1 = new System.Windows.Forms.TextBox();
+            this.dCostS2 = new System.Windows.Forms.TextBox();
+            this.wCostS1 = new System.Windows.Forms.TextBox();
+            this.wCostS2 = new System.Windows.Forms.TextBox();
+            this.mCostS1 = new System.Windows.Forms.TextBox();
+            this.mCostS2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.Tabs.SuspendLayout();
             this.carsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cars_view)).BeginInit();
@@ -666,6 +674,16 @@
             // 
             // carTypeTab
             // 
+            this.carTypeTab.Controls.Add(this.label4);
+            this.carTypeTab.Controls.Add(this.label3);
+            this.carTypeTab.Controls.Add(this.label2);
+            this.carTypeTab.Controls.Add(this.mCostS2);
+            this.carTypeTab.Controls.Add(this.mCostS1);
+            this.carTypeTab.Controls.Add(this.wCostS2);
+            this.carTypeTab.Controls.Add(this.wCostS1);
+            this.carTypeTab.Controls.Add(this.dCostS2);
+            this.carTypeTab.Controls.Add(this.dCostS1);
+            this.carTypeTab.Controls.Add(this.descS);
             this.carTypeTab.Controls.Add(this.editTypeBut);
             this.carTypeTab.Controls.Add(this.delTypeBut);
             this.carTypeTab.Controls.Add(this.DailyRentLabel);
@@ -677,8 +695,6 @@
             this.carTypeTab.Controls.Add(this.dRent);
             this.carTypeTab.Controls.Add(this.typeDesc);
             this.carTypeTab.Controls.Add(this.modelID);
-            this.carTypeTab.Controls.Add(this.rCostS);
-            this.carTypeTab.Controls.Add(this.typeDescS);
             this.carTypeTab.Controls.Add(this.rentalCostSLabel);
             this.carTypeTab.Controls.Add(this.typeSDescLabel);
             this.carTypeTab.Controls.Add(this.modelSLabel);
@@ -760,7 +776,7 @@
             // 
             // modelS
             // 
-            this.modelS.Location = new System.Drawing.Point(21, 433);
+            this.modelS.Location = new System.Drawing.Point(32, 391);
             this.modelS.Name = "modelS";
             this.modelS.Size = new System.Drawing.Size(100, 20);
             this.modelS.TabIndex = 14;
@@ -786,36 +802,19 @@
             this.modelID.Size = new System.Drawing.Size(100, 20);
             this.modelID.TabIndex = 11;
             // 
-            // rCostS
-            // 
-            this.rCostS.FormattingEnabled = true;
-            this.rCostS.Location = new System.Drawing.Point(348, 432);
-            this.rCostS.Name = "rCostS";
-            this.rCostS.Size = new System.Drawing.Size(121, 21);
-            this.rCostS.TabIndex = 10;
-            this.rCostS.SelectedIndexChanged += new System.EventHandler(this.comboBox10_SelectedIndexChanged);
-            // 
-            // typeDescS
-            // 
-            this.typeDescS.FormattingEnabled = true;
-            this.typeDescS.Location = new System.Drawing.Point(180, 432);
-            this.typeDescS.Name = "typeDescS";
-            this.typeDescS.Size = new System.Drawing.Size(121, 21);
-            this.typeDescS.TabIndex = 9;
-            // 
             // rentalCostSLabel
             // 
             this.rentalCostSLabel.AutoSize = true;
-            this.rentalCostSLabel.Location = new System.Drawing.Point(379, 391);
+            this.rentalCostSLabel.Location = new System.Drawing.Point(216, 438);
             this.rentalCostSLabel.Name = "rentalCostSLabel";
-            this.rentalCostSLabel.Size = new System.Drawing.Size(62, 13);
+            this.rentalCostSLabel.Size = new System.Drawing.Size(70, 13);
             this.rentalCostSLabel.TabIndex = 8;
-            this.rentalCostSLabel.Text = "Rental Cost";
+            this.rentalCostSLabel.Text = "Rental Costs:";
             // 
             // typeSDescLabel
             // 
             this.typeSDescLabel.AutoSize = true;
-            this.typeSDescLabel.Location = new System.Drawing.Point(214, 391);
+            this.typeSDescLabel.Location = new System.Drawing.Point(218, 347);
             this.typeSDescLabel.Name = "typeSDescLabel";
             this.typeSDescLabel.Size = new System.Drawing.Size(60, 13);
             this.typeSDescLabel.TabIndex = 7;
@@ -825,7 +824,7 @@
             // modelSLabel
             // 
             this.modelSLabel.AutoSize = true;
-            this.modelSLabel.Location = new System.Drawing.Point(47, 391);
+            this.modelSLabel.Location = new System.Drawing.Point(47, 347);
             this.modelSLabel.Name = "modelSLabel";
             this.modelSLabel.Size = new System.Drawing.Size(50, 13);
             this.modelSLabel.TabIndex = 6;
@@ -861,12 +860,13 @@
             // 
             // typeSBut
             // 
-            this.typeSBut.Location = new System.Drawing.Point(193, 505);
+            this.typeSBut.Location = new System.Drawing.Point(493, 511);
             this.typeSBut.Name = "typeSBut";
             this.typeSBut.Size = new System.Drawing.Size(95, 23);
             this.typeSBut.TabIndex = 2;
             this.typeSBut.Text = "Search Car Type";
             this.typeSBut.UseVisualStyleBackColor = true;
+            this.typeSBut.Click += new System.EventHandler(this.searchCarTypeButClick);
             // 
             // addTypeBut
             // 
@@ -1475,6 +1475,76 @@
             this.customer_view.Size = new System.Drawing.Size(1167, 453);
             this.customer_view.TabIndex = 30;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Customer ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "First Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Middle Name";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Last Name";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Street Address 1";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Street Address 2";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "City";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Province";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Postal Code";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "DOB";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Phone Number";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Insurance";
+            this.Column12.Name = "Column12";
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Drivers License";
+            this.Column13.Name = "Column13";
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Membership Status";
+            this.Column14.Name = "Column14";
+            // 
             // cust_add_but
             // 
             this.cust_add_but.Location = new System.Drawing.Point(8, 517);
@@ -1723,75 +1793,81 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Column1
+            // descS
             // 
-            this.Column1.HeaderText = "Customer ID";
-            this.Column1.Name = "Column1";
+            this.descS.Location = new System.Drawing.Point(193, 391);
+            this.descS.Name = "descS";
+            this.descS.Size = new System.Drawing.Size(100, 20);
+            this.descS.TabIndex = 23;
             // 
-            // Column2
+            // dCostS1
             // 
-            this.Column2.HeaderText = "First Name";
-            this.Column2.Name = "Column2";
+            this.dCostS1.Location = new System.Drawing.Point(32, 496);
+            this.dCostS1.Name = "dCostS1";
+            this.dCostS1.Size = new System.Drawing.Size(100, 20);
+            this.dCostS1.TabIndex = 24;
             // 
-            // Column3
+            // dCostS2
             // 
-            this.Column3.HeaderText = "Middle Name";
-            this.Column3.Name = "Column3";
+            this.dCostS2.Location = new System.Drawing.Point(32, 540);
+            this.dCostS2.Name = "dCostS2";
+            this.dCostS2.Size = new System.Drawing.Size(100, 20);
+            this.dCostS2.TabIndex = 25;
             // 
-            // Column4
+            // wCostS1
             // 
-            this.Column4.HeaderText = "Last Name";
-            this.Column4.Name = "Column4";
+            this.wCostS1.Location = new System.Drawing.Point(201, 496);
+            this.wCostS1.Name = "wCostS1";
+            this.wCostS1.Size = new System.Drawing.Size(100, 20);
+            this.wCostS1.TabIndex = 26;
             // 
-            // Column5
+            // wCostS2
             // 
-            this.Column5.HeaderText = "Street Address 1";
-            this.Column5.Name = "Column5";
+            this.wCostS2.Location = new System.Drawing.Point(201, 540);
+            this.wCostS2.Name = "wCostS2";
+            this.wCostS2.Size = new System.Drawing.Size(100, 20);
+            this.wCostS2.TabIndex = 27;
             // 
-            // Column6
+            // mCostS1
             // 
-            this.Column6.HeaderText = "Street Address 2";
-            this.Column6.Name = "Column6";
+            this.mCostS1.Location = new System.Drawing.Point(367, 496);
+            this.mCostS1.Name = "mCostS1";
+            this.mCostS1.Size = new System.Drawing.Size(100, 20);
+            this.mCostS1.TabIndex = 28;
             // 
-            // Column7
+            // mCostS2
             // 
-            this.Column7.HeaderText = "City";
-            this.Column7.Name = "Column7";
+            this.mCostS2.Location = new System.Drawing.Point(367, 540);
+            this.mCostS2.Name = "mCostS2";
+            this.mCostS2.Size = new System.Drawing.Size(100, 20);
+            this.mCostS2.TabIndex = 29;
             // 
-            // Column8
+            // label2
             // 
-            this.Column8.HeaderText = "Province";
-            this.Column8.Name = "Column8";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 466);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Daily Rental Cost";
             // 
-            // Column9
+            // label3
             // 
-            this.Column9.HeaderText = "Postal Code";
-            this.Column9.Name = "Column9";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(216, 466);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Weekly Rental Cost";
             // 
-            // Column10
+            // label4
             // 
-            this.Column10.HeaderText = "DOB";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Phone Number";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Insurance";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Drivers License";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Membership Status";
-            this.Column14.Name = "Column14";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(387, 466);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Monthly Rental Cost";
             // 
             // Employee
             // 
@@ -1929,8 +2005,6 @@
         private System.Windows.Forms.TextBox dRent;
         private System.Windows.Forms.TextBox typeDesc;
         private System.Windows.Forms.TextBox modelID;
-        private System.Windows.Forms.ComboBox rCostS;
-        private System.Windows.Forms.ComboBox typeDescS;
         private System.Windows.Forms.Button branch_edit_but;
         private System.Windows.Forms.TextBox branch_search_text_box;
         private System.Windows.Forms.ComboBox branch_search_box;
@@ -1986,5 +2060,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.TextBox dCostS2;
+        private System.Windows.Forms.TextBox dCostS1;
+        private System.Windows.Forms.TextBox descS;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox mCostS2;
+        private System.Windows.Forms.TextBox mCostS1;
+        private System.Windows.Forms.TextBox wCostS2;
+        private System.Windows.Forms.TextBox wCostS1;
     }
 }

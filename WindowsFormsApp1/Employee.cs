@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
+
 namespace WindowsFormsApp1
 {
     public partial class Employee : Form
@@ -16,13 +18,16 @@ namespace WindowsFormsApp1
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+
+        //used for checking size of inputted rent values
+        double numLimit = 10000;
         public Employee()
         {
             InitializeComponent();
             
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = DESKTOP-N349OTM; Database = master; Trusted_Connection = yes;";
+            String connectionString = "Server = LAPTOP-DSBFVL6U; Database = 291_RentalDatabase; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -88,7 +93,7 @@ namespace WindowsFormsApp1
                 carTypeView.Rows.Clear();
                 while (myReader.Read())
                 {
-                    carTypeView.Rows.Add(myReader["Car_Type_ID"].ToString(), myReader["Description"].ToString(), myReader["Daily_Rate"].ToString(), myReader["Weekly_Rate"].ToString(), myReader["Monthly_Rate"].ToString());
+                    carTypeView.Rows.Add(myReader["Car_Type_ID"].ToString(), myReader["Description"].ToString(), myReader["Daily_Rate"], myReader["Weekly_Rate"], myReader["Monthly_Rate"]);
                 }
 
                 myReader.Close();
@@ -108,6 +113,12 @@ namespace WindowsFormsApp1
             {
                 try
                 {
+                    //Used to check if rent values exceed DB capacity (precision -2 for decimal vals)
+                    if(double.Parse(dRent.Text) >= numLimit || double.Parse(wRent.Text) >= numLimit || double.Parse(mRent.Text) >= numLimit) {
+                        MessageBox.Show("Rent value entered too large, try a smaller value", "Error");
+                        return;
+                    }
+
                     myCommand.CommandText = "insert into Car_Type values (" + modelID.Text + ",' " +
                         typeDesc.Text + "',' " + dRent.Text + "',' " + wRent.Text + "',' " +
                         mRent.Text + "')";
@@ -171,18 +182,36 @@ namespace WindowsFormsApp1
                 }
                 if (dRent.Text.Length > 0)
                 {
+                    if (double.Parse(dRent.Text) >= numLimit)
+                    {
+                        MessageBox.Show("Rent value entered too large, try a smaller value", "Error");
+                        return;
+                    }
+
                     if (check == 1) { myCommand.CommandText += ", ";  }
                     myCommand.CommandText += "Daily_Rate = " + dRent.Text;
                     check = 1;
                 }
                 if (wRent.Text.Length > 0)
                 {
+                    if (double.Parse(wRent.Text) >= numLimit)
+                    {
+                        MessageBox.Show("Rent value entered too large, try a smaller value", "Error");
+                        return;
+                    }
+
                     if (check == 1) { myCommand.CommandText += ", "; }
                     myCommand.CommandText += "Weekly_Rate = " + wRent.Text;
                     check = 1;
                 }
                 if (mRent.Text.Length > 0)
                 {
+                    if(double.Parse(mRent.Text) >= numLimit)
+                    {
+                        MessageBox.Show("Rent value entered too large, try a smaller value", "Error");
+                        return;
+                    }
+
                     if (check == 1) { myCommand.CommandText += ", "; }
                     myCommand.CommandText += "Monthly_Rate = " + mRent.Text;
                     check = 1;
@@ -212,6 +241,98 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void searchCarTypeButClick(object sender, EventArgs e)
+        {
+
+            int check = 0;
+            myCommand.CommandText = "select * from Car_Type where ";
+
+            if (modelS.Text.Length > 0)
+            {
+                myCommand.CommandText += "Car_Type_ID = " + modelS.Text;
+                check = 1;
+            }
+
+            if (descS.Text.Length > 0)
+            {
+                if(check == 1) { myCommand.CommandText += " and "; }
+                myCommand.CommandText += "Description = '" + descS.Text + "'";
+                check = 1;
+            }
+
+            if (dCostS1.Text.Length > 0)
+            {
+                if (check ==1 ) { myCommand.CommandText += " and "; }
+                myCommand.CommandText += "Daily_Rate >= " + dCostS1.Text;
+                check = 1;
+            }
+
+            if (dCostS2.Text.Length > 0)
+            {
+                if (check == 1) { myCommand.CommandText += " and "; }
+                myCommand.CommandText += "Daily_Rate <= " + dCostS2.Text;
+                check = 1;
+            }
+
+            if (wCostS1.Text.Length > 0)
+            {
+                if (check == 1) { myCommand.CommandText += " and "; }
+                myCommand.CommandText += "Weekly_Rate >= " + wCostS1.Text;
+                check = 1;
+            }
+
+            if (wCostS2.Text.Length > 0)
+            {
+                if (check == 1) { myCommand.CommandText += " and "; }
+                myCommand.CommandText += "Weekly_Rate <= " + wCostS2.Text;
+                check = 1;
+            }
+
+            if (mCostS1.Text.Length > 0)
+            {
+                if (check == 1) { myCommand.CommandText += " and "; }
+                myCommand.CommandText += "Monthly_Rate >= " + mCostS1.Text;
+                check = 1;
+            }
+
+            if (mCostS2.Text.Length > 0)
+            {
+                if (check == 1) { myCommand.CommandText += " and "; }
+                myCommand.CommandText += "Monthly_Rate <= " + mCostS2.Text;
+                check = 1;
+            }
+
+            myCommand.CommandText += ";";
+
+            if (check == 0)
+            {
+                refreshCarType();
+            }
+
+            else
+            {
+                try
+                {
+                    MessageBox.Show(myCommand.CommandText);
+                    myReader = myCommand.ExecuteReader();
+                    carTypeView.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        carTypeView.Rows.Add(myReader["Car_Type_ID"].ToString(), myReader["Description"].ToString(), myReader["Daily_Rate"].ToString(), myReader["Weekly_Rate"].ToString(), myReader["Monthly_Rate"].ToString());
+                    }
+
+                    myReader.Close();
+
+                }
+
+                catch (Exception e2)
+                {
+                    MessageBox.Show("Invalid value(s) entered");
+                }
+            }
+
+
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -1184,6 +1305,11 @@ namespace WindowsFormsApp1
                 Fill_Cars_Search_Dropdown(cars_search_attribute_dropdown.Text);
                 cars_search_dropdown.Text = "";
             }
+
+        }
+
+        private void typeDescS_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
