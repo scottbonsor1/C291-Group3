@@ -73,6 +73,16 @@
             this.cars_vin_text = new System.Windows.Forms.TextBox();
             this.cars_branch_id_label = new System.Windows.Forms.Label();
             this.carTypeTab = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mCostS2 = new System.Windows.Forms.TextBox();
+            this.mCostS1 = new System.Windows.Forms.TextBox();
+            this.wCostS2 = new System.Windows.Forms.TextBox();
+            this.wCostS1 = new System.Windows.Forms.TextBox();
+            this.dCostS2 = new System.Windows.Forms.TextBox();
+            this.dCostS1 = new System.Windows.Forms.TextBox();
+            this.descS = new System.Windows.Forms.TextBox();
             this.editTypeBut = new System.Windows.Forms.Button();
             this.delTypeBut = new System.Windows.Forms.Button();
             this.DailyRentLabel = new System.Windows.Forms.Label();
@@ -189,16 +199,6 @@
             this.cust_f_name_label = new System.Windows.Forms.Label();
             this.cust_custID_label = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.descS = new System.Windows.Forms.TextBox();
-            this.dCostS1 = new System.Windows.Forms.TextBox();
-            this.dCostS2 = new System.Windows.Forms.TextBox();
-            this.wCostS1 = new System.Windows.Forms.TextBox();
-            this.wCostS2 = new System.Windows.Forms.TextBox();
-            this.mCostS1 = new System.Windows.Forms.TextBox();
-            this.mCostS2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Tabs.SuspendLayout();
             this.carsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cars_view)).BeginInit();
@@ -712,6 +712,82 @@
             this.carTypeTab.TabIndex = 1;
             this.carTypeTab.Text = "Car Type";
             this.carTypeTab.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(387, 466);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Monthly Rental Cost";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(216, 466);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Weekly Rental Cost";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 466);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Daily Rental Cost";
+            // 
+            // mCostS2
+            // 
+            this.mCostS2.Location = new System.Drawing.Point(367, 540);
+            this.mCostS2.Name = "mCostS2";
+            this.mCostS2.Size = new System.Drawing.Size(100, 20);
+            this.mCostS2.TabIndex = 29;
+            // 
+            // mCostS1
+            // 
+            this.mCostS1.Location = new System.Drawing.Point(367, 496);
+            this.mCostS1.Name = "mCostS1";
+            this.mCostS1.Size = new System.Drawing.Size(100, 20);
+            this.mCostS1.TabIndex = 28;
+            // 
+            // wCostS2
+            // 
+            this.wCostS2.Location = new System.Drawing.Point(201, 540);
+            this.wCostS2.Name = "wCostS2";
+            this.wCostS2.Size = new System.Drawing.Size(100, 20);
+            this.wCostS2.TabIndex = 27;
+            // 
+            // wCostS1
+            // 
+            this.wCostS1.Location = new System.Drawing.Point(201, 496);
+            this.wCostS1.Name = "wCostS1";
+            this.wCostS1.Size = new System.Drawing.Size(100, 20);
+            this.wCostS1.TabIndex = 26;
+            // 
+            // dCostS2
+            // 
+            this.dCostS2.Location = new System.Drawing.Point(32, 540);
+            this.dCostS2.Name = "dCostS2";
+            this.dCostS2.Size = new System.Drawing.Size(100, 20);
+            this.dCostS2.TabIndex = 25;
+            // 
+            // dCostS1
+            // 
+            this.dCostS1.Location = new System.Drawing.Point(32, 496);
+            this.dCostS1.Name = "dCostS1";
+            this.dCostS1.Size = new System.Drawing.Size(100, 20);
+            this.dCostS1.TabIndex = 24;
+            // 
+            // descS
+            // 
+            this.descS.Location = new System.Drawing.Point(193, 391);
+            this.descS.Name = "descS";
+            this.descS.Size = new System.Drawing.Size(100, 20);
+            this.descS.TabIndex = 23;
             // 
             // editTypeBut
             // 
@@ -1793,87 +1869,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // descS
-            // 
-            this.descS.Location = new System.Drawing.Point(193, 391);
-            this.descS.Name = "descS";
-            this.descS.Size = new System.Drawing.Size(100, 20);
-            this.descS.TabIndex = 23;
-            // 
-            // dCostS1
-            // 
-            this.dCostS1.Location = new System.Drawing.Point(32, 496);
-            this.dCostS1.Name = "dCostS1";
-            this.dCostS1.Size = new System.Drawing.Size(100, 20);
-            this.dCostS1.TabIndex = 24;
-            // 
-            // dCostS2
-            // 
-            this.dCostS2.Location = new System.Drawing.Point(32, 540);
-            this.dCostS2.Name = "dCostS2";
-            this.dCostS2.Size = new System.Drawing.Size(100, 20);
-            this.dCostS2.TabIndex = 25;
-            // 
-            // wCostS1
-            // 
-            this.wCostS1.Location = new System.Drawing.Point(201, 496);
-            this.wCostS1.Name = "wCostS1";
-            this.wCostS1.Size = new System.Drawing.Size(100, 20);
-            this.wCostS1.TabIndex = 26;
-            // 
-            // wCostS2
-            // 
-            this.wCostS2.Location = new System.Drawing.Point(201, 540);
-            this.wCostS2.Name = "wCostS2";
-            this.wCostS2.Size = new System.Drawing.Size(100, 20);
-            this.wCostS2.TabIndex = 27;
-            // 
-            // mCostS1
-            // 
-            this.mCostS1.Location = new System.Drawing.Point(367, 496);
-            this.mCostS1.Name = "mCostS1";
-            this.mCostS1.Size = new System.Drawing.Size(100, 20);
-            this.mCostS1.TabIndex = 28;
-            // 
-            // mCostS2
-            // 
-            this.mCostS2.Location = new System.Drawing.Point(367, 540);
-            this.mCostS2.Name = "mCostS2";
-            this.mCostS2.Size = new System.Drawing.Size(100, 20);
-            this.mCostS2.TabIndex = 29;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 466);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Daily Rental Cost";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 466);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Weekly Rental Cost";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(387, 466);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Monthly Rental Cost";
-            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1367, 700);
+            this.ClientSize = new System.Drawing.Size(1357, 700);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Tabs);
             this.Controls.Add(this.CustomerBtn);

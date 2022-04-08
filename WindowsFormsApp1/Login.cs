@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         private void CustomerBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Customers f1 = new Customers();
+            Rentals f1 = new Rentals();
             f1.ShowDialog();
             this.Close();
         }
