@@ -17,14 +17,17 @@ namespace WindowsFormsApp1
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        //Change the server here for your guys' own servers
+        public String myServer = "LAPTOP-HUT8634L";
+        public String myDatabase = "291_RentalDatabase";
         public Report()
         {
             InitializeComponent();
 
 
 
-            //Change the server here for your guys' own servers
-            String connectionString = "Server = DESKTOP-N349OTM; Database = master; Trusted_Connection = yes;";
+            
+            String connectionString = "Server = " + myServer + "; Database = " + myDatabase + "; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -80,7 +83,7 @@ namespace WindowsFormsApp1
 
         private void report1_btn_Click(object sender, EventArgs e)//Zachs report
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-N349OTM;Initial Catalog = master;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
             {
                 //List the rental popularity of the car types from most to least popular
                 using (SqlCommand cmd = new SqlCommand("Select CT.Car_Type_ID, Description, count(CT.Car_Type_ID) as Count" +
@@ -106,7 +109,7 @@ namespace WindowsFormsApp1
 
         private void report2_btn_Click(object sender, EventArgs e)//Zachs report
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-N349OTM;Initial Catalog = master;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
             {
                 //List all customer(names) who have never returned a car to a branch outside their city
                 using (SqlCommand cmd = new SqlCommand("Select distinct C.First_Name + C.Last_Name" +
@@ -135,8 +138,8 @@ namespace WindowsFormsApp1
 
         private void report3_btn_Click(object sender, EventArgs e)//Brandons report
         {
-            
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-N349OTM;Initial Catalog = master;Integrated Security=True");
+
+            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
             {
                 //Find all customers who have not rented in a given month
                 using (SqlCommand cmd = new SqlCommand("Select MONTH(R.Pick_Up_Date) as Month, C.Car_Type_ID as Category," +
@@ -162,7 +165,7 @@ namespace WindowsFormsApp1
 
         private void report4_btn_Click(object sender, EventArgs e)//Malcolms report
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-N349OTM;Initial Catalog = master;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
             {
                 //Find all customers who have not rented in a given month
                 using (SqlCommand cmd = new SqlCommand("(SELECT C.Customer_ID, First_Name, Middle_Name, Last_Name " +
@@ -190,7 +193,7 @@ namespace WindowsFormsApp1
 
         private void report5_btn_Click(object sender, EventArgs e)//Scotts report
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-N349OTM;Initial Catalog = master;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
             {
                 //List the monthly rental transaction value for each branch.
                 using (SqlCommand cmd = new SqlCommand("Select B.BID, B.Description, Year(R.Pick_Up_Date) as Year, Month(R.Pick_Up_Date) as Month, Sum(R.Total_Rent_Value) as Total_Rent_Value" +
@@ -213,6 +216,9 @@ namespace WindowsFormsApp1
             }
         }
 
-        
+        private void reportgrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
