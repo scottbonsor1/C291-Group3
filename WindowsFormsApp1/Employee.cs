@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
             
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -46,6 +46,7 @@ namespace WindowsFormsApp1
                 myCommand = new SqlCommand();
                 myCommand.Connection = myConnection; // Link the command stream to the connection
                 refreshCarType();
+                refreshBranch();
             }
             catch (Exception e)
             {
@@ -233,7 +234,7 @@ namespace WindowsFormsApp1
                         refreshCarType();
                     }
 
-                    catch (Exception e2)
+                    catch (Exception) // (Exception e2)
                     {
                         MessageBox.Show("Invalid value(s) entered");
                     }
@@ -325,7 +326,7 @@ namespace WindowsFormsApp1
 
                 }
 
-                catch (Exception e2)
+                catch (Exception) // e2)
                 {
                     MessageBox.Show("Invalid value(s) entered");
                 }
@@ -404,7 +405,29 @@ namespace WindowsFormsApp1
 
         }
 
+        void refreshBranch()
+        {
+            myCommand.CommandText = "select * from Branch";
 
+            try
+            {
+                //MessageBox.Show(myCommand.CommandText);  
+                myReader = myCommand.ExecuteReader();
+
+                branch_view.Rows.Clear();
+                while (myReader.Read())
+                {
+                    branch_view.Rows.Add(myReader["BID"].ToString(), myReader["Description"].ToString(), myReader["Street_Address1"].ToString(), myReader["Street_Address2"].ToString(), myReader["City"].ToString(), myReader["Province"].ToString(), myReader["Postal_Code"].ToString(), myReader["Phone_Number"].ToString());
+                }
+
+                myReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+        }
         private void branch_refresh_but_Click(object sender, EventArgs e)
         {
             myCommand.CommandText = "select * from Branch";
@@ -781,7 +804,7 @@ namespace WindowsFormsApp1
                 if (cust_memStat_txt.Text.Length > 0)
                 {
                     if (add == 1) { myCommand.CommandText += ","; }
-                    myCommand.CommandText += "Memebership_Status = '" + cust_memStat_txt.Text + "'";
+                    myCommand.CommandText += "Membership_Status = '" + cust_memStat_txt.Text + "'";
                     add = 1;
                 }
 
@@ -1309,6 +1332,16 @@ namespace WindowsFormsApp1
         }
 
         private void typeDescS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void branch_search_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cars_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

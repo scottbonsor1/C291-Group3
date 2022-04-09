@@ -16,13 +16,16 @@ namespace WindowsFormsApp1
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public SqlDataReader myReader2;
+        public SqlDataReader myReader3;
+        public Double LATE_FEE = 50.00; //this is the added cost for late rentals
 
         public Rentals()
         {
             InitializeComponent();
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -43,9 +46,7 @@ namespace WindowsFormsApp1
             Fill_Customer_ID();
             Fill_Branches();
             Fill_Vehicle_Types();
-
-
-
+            showRentals();
         }
 
         private void CustomerBtn_Click(object sender, EventArgs e)
@@ -194,6 +195,292 @@ namespace WindowsFormsApp1
         private void label14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            //int customerID = (int) customer_id_dropdown.SelectedValue;
+            String CarType = vehicle_type_dropdown.Text;
+            String PickupB = pickup_branch_dropdown.Text;
+            String ReturnB = return_branch_dropdown.Text;
+            String selectedPDate = dateTimePicker1.Value.ToString();
+            String selectedRDate = dateTimePicker2.Value.ToString();
+
+            if (CarType.Length > 0 || PickupB.Length > 0)
+            {
+                //Car.VIN, Car.Make, Car.Model, Car.Year, Car.No_of_Seats, Car.Colour, Car_Type.Description, Car_Type.Daily_Rate, Car_Type.Weekly_Rate, Car_Type.Monthly_Rate 
+                myCommand.CommandText = "select * from Car, Car_Type, Branch " +
+                    "where Car.Car_Type_ID = Car_Type.Car_Type_ID and Branch.BID = Car.Branch_ID and " +
+                    "Branch.Description = '" + PickupB + "' and Car_Type.Description = '" + CarType + "' " +
+                    "and VIN in " +
+                    "(select VIN from Rentals where " +
+                    "(('" + selectedPDate + "' < Pick_Up_Date and '" + selectedRDate + "' < Pick_Up_Date) or " +
+                    "('" + selectedPDate + "' > Return_Date and '" + selectedRDate + "' > Return_Date)));";
+
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+                    available_vehicles_view.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        available_vehicles_view.Rows.Add(
+                            myReader["VIN"].ToString(), myReader["Make"].ToString(),
+                            myReader["Model"].ToString(), myReader["Year"].ToString(),
+                            myReader["No_of_Seats"].ToString(), myReader["Colour"].ToString(),
+                            myReader["Description"].ToString(), myReader["Daily_Rate"].ToString(),
+                            myReader["Weekly_Rate"].ToString(), myReader["Monthly_Rate"].ToString());
+
+                        String VIN_for_list = myReader["VIN"].ToString();
+                        VIN_box.Items.Add(VIN_for_list);
+
+                    }
+                    myReader.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Choose Vehicle Type and Pick-Up Branch to search");
+            }
+
+
+        }
+
+        private Double getCost(TimeSpan rentalSpan, String carType)
+        {
+            Double cost = 0;
+            int days = rentalSpan.Days + 1;
+            int months, weeks;
+            String dCost, wCost, mCost;
+
+            months = days / 30;
+            days -= months * 30;
+            weeks = days / 7;
+            days -= weeks * 7;
+
+            myCommand.CommandText = "Select Daily_Rate, Weekly_Rate, Monthly_Rate from Car_Type where Description = '" + carType + "';";
+            myReader2 = myCommand.ExecuteReader();
+            myReader2.Read();
+            dCost = myReader2["Daily_Rate"].ToString();
+            wCost = myReader2["Weekly_Rate"].ToString();
+            mCost = myReader2["Monthly_Rate"].ToString();
+            myReader2.Close();
+
+            //REF: https://docs.microsoft.com/en-us/dotnet/api/system.double.parse?view=net-6.0
+            cost += (months * (Double.Parse(mCost)));
+            cost += (weeks * (Double.Parse(wCost)));
+            cost += (days * (Double.Parse(dCost)));
+
+            return cost;
+        }
+
+        private void bookButton_Click(object sender, EventArgs e)
+        {
+            String PBID, RBID;
+            String TID = transaction_id_txt.Text;
+            String customerID = customer_id_dropdown.Text;
+            String CarType = vehicle_type_dropdown.Text;
+            String PickupB = pickup_branch_dropdown.Text;
+            String ReturnB = return_branch_dropdown.Text;
+            //REF: https://www.tutorialspoint.com/vb.net/vb.net_date_time_picker.htm#:~:text=The%20DateTimePicker%20control%20allows%20selecting,by%20clicking%20the%20required%20date.
+            DateTime pickupTime = dateTimePicker1.Value;
+            DateTime returnTime = dateTimePicker2.Value;
+            String pickupDate = pickupTime.ToString();
+            String returnDate = returnTime.ToString();
+            String VIN = VIN_box.Text;
+
+
+
+            TimeSpan rentalSpan = returnTime.Subtract(pickupTime);
+            
+            if (rentalSpan.Days < 0)
+            {
+                MessageBox.Show("Return Date cannot be before the Pick-Up Date");
+            }
+            else if (customerID.Length > 0 && CarType.Length > 0 && PickupB.Length > 0 &&
+                ReturnB.Length > 0 && pickupDate.Length > 0 &&
+                returnDate.Length > 0 && VIN.Length > 0)
+            {
+                //calculating the rental cost
+                Double cost = getCost(rentalSpan, CarType);
+                //getting the pickup BID from the selected description
+                myCommand.CommandText = "Select BID from Branch where Description = '" + PickupB + "';";
+                myReader2 = myCommand.ExecuteReader();
+                myReader2.Read();
+                PBID = myReader2["BID"].ToString();
+                myReader2.Close();
+
+                //getting the return BID now
+                myCommand.CommandText = "Select BID from Branch where Description = '" + ReturnB + "';";
+                myReader3 = myCommand.ExecuteReader();
+                myReader3.Read();
+                RBID = myReader3["BID"].ToString();
+                myReader3.Close();
+
+
+                try
+                {
+                    myCommand.CommandText = "insert into Rentals values (" + TID + ",'" + pickupDate + "','" +
+                        returnDate + "'," + customerID + ",'" +
+                        VIN + "'," + PBID + "," + RBID + ",'" +
+                        cost.ToString() + "')";
+                    MessageBox.Show(myCommand.CommandText);
+
+                    myCommand.ExecuteNonQuery();
+                    showRentals();
+                }
+                catch (Exception e2)
+                {
+                    MessageBox.Show(e2.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Required Fields Missing or Incorrect");
+            }
+        }
+
+        private void vehicle_type_dropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void available_vehicles_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void VIN_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showRentals()
+        {
+            myCommand.CommandText = "select * from Rentals;";
+
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+                my_rentals_view.Rows.Clear();
+                while (myReader.Read())
+                {
+                    my_rentals_view.Rows.Add(
+                        myReader["TID"].ToString(), myReader["Pick_Up_Date"].ToString(),
+                        myReader["Return_Date"].ToString(), myReader["Customer_ID"].ToString(),
+                        myReader["VIN"].ToString(), myReader["Pick_Up_BID"].ToString(),
+                        myReader["Return_BID"].ToString(), myReader["Total_Rent_Value"].ToString());
+                }
+                myReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+        }
+
+        private void view_all_btn_Click(object sender, EventArgs e)
+        {
+            showRentals();
+        }
+
+        private void search_by_id_btn_Click(object sender, EventArgs e)
+        {
+            if (search_id_box.Text.Length > 0)
+            {
+                myCommand.CommandText = "select * from Rentals where Customer_ID = " + search_id_box.Text.ToString() + ";";
+
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+                    my_rentals_view.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        my_rentals_view.Rows.Add(
+                            myReader["TID"].ToString(), myReader["Pick_Up_Date"].ToString(),
+                            myReader["Return_Date"].ToString(), myReader["Customer_ID"].ToString(),
+                            myReader["VIN"].ToString(), myReader["Pick_Up_BID"].ToString(),
+                            myReader["Return_BID"].ToString(), myReader["Total_Rent_Value"].ToString());
+                    }
+                    myReader.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            } else
+            {
+                MessageBox.Show("No Customer ID Entered");
+            }
+        }
+
+        private void cancel_rental_btn_Click(object sender, EventArgs e)
+        {
+            if (cancel_rental_box.Text.Length > 0)
+            {
+                myCommand.CommandText = "delete from Rentals where TID = " + cancel_rental_box.Text.ToString() + ";";
+
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                    view_all_btn.PerformClick();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Transaction ID Entered");
+            }
+        }
+
+        private void add_late_fee_btn_Click(object sender, EventArgs e)
+        {
+            if (late_tid_box.Text.Length > 0)
+            {
+                String initialValue;
+                Double newValue;
+                //getting the return BID now
+                myCommand.CommandText = "Select Total_Rent_Value from Rentals where TID = " + late_tid_box.Text.ToString() + ";";
+                myReader3 = myCommand.ExecuteReader();
+                myReader3.Read();
+                initialValue = myReader3["Total_Rent_Value"].ToString();
+                myReader3.Close();
+
+                newValue = Double.Parse(initialValue) + LATE_FEE;
+
+
+                
+                myCommand.CommandText = "update Rentals set Total_Rent_Value = " + newValue.ToString()  +
+                    " Where TID = " + late_tid_box.Text.ToString() + ";";
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                    view_all_btn.PerformClick();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("No Transaction ID Entered");
+            }
         }
     }
 }
