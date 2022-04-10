@@ -62,6 +62,9 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.late_tid_box = new System.Windows.Forms.TextBox();
+            this.add_late_fee_btn = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.cancel_rental_box = new System.Windows.Forms.TextBox();
             this.search_id_box = new System.Windows.Forms.TextBox();
             this.cancel_rental_btn = new System.Windows.Forms.Button();
@@ -78,9 +81,6 @@
             this.PICK_UP_BRANCH_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RETURN_BRANCH_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOTAL_RENT_VAL_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.late_tid_box = new System.Windows.Forms.TextBox();
-            this.add_late_fee_btn = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.available_vehicles_view)).BeginInit();
@@ -464,6 +464,37 @@
             this.tabPage2.Text = "My Rentals";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // late_tid_box
+            // 
+            this.late_tid_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.late_tid_box.Location = new System.Drawing.Point(327, 401);
+            this.late_tid_box.Name = "late_tid_box";
+            this.late_tid_box.Size = new System.Drawing.Size(105, 30);
+            this.late_tid_box.TabIndex = 62;
+            // 
+            // add_late_fee_btn
+            // 
+            this.add_late_fee_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_late_fee_btn.Location = new System.Drawing.Point(121, 453);
+            this.add_late_fee_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.add_late_fee_btn.Name = "add_late_fee_btn";
+            this.add_late_fee_btn.Size = new System.Drawing.Size(267, 41);
+            this.add_late_fee_btn.TabIndex = 61;
+            this.add_late_fee_btn.Text = "Add Late Fee";
+            this.add_late_fee_btn.UseVisualStyleBackColor = true;
+            this.add_late_fee_btn.Click += new System.EventHandler(this.add_late_fee_btn_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(44, 404);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(264, 25);
+            this.label9.TabIndex = 60;
+            this.label9.Text = "Mark Transaction as Late:";
+            // 
             // cancel_rental_box
             // 
             this.cancel_rental_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -612,37 +643,6 @@
             this.TOTAL_RENT_VAL_COL.MinimumWidth = 6;
             this.TOTAL_RENT_VAL_COL.Name = "TOTAL_RENT_VAL_COL";
             this.TOTAL_RENT_VAL_COL.ReadOnly = true;
-            // 
-            // late_tid_box
-            // 
-            this.late_tid_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.late_tid_box.Location = new System.Drawing.Point(327, 401);
-            this.late_tid_box.Name = "late_tid_box";
-            this.late_tid_box.Size = new System.Drawing.Size(105, 30);
-            this.late_tid_box.TabIndex = 62;
-            // 
-            // add_late_fee_btn
-            // 
-            this.add_late_fee_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_late_fee_btn.Location = new System.Drawing.Point(121, 453);
-            this.add_late_fee_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.add_late_fee_btn.Name = "add_late_fee_btn";
-            this.add_late_fee_btn.Size = new System.Drawing.Size(267, 41);
-            this.add_late_fee_btn.TabIndex = 61;
-            this.add_late_fee_btn.Text = "Add Late Fee";
-            this.add_late_fee_btn.UseVisualStyleBackColor = true;
-            this.add_late_fee_btn.Click += new System.EventHandler(this.add_late_fee_btn_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(44, 404);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(264, 25);
-            this.label9.TabIndex = 60;
-            this.label9.Text = "Mark Transaction as Late:";
             // 
             // Rentals
             // 

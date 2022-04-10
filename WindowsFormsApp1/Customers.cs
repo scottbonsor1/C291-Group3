@@ -19,7 +19,8 @@ namespace WindowsFormsApp1
         public SqlDataReader myReader2;
         public SqlDataReader myReader3;
         public Double LATE_FEE = 50.00; //this is the added cost for late rentals
-
+        public Double DIFF_BRANCH_COST = 50.00; //this is the fee for returning to a different branch
+      
         public Rentals()
         {
             InitializeComponent();
@@ -212,10 +213,11 @@ namespace WindowsFormsApp1
                 myCommand.CommandText = "select * from Car, Car_Type, Branch " +
                     "where Car.Car_Type_ID = Car_Type.Car_Type_ID and Branch.BID = Car.Branch_ID and " +
                     "Branch.Description = '" + PickupB + "' and Car_Type.Description = '" + CarType + "' " +
-                    "and VIN in " +
+                    "and VIN not in " +
                     "(select VIN from Rentals where " +
-                    "(('" + selectedPDate + "' < Pick_Up_Date and '" + selectedRDate + "' < Pick_Up_Date) or " +
-                    "('" + selectedPDate + "' > Return_Date and '" + selectedRDate + "' > Return_Date)));";
+                    "(('" + selectedPDate + "' > Pick_Up_Date and '" + selectedPDate + "' < Return_Date) or " +
+                    "('" + selectedRDate + "' < Return_Date and '" + selectedRDate + "' > Pick_Up_Date ) or " +
+                    "('" + selectedPDate + "' < Pick_Up_Date and '" + selectedRDate + "' > Return_Date)));";
 
                 try
                 {
@@ -307,6 +309,10 @@ namespace WindowsFormsApp1
             {
                 //calculating the rental cost
                 Double cost = getCost(rentalSpan, CarType);
+                if (!PickupB.Equals(ReturnB))
+                {
+                    cost += DIFF_BRANCH_COST;
+                }
                 //getting the pickup BID from the selected description
                 myCommand.CommandText = "Select BID from Branch where Description = '" + PickupB + "';";
                 myReader2 = myCommand.ExecuteReader();
