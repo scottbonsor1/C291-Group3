@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         public SqlCommand myCommand;
         public SqlDataReader myReader;
 
-        //used for checking size of inputted rent values
+        //used for checking size of inputed rent values
         double numLimit = 10000;
         public Employee()
         {
