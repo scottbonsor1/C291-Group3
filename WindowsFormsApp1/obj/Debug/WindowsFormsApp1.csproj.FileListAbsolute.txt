@@ -47,7 +47,6 @@ C:\Users\malco\Documents\School\CMPT291\Project\WindowsFormsApp1\bin\Debug\Windo
 C:\Users\malco\Documents\School\CMPT291\Project\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 C:\Users\malco\Documents\School\CMPT291\Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
 C:\Users\malco\Documents\School\CMPT291\Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
-C:\Users\malco\Documents\School\CMPT291\Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Customers.resources
 C:\Users\malco\Documents\School\CMPT291\Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Employee.resources
 C:\Users\malco\Documents\School\CMPT291\Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.EmployeeLogin.resources
 C:\Users\malco\Documents\School\CMPT291\Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Report.resources
@@ -88,3 +87,4 @@ C:\Users\bonso\Documents\291-Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1
 C:\Users\bonso\Documents\291-Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\bonso\Documents\291-Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Rentals.resources
 C:\Users\zswen\source\repos\C291-Group3\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Rentals.resources
+C:\Users\malco\Documents\School\CMPT291\Project\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Rentals.resources

@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
             
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+            String connectionString = "Server = LAPTOP-DSBFVL6U; Database = 291_RentalDatabase; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
