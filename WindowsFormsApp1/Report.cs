@@ -84,11 +84,11 @@ namespace WindowsFormsApp1
         private void report1_btn_Click(object sender, EventArgs e)//Zachs report
         {
 
-            myCommand.CommandText = "Select CT.Car_Type_ID, Description, COUNT(CT.Car_Type_ID) AS total " +
+            myCommand.CommandText = "Select CT.Car_Type_ID, Description, COUNT(CT.Car_Type_ID) AS TOTAL " +
                         "From Car_Type AS CT, Car AS C, Rentals AS R " +
                         "Where R.VIN = C.VIN and C.Car_Type_ID = CT.Car_Type_ID " +
                         "GROUP BY CT.Car_Type_ID, Description " +
-                        "ORDER BY total DESC";
+                        "ORDER BY TOTAL DESC";
 
             try
             {
@@ -99,7 +99,7 @@ namespace WindowsFormsApp1
 
                 while(myReader.Read())
                 {
-                    reportgrid1.Rows.Add(myReader.Read());
+                    reportgrid1.Rows.Add(myReader["Car_Type_ID"].ToString(), myReader["Description"].ToString(), myReader["TOTAL"].ToString());
                 }
 
                 myReader.Close();
@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
 
                 while (myReader.Read())
                 {
-                    reportgrid2.Rows.Add(myReader.Read());
+                    reportgrid2.Rows.Add(myReader["First_Name"].ToString(), myReader["Last_Name"].ToString());
                 }
 
                 myReader.Close();
@@ -143,7 +143,7 @@ namespace WindowsFormsApp1
 
         private void report3_btn_Click(object sender, EventArgs e)//Brandons report
         {
-            myCommand.CommandText = "SELECT MONTH(R.Pick_Up_Date), C.Car_Type_ID, COUNT(R.Pick_Up_BID) as TOTAL " +
+            myCommand.CommandText = "SELECT MONTH(R.Pick_Up_Date) AS M, C.Car_Type_ID, COUNT(R.Pick_Up_BID) as TOTAL " +
                 "FROM Rentals AS R, Car AS C " +
                 "WHERE R.VIN = C.VIN " +
                 "GROUP BY MONTH(R.Pick_Up_Date), C.Car_Type_ID " +
@@ -156,9 +156,9 @@ namespace WindowsFormsApp1
 
                 while(myReader.Read())
                 {
-                    reportgrid3.Rows.Add(myReader.Read());
+                    reportgrid3.Rows.Add(myReader["M"].ToString(), myReader["Car_Type_ID"].ToString(), myReader["TOTAL"].ToString());
                 }
-
+                    
                 myReader.Close();
             }
 
@@ -260,7 +260,7 @@ namespace WindowsFormsApp1
 
         private void report5_btn_Click(object sender, EventArgs e)//Scotts report
         {
-            myCommand.CommandText = "SELECT B.BID, B.Description, YEAR(R.Pick_Up_Date), MONTH(R.Pick_Up_Date), " +
+            myCommand.CommandText = "SELECT B.BID, B.Description, YEAR(R.Pick_Up_Date) AS Y, MONTH(R.Pick_Up_Date) AS M, " +
                 "SUM(R.Total_Rent_Value) AS TOTAL " +
                 "FROM Rentals AS R, Branch AS B " +
                 "WHERE R.Pick_Up_BID = B.BID " +
@@ -276,7 +276,7 @@ namespace WindowsFormsApp1
 
                 while (myReader.Read())
                 {
-                    reportgrid5.Rows.Add(myReader.Read());
+                    reportgrid5.Rows.Add(myReader["BID"].ToString(), myReader["Description"].ToString(), myReader["Y"].ToString(), myReader["M"].ToString());
                 }
 
                 myReader.Close();
