@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public SqlCommand myCommand;
         public SqlDataReader myReader;
         //Change the server here for your guys' own servers
-        public String myServer = "LAPTOP-HUT8634L";
+        public String myServer = "LAPTOP-DSBFVL6U";
         public String myDatabase = "291_RentalDatabase";
         public Report()
         {
@@ -83,140 +83,223 @@ namespace WindowsFormsApp1
 
         private void report1_btn_Click(object sender, EventArgs e)//Zachs report
         {
-            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
-            {
-                //List the rental popularity of the car types from most to least popular
-                using (SqlCommand cmd = new SqlCommand("Select CT.Car_Type_ID, Description, count(CT.Car_Type_ID) as Count" +
-                        "From Car_Type CT, Car C, Rentals R" +
-                        "Where R.VIN = C.VIN and C.Car_Type_ID = CT.Car_Type_ID" +
-                        "Group by C.Car_Type_ID, Description" +
-                        "Order by Count DESC;"))
-                {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    reportgrid1.Rows.Clear();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        while (sdr.Read())
-                        {
-                            reportgrid1.Rows.Add(sdr["Car_Type_ID"].ToString(), sdr["Description"].ToString());
-                        }
-                    }
-                }
-            }
-        }
 
+            myCommand.CommandText = "Select CT.Car_Type_ID, Description, COUNT(CT.Car_Type_ID) AS total " +
+                        "From Car_Type AS CT, Car AS C, Rentals AS R " +
+                        "Where R.VIN = C.VIN and C.Car_Type_ID = CT.Car_Type_ID " +
+                        "GROUP BY CT.Car_Type_ID, Description " +
+                        "ORDER BY total DESC";
+
+            try
+            {
+
+                myReader = myCommand.ExecuteReader();
+
+                reportgrid1.Rows.Clear();
+
+                while(myReader.Read())
+                {
+                    reportgrid1.Rows.Add(myReader.Read());
+                }
+
+                myReader.Close();
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+
+        }
+        
         private void report2_btn_Click(object sender, EventArgs e)//Zachs report
         {
-            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
-            {
-                //List all customer(names) who have never returned a car to a branch outside their city
-                using (SqlCommand cmd = new SqlCommand("Select distinct C.First_Name + C.Last_Name" +
-                        "From Rentals R, Customer C, Branch B" +
-                        "Where C.Customer_ID = R.Customer_ID and R.Return_BID = B.BID and C.City = B.City" +
-                        "except(" +
-                        "Select distinct *" +
-                        "From Rentals R, Customer C, Branch B" +
-                        "Where C.Customer_ID = R.Customer_ID and R.Return_BID = B.BID and C.City != B.City);"))
-                {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    reportgrid2.Rows.Clear();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        while (sdr.Read())
-                        {
-                            reportgrid2.Rows.Add(sdr["First_Name"].ToString(), sdr["Last_Name"].ToString());
+            myCommand.CommandText = "SELECT DISTINCT C.First_Name, C.Last_Name " +
+                "FROM Rentals AS R, Customer AS C, Branch AS B " +
+                "WHERE C.Customer_ID = R.Customer_ID AND R.Return_BID = B.BID AND C.City = B.City " +
+                "EXCEPT " +
+                "(SELECT DISTINCT C.First_Name, C.Last_Name " +
+                "FROM Rentals AS R, Customer AS C, Branch AS B " +
+                "WHERE C.Customer_ID = R.Customer_ID AND R.Return_BID = B.BID AND C.City != B.City)";
 
-                        }
-                    }
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+                reportgrid2.Rows.Clear();
+
+                while (myReader.Read())
+                {
+                    reportgrid2.Rows.Add(myReader.Read());
                 }
+
+                myReader.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
             }
         }
 
         private void report3_btn_Click(object sender, EventArgs e)//Brandons report
         {
+            myCommand.CommandText = "SELECT MONTH(R.Pick_Up_Date), C.Car_Type_ID, COUNT(R.Pick_Up_BID) as TOTAL " +
+                "FROM Rentals AS R, Car AS C " +
+                "WHERE R.VIN = C.VIN " +
+                "GROUP BY MONTH(R.Pick_Up_Date), C.Car_Type_ID " +
+                "ORDER BY MONTH(R.Pick_Up_Date)";
 
-            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
+            try
             {
-                //Find all customers who have not rented in a given month
-                using (SqlCommand cmd = new SqlCommand("Select MONTH(R.Pick_Up_Date) as Month, C.Car_Type_ID as Category," +
-                        "COUNT(R.Pick_Up_BID) as TOTAL from Rentals R, Car C" +
-                        "WHERE R.VIN = C.VIN" +
-                        "Group by MONTH(R.Pick_Up_Date), C.Car_Type_ID" +
-                        "Order bY MONTH(R.Pick_Up_Date);"))
+                myReader = myCommand.ExecuteReader();
+                reportgrid3.Rows.Clear();
+
+                while(myReader.Read())
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    reportgrid3.Rows.Clear();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        while (sdr.Read())
-                        {
-                            reportgrid3.Rows.Add(sdr["Pick_Up_Date"].ToString(), sdr["Car_Type_ID"].ToString());
-                        }
-                    }
+                    reportgrid3.Rows.Add(myReader.Read());
                 }
+
+                myReader.Close();
             }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+            
         }
 
         private void report4_btn_Click(object sender, EventArgs e)//Malcolms report
         {
-            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
+
+            int temp;
+            
+            switch (monthSelect.Text)
             {
-                //Find all customers who have not rented in a given month
-                using (SqlCommand cmd = new SqlCommand("(SELECT C.Customer_ID, First_Name, Middle_Name, Last_Name " +
-                    "FROM Customer as C" +
-                    "except" +
-                    "SELECT C.Customer_ID, First_Name, Middle_Name, Last_Name" +
-                    "FROM Customer as C, Rentals as R" +
-                    "WHERE C.Customer_ID = R.Customer_ID and $MONTH$ = R.Pick_Up_Date); "))
-                {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    reportgrid4.Rows.Clear();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        while (sdr.Read())
-                        {
-                            reportgrid4.Rows.Add(sdr["Customer_ID"].ToString(), sdr["First_Name"].ToString(), sdr["Middle_Name"].ToString(), sdr["Last_Name"].ToString());
-                        }
-                    }
-                }
+
+                case "January":
+                    temp = 1;
+                    break;
+
+                case "February":
+                    temp = 2;
+                    break;
+
+                case "March":
+                    temp = 3;
+                    break;
+
+                case "April":
+                    temp = 4;
+                    break;
+
+                case "May":
+                    temp = 5;
+                    break;
+
+                case "June":
+                    temp = 6;
+                    break;
+
+                case "July":
+                    temp = 7;
+                    break;
+
+                case "August":
+                    temp = 8;
+                    break;
+
+                case "September":
+                    temp = 9;
+                    break;
+
+                case "October":
+                    temp = 10;
+                    break;
+
+                case "November":
+                    temp = 11;
+                    break;
+
+                case "December":
+                    temp = 12;
+                    break;
+
+                default:
+                    temp = 0;
+                    break;
+
             }
 
+            myCommand.CommandText = "(SELECT First_Name, Middle_Name, Last_Name " +
+                "FROM Customer AS C) " +
+                "EXCEPT " +
+                "(SELECT First_Name, Middle_Name, Last_Name " +
+                "FROM Customer AS C, Rentals AS R " +
+                "WHERE C.Customer_ID = R.Customer_ID AND MONTH(R.Return_Date) = " + temp + ");";
+
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+
+                reportgrid4.Rows.Clear();
+                while(myReader.Read())
+                {
+                    reportgrid4.Rows.Add(myReader["First_Name"].ToString(), myReader["Middle_Name"].ToString(), myReader["Last_Name"]);
+
+                }
+
+                myReader.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
         }
 
         private void report5_btn_Click(object sender, EventArgs e)//Scotts report
         {
-            SqlConnection con = new SqlConnection(@"Data Source=" + myServer + ";Initial Catalog = " + myDatabase + ";Integrated Security=True");
+            myCommand.CommandText = "SELECT B.BID, B.Description, YEAR(R.Pick_Up_Date), MONTH(R.Pick_Up_Date), " +
+                "SUM(R.Total_Rent_Value) AS TOTAL " +
+                "FROM Rentals AS R, Branch AS B " +
+                "WHERE R.Pick_Up_BID = B.BID " +
+                "GROUP BY B.BID, B.Description, YEAR(R.Pick_Up_Date), MONTH(R.Pick_Up_Date)";
+
+
+            try
             {
-                //List the monthly rental transaction value for each branch.
-                using (SqlCommand cmd = new SqlCommand("Select B.BID, B.Description, Year(R.Pick_Up_Date) as Year, Month(R.Pick_Up_Date) as Month, Sum(R.Total_Rent_Value) as Total_Rent_Value" +
-                    "From Rentals as R, Branch as B" +
-                    "Where R.Pick_Up_BID = B.BID" +
-                    "Group By B.BID, B.Description, Year(R.Pick_Up_Date), Month(R.Pick_Up_Date); "))
+
+
+                myReader = myCommand.ExecuteReader();
+                reportgrid5.Rows.Clear();
+
+                while (myReader.Read())
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    reportgrid5.Rows.Clear();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        while (sdr.Read())
-                        {
-                            reportgrid5.Rows.Add(sdr["BID"].ToString(), sdr["Description"].ToString(), sdr["Pick_Up_Date"].ToString(), sdr["Pick_Up_Date"].ToString(),sdr["Pick_Up_Date"].ToString());
-                        }
-                    }
+                    reportgrid5.Rows.Add(myReader.Read());
                 }
+
+                myReader.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
             }
         }
 
+
         private void reportgrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void reportgrid4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }
