@@ -18,8 +18,8 @@ namespace WindowsFormsApp1
         public SqlDataReader myReader;
         public SqlDataReader myReader2;
         public SqlDataReader myReader3;
-        public Double LATE_FEE = 50.00; //this is the added cost for late rentals
-        public Double DIFF_BRANCH_COST = 50.00; //this is the fee for returning to a different branch
+        public Double LATE_FEE = 49.99; //this is the added cost for late rentals
+        public Double DIFF_BRANCH_COST = 35.50; //this is the fee for returning to a different branch
       
         public Rentals()
         {
@@ -204,20 +204,32 @@ namespace WindowsFormsApp1
             String CarType = vehicle_type_dropdown.Text;
             String PickupB = pickup_branch_dropdown.Text;
             String ReturnB = return_branch_dropdown.Text;
-            String selectedPDate = dateTimePicker1.Value.ToString();
-            String selectedRDate = dateTimePicker2.Value.ToString();
+            //REF: https://www.tutorialspoint.com/vb.net/vb.net_date_time_picker.htm#:~:text=The%20DateTimePicker%20control%20allows%20selecting,by%20clicking%20the%20required%20date.
+            DateTime pickupTime = dateTimePicker1.Value;
+            DateTime returnTime = dateTimePicker2.Value;
+            String selectedPDate = pickupTime.ToString();
+            String selectedRDate = returnTime.ToString();
 
-            if (CarType.Length > 0 || PickupB.Length > 0)
+            TimeSpan rentalSpan = returnTime.Subtract(pickupTime);
+
+
+
+            if (rentalSpan.Days < 0)
             {
+                MessageBox.Show("Return Date cannot be before the Pick-Up Date");
+            }
+            else if (CarType.Length > 0 && PickupB.Length > 0)
+            {
+                VIN_box.Items.Clear();
                 //Car.VIN, Car.Make, Car.Model, Car.Year, Car.No_of_Seats, Car.Colour, Car_Type.Description, Car_Type.Daily_Rate, Car_Type.Weekly_Rate, Car_Type.Monthly_Rate 
                 myCommand.CommandText = "select * from Car, Car_Type, Branch " +
                     "where Car.Car_Type_ID = Car_Type.Car_Type_ID and Branch.BID = Car.Branch_ID and " +
                     "Branch.Description = '" + PickupB + "' and Car_Type.Description = '" + CarType + "' " +
                     "and VIN not in " +
                     "(select VIN from Rentals where " +
-                    "(('" + selectedPDate + "' > Pick_Up_Date and '" + selectedPDate + "' < Return_Date) or " +
-                    "('" + selectedRDate + "' < Return_Date and '" + selectedRDate + "' > Pick_Up_Date ) or " +
-                    "('" + selectedPDate + "' < Pick_Up_Date and '" + selectedRDate + "' > Return_Date)));";
+                    "(('" + selectedPDate + "' >= Pick_Up_Date and '" + selectedPDate + "' <= Return_Date) or " +
+                    "('" + selectedRDate + "' <= Return_Date and '" + selectedRDate + "' >= Pick_Up_Date ) or " +
+                    "('" + selectedPDate + "' <= Pick_Up_Date and '" + selectedRDate + "' >= Return_Date)));";
 
                 try
                 {
@@ -280,10 +292,71 @@ namespace WindowsFormsApp1
             return cost;
         }
 
+        private void updateGold(String customerID)
+        {
+            String rentalCount;
+            myCommand.CommandText = "Select count(*) as count from Rentals where Customer_ID = " + customerID + ";";
+            myReader3 = myCommand.ExecuteReader();
+            myReader3.Read();
+            rentalCount = myReader3["count"].ToString();
+            myReader3.Close();
+
+            //if this is their third rental
+            if (int.Parse(rentalCount) == 3)
+            {
+                //update their membership status to gold member
+                myCommand.CommandText = "update Customer set Membership_Status = 1 where Customer_ID = " + customerID + ";";
+                myCommand.ExecuteNonQuery();
+                MessageBox.Show("Congratulations, you have been upgraded to a Gold Star member!");
+            }
+
+        }
+
+        private Boolean goldCheck(String customerID)
+        {
+            Boolean gold = false;
+            String goldStatus;
+
+            myCommand.CommandText = "Select Membership_Status from Customer where Customer_ID = " + customerID + ";";
+            myReader3 = myCommand.ExecuteReader();
+            myReader3.Read();
+            goldStatus = myReader3["Membership_Status"].ToString();
+            myReader3.Close();
+
+            if (int.Parse(goldStatus) == 1)
+            {
+                gold = true;
+            }
+
+            return gold;
+        }
+
+        //gets the max TID in the table and adds one to autoincrement the TID
+        private String getNewTID()
+        {
+            String TID;
+
+            myCommand.CommandText = "Select max(TID) as max from Rentals;";
+            myReader3 = myCommand.ExecuteReader();
+            myReader3.Read();
+            TID = myReader3["max"].ToString();
+            myReader3.Close();
+
+            if (TID.Length > 0)
+            {
+                TID = (int.Parse(TID) + 1).ToString();
+            } else
+            {
+                TID = "0";
+            }
+
+            return TID;
+        }
+
         private void bookButton_Click(object sender, EventArgs e)
         {
             String PBID, RBID;
-            String TID = transaction_id_txt.Text;
+            //String TID = transaction_id_txt.Text;
             String customerID = customer_id_dropdown.Text;
             String CarType = vehicle_type_dropdown.Text;
             String PickupB = pickup_branch_dropdown.Text;
@@ -307,11 +380,17 @@ namespace WindowsFormsApp1
                 ReturnB.Length > 0 && pickupDate.Length > 0 &&
                 returnDate.Length > 0 && VIN.Length > 0)
             {
+                //getting TID to add to transaction
+                String TID = getNewTID();
+
                 //calculating the rental cost
                 Double cost = getCost(rentalSpan, CarType);
                 if (!PickupB.Equals(ReturnB))
                 {
-                    cost += DIFF_BRANCH_COST;
+                    if (!goldCheck(customerID))
+                    {
+                        cost += DIFF_BRANCH_COST;
+                    }
                 }
                 //getting the pickup BID from the selected description
                 myCommand.CommandText = "Select BID from Branch where Description = '" + PickupB + "';";
@@ -343,6 +422,11 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show(e2.ToString(), "Error");
                 }
+                //update list to remove newly rented car
+                searchButton.PerformClick();
+
+                //lets check if that gives them a gold upgrade
+                updateGold(customerID);
             }
             else
             {

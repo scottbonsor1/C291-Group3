@@ -31,8 +31,6 @@
             this.CustomerBtn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.transaction_id_txt = new System.Windows.Forms.TextBox();
-            this.TID_label = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.customer_id_dropdown = new System.Windows.Forms.ComboBox();
             this.customer_id_label = new System.Windows.Forms.Label();
@@ -113,8 +111,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.transaction_id_txt);
-            this.tabPage1.Controls.Add(this.TID_label);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.customer_id_dropdown);
             this.tabPage1.Controls.Add(this.customer_id_label);
@@ -141,26 +137,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Rent Vehicle";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // transaction_id_txt
-            // 
-            this.transaction_id_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transaction_id_txt.Location = new System.Drawing.Point(251, 592);
-            this.transaction_id_txt.Margin = new System.Windows.Forms.Padding(4);
-            this.transaction_id_txt.Name = "transaction_id_txt";
-            this.transaction_id_txt.Size = new System.Drawing.Size(201, 30);
-            this.transaction_id_txt.TabIndex = 43;
-            // 
-            // TID_label
-            // 
-            this.TID_label.AutoSize = true;
-            this.TID_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TID_label.Location = new System.Drawing.Point(67, 595);
-            this.TID_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.TID_label.Name = "TID_label";
-            this.TID_label.Size = new System.Drawing.Size(153, 25);
-            this.TID_label.TabIndex = 42;
-            this.TID_label.Text = "Transaction ID";
             // 
             // label7
             // 
@@ -200,7 +176,7 @@
             this.VIN_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.VIN_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VIN_box.FormattingEnabled = true;
-            this.VIN_box.Location = new System.Drawing.Point(72, 526);
+            this.VIN_box.Location = new System.Drawing.Point(69, 557);
             this.VIN_box.Margin = new System.Windows.Forms.Padding(4);
             this.VIN_box.Name = "VIN_box";
             this.VIN_box.Size = new System.Drawing.Size(344, 33);
@@ -211,7 +187,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(124, 497);
+            this.label6.Location = new System.Drawing.Point(121, 528);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(209, 25);
@@ -311,7 +287,7 @@
             // bookButton
             // 
             this.bookButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookButton.Location = new System.Drawing.Point(154, 657);
+            this.bookButton.Location = new System.Drawing.Point(139, 648);
             this.bookButton.Margin = new System.Windows.Forms.Padding(4);
             this.bookButton.Name = "bookButton";
             this.bookButton.Size = new System.Drawing.Size(179, 41);
@@ -706,8 +682,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Daily_Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Weekly_Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monthly_Cost;
-        private System.Windows.Forms.TextBox transaction_id_txt;
-        private System.Windows.Forms.Label TID_label;
         private System.Windows.Forms.DataGridViewTextBoxColumn TID_COL;
         private System.Windows.Forms.DataGridViewTextBoxColumn PICK_UP_DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn RETURN_DATE_COL;
