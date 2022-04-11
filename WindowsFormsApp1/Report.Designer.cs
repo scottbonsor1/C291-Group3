@@ -49,11 +49,10 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.monthLabel = new System.Windows.Forms.Label();
+            this.monthSelect = new System.Windows.Forms.ComboBox();
             this.report4_btn = new System.Windows.Forms.Button();
             this.reportgrid4 = new System.Windows.Forms.DataGridView();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.report5_btn = new System.Windows.Forms.Button();
             this.reportgrid5 = new System.Windows.Forms.DataGridView();
@@ -62,8 +61,10 @@
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthSelect = new System.Windows.Forms.ComboBox();
-            this.monthLabel = new System.Windows.Forms.Label();
+            this.customerIDTab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.report5.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportgrid1)).BeginInit();
@@ -119,7 +120,7 @@
             this.tabPage1.Controls.Add(this.reportgrid1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(544, 441);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Report 1";
@@ -176,7 +177,7 @@
             this.tabPage2.Controls.Add(this.reportgrid2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(544, 441);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Report 2";
@@ -224,7 +225,7 @@
             this.tabPage3.Controls.Add(this.reportgrid3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(544, 441);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Report 3";
@@ -282,11 +283,42 @@
             this.tabPage4.Controls.Add(this.reportgrid4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(544, 441);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Report 4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // monthLabel
+            // 
+            this.monthLabel.AutoSize = true;
+            this.monthLabel.Location = new System.Drawing.Point(434, 43);
+            this.monthLabel.Name = "monthLabel";
+            this.monthLabel.Size = new System.Drawing.Size(37, 13);
+            this.monthLabel.TabIndex = 3;
+            this.monthLabel.Text = "Month";
+            // 
+            // monthSelect
+            // 
+            this.monthSelect.FormattingEnabled = true;
+            this.monthSelect.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.monthSelect.Location = new System.Drawing.Point(392, 73);
+            this.monthSelect.Name = "monthSelect";
+            this.monthSelect.Size = new System.Drawing.Size(121, 21);
+            this.monthSelect.TabIndex = 2;
+            this.monthSelect.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // report4_btn
             // 
@@ -302,6 +334,7 @@
             // 
             this.reportgrid4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reportgrid4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customerIDTab,
             this.Column11,
             this.Column12,
             this.Column13});
@@ -312,34 +345,13 @@
             this.reportgrid4.TabIndex = 0;
             this.reportgrid4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportgrid4_CellContentClick);
             // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "First Name";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 125;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Middle Name";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 125;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Last Name";
-            this.Column13.MinimumWidth = 6;
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 125;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.report5_btn);
             this.tabPage5.Controls.Add(this.reportgrid5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(544, 441);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Report 5";
@@ -405,36 +417,31 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 125;
             // 
-            // monthSelect
+            // customerIDTab
             // 
-            this.monthSelect.FormattingEnabled = true;
-            this.monthSelect.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.monthSelect.Location = new System.Drawing.Point(392, 73);
-            this.monthSelect.Name = "monthSelect";
-            this.monthSelect.Size = new System.Drawing.Size(121, 21);
-            this.monthSelect.TabIndex = 2;
-            this.monthSelect.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this.customerIDTab.HeaderText = "Customer ID";
+            this.customerIDTab.Name = "customerIDTab";
             // 
-            // monthLabel
+            // Column11
             // 
-            this.monthLabel.AutoSize = true;
-            this.monthLabel.Location = new System.Drawing.Point(434, 43);
-            this.monthLabel.Name = "monthLabel";
-            this.monthLabel.Size = new System.Drawing.Size(37, 13);
-            this.monthLabel.TabIndex = 3;
-            this.monthLabel.Text = "Month";
+            this.Column11.HeaderText = "First Name";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 125;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Middle Name";
+            this.Column12.MinimumWidth = 6;
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 125;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Last Name";
+            this.Column13.MinimumWidth = 6;
+            this.Column13.Name = "Column13";
+            this.Column13.Width = 125;
             // 
             // Report
             // 
@@ -444,7 +451,7 @@
             this.Controls.Add(this.report5);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.ReportLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Report";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.Report_Load);
@@ -492,9 +499,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
@@ -502,5 +506,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.ComboBox monthSelect;
         private System.Windows.Forms.Label monthLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDTab;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
     }
 }

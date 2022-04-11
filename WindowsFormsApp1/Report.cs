@@ -231,10 +231,10 @@ namespace WindowsFormsApp1
 
             }
 
-            myCommand.CommandText = "(SELECT First_Name, Middle_Name, Last_Name " +
+            myCommand.CommandText = "(SELECT C.Customer_ID, First_Name, Middle_Name, Last_Name " +
                 "FROM Customer AS C) " +
                 "EXCEPT " +
-                "(SELECT First_Name, Middle_Name, Last_Name " +
+                "(SELECT C.Customer_ID, First_Name, Middle_Name, Last_Name " +
                 "FROM Customer AS C, Rentals AS R " +
                 "WHERE C.Customer_ID = R.Customer_ID AND MONTH(R.Return_Date) = " + temp + ");";
 
@@ -245,7 +245,7 @@ namespace WindowsFormsApp1
                 reportgrid4.Rows.Clear();
                 while(myReader.Read())
                 {
-                    reportgrid4.Rows.Add(myReader["First_Name"].ToString(), myReader["Middle_Name"].ToString(), myReader["Last_Name"]);
+                    reportgrid4.Rows.Add(myReader["Customer_ID"].ToString(), myReader["First_Name"].ToString(), myReader["Middle_Name"].ToString(), myReader["Last_Name"]);
 
                 }
 
