@@ -18,6 +18,10 @@ namespace WindowsFormsApp1
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
+        public SqlDataReader myReader2;
+        public SqlDataReader myReader3;
+        public Double LATE_FEE = 49.99; //this is the added cost for late rentals
+        public Double DIFF_BRANCH_COST = 35.50; //this is the fee for returning to a different branch
 
         //used for checking size of inputed rent values
         double numLimit = 10000;
@@ -27,7 +31,7 @@ namespace WindowsFormsApp1
             
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -1394,6 +1398,127 @@ namespace WindowsFormsApp1
         private void cars_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        //---------------------- Rentals Tab ---------------------------------------
+        private void showRentals()
+        {
+            myCommand.CommandText = "select * from Rentals;";
+
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+                my_rentals_view.Rows.Clear();
+                while (myReader.Read())
+                {
+                    my_rentals_view.Rows.Add(
+                        myReader["TID"].ToString(), myReader["Pick_Up_Date"].ToString(),
+                        myReader["Return_Date"].ToString(), myReader["Customer_ID"].ToString(),
+                        myReader["VIN"].ToString(), myReader["Pick_Up_BID"].ToString(),
+                        myReader["Return_BID"].ToString(), myReader["Total_Rent_Value"].ToString());
+                }
+                myReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+        }
+
+        private void view_all_btn_Click(object sender, EventArgs e)
+        {
+            showRentals();
+        }
+
+        private void search_by_id_btn_Click(object sender, EventArgs e)
+        {
+            if (search_id_box.Text.Length > 0)
+            {
+                myCommand.CommandText = "select * from Rentals where Customer_ID = " + search_id_box.Text.ToString() + ";";
+
+                try
+                {
+                    myReader = myCommand.ExecuteReader();
+                    my_rentals_view.Rows.Clear();
+                    while (myReader.Read())
+                    {
+                        my_rentals_view.Rows.Add(
+                            myReader["TID"].ToString(), myReader["Pick_Up_Date"].ToString(),
+                            myReader["Return_Date"].ToString(), myReader["Customer_ID"].ToString(),
+                            myReader["VIN"].ToString(), myReader["Pick_Up_BID"].ToString(),
+                            myReader["Return_BID"].ToString(), myReader["Total_Rent_Value"].ToString());
+                    }
+                    myReader.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Customer ID Entered");
+            }
+        }
+
+        private void add_late_fee_btn_Click(object sender, EventArgs e)
+        {
+            if (late_tid_box.Text.Length > 0)
+            {
+                String initialValue;
+                Double newValue;
+                //getting the return BID now
+                myCommand.CommandText = "Select Total_Rent_Value from Rentals where TID = " + late_tid_box.Text.ToString() + ";";
+                myReader3 = myCommand.ExecuteReader();
+                myReader3.Read();
+                initialValue = myReader3["Total_Rent_Value"].ToString();
+                myReader3.Close();
+
+                newValue = Double.Parse(initialValue) + LATE_FEE;
+
+
+
+                myCommand.CommandText = "update Rentals set Total_Rent_Value = " + newValue.ToString() +
+                    " Where TID = " + late_tid_box.Text.ToString() + ";";
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                    view_all_btn.PerformClick();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No Transaction ID Entered");
+            }
+        }
+
+        private void cancel_rental_btn_Click(object sender, EventArgs e)
+        {
+            if (cancel_rental_box.Text.Length > 0)
+            {
+                myCommand.CommandText = "delete from Rentals where TID = " + cancel_rental_box.Text.ToString() + ";";
+
+                try
+                {
+                    myCommand.ExecuteNonQuery();
+                    view_all_btn.PerformClick();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Transaction ID Entered");
+            }
         }
     }
 
