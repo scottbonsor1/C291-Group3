@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
     {
         public SqlConnection myConnection;
         public SqlCommand myCommand;
+        public SqlCommand myCommand2;
         public SqlDataReader myReader;
         public SqlDataReader myReader2;
         public SqlDataReader myReader3;
@@ -31,7 +32,7 @@ namespace WindowsFormsApp1
             
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes; MultipleActiveResultSets=True;";
 
 
             /* Starting the connection */
@@ -48,15 +49,23 @@ namespace WindowsFormsApp1
             {
                 myConnection.Open(); // Open connection
                 myCommand = new SqlCommand();
+                myCommand2 = new SqlCommand();
                 myCommand.Connection = myConnection; // Link the command stream to the connection
+                myCommand2.Connection = myConnection;
+
                 refreshCarType();
                 refreshBranch();
                 //Populate Cars tab combo boxes with available Branch_ID's, Car_Type_ID's and VIN's
                 Fill_Cars_BranchID();
                 Fill_Cars_Car_Type_ID();
                 Fill_Cars_Delete_VIN();
-                refresh_cars();
+                
                 refresh_customer();
+
+                update_car_branch();
+
+                refresh_cars();
+
             }
             catch (Exception e)
             {
@@ -1520,6 +1529,69 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No Transaction ID Entered");
             }
         }
+
+        // UPDATE CAR BRANCH_ID WHEN RETURNED TO A DIFFERENT BRANCH
+        void update_car_branch()
+        {
+
+
+            //Get current date and format the same as SQL date type
+            DateTime currentDate = DateTime.Now;
+            //int day = currentDate.Day;
+            //int month = currentDate.Month;
+            //int year = currentDate.Year;
+
+
+            //Console.WriteLine(currentDateString);
+
+            //Select all VIN's that have been returned to a different branch and the return date has passed
+            //myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID and Year(Return_Date) = " + year +
+            //   "and Month(Return_Date) = " + month + " and Day(Return_Date) = " + (day - 1) + ";";
+
+            myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID;";
+
+
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+
+                    DateTime returnDate = (DateTime)myReader["Return_Date"];
+
+                    Console.WriteLine((currentDate - returnDate).Days.ToString());
+
+
+                    if ((currentDate - returnDate).Days > 0)
+                    {
+                        String vin = myReader["VIN"].ToString();
+                        String branch_id = myReader["Return_BID"].ToString();
+
+                        myCommand2.CommandText = "Update Car Set Branch_ID = " + branch_id + " Where VIN = " + vin + ";";
+                        myCommand2.ExecuteNonQuery();
+                    }
+
+
+                    //Console.WriteLine((currentDate - returnDate).Days.ToString());
+
+                    //myCommand2.CommandText = "Update Car Set Branch_ID = " + branch_id + " Where VIN = " + vin + ";";
+                    //myCommand2.ExecuteNonQuery();
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+
+
+            myReader.Close();
+
+        }
+
+
     }
 
 
