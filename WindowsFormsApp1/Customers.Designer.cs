@@ -89,10 +89,9 @@
             // CustomerBtn
             // 
             this.CustomerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerBtn.Location = new System.Drawing.Point(37, 796);
-            this.CustomerBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.CustomerBtn.Location = new System.Drawing.Point(28, 647);
             this.CustomerBtn.Name = "CustomerBtn";
-            this.CustomerBtn.Size = new System.Drawing.Size(100, 39);
+            this.CustomerBtn.Size = new System.Drawing.Size(75, 32);
             this.CustomerBtn.TabIndex = 1;
             this.CustomerBtn.Text = "Logout";
             this.CustomerBtn.UseVisualStyleBackColor = true;
@@ -102,11 +101,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(32, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Location = new System.Drawing.Point(24, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1791, 754);
+            this.tabControl1.Size = new System.Drawing.Size(1343, 613);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -129,11 +127,10 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1783, 725);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(1335, 587);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Rent Vehicle";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -142,10 +139,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(596, 16);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(447, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(190, 25);
+            this.label7.Size = new System.Drawing.Size(154, 20);
             this.label7.TabIndex = 41;
             this.label7.Text = "Available Vehicles";
             // 
@@ -154,20 +150,18 @@
             this.customer_id_dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customer_id_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customer_id_dropdown.FormattingEnabled = true;
-            this.customer_id_dropdown.Location = new System.Drawing.Point(217, 30);
-            this.customer_id_dropdown.Margin = new System.Windows.Forms.Padding(4);
+            this.customer_id_dropdown.Location = new System.Drawing.Point(163, 24);
             this.customer_id_dropdown.Name = "customer_id_dropdown";
-            this.customer_id_dropdown.Size = new System.Drawing.Size(152, 33);
+            this.customer_id_dropdown.Size = new System.Drawing.Size(115, 28);
             this.customer_id_dropdown.TabIndex = 40;
             // 
             // customer_id_label
             // 
             this.customer_id_label.AutoSize = true;
             this.customer_id_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customer_id_label.Location = new System.Drawing.Point(23, 33);
-            this.customer_id_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.customer_id_label.Location = new System.Drawing.Point(17, 27);
             this.customer_id_label.Name = "customer_id_label";
-            this.customer_id_label.Size = new System.Drawing.Size(132, 25);
+            this.customer_id_label.Size = new System.Drawing.Size(110, 20);
             this.customer_id_label.TabIndex = 39;
             this.customer_id_label.Text = "Customer ID";
             // 
@@ -176,10 +170,9 @@
             this.VIN_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.VIN_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VIN_box.FormattingEnabled = true;
-            this.VIN_box.Location = new System.Drawing.Point(69, 557);
-            this.VIN_box.Margin = new System.Windows.Forms.Padding(4);
+            this.VIN_box.Location = new System.Drawing.Point(52, 453);
             this.VIN_box.Name = "VIN_box";
-            this.VIN_box.Size = new System.Drawing.Size(344, 33);
+            this.VIN_box.Size = new System.Drawing.Size(259, 28);
             this.VIN_box.TabIndex = 38;
             this.VIN_box.SelectedIndexChanged += new System.EventHandler(this.VIN_box_SelectedIndexChanged);
             // 
@@ -187,10 +180,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(121, 528);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(91, 429);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(209, 25);
+            this.label6.Size = new System.Drawing.Size(171, 20);
             this.label6.TabIndex = 37;
             this.label6.Text = "Select Vehicle (VIN)";
             // 
@@ -209,11 +201,10 @@
             this.Daily_Cost,
             this.Weekly_Cost,
             this.Monthly_Cost});
-            this.available_vehicles_view.Location = new System.Drawing.Point(601, 44);
-            this.available_vehicles_view.Margin = new System.Windows.Forms.Padding(4);
+            this.available_vehicles_view.Location = new System.Drawing.Point(451, 36);
             this.available_vehicles_view.Name = "available_vehicles_view";
             this.available_vehicles_view.RowHeadersWidth = 51;
-            this.available_vehicles_view.Size = new System.Drawing.Size(1153, 645);
+            this.available_vehicles_view.Size = new System.Drawing.Size(865, 524);
             this.available_vehicles_view.TabIndex = 36;
             this.available_vehicles_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.available_vehicles_view_CellContentClick);
             // 
@@ -287,10 +278,9 @@
             // bookButton
             // 
             this.bookButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookButton.Location = new System.Drawing.Point(139, 648);
-            this.bookButton.Margin = new System.Windows.Forms.Padding(4);
+            this.bookButton.Location = new System.Drawing.Point(104, 526);
             this.bookButton.Name = "bookButton";
-            this.bookButton.Size = new System.Drawing.Size(179, 41);
+            this.bookButton.Size = new System.Drawing.Size(134, 33);
             this.bookButton.TabIndex = 35;
             this.bookButton.Text = "Book Now";
             this.bookButton.UseVisualStyleBackColor = true;
@@ -301,10 +291,9 @@
             this.vehicle_type_dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vehicle_type_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehicle_type_dropdown.FormattingEnabled = true;
-            this.vehicle_type_dropdown.Location = new System.Drawing.Point(217, 220);
-            this.vehicle_type_dropdown.Margin = new System.Windows.Forms.Padding(4);
+            this.vehicle_type_dropdown.Location = new System.Drawing.Point(163, 179);
             this.vehicle_type_dropdown.Name = "vehicle_type_dropdown";
-            this.vehicle_type_dropdown.Size = new System.Drawing.Size(344, 33);
+            this.vehicle_type_dropdown.Size = new System.Drawing.Size(259, 28);
             this.vehicle_type_dropdown.TabIndex = 34;
             this.vehicle_type_dropdown.SelectedIndexChanged += new System.EventHandler(this.vehicle_type_dropdown_SelectedIndexChanged);
             // 
@@ -312,20 +301,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 223);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(17, 181);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 25);
+            this.label5.Size = new System.Drawing.Size(111, 20);
             this.label5.TabIndex = 33;
             this.label5.Text = "Vehicle Type";
             // 
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(104, 412);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.searchButton.Location = new System.Drawing.Point(78, 335);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(267, 41);
+            this.searchButton.Size = new System.Drawing.Size(200, 33);
             this.searchButton.TabIndex = 32;
             this.searchButton.Text = "Search Availability";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -336,20 +323,18 @@
             this.return_branch_dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.return_branch_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.return_branch_dropdown.FormattingEnabled = true;
-            this.return_branch_dropdown.Location = new System.Drawing.Point(217, 334);
-            this.return_branch_dropdown.Margin = new System.Windows.Forms.Padding(4);
+            this.return_branch_dropdown.Location = new System.Drawing.Point(163, 271);
             this.return_branch_dropdown.Name = "return_branch_dropdown";
-            this.return_branch_dropdown.Size = new System.Drawing.Size(344, 33);
+            this.return_branch_dropdown.Size = new System.Drawing.Size(259, 28);
             this.return_branch_dropdown.TabIndex = 31;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 338);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(17, 275);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 25);
+            this.label4.Size = new System.Drawing.Size(126, 20);
             this.label4.TabIndex = 30;
             this.label4.Text = "Return Branch";
             // 
@@ -358,31 +343,28 @@
             this.pickup_branch_dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.pickup_branch_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickup_branch_dropdown.FormattingEnabled = true;
-            this.pickup_branch_dropdown.Location = new System.Drawing.Point(217, 162);
-            this.pickup_branch_dropdown.Margin = new System.Windows.Forms.Padding(4);
+            this.pickup_branch_dropdown.Location = new System.Drawing.Point(163, 132);
             this.pickup_branch_dropdown.Name = "pickup_branch_dropdown";
-            this.pickup_branch_dropdown.Size = new System.Drawing.Size(344, 33);
+            this.pickup_branch_dropdown.Size = new System.Drawing.Size(259, 28);
             this.pickup_branch_dropdown.TabIndex = 29;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 165);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(17, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 25);
+            this.label3.Size = new System.Drawing.Size(130, 20);
             this.label3.TabIndex = 28;
             this.label3.Text = "Pick-up Branch";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(217, 278);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker2.Location = new System.Drawing.Point(163, 226);
             this.dateTimePicker2.MinDate = new System.DateTime(2022, 4, 8, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(344, 30);
+            this.dateTimePicker2.Size = new System.Drawing.Size(259, 26);
             this.dateTimePicker2.TabIndex = 27;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged_1);
             // 
@@ -390,31 +372,28 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 281);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(17, 228);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 25);
+            this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 26;
             this.label2.Text = "Return Date";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(217, 107);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(163, 87);
             this.dateTimePicker1.MinDate = new System.DateTime(2022, 4, 8, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(344, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(259, 26);
             this.dateTimePicker1.TabIndex = 25;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 107);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(17, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 25);
+            this.label1.Size = new System.Drawing.Size(112, 20);
             this.label1.TabIndex = 24;
             this.label1.Text = "Pick-up Date";
             // 
@@ -431,11 +410,10 @@
             this.tabPage2.Controls.Add(this.view_all_btn);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.my_rentals_view);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1783, 725);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(1335, 587);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "My Rentals";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -443,18 +421,18 @@
             // late_tid_box
             // 
             this.late_tid_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.late_tid_box.Location = new System.Drawing.Point(327, 401);
+            this.late_tid_box.Location = new System.Drawing.Point(245, 326);
+            this.late_tid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.late_tid_box.Name = "late_tid_box";
-            this.late_tid_box.Size = new System.Drawing.Size(105, 30);
+            this.late_tid_box.Size = new System.Drawing.Size(80, 26);
             this.late_tid_box.TabIndex = 62;
             // 
             // add_late_fee_btn
             // 
             this.add_late_fee_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_late_fee_btn.Location = new System.Drawing.Point(121, 453);
-            this.add_late_fee_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.add_late_fee_btn.Location = new System.Drawing.Point(91, 368);
             this.add_late_fee_btn.Name = "add_late_fee_btn";
-            this.add_late_fee_btn.Size = new System.Drawing.Size(267, 41);
+            this.add_late_fee_btn.Size = new System.Drawing.Size(200, 33);
             this.add_late_fee_btn.TabIndex = 61;
             this.add_late_fee_btn.Text = "Add Late Fee";
             this.add_late_fee_btn.UseVisualStyleBackColor = true;
@@ -464,36 +442,36 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(44, 404);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(33, 328);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(264, 25);
+            this.label9.Size = new System.Drawing.Size(217, 20);
             this.label9.TabIndex = 60;
             this.label9.Text = "Mark Transaction as Late:";
             // 
             // cancel_rental_box
             // 
             this.cancel_rental_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel_rental_box.Location = new System.Drawing.Point(329, 601);
+            this.cancel_rental_box.Location = new System.Drawing.Point(247, 488);
+            this.cancel_rental_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cancel_rental_box.Name = "cancel_rental_box";
-            this.cancel_rental_box.Size = new System.Drawing.Size(105, 30);
+            this.cancel_rental_box.Size = new System.Drawing.Size(80, 26);
             this.cancel_rental_box.TabIndex = 59;
             // 
             // search_id_box
             // 
             this.search_id_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_id_box.Location = new System.Drawing.Point(327, 229);
+            this.search_id_box.Location = new System.Drawing.Point(245, 186);
+            this.search_id_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.search_id_box.Name = "search_id_box";
-            this.search_id_box.Size = new System.Drawing.Size(105, 30);
+            this.search_id_box.Size = new System.Drawing.Size(80, 26);
             this.search_id_box.TabIndex = 58;
             // 
             // cancel_rental_btn
             // 
             this.cancel_rental_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel_rental_btn.Location = new System.Drawing.Point(137, 647);
-            this.cancel_rental_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.cancel_rental_btn.Location = new System.Drawing.Point(103, 526);
             this.cancel_rental_btn.Name = "cancel_rental_btn";
-            this.cancel_rental_btn.Size = new System.Drawing.Size(267, 41);
+            this.cancel_rental_btn.Size = new System.Drawing.Size(200, 33);
             this.cancel_rental_btn.TabIndex = 57;
             this.cancel_rental_btn.Text = "Cancel Rental";
             this.cancel_rental_btn.UseVisualStyleBackColor = true;
@@ -503,10 +481,9 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(58, 604);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(44, 491);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(234, 25);
+            this.label14.Size = new System.Drawing.Size(192, 20);
             this.label14.TabIndex = 55;
             this.label14.Text = "Cancel Transaction ID:";
             this.label14.Click += new System.EventHandler(this.label14_Click);
@@ -514,10 +491,9 @@
             // search_by_id_btn
             // 
             this.search_by_id_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_by_id_btn.Location = new System.Drawing.Point(121, 281);
-            this.search_by_id_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.search_by_id_btn.Location = new System.Drawing.Point(91, 228);
             this.search_by_id_btn.Name = "search_by_id_btn";
-            this.search_by_id_btn.Size = new System.Drawing.Size(267, 41);
+            this.search_by_id_btn.Size = new System.Drawing.Size(200, 33);
             this.search_by_id_btn.TabIndex = 54;
             this.search_by_id_btn.Text = "Search";
             this.search_by_id_btn.UseVisualStyleBackColor = true;
@@ -526,10 +502,9 @@
             // view_all_btn
             // 
             this.view_all_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_all_btn.Location = new System.Drawing.Point(121, 93);
-            this.view_all_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.view_all_btn.Location = new System.Drawing.Point(91, 76);
             this.view_all_btn.Name = "view_all_btn";
-            this.view_all_btn.Size = new System.Drawing.Size(267, 81);
+            this.view_all_btn.Size = new System.Drawing.Size(200, 66);
             this.view_all_btn.TabIndex = 43;
             this.view_all_btn.Text = "View All Rentals";
             this.view_all_btn.UseVisualStyleBackColor = true;
@@ -539,10 +514,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(56, 232);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(42, 188);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(243, 25);
+            this.label8.Size = new System.Drawing.Size(200, 20);
             this.label8.TabIndex = 41;
             this.label8.Text = "Search by Customer ID:";
             // 
@@ -559,11 +533,10 @@
             this.PICK_UP_BRANCH_COL,
             this.RETURN_BRANCH_COL,
             this.TOTAL_RENT_VAL_COL});
-            this.my_rentals_view.Location = new System.Drawing.Point(624, 26);
-            this.my_rentals_view.Margin = new System.Windows.Forms.Padding(4);
+            this.my_rentals_view.Location = new System.Drawing.Point(468, 21);
             this.my_rentals_view.Name = "my_rentals_view";
             this.my_rentals_view.RowHeadersWidth = 51;
-            this.my_rentals_view.Size = new System.Drawing.Size(1129, 626);
+            this.my_rentals_view.Size = new System.Drawing.Size(847, 509);
             this.my_rentals_view.TabIndex = 37;
             // 
             // TID_COL
@@ -622,13 +595,13 @@
             // 
             // Rentals
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1839, 866);
+            this.ClientSize = new System.Drawing.Size(1379, 704);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.CustomerBtn);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Rentals";
             this.Text = "Form2";
             this.tabControl1.ResumeLayout(false);
