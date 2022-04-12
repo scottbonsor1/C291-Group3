@@ -694,19 +694,52 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        //gets the max CID in the table and adds one to autoincrement it
+        private String getNewCID()
+        {
+            String CID;
+
+            myCommand.CommandText = "Select max(Customer_ID) as max from Customer;";
+            myReader = myCommand.ExecuteReader();
+            myReader.Read();
+            CID = myReader["max"].ToString();
+            myReader.Close();
+
+            if (CID.Length > 0)
+            {
+                CID = (int.Parse(CID) + 1).ToString();
+            }
+            else
+            {
+                CID = "0";
+            }
+
+            return CID;
+        }
         //Customer Add button
         private void cust_add_but_Click(object sender, EventArgs e)
         {
-            if (cust_custID_txt.Text.Length > 0 && cust_first_name_txt.Text.Length > 0 && cust_street_add1_txt.Text.Length > 0 &&
+            String CID;
+            if (cust_first_name_txt.Text.Length > 0 && cust_street_add1_txt.Text.Length > 0 &&
                 cust_city_txt.Text.Length > 0 && cust_prov_txt.Text.Length > 0 && cust_pCode_txt.Text.Length > 0 && cust_phone_num_txt.Text.Length > 0 &&
-                cust_insurance_txt.Text.Length > 0 && cust_drivers_txt.Text.Length > 0 && cust_memStat_txt.Text.Length > 0)
+                cust_insurance_txt.Text.Length > 0 && cust_drivers_txt.Text.Length > 0)
             {
+                if (cust_custID_txt.Text.Length == 0)
+                {
+                    //if no CID was provided we autogenerate one
+                    CID = getNewCID();
+                } else
+                {
+                    //if one was provided we use that
+                    CID = cust_custID_txt.Text.ToString();
+                }
                 try
                 {
-                    myCommand.CommandText = "insert into Customer Values (" + cust_custID_txt.Text + ",'" + cust_first_name_txt.Text + "','" +
+                    myCommand.CommandText = "insert into Customer Values (" + CID + ",'" + cust_first_name_txt.Text + "','" +
                         cust_mid_name_txt.Text + "','" + cust_last_name_txt.Text + "','" + cust_street_add1_txt.Text + "','" + cust_street_add2_txt.Text + "','" +
                         cust_city_txt.Text + "','" + cust_prov_txt.Text + "','" + cust_pCode_txt.Text + "','" + cust_dob_txt.Text + "','" + cust_phone_num_txt.Text + "','" +
-                        cust_insurance_txt.Text + "','" + cust_drivers_txt.Text + "','" + cust_memStat_txt.Text + "')";
+                        cust_insurance_txt.Text + "','" + cust_drivers_txt.Text + "',0)";
                     MessageBox.Show(myCommand.CommandText);
 
                     myCommand.ExecuteNonQuery();
@@ -799,12 +832,6 @@ namespace WindowsFormsApp1
                 {
                     if (add == 1) { myCommand.CommandText += ","; }
                     myCommand.CommandText += "Drivers_License = '" + cust_drivers_txt.Text + "'";
-                    add = 1;
-                }
-                if (cust_memStat_txt.Text.Length > 0)
-                {
-                    if (add == 1) { myCommand.CommandText += ","; }
-                    myCommand.CommandText += "Membership_Status = '" + cust_memStat_txt.Text + "'";
                     add = 1;
                 }
 

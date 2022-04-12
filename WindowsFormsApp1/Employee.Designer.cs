@@ -170,7 +170,6 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cust_add_but = new System.Windows.Forms.Button();
-            this.cust_memStat_txt = new System.Windows.Forms.TextBox();
             this.cust_drivers_txt = new System.Windows.Forms.TextBox();
             this.cust_insurance_txt = new System.Windows.Forms.TextBox();
             this.cust_phone_num_txt = new System.Windows.Forms.TextBox();
@@ -184,7 +183,6 @@
             this.cust_mid_name_txt = new System.Windows.Forms.TextBox();
             this.cust_first_name_txt = new System.Windows.Forms.TextBox();
             this.cust_custID_txt = new System.Windows.Forms.TextBox();
-            this.cust_memStat_label = new System.Windows.Forms.Label();
             this.cust_drivers_label = new System.Windows.Forms.Label();
             this.cust_insurance_label = new System.Windows.Forms.Label();
             this.cust_phone_num_label = new System.Windows.Forms.Label();
@@ -214,7 +212,7 @@
             // 
             this.CustomerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerBtn.Location = new System.Drawing.Point(1707, 809);
-            this.CustomerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CustomerBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CustomerBtn.Name = "CustomerBtn";
             this.CustomerBtn.Size = new System.Drawing.Size(100, 39);
             this.CustomerBtn.TabIndex = 2;
@@ -283,7 +281,7 @@
             this.cars_search_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_search_dropdown.FormattingEnabled = true;
             this.cars_search_dropdown.Location = new System.Drawing.Point(749, 619);
-            this.cars_search_dropdown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_search_dropdown.Margin = new System.Windows.Forms.Padding(4);
             this.cars_search_dropdown.Name = "cars_search_dropdown";
             this.cars_search_dropdown.Size = new System.Drawing.Size(160, 28);
             this.cars_search_dropdown.TabIndex = 41;
@@ -304,7 +302,7 @@
             // 
             this.btn_cars_show_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cars_show_all.Location = new System.Drawing.Point(1639, 638);
-            this.btn_cars_show_all.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cars_show_all.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cars_show_all.Name = "btn_cars_show_all";
             this.btn_cars_show_all.Size = new System.Drawing.Size(125, 37);
             this.btn_cars_show_all.TabIndex = 39;
@@ -316,7 +314,7 @@
             // 
             this.btn_cars_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cars_delete.Location = new System.Drawing.Point(1281, 656);
-            this.btn_cars_delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cars_delete.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cars_delete.Name = "btn_cars_delete";
             this.btn_cars_delete.Size = new System.Drawing.Size(125, 37);
             this.btn_cars_delete.TabIndex = 38;
@@ -329,7 +327,7 @@
             this.cars_delete_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_delete_dropdown.FormattingEnabled = true;
             this.cars_delete_dropdown.Location = new System.Drawing.Point(1265, 619);
-            this.cars_delete_dropdown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_delete_dropdown.Margin = new System.Windows.Forms.Padding(4);
             this.cars_delete_dropdown.Name = "cars_delete_dropdown";
             this.cars_delete_dropdown.Size = new System.Drawing.Size(160, 28);
             this.cars_delete_dropdown.TabIndex = 37;
@@ -352,7 +350,7 @@
             "Branch_ID",
             "Car_Type_ID"});
             this.cars_search_attribute_dropdown.Location = new System.Drawing.Point(565, 619);
-            this.cars_search_attribute_dropdown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_search_attribute_dropdown.Margin = new System.Windows.Forms.Padding(4);
             this.cars_search_attribute_dropdown.Name = "cars_search_attribute_dropdown";
             this.cars_search_attribute_dropdown.Size = new System.Drawing.Size(160, 28);
             this.cars_search_attribute_dropdown.TabIndex = 35;
@@ -375,7 +373,7 @@
             // 
             this.btn_cars_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cars_edit.Location = new System.Drawing.Point(189, 558);
-            this.btn_cars_edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cars_edit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cars_edit.Name = "btn_cars_edit";
             this.btn_cars_edit.Size = new System.Drawing.Size(125, 42);
             this.btn_cars_edit.TabIndex = 33;
@@ -388,7 +386,7 @@
             this.cars_car_type_id_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_car_type_id_dropdown.FormattingEnabled = true;
             this.cars_car_type_id_dropdown.Location = new System.Drawing.Point(172, 487);
-            this.cars_car_type_id_dropdown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_car_type_id_dropdown.Margin = new System.Windows.Forms.Padding(4);
             this.cars_car_type_id_dropdown.Name = "cars_car_type_id_dropdown";
             this.cars_car_type_id_dropdown.Size = new System.Drawing.Size(160, 28);
             this.cars_car_type_id_dropdown.TabIndex = 32;
@@ -420,7 +418,7 @@
             // 
             this.cars_make_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_make_txt.Location = new System.Drawing.Point(172, 92);
-            this.cars_make_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_make_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cars_make_txt.Name = "cars_make_txt";
             this.cars_make_txt.Size = new System.Drawing.Size(160, 26);
             this.cars_make_txt.TabIndex = 29;
@@ -429,7 +427,7 @@
             // 
             this.btn_cars_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cars_search.Location = new System.Drawing.Point(579, 656);
-            this.btn_cars_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cars_search.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cars_search.Name = "btn_cars_search";
             this.btn_cars_search.Size = new System.Drawing.Size(125, 37);
             this.btn_cars_search.TabIndex = 28;
@@ -441,7 +439,7 @@
             // 
             this.btn_cars_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cars_add.Location = new System.Drawing.Point(25, 558);
-            this.btn_cars_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cars_add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cars_add.Name = "btn_cars_add";
             this.btn_cars_add.Size = new System.Drawing.Size(125, 42);
             this.btn_cars_add.TabIndex = 27;
@@ -465,7 +463,7 @@
             this.BRANCH_ID_COL,
             this.CAR_TYPE_ID_COL});
             this.cars_view.Location = new System.Drawing.Point(341, 0);
-            this.cars_view.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_view.Margin = new System.Windows.Forms.Padding(4);
             this.cars_view.Name = "cars_view";
             this.cars_view.RowHeadersWidth = 51;
             this.cars_view.Size = new System.Drawing.Size(1447, 599);
@@ -544,7 +542,7 @@
             // 
             this.cars_odometer_no_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_odometer_no_txt.Location = new System.Drawing.Point(172, 388);
-            this.cars_odometer_no_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_odometer_no_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cars_odometer_no_txt.Name = "cars_odometer_no_txt";
             this.cars_odometer_no_txt.Size = new System.Drawing.Size(160, 26);
             this.cars_odometer_no_txt.TabIndex = 16;
@@ -553,7 +551,7 @@
             // 
             this.cars_no_seats_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_no_seats_txt.Location = new System.Drawing.Point(172, 240);
-            this.cars_no_seats_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_no_seats_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cars_no_seats_txt.Name = "cars_no_seats_txt";
             this.cars_no_seats_txt.Size = new System.Drawing.Size(160, 26);
             this.cars_no_seats_txt.TabIndex = 15;
@@ -562,7 +560,7 @@
             // 
             this.cars_colour_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_colour_txt.Location = new System.Drawing.Point(172, 289);
-            this.cars_colour_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_colour_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cars_colour_txt.Name = "cars_colour_txt";
             this.cars_colour_txt.Size = new System.Drawing.Size(160, 26);
             this.cars_colour_txt.TabIndex = 14;
@@ -571,7 +569,7 @@
             // 
             this.cars_insurance_no_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_insurance_no_txt.Location = new System.Drawing.Point(172, 338);
-            this.cars_insurance_no_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_insurance_no_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cars_insurance_no_txt.Name = "cars_insurance_no_txt";
             this.cars_insurance_no_txt.Size = new System.Drawing.Size(160, 26);
             this.cars_insurance_no_txt.TabIndex = 13;
@@ -580,7 +578,7 @@
             // 
             this.cars_year_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_year_txt.Location = new System.Drawing.Point(172, 191);
-            this.cars_year_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_year_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cars_year_txt.Name = "cars_year_txt";
             this.cars_year_txt.Size = new System.Drawing.Size(160, 26);
             this.cars_year_txt.TabIndex = 12;
@@ -589,7 +587,7 @@
             // 
             this.cars_model_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_model_txt.Location = new System.Drawing.Point(172, 142);
-            this.cars_model_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_model_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cars_model_txt.Name = "cars_model_txt";
             this.cars_model_txt.Size = new System.Drawing.Size(160, 26);
             this.cars_model_txt.TabIndex = 11;
@@ -679,7 +677,7 @@
             this.cars_branch_id_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_branch_id_dropdown.FormattingEnabled = true;
             this.cars_branch_id_dropdown.Location = new System.Drawing.Point(172, 437);
-            this.cars_branch_id_dropdown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_branch_id_dropdown.Margin = new System.Windows.Forms.Padding(4);
             this.cars_branch_id_dropdown.Name = "cars_branch_id_dropdown";
             this.cars_branch_id_dropdown.Size = new System.Drawing.Size(160, 28);
             this.cars_branch_id_dropdown.TabIndex = 3;
@@ -690,7 +688,7 @@
             // 
             this.cars_vin_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cars_vin_text.Location = new System.Drawing.Point(172, 43);
-            this.cars_vin_text.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cars_vin_text.Margin = new System.Windows.Forms.Padding(4);
             this.cars_vin_text.Name = "cars_vin_text";
             this.cars_vin_text.Size = new System.Drawing.Size(160, 26);
             this.cars_vin_text.TabIndex = 2;
@@ -781,7 +779,7 @@
             // mCostS2
             // 
             this.mCostS2.Location = new System.Drawing.Point(489, 665);
-            this.mCostS2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mCostS2.Margin = new System.Windows.Forms.Padding(4);
             this.mCostS2.Name = "mCostS2";
             this.mCostS2.Size = new System.Drawing.Size(132, 22);
             this.mCostS2.TabIndex = 29;
@@ -789,7 +787,7 @@
             // mCostS1
             // 
             this.mCostS1.Location = new System.Drawing.Point(489, 610);
-            this.mCostS1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mCostS1.Margin = new System.Windows.Forms.Padding(4);
             this.mCostS1.Name = "mCostS1";
             this.mCostS1.Size = new System.Drawing.Size(132, 22);
             this.mCostS1.TabIndex = 28;
@@ -797,7 +795,7 @@
             // wCostS2
             // 
             this.wCostS2.Location = new System.Drawing.Point(268, 665);
-            this.wCostS2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.wCostS2.Margin = new System.Windows.Forms.Padding(4);
             this.wCostS2.Name = "wCostS2";
             this.wCostS2.Size = new System.Drawing.Size(132, 22);
             this.wCostS2.TabIndex = 27;
@@ -805,7 +803,7 @@
             // wCostS1
             // 
             this.wCostS1.Location = new System.Drawing.Point(268, 610);
-            this.wCostS1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.wCostS1.Margin = new System.Windows.Forms.Padding(4);
             this.wCostS1.Name = "wCostS1";
             this.wCostS1.Size = new System.Drawing.Size(132, 22);
             this.wCostS1.TabIndex = 26;
@@ -813,7 +811,7 @@
             // dCostS2
             // 
             this.dCostS2.Location = new System.Drawing.Point(43, 665);
-            this.dCostS2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dCostS2.Margin = new System.Windows.Forms.Padding(4);
             this.dCostS2.Name = "dCostS2";
             this.dCostS2.Size = new System.Drawing.Size(132, 22);
             this.dCostS2.TabIndex = 25;
@@ -821,7 +819,7 @@
             // dCostS1
             // 
             this.dCostS1.Location = new System.Drawing.Point(43, 610);
-            this.dCostS1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dCostS1.Margin = new System.Windows.Forms.Padding(4);
             this.dCostS1.Name = "dCostS1";
             this.dCostS1.Size = new System.Drawing.Size(132, 22);
             this.dCostS1.TabIndex = 24;
@@ -829,7 +827,7 @@
             // descS
             // 
             this.descS.Location = new System.Drawing.Point(257, 481);
-            this.descS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.descS.Margin = new System.Windows.Forms.Padding(4);
             this.descS.Name = "descS";
             this.descS.Size = new System.Drawing.Size(132, 22);
             this.descS.TabIndex = 23;
@@ -837,7 +835,7 @@
             // editTypeBut
             // 
             this.editTypeBut.Location = new System.Drawing.Point(508, 335);
-            this.editTypeBut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editTypeBut.Margin = new System.Windows.Forms.Padding(4);
             this.editTypeBut.Name = "editTypeBut";
             this.editTypeBut.Size = new System.Drawing.Size(117, 28);
             this.editTypeBut.TabIndex = 22;
@@ -848,7 +846,7 @@
             // delTypeBut
             // 
             this.delTypeBut.Location = new System.Drawing.Point(268, 335);
-            this.delTypeBut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.delTypeBut.Margin = new System.Windows.Forms.Padding(4);
             this.delTypeBut.Name = "delTypeBut";
             this.delTypeBut.Size = new System.Drawing.Size(133, 28);
             this.delTypeBut.TabIndex = 21;
@@ -889,7 +887,7 @@
             // mRent
             // 
             this.mRent.Location = new System.Drawing.Point(493, 239);
-            this.mRent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mRent.Margin = new System.Windows.Forms.Padding(4);
             this.mRent.Name = "mRent";
             this.mRent.Size = new System.Drawing.Size(132, 22);
             this.mRent.TabIndex = 16;
@@ -897,7 +895,7 @@
             // wRent
             // 
             this.wRent.Location = new System.Drawing.Point(268, 239);
-            this.wRent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.wRent.Margin = new System.Windows.Forms.Padding(4);
             this.wRent.Name = "wRent";
             this.wRent.Size = new System.Drawing.Size(132, 22);
             this.wRent.TabIndex = 15;
@@ -905,7 +903,7 @@
             // modelS
             // 
             this.modelS.Location = new System.Drawing.Point(43, 481);
-            this.modelS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modelS.Margin = new System.Windows.Forms.Padding(4);
             this.modelS.Name = "modelS";
             this.modelS.Size = new System.Drawing.Size(132, 22);
             this.modelS.TabIndex = 14;
@@ -913,7 +911,7 @@
             // dRent
             // 
             this.dRent.Location = new System.Drawing.Point(43, 239);
-            this.dRent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dRent.Margin = new System.Windows.Forms.Padding(4);
             this.dRent.Name = "dRent";
             this.dRent.Size = new System.Drawing.Size(132, 22);
             this.dRent.TabIndex = 13;
@@ -921,7 +919,7 @@
             // typeDesc
             // 
             this.typeDesc.Location = new System.Drawing.Point(399, 58);
-            this.typeDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.typeDesc.Margin = new System.Windows.Forms.Padding(4);
             this.typeDesc.Name = "typeDesc";
             this.typeDesc.Size = new System.Drawing.Size(132, 22);
             this.typeDesc.TabIndex = 12;
@@ -929,7 +927,7 @@
             // modelID
             // 
             this.modelID.Location = new System.Drawing.Point(125, 58);
-            this.modelID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modelID.Margin = new System.Windows.Forms.Padding(4);
             this.modelID.Name = "modelID";
             this.modelID.Size = new System.Drawing.Size(132, 22);
             this.modelID.TabIndex = 11;
@@ -999,7 +997,7 @@
             // typeSBut
             // 
             this.typeSBut.Location = new System.Drawing.Point(657, 629);
-            this.typeSBut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.typeSBut.Margin = new System.Windows.Forms.Padding(4);
             this.typeSBut.Name = "typeSBut";
             this.typeSBut.Size = new System.Drawing.Size(127, 28);
             this.typeSBut.TabIndex = 2;
@@ -1010,7 +1008,7 @@
             // addTypeBut
             // 
             this.addTypeBut.Location = new System.Drawing.Point(43, 335);
-            this.addTypeBut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addTypeBut.Margin = new System.Windows.Forms.Padding(4);
             this.addTypeBut.Name = "addTypeBut";
             this.addTypeBut.Size = new System.Drawing.Size(112, 28);
             this.addTypeBut.TabIndex = 1;
@@ -1028,7 +1026,7 @@
             this.WEEKLY_RENTAL_COST_COL,
             this.MONTHLY_RENTAL_COST_COL});
             this.carTypeView.Location = new System.Drawing.Point(792, 42);
-            this.carTypeView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.carTypeView.Margin = new System.Windows.Forms.Padding(4);
             this.carTypeView.Name = "carTypeView";
             this.carTypeView.RowHeadersWidth = 51;
             this.carTypeView.Size = new System.Drawing.Size(905, 673);
@@ -1118,7 +1116,7 @@
             // 
             this.branch_search_text_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_search_text_box.Location = new System.Drawing.Point(869, 590);
-            this.branch_search_text_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_search_text_box.Margin = new System.Windows.Forms.Padding(4);
             this.branch_search_text_box.Name = "branch_search_text_box";
             this.branch_search_text_box.Size = new System.Drawing.Size(167, 26);
             this.branch_search_text_box.TabIndex = 26;
@@ -1137,7 +1135,7 @@
             "Postal Code",
             "Phone Number"});
             this.branch_search_box.Location = new System.Drawing.Point(613, 590);
-            this.branch_search_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_search_box.Margin = new System.Windows.Forms.Padding(4);
             this.branch_search_box.Name = "branch_search_box";
             this.branch_search_box.Size = new System.Drawing.Size(228, 28);
             this.branch_search_box.TabIndex = 25;
@@ -1159,7 +1157,7 @@
             // 
             this.branch_edit_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_edit_but.Location = new System.Drawing.Point(255, 567);
-            this.branch_edit_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_edit_but.Margin = new System.Windows.Forms.Padding(4);
             this.branch_edit_but.Name = "branch_edit_but";
             this.branch_edit_but.Size = new System.Drawing.Size(127, 76);
             this.branch_edit_but.TabIndex = 23;
@@ -1171,7 +1169,7 @@
             // 
             this.branch_refresh_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_refresh_but.Location = new System.Drawing.Point(1580, 610);
-            this.branch_refresh_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_refresh_but.Margin = new System.Windows.Forms.Padding(4);
             this.branch_refresh_but.Name = "branch_refresh_but";
             this.branch_refresh_but.Size = new System.Drawing.Size(128, 73);
             this.branch_refresh_but.TabIndex = 22;
@@ -1195,7 +1193,7 @@
             // 
             this.branch_id_LU_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_id_LU_txt.Location = new System.Drawing.Point(1305, 593);
-            this.branch_id_LU_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_id_LU_txt.Margin = new System.Windows.Forms.Padding(4);
             this.branch_id_LU_txt.Name = "branch_id_LU_txt";
             this.branch_id_LU_txt.Size = new System.Drawing.Size(132, 26);
             this.branch_id_LU_txt.TabIndex = 20;
@@ -1204,7 +1202,7 @@
             // 
             this.branch_search_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_search_but.Location = new System.Drawing.Point(892, 631);
-            this.branch_search_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_search_but.Margin = new System.Windows.Forms.Padding(4);
             this.branch_search_but.Name = "branch_search_but";
             this.branch_search_but.Size = new System.Drawing.Size(128, 69);
             this.branch_search_but.TabIndex = 19;
@@ -1216,7 +1214,7 @@
             // 
             this.branch_del_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_del_but.Location = new System.Drawing.Point(1305, 628);
-            this.branch_del_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_del_but.Margin = new System.Windows.Forms.Padding(4);
             this.branch_del_but.Name = "branch_del_but";
             this.branch_del_but.Size = new System.Drawing.Size(131, 73);
             this.branch_del_but.TabIndex = 18;
@@ -1228,7 +1226,7 @@
             // 
             this.branch_add_but.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_add_but.Location = new System.Drawing.Point(51, 569);
-            this.branch_add_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_add_but.Margin = new System.Windows.Forms.Padding(4);
             this.branch_add_but.Name = "branch_add_but";
             this.branch_add_but.Size = new System.Drawing.Size(127, 76);
             this.branch_add_but.TabIndex = 17;
@@ -1249,7 +1247,7 @@
             this.Column21,
             this.Column22});
             this.branch_view.Location = new System.Drawing.Point(411, 27);
-            this.branch_view.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_view.Margin = new System.Windows.Forms.Padding(4);
             this.branch_view.Name = "branch_view";
             this.branch_view.RowHeadersWidth = 51;
             this.branch_view.Size = new System.Drawing.Size(1352, 500);
@@ -1316,7 +1314,7 @@
             // 
             this.branch_id_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_id_txt.Location = new System.Drawing.Point(200, 41);
-            this.branch_id_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_id_txt.Margin = new System.Windows.Forms.Padding(4);
             this.branch_id_txt.Name = "branch_id_txt";
             this.branch_id_txt.Size = new System.Drawing.Size(201, 27);
             this.branch_id_txt.TabIndex = 15;
@@ -1325,7 +1323,7 @@
             // 
             this.branch_phone_num_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_phone_num_txt.Location = new System.Drawing.Point(200, 498);
-            this.branch_phone_num_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_phone_num_txt.Margin = new System.Windows.Forms.Padding(4);
             this.branch_phone_num_txt.Name = "branch_phone_num_txt";
             this.branch_phone_num_txt.Size = new System.Drawing.Size(201, 27);
             this.branch_phone_num_txt.TabIndex = 14;
@@ -1334,7 +1332,7 @@
             // 
             this.branch_pCode_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_pCode_txt.Location = new System.Drawing.Point(200, 423);
-            this.branch_pCode_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_pCode_txt.Margin = new System.Windows.Forms.Padding(4);
             this.branch_pCode_txt.Name = "branch_pCode_txt";
             this.branch_pCode_txt.Size = new System.Drawing.Size(201, 27);
             this.branch_pCode_txt.TabIndex = 13;
@@ -1343,7 +1341,7 @@
             // 
             this.branch_province_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_province_txt.Location = new System.Drawing.Point(200, 354);
-            this.branch_province_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_province_txt.Margin = new System.Windows.Forms.Padding(4);
             this.branch_province_txt.Name = "branch_province_txt";
             this.branch_province_txt.Size = new System.Drawing.Size(201, 27);
             this.branch_province_txt.TabIndex = 12;
@@ -1352,7 +1350,7 @@
             // 
             this.branch_city_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_city_txt.Location = new System.Drawing.Point(200, 284);
-            this.branch_city_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_city_txt.Margin = new System.Windows.Forms.Padding(4);
             this.branch_city_txt.Name = "branch_city_txt";
             this.branch_city_txt.Size = new System.Drawing.Size(201, 27);
             this.branch_city_txt.TabIndex = 11;
@@ -1361,7 +1359,7 @@
             // 
             this.branch_street_add2_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_street_add2_txt.Location = new System.Drawing.Point(200, 218);
-            this.branch_street_add2_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_street_add2_txt.Margin = new System.Windows.Forms.Padding(4);
             this.branch_street_add2_txt.Name = "branch_street_add2_txt";
             this.branch_street_add2_txt.Size = new System.Drawing.Size(201, 27);
             this.branch_street_add2_txt.TabIndex = 10;
@@ -1370,7 +1368,7 @@
             // 
             this.branch_street_add1_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_street_add1_txt.Location = new System.Drawing.Point(200, 153);
-            this.branch_street_add1_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_street_add1_txt.Margin = new System.Windows.Forms.Padding(4);
             this.branch_street_add1_txt.Name = "branch_street_add1_txt";
             this.branch_street_add1_txt.Size = new System.Drawing.Size(201, 27);
             this.branch_street_add1_txt.TabIndex = 9;
@@ -1379,7 +1377,7 @@
             // 
             this.branch_descrip_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branch_descrip_txt.Location = new System.Drawing.Point(200, 90);
-            this.branch_descrip_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.branch_descrip_txt.Margin = new System.Windows.Forms.Padding(4);
             this.branch_descrip_txt.Name = "branch_descrip_txt";
             this.branch_descrip_txt.Size = new System.Drawing.Size(201, 27);
             this.branch_descrip_txt.TabIndex = 8;
@@ -1486,7 +1484,6 @@
             this.tabPage3.Controls.Add(this.cust_edit_but);
             this.tabPage3.Controls.Add(this.customer_view);
             this.tabPage3.Controls.Add(this.cust_add_but);
-            this.tabPage3.Controls.Add(this.cust_memStat_txt);
             this.tabPage3.Controls.Add(this.cust_drivers_txt);
             this.tabPage3.Controls.Add(this.cust_insurance_txt);
             this.tabPage3.Controls.Add(this.cust_phone_num_txt);
@@ -1500,7 +1497,6 @@
             this.tabPage3.Controls.Add(this.cust_mid_name_txt);
             this.tabPage3.Controls.Add(this.cust_first_name_txt);
             this.tabPage3.Controls.Add(this.cust_custID_txt);
-            this.tabPage3.Controls.Add(this.cust_memStat_label);
             this.tabPage3.Controls.Add(this.cust_drivers_label);
             this.tabPage3.Controls.Add(this.cust_insurance_label);
             this.tabPage3.Controls.Add(this.cust_phone_num_label);
@@ -1527,7 +1523,7 @@
             // cust_del_but
             // 
             this.cust_del_but.Location = new System.Drawing.Point(957, 650);
-            this.cust_del_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_del_but.Margin = new System.Windows.Forms.Padding(4);
             this.cust_del_but.Name = "cust_del_but";
             this.cust_del_but.Size = new System.Drawing.Size(133, 65);
             this.cust_del_but.TabIndex = 35;
@@ -1554,7 +1550,7 @@
             "Drivers_License",
             "Membership Status"});
             this.cust_box_search.Location = new System.Drawing.Point(461, 606);
-            this.cust_box_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_box_search.Margin = new System.Windows.Forms.Padding(4);
             this.cust_box_search.Name = "cust_box_search";
             this.cust_box_search.Size = new System.Drawing.Size(160, 24);
             this.cust_box_search.TabIndex = 5;
@@ -1573,7 +1569,7 @@
             // cust_id_LU_txt
             // 
             this.cust_id_LU_txt.Location = new System.Drawing.Point(957, 607);
-            this.cust_id_LU_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_id_LU_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_id_LU_txt.Name = "cust_id_LU_txt";
             this.cust_id_LU_txt.Size = new System.Drawing.Size(132, 22);
             this.cust_id_LU_txt.TabIndex = 33;
@@ -1581,7 +1577,7 @@
             // cust_search_box_txt
             // 
             this.cust_search_box_txt.Location = new System.Drawing.Point(653, 606);
-            this.cust_search_box_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_search_box_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_search_box_txt.Name = "cust_search_box_txt";
             this.cust_search_box_txt.Size = new System.Drawing.Size(132, 22);
             this.cust_search_box_txt.TabIndex = 32;
@@ -1599,7 +1595,7 @@
             // cust_search_but
             // 
             this.cust_search_but.Location = new System.Drawing.Point(653, 647);
-            this.cust_search_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_search_but.Margin = new System.Windows.Forms.Padding(4);
             this.cust_search_but.Name = "cust_search_but";
             this.cust_search_but.Size = new System.Drawing.Size(133, 68);
             this.cust_search_but.TabIndex = 6;
@@ -1610,7 +1606,7 @@
             // cust_refresh_but
             // 
             this.cust_refresh_but.Location = new System.Drawing.Point(1640, 629);
-            this.cust_refresh_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_refresh_but.Margin = new System.Windows.Forms.Padding(4);
             this.cust_refresh_but.Name = "cust_refresh_but";
             this.cust_refresh_but.Size = new System.Drawing.Size(127, 75);
             this.cust_refresh_but.TabIndex = 31;
@@ -1621,7 +1617,7 @@
             // cust_edit_but
             // 
             this.cust_edit_but.Location = new System.Drawing.Point(151, 636);
-            this.cust_edit_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_edit_but.Margin = new System.Windows.Forms.Padding(4);
             this.cust_edit_but.Name = "cust_edit_but";
             this.cust_edit_but.Size = new System.Drawing.Size(109, 60);
             this.cust_edit_but.TabIndex = 5;
@@ -1648,7 +1644,7 @@
             this.Column13,
             this.Column14});
             this.customer_view.Location = new System.Drawing.Point(284, 16);
-            this.customer_view.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customer_view.Margin = new System.Windows.Forms.Padding(4);
             this.customer_view.Name = "customer_view";
             this.customer_view.RowHeadersWidth = 51;
             this.customer_view.Size = new System.Drawing.Size(1556, 558);
@@ -1755,7 +1751,7 @@
             // cust_add_but
             // 
             this.cust_add_but.Location = new System.Drawing.Point(11, 636);
-            this.cust_add_but.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_add_but.Margin = new System.Windows.Forms.Padding(4);
             this.cust_add_but.Name = "cust_add_but";
             this.cust_add_but.Size = new System.Drawing.Size(111, 62);
             this.cust_add_but.TabIndex = 28;
@@ -1763,18 +1759,10 @@
             this.cust_add_but.UseVisualStyleBackColor = true;
             this.cust_add_but.Click += new System.EventHandler(this.cust_add_but_Click);
             // 
-            // cust_memStat_txt
-            // 
-            this.cust_memStat_txt.Location = new System.Drawing.Point(131, 549);
-            this.cust_memStat_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cust_memStat_txt.Name = "cust_memStat_txt";
-            this.cust_memStat_txt.Size = new System.Drawing.Size(144, 22);
-            this.cust_memStat_txt.TabIndex = 27;
-            // 
             // cust_drivers_txt
             // 
             this.cust_drivers_txt.Location = new System.Drawing.Point(128, 510);
-            this.cust_drivers_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_drivers_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_drivers_txt.Name = "cust_drivers_txt";
             this.cust_drivers_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_drivers_txt.TabIndex = 26;
@@ -1782,7 +1770,7 @@
             // cust_insurance_txt
             // 
             this.cust_insurance_txt.Location = new System.Drawing.Point(128, 471);
-            this.cust_insurance_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_insurance_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_insurance_txt.Name = "cust_insurance_txt";
             this.cust_insurance_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_insurance_txt.TabIndex = 25;
@@ -1790,7 +1778,7 @@
             // cust_phone_num_txt
             // 
             this.cust_phone_num_txt.Location = new System.Drawing.Point(128, 432);
-            this.cust_phone_num_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_phone_num_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_phone_num_txt.Name = "cust_phone_num_txt";
             this.cust_phone_num_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_phone_num_txt.TabIndex = 24;
@@ -1798,7 +1786,7 @@
             // cust_dob_txt
             // 
             this.cust_dob_txt.Location = new System.Drawing.Point(129, 390);
-            this.cust_dob_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_dob_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_dob_txt.Name = "cust_dob_txt";
             this.cust_dob_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_dob_txt.TabIndex = 23;
@@ -1806,7 +1794,7 @@
             // cust_pCode_txt
             // 
             this.cust_pCode_txt.Location = new System.Drawing.Point(128, 351);
-            this.cust_pCode_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_pCode_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_pCode_txt.Name = "cust_pCode_txt";
             this.cust_pCode_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_pCode_txt.TabIndex = 22;
@@ -1814,7 +1802,7 @@
             // cust_prov_txt
             // 
             this.cust_prov_txt.Location = new System.Drawing.Point(128, 310);
-            this.cust_prov_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_prov_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_prov_txt.Name = "cust_prov_txt";
             this.cust_prov_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_prov_txt.TabIndex = 21;
@@ -1822,7 +1810,7 @@
             // cust_city_txt
             // 
             this.cust_city_txt.Location = new System.Drawing.Point(128, 272);
-            this.cust_city_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_city_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_city_txt.Name = "cust_city_txt";
             this.cust_city_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_city_txt.TabIndex = 20;
@@ -1830,7 +1818,7 @@
             // cust_street_add2_txt
             // 
             this.cust_street_add2_txt.Location = new System.Drawing.Point(128, 229);
-            this.cust_street_add2_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_street_add2_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_street_add2_txt.Name = "cust_street_add2_txt";
             this.cust_street_add2_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_street_add2_txt.TabIndex = 19;
@@ -1838,7 +1826,7 @@
             // cust_street_add1_txt
             // 
             this.cust_street_add1_txt.Location = new System.Drawing.Point(129, 188);
-            this.cust_street_add1_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_street_add1_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_street_add1_txt.Name = "cust_street_add1_txt";
             this.cust_street_add1_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_street_add1_txt.TabIndex = 18;
@@ -1846,7 +1834,7 @@
             // cust_last_name_txt
             // 
             this.cust_last_name_txt.Location = new System.Drawing.Point(129, 144);
-            this.cust_last_name_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_last_name_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_last_name_txt.Name = "cust_last_name_txt";
             this.cust_last_name_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_last_name_txt.TabIndex = 17;
@@ -1854,7 +1842,7 @@
             // cust_mid_name_txt
             // 
             this.cust_mid_name_txt.Location = new System.Drawing.Point(129, 100);
-            this.cust_mid_name_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_mid_name_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_mid_name_txt.Name = "cust_mid_name_txt";
             this.cust_mid_name_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_mid_name_txt.TabIndex = 16;
@@ -1862,7 +1850,7 @@
             // cust_first_name_txt
             // 
             this.cust_first_name_txt.Location = new System.Drawing.Point(129, 57);
-            this.cust_first_name_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_first_name_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_first_name_txt.Name = "cust_first_name_txt";
             this.cust_first_name_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_first_name_txt.TabIndex = 15;
@@ -1870,21 +1858,10 @@
             // cust_custID_txt
             // 
             this.cust_custID_txt.Location = new System.Drawing.Point(129, 16);
-            this.cust_custID_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cust_custID_txt.Margin = new System.Windows.Forms.Padding(4);
             this.cust_custID_txt.Name = "cust_custID_txt";
             this.cust_custID_txt.Size = new System.Drawing.Size(144, 22);
             this.cust_custID_txt.TabIndex = 14;
-            // 
-            // cust_memStat_label
-            // 
-            this.cust_memStat_label.AutoSize = true;
-            this.cust_memStat_label.Location = new System.Drawing.Point(7, 549);
-            this.cust_memStat_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.cust_memStat_label.Name = "cust_memStat_label";
-            this.cust_memStat_label.Size = new System.Drawing.Size(108, 16);
-            this.cust_memStat_label.TabIndex = 13;
-            this.cust_memStat_label.Text = "Membership Stat";
-            this.cust_memStat_label.Click += new System.EventHandler(this.cust_memStat_label_Click);
             // 
             // cust_drivers_label
             // 
@@ -1892,9 +1869,9 @@
             this.cust_drivers_label.Location = new System.Drawing.Point(7, 510);
             this.cust_drivers_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cust_drivers_label.Name = "cust_drivers_label";
-            this.cust_drivers_label.Size = new System.Drawing.Size(103, 16);
+            this.cust_drivers_label.Size = new System.Drawing.Size(124, 16);
             this.cust_drivers_label.TabIndex = 12;
-            this.cust_drivers_label.Text = "Drivers License ";
+            this.cust_drivers_label.Text = "Drivers License No.";
             // 
             // cust_insurance_label
             // 
@@ -1922,9 +1899,9 @@
             this.cust_dob_label.Location = new System.Drawing.Point(7, 390);
             this.cust_dob_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cust_dob_label.Name = "cust_dob_label";
-            this.cust_dob_label.Size = new System.Drawing.Size(36, 16);
+            this.cust_dob_label.Size = new System.Drawing.Size(121, 16);
             this.cust_dob_label.TabIndex = 9;
-            this.cust_dob_label.Text = "DOB";
+            this.cust_dob_label.Text = "DOB (yyyy-mm-dd)";
             // 
             // cust_pCode_label
             // 
@@ -2066,7 +2043,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label cust_memStat_label;
         private System.Windows.Forms.Label cust_drivers_label;
         private System.Windows.Forms.Label cust_insurance_label;
         private System.Windows.Forms.Label cust_phone_num_label;
@@ -2080,7 +2056,6 @@
         private System.Windows.Forms.Label cust_mid_name_label;
         private System.Windows.Forms.Label cust_f_name_label;
         private System.Windows.Forms.Label cust_custID_label;
-        private System.Windows.Forms.TextBox cust_memStat_txt;
         private System.Windows.Forms.TextBox cust_drivers_txt;
         private System.Windows.Forms.TextBox cust_insurance_txt;
         private System.Windows.Forms.TextBox cust_phone_num_txt;
