@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
             //Change the server here for your guys' own servers
                 //MultipleActiveResultsSets=True allows for multiple for multuple MyCommands open and accessing the database.
                     //2 SQl commands running simultaneously required when updating the Branch_ID of cars returned to different branches.
-            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes; MultipleActiveResultSets=True";
+            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes; MultipleActiveResultSets=True;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -470,27 +470,45 @@ namespace WindowsFormsApp1
 
             //Get current date and format the same as SQL date type
             DateTime currentDate = DateTime.Now;
-            int day = currentDate.Day;
-            int month = currentDate.Month;
-            int year = currentDate.Year;
+            //int day = currentDate.Day;
+            //int month = currentDate.Month;
+            //int year = currentDate.Year;
 
 
             //Console.WriteLine(currentDateString);
 
             //Select all VIN's that have been returned to a different branch and the return date has passed
-            myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID and Year(Return_Date) = " + year +
-                "and Month(Return_Date) = " + month + " and Day(Return_Date) = " + (day - 1) + ";";
+            //myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID and Year(Return_Date) = " + year +
+            //   "and Month(Return_Date) = " + month + " and Day(Return_Date) = " + (day - 1) + ";";
+
+            myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID;";
+
+           
             try
             {
                 myReader = myCommand.ExecuteReader();
                 while (myReader.Read())
                 {
-                    String vin = myReader["VIN"].ToString();
-                    String branch_id = myReader["Return_BID"].ToString();
-
                     
-                    myCommand2.CommandText = "Update Car Set Branch_ID = " + branch_id + " Where VIN = " + vin + ";";
-                    myCommand2.ExecuteNonQuery();
+                    DateTime returnDate = (DateTime) myReader["Return_Date"];
+
+                    Console.WriteLine((currentDate - returnDate).Days.ToString());
+
+
+                    if ((currentDate - returnDate).Days > 0)
+                    {
+                        String vin = myReader["VIN"].ToString();
+                        String branch_id = myReader["Return_BID"].ToString();
+
+                        myCommand2.CommandText = "Update Car Set Branch_ID = " + branch_id + " Where VIN = " + vin + ";";
+                        myCommand2.ExecuteNonQuery();
+                    }
+
+
+                    //Console.WriteLine((currentDate - returnDate).Days.ToString());
+
+                    //myCommand2.CommandText = "Update Car Set Branch_ID = " + branch_id + " Where VIN = " + vin + ";";
+                    //myCommand2.ExecuteNonQuery();
 
 
                 }
@@ -503,16 +521,9 @@ namespace WindowsFormsApp1
             
            
             myReader.Close();
-
             
-       
         }
            
-
-
-
-
-
     }
 
     

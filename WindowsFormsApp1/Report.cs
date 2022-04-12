@@ -264,7 +264,7 @@ namespace WindowsFormsApp1
                 "SUM(R.Total_Rent_Value) AS TOTAL " +
                 "FROM Rentals AS R, Branch AS B " +
                 "WHERE R.Pick_Up_BID = B.BID " +
-                "GROUP BY B.BID, B.Description, YEAR(R.Pick_Up_Date), MONTH(R.Pick_Up_Date)";
+                "GROUP BY B.BID, B.Description, YEAR(R.Pick_Up_Date), MONTH(R.Pick_Up_Date) Order By SUM(R.Total_Rent_Value) Desc";
 
 
             try
@@ -300,6 +300,11 @@ namespace WindowsFormsApp1
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monthLabel_Click(object sender, EventArgs e)
         {
 
         }

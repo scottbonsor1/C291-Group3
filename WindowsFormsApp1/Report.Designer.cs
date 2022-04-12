@@ -137,18 +137,16 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(604, 34);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(452, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(301, 99);
+            this.label2.Size = new System.Drawing.Size(215, 86);
             this.label2.TabIndex = 2;
             this.label2.Text = "Find the popularity of rented car types from most popular to least popular.";
             // 
             // report1_btn
             // 
             this.report1_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report1_btn.Location = new System.Drawing.Point(703, 289);
-            this.report1_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.report1_btn.Location = new System.Drawing.Point(527, 235);
             this.report1_btn.Name = "report1_btn";
             this.report1_btn.Size = new System.Drawing.Size(109, 69);
             this.report1_btn.TabIndex = 1;
@@ -174,26 +172,20 @@
             // carTypeIDR1
             // 
             this.carTypeIDR1.HeaderText = "Car Type ID";
-            this.carTypeIDR1.MinimumWidth = 6;
             this.carTypeIDR1.Name = "carTypeIDR1";
             this.carTypeIDR1.ReadOnly = true;
-            this.carTypeIDR1.Width = 125;
             // 
             // carTypeR1
             // 
             this.carTypeR1.HeaderText = "Car Type";
-            this.carTypeR1.MinimumWidth = 6;
             this.carTypeR1.Name = "carTypeR1";
             this.carTypeR1.ReadOnly = true;
-            this.carTypeR1.Width = 125;
             // 
             // countR1
             // 
             this.countR1.HeaderText = "Number Of Rentals";
-            this.countR1.MinimumWidth = 6;
             this.countR1.Name = "countR1";
             this.countR1.ReadOnly = true;
-            this.countR1.Width = 125;
             // 
             // tabPage2
             // 
@@ -212,10 +204,9 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(455, 39);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(403, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(435, 103);
+            this.label3.Size = new System.Drawing.Size(217, 113);
             this.label3.TabIndex = 3;
             this.label3.Text = "Find the names of customers who have never returned a car to a branch in a city t" +
     "hat differs from their city.";
@@ -223,8 +214,7 @@
             // report2_btn
             // 
             this.report2_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report2_btn.Location = new System.Drawing.Point(589, 378);
-            this.report2_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.report2_btn.Location = new System.Drawing.Point(442, 307);
             this.report2_btn.Name = "report2_btn";
             this.report2_btn.Size = new System.Drawing.Size(136, 69);
             this.report2_btn.TabIndex = 1;
@@ -278,18 +268,16 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(604, 58);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(473, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(301, 98);
+            this.label4.Size = new System.Drawing.Size(183, 91);
             this.label4.TabIndex = 3;
             this.label4.Text = "Find the total amount of rentals made for each car type in each month.";
             // 
             // report3_btn
             // 
             this.report3_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report3_btn.Location = new System.Drawing.Point(700, 354);
-            this.report3_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.report3_btn.Location = new System.Drawing.Point(525, 288);
             this.report3_btn.Name = "report3_btn";
             this.report3_btn.Size = new System.Drawing.Size(108, 73);
             this.report3_btn.TabIndex = 1;
@@ -322,18 +310,14 @@
             // carTypeIDR3
             // 
             this.carTypeIDR3.HeaderText = "Car Type ID";
-            this.carTypeIDR3.MinimumWidth = 6;
             this.carTypeIDR3.Name = "carTypeIDR3";
             this.carTypeIDR3.ReadOnly = true;
-            this.carTypeIDR3.Width = 125;
             // 
             // totalR3
             // 
             this.totalR3.HeaderText = "Total Number Of Rentals";
-            this.totalR3.MinimumWidth = 6;
             this.totalR3.Name = "totalR3";
             this.totalR3.ReadOnly = true;
-            this.totalR3.Width = 125;
             // 
             // tabPage4
             // 
@@ -354,10 +338,9 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(596, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(550, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 84);
+            this.label1.Size = new System.Drawing.Size(127, 131);
             this.label1.TabIndex = 4;
             this.label1.Text = "Find all customers who have not rented in the selected month.";
             // 
@@ -365,16 +348,15 @@
             // 
             this.monthLabel.AutoSize = true;
             this.monthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthLabel.Location = new System.Drawing.Point(692, 127);
-            this.monthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.monthLabel.Location = new System.Drawing.Point(588, 173);
             this.monthLabel.Name = "monthLabel";
-            this.monthLabel.Size = new System.Drawing.Size(67, 25);
+            this.monthLabel.Size = new System.Drawing.Size(54, 20);
             this.monthLabel.TabIndex = 3;
             this.monthLabel.Text = "Month";
+            this.monthLabel.Click += new System.EventHandler(this.monthLabel_Click);
             // 
             // monthSelect
             // 
-            this.monthSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.monthSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthSelect.FormattingEnabled = true;
             this.monthSelect.Items.AddRange(new object[] {
@@ -393,15 +375,14 @@
             this.monthSelect.Location = new System.Drawing.Point(648, 165);
             this.monthSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.monthSelect.Name = "monthSelect";
-            this.monthSelect.Size = new System.Drawing.Size(160, 33);
+            this.monthSelect.Size = new System.Drawing.Size(121, 28);
             this.monthSelect.TabIndex = 2;
             this.monthSelect.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // report4_btn
             // 
             this.report4_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report4_btn.Location = new System.Drawing.Point(686, 359);
-            this.report4_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.report4_btn.Location = new System.Drawing.Point(573, 337);
             this.report4_btn.Name = "report4_btn";
             this.report4_btn.Size = new System.Drawing.Size(108, 74);
             this.report4_btn.TabIndex = 1;
@@ -428,10 +409,8 @@
             // customerIDTab
             // 
             this.customerIDTab.HeaderText = "Customer ID";
-            this.customerIDTab.MinimumWidth = 6;
             this.customerIDTab.Name = "customerIDTab";
             this.customerIDTab.ReadOnly = true;
-            this.customerIDTab.Width = 125;
             // 
             // Column11
             // 
@@ -474,18 +453,16 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(633, 69);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(475, 56);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(272, 92);
+            this.label5.Size = new System.Drawing.Size(191, 112);
             this.label5.TabIndex = 7;
             this.label5.Text = "Find the rental amount made monthly for each branch in each month and year.";
             // 
             // report5_btn
             // 
             this.report5_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report5_btn.Location = new System.Drawing.Point(711, 396);
-            this.report5_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.report5_btn.Location = new System.Drawing.Point(518, 324);
             this.report5_btn.Name = "report5_btn";
             this.report5_btn.Size = new System.Drawing.Size(103, 48);
             this.report5_btn.TabIndex = 6;
@@ -549,7 +526,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 750);
+            this.ClientSize = new System.Drawing.Size(766, 609);
             this.Controls.Add(this.report5);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.ReportLabel);
