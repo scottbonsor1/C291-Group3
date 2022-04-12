@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
             
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes;";
 
 
             /* Starting the connection */
@@ -47,6 +47,12 @@ namespace WindowsFormsApp1
                 myCommand.Connection = myConnection; // Link the command stream to the connection
                 refreshCarType();
                 refreshBranch();
+                //Populate Cars tab combo boxes with available Branch_ID's, Car_Type_ID's and VIN's
+                Fill_Cars_BranchID();
+                Fill_Cars_Car_Type_ID();
+                Fill_Cars_Delete_VIN();
+                refresh_cars();
+                refresh_customer();
             }
             catch (Exception e)
             {
@@ -54,11 +60,7 @@ namespace WindowsFormsApp1
                 this.Close();
             }
 
-            //Populate Cars tab combo boxes with available Branch_ID's, Car_Type_ID's and VIN's
-            Fill_Cars_BranchID();
-            Fill_Cars_Car_Type_ID();
-            Fill_Cars_Delete_VIN();
-            refresh_cars();
+            
 
         }
 
@@ -123,7 +125,6 @@ namespace WindowsFormsApp1
                     myCommand.CommandText = "insert into Car_Type values (" + modelID.Text + ",' " +
                         typeDesc.Text + "',' " + dRent.Text + "',' " + wRent.Text + "',' " +
                         mRent.Text + "')";
-                    MessageBox.Show(myCommand.CommandText);
 
                     myCommand.ExecuteNonQuery();
                     refreshCarType();
@@ -480,7 +481,6 @@ namespace WindowsFormsApp1
                         branch_descrip_txt.Text + "','" + branch_street_add1_txt.Text + "','" +
                         branch_street_add2_txt.Text + "','" + branch_city_txt.Text + "','" + branch_province_txt.Text + "','" +
                         branch_pCode_txt.Text + "','" + branch_phone_num_txt.Text + "')";
-                    MessageBox.Show(myCommand.CommandText);
 
                     myCommand.ExecuteNonQuery();
                     branch_refresh_but.PerformClick();
@@ -740,7 +740,6 @@ namespace WindowsFormsApp1
                         cust_mid_name_txt.Text + "','" + cust_last_name_txt.Text + "','" + cust_street_add1_txt.Text + "','" + cust_street_add2_txt.Text + "','" +
                         cust_city_txt.Text + "','" + cust_prov_txt.Text + "','" + cust_pCode_txt.Text + "','" + cust_dob_txt.Text + "','" + cust_phone_num_txt.Text + "','" +
                         cust_insurance_txt.Text + "','" + cust_drivers_txt.Text + "',0)";
-                    MessageBox.Show(myCommand.CommandText);
 
                     myCommand.ExecuteNonQuery();
                     cust_refresh_but.PerformClick();
@@ -984,6 +983,30 @@ namespace WindowsFormsApp1
             else
             {
                 MessageBox.Show("No Valid CustomerID to delete");
+            }
+        }
+
+        private void refresh_customer()
+        {
+            myCommand.CommandText = "select * from Customer";
+
+            try
+            {
+                //MessageBox.Show(myCommand.CommandText);  
+                myReader = myCommand.ExecuteReader();
+
+                customer_view.Rows.Clear();
+                while (myReader.Read())
+                {
+                    customer_view.Rows.Add(myReader["Customer_ID"].ToString(), myReader["First_Name"].ToString(), myReader["Middle_Name"].ToString(), myReader["Last_Name"].ToString(), myReader["Street_Address1"].ToString(), myReader["Street_Address2"].ToString(), myReader["City"].ToString(), myReader["Province"].ToString(), myReader["Postal_Code"].ToString(), myReader["Date_of_Birth"].ToString(), myReader["Phone_Number"].ToString(), myReader["Insurance"].ToString(), myReader["Drivers_License"].ToString(), myReader["Membership_Status"].ToString());
+                }
+
+                myReader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
             }
         }
         //customer refresh button
