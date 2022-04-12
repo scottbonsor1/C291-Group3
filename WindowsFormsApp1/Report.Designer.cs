@@ -45,9 +45,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.report3_btn = new System.Windows.Forms.Button();
             this.reportgrid3 = new System.Windows.Forms.DataGridView();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.monthLabel = new System.Windows.Forms.Label();
             this.monthSelect = new System.Windows.Forms.ComboBox();
@@ -65,6 +62,14 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carTypeIDR3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.report5.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportgrid1)).BeginInit();
@@ -111,24 +116,25 @@
             this.report5.Location = new System.Drawing.Point(12, 72);
             this.report5.Name = "report5";
             this.report5.SelectedIndex = 0;
-            this.report5.Size = new System.Drawing.Size(552, 467);
+            this.report5.Size = new System.Drawing.Size(691, 467);
             this.report5.TabIndex = 5;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.report1_btn);
             this.tabPage1.Controls.Add(this.reportgrid1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(544, 441);
+            this.tabPage1.Size = new System.Drawing.Size(683, 441);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Report 1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // report1_btn
             // 
-            this.report1_btn.Location = new System.Drawing.Point(406, 191);
+            this.report1_btn.Location = new System.Drawing.Point(527, 235);
             this.report1_btn.Name = "report1_btn";
             this.report1_btn.Size = new System.Drawing.Size(82, 56);
             this.report1_btn.TabIndex = 1;
@@ -146,7 +152,7 @@
             this.reportgrid1.Location = new System.Drawing.Point(0, 0);
             this.reportgrid1.Name = "reportgrid1";
             this.reportgrid1.RowHeadersWidth = 51;
-            this.reportgrid1.Size = new System.Drawing.Size(343, 435);
+            this.reportgrid1.Size = new System.Drawing.Size(446, 423);
             this.reportgrid1.TabIndex = 0;
             this.reportgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportgrid1_CellContentClick);
             // 
@@ -173,19 +179,20 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.report2_btn);
             this.tabPage2.Controls.Add(this.reportgrid2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(544, 441);
+            this.tabPage2.Size = new System.Drawing.Size(683, 441);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Report 2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // report2_btn
             // 
-            this.report2_btn.Location = new System.Drawing.Point(349, 164);
+            this.report2_btn.Location = new System.Drawing.Point(442, 307);
             this.report2_btn.Name = "report2_btn";
             this.report2_btn.Size = new System.Drawing.Size(102, 56);
             this.report2_btn.TabIndex = 1;
@@ -202,7 +209,7 @@
             this.reportgrid2.Location = new System.Drawing.Point(0, 0);
             this.reportgrid2.Name = "reportgrid2";
             this.reportgrid2.RowHeadersWidth = 51;
-            this.reportgrid2.Size = new System.Drawing.Size(245, 435);
+            this.reportgrid2.Size = new System.Drawing.Size(310, 435);
             this.reportgrid2.TabIndex = 0;
             // 
             // Column3
@@ -221,19 +228,20 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.report3_btn);
             this.tabPage3.Controls.Add(this.reportgrid3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(544, 441);
+            this.tabPage3.Size = new System.Drawing.Size(683, 441);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Report 3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // report3_btn
             // 
-            this.report3_btn.Location = new System.Drawing.Point(406, 177);
+            this.report3_btn.Location = new System.Drawing.Point(525, 288);
             this.report3_btn.Name = "report3_btn";
             this.report3_btn.Size = new System.Drawing.Size(81, 59);
             this.report3_btn.TabIndex = 1;
@@ -246,37 +254,17 @@
             this.reportgrid3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reportgrid3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column7,
-            this.Column8,
+            this.carTypeIDR3,
             this.Column9});
             this.reportgrid3.Location = new System.Drawing.Point(0, 0);
             this.reportgrid3.Name = "reportgrid3";
             this.reportgrid3.RowHeadersWidth = 51;
-            this.reportgrid3.Size = new System.Drawing.Size(344, 441);
+            this.reportgrid3.Size = new System.Drawing.Size(447, 441);
             this.reportgrid3.TabIndex = 0;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Month";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Category";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Total";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Controls.Add(this.monthLabel);
             this.tabPage4.Controls.Add(this.monthSelect);
             this.tabPage4.Controls.Add(this.report4_btn);
@@ -284,7 +272,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(544, 441);
+            this.tabPage4.Size = new System.Drawing.Size(683, 441);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Report 4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -292,7 +280,7 @@
             // monthLabel
             // 
             this.monthLabel.AutoSize = true;
-            this.monthLabel.Location = new System.Drawing.Point(434, 43);
+            this.monthLabel.Location = new System.Drawing.Point(597, 162);
             this.monthLabel.Name = "monthLabel";
             this.monthLabel.Size = new System.Drawing.Size(37, 13);
             this.monthLabel.TabIndex = 3;
@@ -314,7 +302,7 @@
             "October",
             "November",
             "December"});
-            this.monthSelect.Location = new System.Drawing.Point(392, 73);
+            this.monthSelect.Location = new System.Drawing.Point(556, 196);
             this.monthSelect.Name = "monthSelect";
             this.monthSelect.Size = new System.Drawing.Size(121, 21);
             this.monthSelect.TabIndex = 2;
@@ -322,7 +310,7 @@
             // 
             // report4_btn
             // 
-            this.report4_btn.Location = new System.Drawing.Point(408, 177);
+            this.report4_btn.Location = new System.Drawing.Point(573, 337);
             this.report4_btn.Name = "report4_btn";
             this.report4_btn.Size = new System.Drawing.Size(81, 60);
             this.report4_btn.TabIndex = 1;
@@ -341,25 +329,26 @@
             this.reportgrid4.Location = new System.Drawing.Point(0, 0);
             this.reportgrid4.Name = "reportgrid4";
             this.reportgrid4.RowHeadersWidth = 51;
-            this.reportgrid4.Size = new System.Drawing.Size(346, 435);
+            this.reportgrid4.Size = new System.Drawing.Size(544, 435);
             this.reportgrid4.TabIndex = 0;
             this.reportgrid4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportgrid4_CellContentClick);
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label5);
             this.tabPage5.Controls.Add(this.report5_btn);
             this.tabPage5.Controls.Add(this.reportgrid5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(544, 441);
+            this.tabPage5.Size = new System.Drawing.Size(683, 441);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Report 5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // report5_btn
             // 
-            this.report5_btn.Location = new System.Drawing.Point(6, 396);
+            this.report5_btn.Location = new System.Drawing.Point(518, 324);
             this.report5_btn.Name = "report5_btn";
             this.report5_btn.Size = new System.Drawing.Size(77, 39);
             this.report5_btn.TabIndex = 6;
@@ -369,6 +358,7 @@
             // 
             // reportgrid5
             // 
+            this.reportgrid5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.reportgrid5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reportgrid5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column16,
@@ -379,7 +369,7 @@
             this.reportgrid5.Location = new System.Drawing.Point(0, 0);
             this.reportgrid5.Name = "reportgrid5";
             this.reportgrid5.RowHeadersWidth = 51;
-            this.reportgrid5.Size = new System.Drawing.Size(544, 390);
+            this.reportgrid5.Size = new System.Drawing.Size(423, 454);
             this.reportgrid5.TabIndex = 0;
             // 
             // Column16
@@ -387,35 +377,35 @@
             this.Column16.HeaderText = "BID";
             this.Column16.MinimumWidth = 6;
             this.Column16.Name = "Column16";
-            this.Column16.Width = 125;
+            this.Column16.Width = 50;
             // 
             // Column17
             // 
             this.Column17.HeaderText = "Description";
             this.Column17.MinimumWidth = 6;
             this.Column17.Name = "Column17";
-            this.Column17.Width = 125;
+            this.Column17.Width = 85;
             // 
             // Column18
             // 
             this.Column18.HeaderText = "Year";
             this.Column18.MinimumWidth = 6;
             this.Column18.Name = "Column18";
-            this.Column18.Width = 125;
+            this.Column18.Width = 54;
             // 
             // Column19
             // 
             this.Column19.HeaderText = "Month";
             this.Column19.MinimumWidth = 6;
             this.Column19.Name = "Column19";
-            this.Column19.Width = 125;
+            this.Column19.Width = 62;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Total Rent Value";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.Column5.Width = 112;
             // 
             // customerIDTab
             // 
@@ -443,11 +433,71 @@
             this.Column13.Name = "Column13";
             this.Column13.Width = 125;
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Month";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // carTypeIDR3
+            // 
+            this.carTypeIDR3.HeaderText = "Car Type ID";
+            this.carTypeIDR3.Name = "carTypeIDR3";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Total";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(553, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 45);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Find all customers who have not rented in the selected month";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(488, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 41);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Find the popularity of rented car types from least popular to most popular";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(403, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(191, 52);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Find the names of customers who have never returned a car to a branch that differ" +
+    "s from their renting branch";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(484, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 41);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Find the total amount of rentals made for each car type in each month";
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(475, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(156, 41);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Find the rental amount made monthly for each branch in each month and year";
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 609);
+            this.ClientSize = new System.Drawing.Size(715, 609);
             this.Controls.Add(this.report5);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.ReportLabel);
@@ -496,9 +546,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
@@ -510,5 +557,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carTypeIDR3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
     }
 }

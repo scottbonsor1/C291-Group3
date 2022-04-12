@@ -276,7 +276,7 @@ namespace WindowsFormsApp1
 
                 while (myReader.Read())
                 {
-                    reportgrid5.Rows.Add(myReader["BID"].ToString(), myReader["Description"].ToString(), myReader["Y"].ToString(), myReader["M"].ToString());
+                    reportgrid5.Rows.Add(myReader["BID"].ToString(), myReader["Description"].ToString(), myReader["Y"].ToString(), myReader["M"].ToString(), myReader["TOTAL"].ToString());
                 }
 
                 myReader.Close();
