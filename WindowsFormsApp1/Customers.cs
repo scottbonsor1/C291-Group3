@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             Fill_Customer_ID();
             Fill_Branches();
             Fill_Vehicle_Types();
-            showRentals();
+            
 
             //Go through rentals database and update the branch id for all cars returned to a differnt branch
             update_car_branch();
@@ -421,10 +421,10 @@ namespace WindowsFormsApp1
                         returnDate + "'," + customerID + ",'" +
                         VIN + "'," + PBID + "," + RBID + ",'" +
                         cost.ToString() + "')";
-                    MessageBox.Show(myCommand.CommandText);
+                    MessageBox.Show("Vehicle Booked");
 
                     myCommand.ExecuteNonQuery();
-                    showRentals();
+                    
                 }
                 catch (Exception e2)
                 {
@@ -462,125 +462,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void showRentals()
-        {
-            myCommand.CommandText = "select * from Rentals;";
-
-            try
-            {
-                myReader = myCommand.ExecuteReader();
-                my_rentals_view.Rows.Clear();
-                while (myReader.Read())
-                {
-                    my_rentals_view.Rows.Add(
-                        myReader["TID"].ToString(), myReader["Pick_Up_Date"].ToString(),
-                        myReader["Return_Date"].ToString(), myReader["Customer_ID"].ToString(),
-                        myReader["VIN"].ToString(), myReader["Pick_Up_BID"].ToString(),
-                        myReader["Return_BID"].ToString(), myReader["Total_Rent_Value"].ToString());
-                }
-                myReader.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Error");
-            }
-        }
-
-        private void view_all_btn_Click(object sender, EventArgs e)
-        {
-            showRentals();
-        }
-
-        private void search_by_id_btn_Click(object sender, EventArgs e)
-        {
-            if (search_id_box.Text.Length > 0)
-            {
-                myCommand.CommandText = "select * from Rentals where Customer_ID = " + search_id_box.Text.ToString() + ";";
-
-                try
-                {
-                    myReader = myCommand.ExecuteReader();
-                    my_rentals_view.Rows.Clear();
-                    while (myReader.Read())
-                    {
-                        my_rentals_view.Rows.Add(
-                            myReader["TID"].ToString(), myReader["Pick_Up_Date"].ToString(),
-                            myReader["Return_Date"].ToString(), myReader["Customer_ID"].ToString(),
-                            myReader["VIN"].ToString(), myReader["Pick_Up_BID"].ToString(),
-                            myReader["Return_BID"].ToString(), myReader["Total_Rent_Value"].ToString());
-                    }
-                    myReader.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), "Error");
-                }
-            } else
-            {
-                MessageBox.Show("No Customer ID Entered");
-            }
-        }
-
-        private void cancel_rental_btn_Click(object sender, EventArgs e)
-        {
-            if (cancel_rental_box.Text.Length > 0)
-            {
-                myCommand.CommandText = "delete from Rentals where TID = " + cancel_rental_box.Text.ToString() + ";";
-
-                try
-                {
-                    myCommand.ExecuteNonQuery();
-                    view_all_btn.PerformClick();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), "Error");
-                }
-            }
-            else
-            {
-                MessageBox.Show("No Transaction ID Entered");
-            }
-        }
-
-        private void add_late_fee_btn_Click(object sender, EventArgs e)
-        {
-            if (late_tid_box.Text.Length > 0)
-            {
-                String initialValue;
-                Double newValue;
-                //getting the return BID now
-                myCommand.CommandText = "Select Total_Rent_Value from Rentals where TID = " + late_tid_box.Text.ToString() + ";";
-                myReader3 = myCommand.ExecuteReader();
-                myReader3.Read();
-                initialValue = myReader3["Total_Rent_Value"].ToString();
-                myReader3.Close();
-
-                newValue = Double.Parse(initialValue) + LATE_FEE;
-
-
-                
-                myCommand.CommandText = "update Rentals set Total_Rent_Value = " + newValue.ToString()  +
-                    " Where TID = " + late_tid_box.Text.ToString() + ";";
-                try
-                {
-                    myCommand.ExecuteNonQuery();
-                    view_all_btn.PerformClick();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), "Error");
-                }
-                
-            }
-            else
-            {
-                MessageBox.Show("No Transaction ID Entered");
-            }
-        }
-
+       
         // UPDATE CAR BRANCH_ID WHEN RETURNED TO A DIFFERENT BRANCH
         void update_car_branch()
         {

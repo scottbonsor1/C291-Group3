@@ -59,31 +59,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.late_tid_box = new System.Windows.Forms.TextBox();
-            this.add_late_fee_btn = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cancel_rental_box = new System.Windows.Forms.TextBox();
-            this.search_id_box = new System.Windows.Forms.TextBox();
-            this.cancel_rental_btn = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.search_by_id_btn = new System.Windows.Forms.Button();
-            this.view_all_btn = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.my_rentals_view = new System.Windows.Forms.DataGridView();
-            this.TID_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PICK_UP_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RETURN_DATE_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PICK_UP_BRANCH_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RETURN_BRANCH_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_RENT_VAL_COL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.available_vehicles_view)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.my_rentals_view)).BeginInit();
             this.SuspendLayout();
             // 
             // CustomerBtn
@@ -100,7 +78,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(24, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -129,7 +106,7 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1335, 587);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Rent Vehicle";
@@ -397,202 +374,6 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Pick-up Date";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.late_tid_box);
-            this.tabPage2.Controls.Add(this.add_late_fee_btn);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.cancel_rental_box);
-            this.tabPage2.Controls.Add(this.search_id_box);
-            this.tabPage2.Controls.Add(this.cancel_rental_btn);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.search_by_id_btn);
-            this.tabPage2.Controls.Add(this.view_all_btn);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.my_rentals_view);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(1335, 587);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "My Rentals";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // late_tid_box
-            // 
-            this.late_tid_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.late_tid_box.Location = new System.Drawing.Point(245, 326);
-            this.late_tid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.late_tid_box.Name = "late_tid_box";
-            this.late_tid_box.Size = new System.Drawing.Size(80, 26);
-            this.late_tid_box.TabIndex = 62;
-            // 
-            // add_late_fee_btn
-            // 
-            this.add_late_fee_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_late_fee_btn.Location = new System.Drawing.Point(91, 368);
-            this.add_late_fee_btn.Name = "add_late_fee_btn";
-            this.add_late_fee_btn.Size = new System.Drawing.Size(200, 33);
-            this.add_late_fee_btn.TabIndex = 61;
-            this.add_late_fee_btn.Text = "Add Late Fee";
-            this.add_late_fee_btn.UseVisualStyleBackColor = true;
-            this.add_late_fee_btn.Click += new System.EventHandler(this.add_late_fee_btn_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(33, 328);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(217, 20);
-            this.label9.TabIndex = 60;
-            this.label9.Text = "Mark Transaction as Late:";
-            // 
-            // cancel_rental_box
-            // 
-            this.cancel_rental_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel_rental_box.Location = new System.Drawing.Point(247, 488);
-            this.cancel_rental_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cancel_rental_box.Name = "cancel_rental_box";
-            this.cancel_rental_box.Size = new System.Drawing.Size(80, 26);
-            this.cancel_rental_box.TabIndex = 59;
-            // 
-            // search_id_box
-            // 
-            this.search_id_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_id_box.Location = new System.Drawing.Point(245, 186);
-            this.search_id_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.search_id_box.Name = "search_id_box";
-            this.search_id_box.Size = new System.Drawing.Size(80, 26);
-            this.search_id_box.TabIndex = 58;
-            // 
-            // cancel_rental_btn
-            // 
-            this.cancel_rental_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel_rental_btn.Location = new System.Drawing.Point(103, 526);
-            this.cancel_rental_btn.Name = "cancel_rental_btn";
-            this.cancel_rental_btn.Size = new System.Drawing.Size(200, 33);
-            this.cancel_rental_btn.TabIndex = 57;
-            this.cancel_rental_btn.Text = "Cancel Rental";
-            this.cancel_rental_btn.UseVisualStyleBackColor = true;
-            this.cancel_rental_btn.Click += new System.EventHandler(this.cancel_rental_btn_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(44, 491);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(192, 20);
-            this.label14.TabIndex = 55;
-            this.label14.Text = "Cancel Transaction ID:";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // search_by_id_btn
-            // 
-            this.search_by_id_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_by_id_btn.Location = new System.Drawing.Point(91, 228);
-            this.search_by_id_btn.Name = "search_by_id_btn";
-            this.search_by_id_btn.Size = new System.Drawing.Size(200, 33);
-            this.search_by_id_btn.TabIndex = 54;
-            this.search_by_id_btn.Text = "Search";
-            this.search_by_id_btn.UseVisualStyleBackColor = true;
-            this.search_by_id_btn.Click += new System.EventHandler(this.search_by_id_btn_Click);
-            // 
-            // view_all_btn
-            // 
-            this.view_all_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_all_btn.Location = new System.Drawing.Point(91, 76);
-            this.view_all_btn.Name = "view_all_btn";
-            this.view_all_btn.Size = new System.Drawing.Size(200, 66);
-            this.view_all_btn.TabIndex = 43;
-            this.view_all_btn.Text = "View All Rentals";
-            this.view_all_btn.UseVisualStyleBackColor = true;
-            this.view_all_btn.Click += new System.EventHandler(this.view_all_btn_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(42, 188);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(200, 20);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Search by Customer ID:";
-            // 
-            // my_rentals_view
-            // 
-            this.my_rentals_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.my_rentals_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.my_rentals_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TID_COL,
-            this.PICK_UP_DATE,
-            this.RETURN_DATE_COL,
-            this.Customer_ID,
-            this.VIN,
-            this.PICK_UP_BRANCH_COL,
-            this.RETURN_BRANCH_COL,
-            this.TOTAL_RENT_VAL_COL});
-            this.my_rentals_view.Location = new System.Drawing.Point(468, 21);
-            this.my_rentals_view.Name = "my_rentals_view";
-            this.my_rentals_view.RowHeadersWidth = 51;
-            this.my_rentals_view.Size = new System.Drawing.Size(847, 509);
-            this.my_rentals_view.TabIndex = 37;
-            // 
-            // TID_COL
-            // 
-            this.TID_COL.HeaderText = "TID";
-            this.TID_COL.MinimumWidth = 6;
-            this.TID_COL.Name = "TID_COL";
-            this.TID_COL.ReadOnly = true;
-            // 
-            // PICK_UP_DATE
-            // 
-            this.PICK_UP_DATE.HeaderText = "Pick-up Date";
-            this.PICK_UP_DATE.MinimumWidth = 6;
-            this.PICK_UP_DATE.Name = "PICK_UP_DATE";
-            this.PICK_UP_DATE.ReadOnly = true;
-            // 
-            // RETURN_DATE_COL
-            // 
-            this.RETURN_DATE_COL.HeaderText = "Return Date";
-            this.RETURN_DATE_COL.MinimumWidth = 6;
-            this.RETURN_DATE_COL.Name = "RETURN_DATE_COL";
-            this.RETURN_DATE_COL.ReadOnly = true;
-            // 
-            // Customer_ID
-            // 
-            this.Customer_ID.HeaderText = "Customer ID";
-            this.Customer_ID.MinimumWidth = 6;
-            this.Customer_ID.Name = "Customer_ID";
-            // 
-            // VIN
-            // 
-            this.VIN.HeaderText = "VIN";
-            this.VIN.MinimumWidth = 6;
-            this.VIN.Name = "VIN";
-            // 
-            // PICK_UP_BRANCH_COL
-            // 
-            this.PICK_UP_BRANCH_COL.HeaderText = "Pick-up Branch";
-            this.PICK_UP_BRANCH_COL.MinimumWidth = 6;
-            this.PICK_UP_BRANCH_COL.Name = "PICK_UP_BRANCH_COL";
-            this.PICK_UP_BRANCH_COL.ReadOnly = true;
-            // 
-            // RETURN_BRANCH_COL
-            // 
-            this.RETURN_BRANCH_COL.HeaderText = "Return Branch";
-            this.RETURN_BRANCH_COL.MinimumWidth = 6;
-            this.RETURN_BRANCH_COL.Name = "RETURN_BRANCH_COL";
-            this.RETURN_BRANCH_COL.ReadOnly = true;
-            // 
-            // TOTAL_RENT_VAL_COL
-            // 
-            this.TOTAL_RENT_VAL_COL.HeaderText = "Total Rent Value";
-            this.TOTAL_RENT_VAL_COL.MinimumWidth = 6;
-            this.TOTAL_RENT_VAL_COL.Name = "TOTAL_RENT_VAL_COL";
-            this.TOTAL_RENT_VAL_COL.ReadOnly = true;
-            // 
             // Rentals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -601,16 +382,13 @@
             this.ClientSize = new System.Drawing.Size(1379, 704);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.CustomerBtn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Rentals";
             this.Text = "Form2";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.available_vehicles_view)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.my_rentals_view)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,7 +398,6 @@
         private System.Windows.Forms.Button CustomerBtn;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox customer_id_dropdown;
         private System.Windows.Forms.Label customer_id_label;
@@ -639,12 +416,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button search_by_id_btn;
-        private System.Windows.Forms.Button view_all_btn;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView my_rentals_view;
-        private System.Windows.Forms.Button cancel_rental_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn VIN_COL;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKE_COL;
         private System.Windows.Forms.DataGridViewTextBoxColumn MODEL_COL;
@@ -655,18 +426,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Daily_Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Weekly_Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monthly_Cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TID_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PICK_UP_DATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RETURN_DATE_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VIN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PICK_UP_BRANCH_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RETURN_BRANCH_COL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_RENT_VAL_COL;
-        private System.Windows.Forms.TextBox search_id_box;
-        private System.Windows.Forms.TextBox cancel_rental_box;
-        private System.Windows.Forms.TextBox late_tid_box;
-        private System.Windows.Forms.Button add_late_fee_btn;
-        private System.Windows.Forms.Label label9;
     }
 }
