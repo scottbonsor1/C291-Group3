@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
     {
         public SqlConnection myConnection;
         public SqlCommand myCommand;
+        public SqlCommand myCommand2;
         public SqlDataReader myReader;
         public SqlDataReader myReader2;
         public SqlDataReader myReader3;
@@ -26,7 +27,9 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             //Change the server here for your guys' own servers
-            String connectionString = "Server = LAPTOP-HUT8634L; Database = 291_RentalDatabase; Trusted_Connection = yes;";
+                //MultipleActiveResultsSets=True allows for multiple for multuple MyCommands open and accessing the database.
+                    //2 SQl commands running simultaneously required when updating the Branch_ID of cars returned to different branches.
+            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes; MultipleActiveResultSets=True";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -34,7 +37,9 @@ namespace WindowsFormsApp1
             {
                 myConnection.Open(); // Open connection
                 myCommand = new SqlCommand();
+                myCommand2 = new SqlCommand();
                 myCommand.Connection = myConnection; // Link the command stream to the connection
+                myCommand2.Connection = myConnection;
                 
             }
             catch (Exception e)
@@ -48,6 +53,9 @@ namespace WindowsFormsApp1
             Fill_Branches();
             Fill_Vehicle_Types();
             showRentals();
+
+            //Go through rentals database and update the branch id for all cars returned to a differnt branch
+            update_car_branch();
         }
 
         private void CustomerBtn_Click(object sender, EventArgs e)
@@ -572,5 +580,61 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No Transaction ID Entered");
             }
         }
+
+        // UPDATE CAR BRANCH_ID WHEN RETURNED TO A DIFFERENT BRANCH
+        void update_car_branch()
+        {
+           
+
+            //Get current date and format the same as SQL date type
+            DateTime currentDate = DateTime.Now;
+            int day = currentDate.Day;
+            int month = currentDate.Month;
+            int year = currentDate.Year;
+
+
+            //Console.WriteLine(currentDateString);
+
+            //Select all VIN's that have been returned to a different branch and the return date has passed
+            myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID and Year(Return_Date) = " + year +
+                "and Month(Return_Date) = " + month + " and Day(Return_Date) = " + (day - 1) + ";";
+            try
+            {
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    String vin = myReader["VIN"].ToString();
+                    String branch_id = myReader["Return_BID"].ToString();
+
+                    
+                    myCommand2.CommandText = "Update Car Set Branch_ID = " + branch_id + " Where VIN = " + vin + ";";
+                    myCommand2.ExecuteNonQuery();
+
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+            
+           
+            myReader.Close();
+
+            
+       
+        }
+           
+
+
+
+
+
     }
+
+    
+
+
+
 }
