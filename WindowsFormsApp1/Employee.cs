@@ -734,7 +734,7 @@ namespace WindowsFormsApp1
         private void cust_add_but_Click(object sender, EventArgs e)
         {
             String CID;
-            if (cust_first_name_txt.Text.Length > 0 && cust_street_add1_txt.Text.Length > 0 &&
+            if (cust_first_name_txt.Text.Length > 0 && cust_street_add1_txt.Text.Length > 0 && cust_dob_txt.Text.Length > 0 &&
                 cust_city_txt.Text.Length > 0 && cust_prov_txt.Text.Length > 0 && cust_pCode_txt.Text.Length > 0 && cust_phone_num_txt.Text.Length > 0 &&
                 cust_insurance_txt.Text.Length > 0 && cust_drivers_txt.Text.Length > 0)
             {
