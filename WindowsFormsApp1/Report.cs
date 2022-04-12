@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public SqlCommand myCommand;
         public SqlDataReader myReader;
         //Change the server here for your guys' own servers
-        public String myServer = "LAPTOP-DSBFVL6U";
+        public String myServer = "LAPTOP-HUT8634L";
         public String myDatabase = "291_RentalDatabase";
         public Report()
         {
