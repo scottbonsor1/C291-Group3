@@ -1137,7 +1137,7 @@ namespace WindowsFormsApp1
         //Refresh Cars tab DataGridView with all records in Car table
         private void refresh_cars()
         {
-            myCommand.CommandText = "select * from Car";
+            myCommand.CommandText = "select * from Car ORDER BY LEN(VIN), VIN";
 
             try
             {
