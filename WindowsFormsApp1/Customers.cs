@@ -21,7 +21,12 @@ namespace WindowsFormsApp1
         public SqlDataReader myReader3;
         public Double LATE_FEE = 49.99; //this is the added cost for late rentals
         public Double DIFF_BRANCH_COST = 35.50; //this is the fee for returning to a different branch
-      
+        public Double Gold_upgrade_D = -1;
+        public Double Gold_upgrade_W = -1;
+        public Double Gold_upgrade_M = -1;
+        public String upgraded = "";
+
+
         public Rentals()
         {
             InitializeComponent();
@@ -29,7 +34,7 @@ namespace WindowsFormsApp1
             //Change the server here for your guys' own servers
                 //MultipleActiveResultsSets=True allows for multiple for multuple MyCommands open and accessing the database.
                     //2 SQl commands running simultaneously required when updating the Branch_ID of cars returned to different branches.
-            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes; MultipleActiveResultSets=True;";
+            String connectionString = "Server = LAPTOP-DSBFVL6U; Database = 291_RentalDatabase; Trusted_Connection = yes; MultipleActiveResultSets=True;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -209,6 +214,8 @@ namespace WindowsFormsApp1
         private void searchButton_Click(object sender, EventArgs e)
         {
             //int customerID = (int) customer_id_dropdown.SelectedValue;
+            Gold_upgrade_D = -1;
+            upgraded = "";
             String CarType = vehicle_type_dropdown.Text;
             String PickupB = pickup_branch_dropdown.Text;
             String ReturnB = return_branch_dropdown.Text;
@@ -258,6 +265,95 @@ namespace WindowsFormsApp1
                     }
                     myReader.Close();
 
+                    if (available_vehicles_view.Rows.Count == 1)
+                    {
+                        var result = MessageBox.Show("No " + CarType + " vehichles available, would you like to upgrade?",
+                            "Upgrade?", MessageBoxButtons.YesNo);
+
+                        if (result == DialogResult.Yes)
+                        {
+
+                            myCommand.CommandText = "SELECT Daily_Rate, Weekly_Rate, Monthly_Rate FROM Car_Type WHERE Description = '" + CarType + "';";
+                            myReader = myCommand.ExecuteReader();
+                            myReader.Read();
+                            var oldDaily = Double.Parse(myReader["Daily_Rate"].ToString());
+                            var oldWeekly = Double.Parse(myReader["Weekly_Rate"].ToString());
+                            var oldMonthly = Double.Parse(myReader["Monthly_Rate"].ToString());
+
+                            myReader.Close();
+
+                            if (goldCheck(customer_id_dropdown.Text))
+                            {
+                                Gold_upgrade_D = oldDaily;
+                                Gold_upgrade_W = oldWeekly;
+                                Gold_upgrade_M = oldMonthly;
+                            }
+
+                            String newDesc = findNextType(CarType, oldDaily);
+
+                            if (newDesc == "None")
+                            {
+                                MessageBox.Show("Sorry, there is no upgrade available for your selected car type", "No upgrade available");
+                            }
+
+                            else
+                            {
+
+                                Console.WriteLine(customer_id_dropdown.Text);
+                                var checkTemp = goldCheck(customer_id_dropdown.Text);
+
+                                myCommand.CommandText = "select * from Car, Car_Type, Branch " +
+                               "where Car.Car_Type_ID = Car_Type.Car_Type_ID and Branch.BID = Car.Branch_ID and " +
+                               "Branch.Description = '" + PickupB + "' and Car_Type.Description = '" + newDesc + "' " +
+                               "and VIN not in " +
+                               "(select VIN from Rentals where " +
+                               "(('" + selectedPDate + "' >= Pick_Up_Date and '" + selectedPDate + "' <= Return_Date) or " +
+                               "('" + selectedRDate + "' <= Return_Date and '" + selectedRDate + "' >= Pick_Up_Date ) or " +
+                               "('" + selectedPDate + "' <= Pick_Up_Date and '" + selectedRDate + "' >= Return_Date)));";
+
+
+                                myReader = myCommand.ExecuteReader();
+                                available_vehicles_view.Rows.Clear();
+
+                                
+
+                                if (checkTemp)
+                                {
+                                    while (myReader.Read())
+                                    {
+                                        available_vehicles_view.Rows.Add(
+                                            myReader["VIN"].ToString(), myReader["Make"].ToString(),
+                                            myReader["Model"].ToString(), myReader["Year"].ToString(),
+                                            myReader["No_of_Seats"].ToString(), myReader["Colour"].ToString(),
+                                            myReader["Description"].ToString(), oldDaily,
+                                            oldWeekly, oldMonthly);
+
+                                        String VIN_for_list = myReader["VIN"].ToString();
+                                        VIN_box.Items.Add(VIN_for_list);
+                                    }
+                                }
+                                else
+                                {
+                                    while (myReader.Read())
+                                    {
+                                        available_vehicles_view.Rows.Add(
+                                        myReader["VIN"].ToString(), myReader["Make"].ToString(),
+                                        myReader["Model"].ToString(), myReader["Year"].ToString(),
+                                        myReader["No_of_Seats"].ToString(), myReader["Colour"].ToString(),
+                                        myReader["Description"].ToString(), myReader["Daily_Rate"].ToString(),
+                                        myReader["Weekly_Rate"].ToString(), myReader["Monthly_Rate"].ToString());
+
+                                        String VIN_for_list = myReader["VIN"].ToString();
+                                        VIN_box.Items.Add(VIN_for_list);
+                                    }
+                                }
+
+                                
+                                myReader.Close();
+                                upgraded = newDesc;
+                            }
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -284,14 +380,24 @@ namespace WindowsFormsApp1
             weeks = days / 7;
             days -= weeks * 7;
 
-            myCommand.CommandText = "Select Daily_Rate, Weekly_Rate, Monthly_Rate from Car_Type where Description = '" + carType + "';";
-            myReader2 = myCommand.ExecuteReader();
-            myReader2.Read();
-            dCost = myReader2["Daily_Rate"].ToString();
-            wCost = myReader2["Weekly_Rate"].ToString();
-            mCost = myReader2["Monthly_Rate"].ToString();
-            myReader2.Close();
+            Console.WriteLine(Gold_upgrade_D);
+            if (Gold_upgrade_D == -1)
+            {
+                myCommand.CommandText = "Select Daily_Rate, Weekly_Rate, Monthly_Rate from Car_Type where Description = '" + carType + "';";
+                myReader2 = myCommand.ExecuteReader();
+                myReader2.Read();
+                dCost = myReader2["Daily_Rate"].ToString();
+                wCost = myReader2["Weekly_Rate"].ToString();
+                mCost = myReader2["Monthly_Rate"].ToString();
+                myReader2.Close();
+            }
 
+            else
+            {
+                dCost = Gold_upgrade_D.ToString();
+                wCost = Gold_upgrade_W.ToString();
+                mCost = Gold_upgrade_M.ToString();
+            }
             //REF: https://docs.microsoft.com/en-us/dotnet/api/system.double.parse?view=net-6.0
             cost += (months * (Double.Parse(mCost)));
             cost += (weeks * (Double.Parse(wCost)));
@@ -339,6 +445,29 @@ namespace WindowsFormsApp1
             return gold;
         }
 
+        private String findNextType(String carType, Double Daily_Rate)
+        {
+
+            String temp;
+
+            myCommand.CommandText = "SELECT CT.Description " +
+                "FROM Car_Type AS CT, Car AS C, Branch AS B " +
+                "WHERE CT.Car_Type_ID = C.Car_Type_ID AND C.Branch_ID = B.BID AND CT.Daily_Rate > " + Daily_Rate +
+                " ORDER BY CT.Description DESC;";
+
+            myReader = myCommand.ExecuteReader();
+            if (myReader.Read())
+            {
+                temp = myReader["Description"].ToString();
+            }
+            else
+            {
+                temp = "None";
+            }
+            myReader.Close();
+            return temp;
+        }
+
         //gets the max TID in the table and adds one to autoincrement the TID
         private String getNewTID()
         {
@@ -375,8 +504,11 @@ namespace WindowsFormsApp1
             String pickupDate = pickupTime.ToString();
             String returnDate = returnTime.ToString();
             String VIN = VIN_box.Text;
-
-
+            
+            if (upgraded != "")
+            {
+                CarType = upgraded;
+            }
 
             TimeSpan rentalSpan = returnTime.Subtract(pickupTime);
             
@@ -430,8 +562,9 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show(e2.ToString(), "Error");
                 }
-                //update list to remove newly rented car
-                searchButton.PerformClick();
+                //clear screen after renting
+                available_vehicles_view.Rows.Clear();
+                VIN_box.Items.Clear();
 
                 //lets check if that gives them a gold upgrade
                 updateGold(customerID);
