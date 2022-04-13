@@ -44,7 +44,7 @@ namespace WindowsFormsApp1
             //Change the server here for your guys' own servers
             //MultipleActiveResultsSets=True allows for multiple for multuple MyCommands open and accessing the database.
             //2 SQl commands running simultaneously required when updating the Branch_ID of cars returned to different branches.
-            String connectionString = "Server = LAPTOP-DSBFVL6U; Database = 291_RentalDatabase; Trusted_Connection = yes; MultipleActiveResultSets=True;";
+            String connectionString = "Server = DESKTOP-D7J3O0B; Database = 291_RentalDatabase; Trusted_Connection = yes; MultipleActiveResultSets=True;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
@@ -693,7 +693,11 @@ namespace WindowsFormsApp1
             myReader.Close();
             
         }
-           
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
