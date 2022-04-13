@@ -10,22 +10,32 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
+/**
+ * This is the Employee form. It handles all the actions an Employee can perform in the application.
+ * It allows Employees to add cars, car types, branches, and customers, and allows them to view, search,
+ * and delete the above, in addition to rental transactions.
+ * 
+ */
 
 namespace WindowsFormsApp1
 {
     public partial class Employee : Form
     {
+        //global vars
+        //SQL connection variables
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlCommand myCommand2;
         public SqlDataReader myReader;
         public SqlDataReader myReader2;
         public SqlDataReader myReader3;
+
+        //fee constants
         public Double LATE_FEE = 49.99; //this is the added cost for late rentals
         public Double DIFF_BRANCH_COST = 35.50; //this is the fee for returning to a different branch
 
         //used for checking size of inputed rent values
-        double numLimit = 10000;
+        double numLimit = 1000000;
         public Employee()
         {
             InitializeComponent();
@@ -45,6 +55,7 @@ namespace WindowsFormsApp1
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
 
+            //open connection to local machine
             try
             {
                 myConnection.Open(); // Open connection
@@ -53,6 +64,7 @@ namespace WindowsFormsApp1
                 myCommand.Connection = myConnection; // Link the command stream to the connection
                 myCommand2.Connection = myConnection;
 
+                //populate tabs
                 refreshCarType();
                 refreshBranch();
                 //Populate Cars tab combo boxes with available Branch_ID's, Car_Type_ID's and VIN's
@@ -69,14 +81,18 @@ namespace WindowsFormsApp1
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString(), "Error");
+                MessageBox.Show("Error connecting to database, terminating application...", "Error");
                 this.Close();
             }
 
             
 
         }
-
+        
+        /**
+         * CustomerBtn_Click allows the logged in employee to leave the employee screen and return to the
+         * login screen.
+         */
         private void CustomerBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -100,10 +116,12 @@ namespace WindowsFormsApp1
         //refreshCarType (re)populates the data view with entries from the Car_Type database table
         private void refreshCarType()
         {
+            //select all rows in Car_Type
             myCommand.CommandText = "select * from Car_Type";
 
             try
             { 
+                //execute query and iterate over all columns
                 myReader = myCommand.ExecuteReader();
 
                 carTypeView.Rows.Clear();
@@ -117,13 +135,15 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error loading car types from database", "Error");
             }
         }
 
         //add new Car Type to Car_Type database table
         private void addCarTypeButClick(object sender, EventArgs e)
         {
+
+            //check required field length
             if (modelID.Text.Length > 0 && typeDesc.Text.Length > 0 && dRent.Text.Length > 0
                 && wRent.Text.Length > 0 && mRent.Text.Length > 0)
             {
@@ -135,6 +155,7 @@ namespace WindowsFormsApp1
                         return;
                     }
 
+                    //insert query
                     myCommand.CommandText = "insert into Car_Type values (" + modelID.Text + ",' " +
                         typeDesc.Text + "',' " + dRent.Text + "',' " + wRent.Text + "',' " +
                         mRent.Text + "')";
@@ -145,7 +166,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception e2)
                 {
-                    MessageBox.Show(e2.ToString(), "Error");
+                    MessageBox.Show("Error inserting data into database", "Error");
                 }
             }
             else
@@ -159,20 +180,23 @@ namespace WindowsFormsApp1
         private void delCarTypeButClick(object sender, EventArgs e)
         {
 
+            //check field length
             if (modelID.Text.Length > 0 )
             {
+                //delete query
                 myCommand.CommandText = "delete from Car_Type where Car_Type_ID = " + modelID.Text;
 
                 try
                 {
-                    MessageBox.Show(myCommand.CommandText);
+                    var message = "Deleting Car Type with ID " + modelID.Text +" from database";
+                    MessageBox.Show("message");
                     myCommand.ExecuteNonQuery();
                     refreshCarType();
                     Fill_Cars_Car_Type_ID();    // Update Car Type ID dropdown box in Cars tab with removed branch.
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error deleting Car Type from database", "Error");
                 }
             }
             else
@@ -185,11 +209,15 @@ namespace WindowsFormsApp1
         //edit car type from Car_Type database table
         private void editCarTypeButClick(object sender, EventArgs e)
         {
+            //check if required fields are filled
             if (modelID.Text.Length > 0)
             {
+                //used to check whther a comma should be placed in string
                 int check = 0;
                 myCommand.CommandText = "update Car_Type set ";
 
+                //Add appropriate fields to be edited into query
+                //For all but first and last, check if check == 1 to see if a comma should be place in query
                 if (typeDesc.Text.Length > 0)
                 {
                     myCommand.CommandText += "Description = '" + typeDesc.Text + "'";
@@ -234,6 +262,7 @@ namespace WindowsFormsApp1
 
                 myCommand.CommandText += " where Car_Type_ID = " + modelID.Text + ";";
 
+                //no fields entered
                 if (check == 0)
                 {
                     MessageBox.Show("No edit fields entered");
@@ -243,12 +272,13 @@ namespace WindowsFormsApp1
                 {
                     try
                     {
-                        MessageBox.Show(myCommand.CommandText);
+                        var message = "Editing car type with ID " + modelID.Text;
+                        MessageBox.Show(message);
                         myCommand.ExecuteNonQuery();
                         refreshCarType();
                     }
 
-                    catch (Exception) // (Exception e2)
+                    catch (Exception)
                     {
                         MessageBox.Show("Invalid value(s) entered");
                     }
@@ -256,12 +286,17 @@ namespace WindowsFormsApp1
             }
         }
 
+
+        //search for car types given specified criteria
         private void searchCarTypeButClick(object sender, EventArgs e)
         {
 
+            //used to check if multiple fields have been selected, requiring a comma in the query
             int check = 0;
             myCommand.CommandText = "select * from Car_Type where ";
 
+            //find fields to search with
+            //for all but the first and last, if check == 1 add a comma to the query
             if (modelS.Text.Length > 0)
             {
                 myCommand.CommandText += "Car_Type_ID = " + modelS.Text;
@@ -328,7 +363,8 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    MessageBox.Show(myCommand.CommandText);
+
+                    //insert query data into datagrid
                     myReader = myCommand.ExecuteReader();
                     carTypeView.Rows.Clear();
                     while (myReader.Read())
@@ -419,13 +455,17 @@ namespace WindowsFormsApp1
 
         }
 
+        //**********************
+        //Start of Branch Tab
+        //**********************
+
+        //(re)populate branch dataGrid object
         void refreshBranch()
         {
             myCommand.CommandText = "select * from Branch";
 
             try
             {
-                //MessageBox.Show(myCommand.CommandText);  
                 myReader = myCommand.ExecuteReader();
 
                 branch_view.Rows.Clear();
@@ -439,16 +479,17 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occured while grabbing data from database", "Error");
             }
         }
+
+        //button click function for refreshing Branch tab
         private void branch_refresh_but_Click(object sender, EventArgs e)
         {
             myCommand.CommandText = "select * from Branch";
 
             try
             {
-                //MessageBox.Show(myCommand.CommandText);  
                 myReader = myCommand.ExecuteReader();
 
                 branch_view.Rows.Clear();
@@ -462,7 +503,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occured while grabbing data from database", "Error");
             }
         }
 
@@ -482,8 +523,10 @@ namespace WindowsFormsApp1
         }
 
 
+        //add new branch entry in database using inputted data
         private void branch_add_but_Click(object sender, EventArgs e)
         {
+            //check required fields are filled
             if (branch_id_txt.Text.Length > 0 && branch_descrip_txt.Text.Length > 0 && branch_street_add1_txt.Text.Length > 0 &&
                 branch_city_txt.Text.Length > 0 && branch_province_txt.Text.Length > 0 &&
                 branch_pCode_txt.Text.Length > 0 && branch_phone_num_txt.Text.Length > 0)
@@ -501,7 +544,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception e2)
                 {
-                    MessageBox.Show(e2.ToString(), "Error");
+                    MessageBox.Show("Error adding new Branch instance", "Error");
                 }
             }
             else
@@ -510,13 +553,16 @@ namespace WindowsFormsApp1
             }
         }
 
+        //edit a given branch entry with inputted information
         private void branch_edit_but_Click(object sender, EventArgs e)
         {
+            //used to check if a comma is needed in the query
             int add = 0;
             try
             {
                 myCommand.CommandText = "update Branch set ";
 
+                //for all but the first and last, if add == 1, add a comma to the query
                 if (branch_descrip_txt.Text.Length > 0)
                 {
                     myCommand.CommandText += "Description = '" + branch_descrip_txt.Text + "'";
@@ -563,7 +609,9 @@ namespace WindowsFormsApp1
 
                 if (add == 1 && branch_id_txt.Text.Length > 0)
                 {
-                    MessageBox.Show(myCommand.CommandText);
+
+                    var message = "Editing branch with ID " + branch_id_txt.Text;
+                    MessageBox.Show(message);
 
                     myCommand.ExecuteNonQuery();
                     branch_refresh_but.PerformClick();
@@ -575,12 +623,15 @@ namespace WindowsFormsApp1
             }
             catch (Exception e2)
             {
-                MessageBox.Show(e2.ToString(), "Error");
+                MessageBox.Show("Error occured while editing branch", "Error");
             }
         }
 
+        //search for branch given user inputted information
         private void branch_search_but_Click(object sender, EventArgs e)
         {
+
+            //used to check for invalid fields
             int invalid = 0;
             int bid = 0;
             int result;
@@ -642,7 +693,7 @@ namespace WindowsFormsApp1
                 }
                 try
                 {
-                    //MessageBox.Show(myCommand.CommandText);
+                    
                     myReader = myCommand.ExecuteReader();
                     branch_view.Rows.Clear();
                     while (myReader.Read())
@@ -655,7 +706,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while searching", "Error");
                 }
 
             }
@@ -668,23 +719,25 @@ namespace WindowsFormsApp1
             }
         }
 
+        // delete branch from database table
         private void branch_del_but_Click(object sender, EventArgs e)
         {
             int result;
+            
             if (branch_id_LU_txt.Text.Length > 0 && !int.TryParse(branch_search_text_box.Text.ToString(), out result)) //tests if it is an int
             {
                 myCommand.CommandText = "delete from Branch where BID = " + branch_id_LU_txt.Text;
 
                 try
                 {
-                    MessageBox.Show(myCommand.CommandText);
+                    
                     myCommand.ExecuteNonQuery();
                     branch_refresh_but.PerformClick();
                     Fill_Cars_BranchID();   // Update Branch ID dropdown box in Cars tab with removed branch.
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while deleting branch", "Error");
                 }
             }
             else
@@ -730,6 +783,7 @@ namespace WindowsFormsApp1
 
             return CID;
         }
+
         //Customer Add button
         private void cust_add_but_Click(object sender, EventArgs e)
         {
@@ -767,9 +821,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Required Fields Missing or Incorrect");
             }
         }
+
         //customer edit button
         private void cust_edit_but_Click(object sender, EventArgs e)
         {
+            //used to check if query needs a comma added
             int add = 0;
             try
             {
@@ -858,17 +914,19 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    MessageBox.Show("No fields Edited");
+                    MessageBox.Show("No fields edited");
                 }
             }
             catch (Exception e2)
             {
-                MessageBox.Show(e2.ToString(), "Error");
+                MessageBox.Show("Error occurred while trying to edit customer", "Error");
             }
         }
+
         //customer search button
         private void cust_search_but_Click(object sender, EventArgs e)
         {
+            //used to check if fields entered are invalid
             int invalid = 0;
             int cid = 0;
             int result;
@@ -941,6 +999,8 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No Search Field Selected");
                 invalid = 1;
             }
+
+
             if (cust_search_box_txt.Text.Length > 0 && invalid == 0)
             {
                 if (cid != 1)
@@ -963,7 +1023,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while trying to search for customer(s)", "Error");
                 }
             }
             else
@@ -974,23 +1034,25 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
         //customer delete button
         private void cust_del_but_Click(object sender, EventArgs e)
         {
             int result;
+            //check to see if int
             if (cust_id_LU_txt.Text.Length > 0 && !int.TryParse(branch_search_text_box.Text.ToString(), out result))
             {
                 myCommand.CommandText = "delete from Customer where Customer_ID = " + cust_id_LU_txt.Text;
 
                 try
                 {
-                    MessageBox.Show(myCommand.CommandText);
+                    
                     myCommand.ExecuteNonQuery();
                     cust_refresh_but.PerformClick();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while deleting customer", "Error");
                 }
             }
             else
@@ -999,13 +1061,13 @@ namespace WindowsFormsApp1
             }
         }
 
+        //(re)populate customer tab
         private void refresh_customer()
         {
             myCommand.CommandText = "select * from Customer";
 
             try
             {
-                //MessageBox.Show(myCommand.CommandText);  
                 myReader = myCommand.ExecuteReader();
 
                 customer_view.Rows.Clear();
@@ -1019,7 +1081,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
         }
         //customer refresh button
@@ -1029,7 +1091,6 @@ namespace WindowsFormsApp1
 
             try
             {
-                //MessageBox.Show(myCommand.CommandText);  
                 myReader = myCommand.ExecuteReader();
 
                 customer_view.Rows.Clear();
@@ -1043,7 +1104,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
         }
 
@@ -1079,7 +1140,7 @@ namespace WindowsFormsApp1
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
         }
 
@@ -1103,7 +1164,7 @@ namespace WindowsFormsApp1
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
         }
         
@@ -1128,7 +1189,7 @@ namespace WindowsFormsApp1
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
 
         }
@@ -1154,7 +1215,7 @@ namespace WindowsFormsApp1
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
 
         }
@@ -1182,7 +1243,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while grabbing data from database", "Error");
                 }
             }
 
@@ -1213,7 +1274,7 @@ namespace WindowsFormsApp1
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while deleting car from database", "Error");
                 }
             }
             else
@@ -1319,7 +1380,7 @@ namespace WindowsFormsApp1
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while deleting car from database", "Error");
             }
 
         }
@@ -1347,7 +1408,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while searching for car(s)", "Error");
                 }
 
             }
@@ -1378,7 +1439,7 @@ namespace WindowsFormsApp1
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
         }
 
@@ -1410,6 +1471,8 @@ namespace WindowsFormsApp1
         }
 
         //---------------------- Rentals Tab ---------------------------------------
+
+        //(re)populate rental tab
         private void showRentals()
         {
             myCommand.CommandText = "select * from Rentals;";
@@ -1431,15 +1494,17 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
         }
 
+        //button function for showRentals
         private void view_all_btn_Click(object sender, EventArgs e)
         {
             showRentals();
         }
 
+        //search for rental via TID
         private void search_by_id_btn_Click(object sender, EventArgs e)
         {
             if (search_id_box.Text.Length > 0)
@@ -1463,7 +1528,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while searching ", "Error");
                 }
             }
             else
@@ -1472,6 +1537,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        //add late fee to rental transaction
         private void add_late_fee_btn_Click(object sender, EventArgs e)
         {
             if (late_tid_box.Text.Length > 0)
@@ -1498,7 +1564,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while trying to find transaction", "Error");
                 }
 
             }
@@ -1508,6 +1574,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        //cancel rental transaction
         private void cancel_rental_btn_Click(object sender, EventArgs e)
         {
             if (cancel_rental_box.Text.Length > 0)
@@ -1521,7 +1588,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while trying to cancel rental transaction", "Error");
                 }
             }
             else
@@ -1537,16 +1604,8 @@ namespace WindowsFormsApp1
 
             //Get current date and format the same as SQL date type
             DateTime currentDate = DateTime.Now;
-            //int day = currentDate.Day;
-            //int month = currentDate.Month;
-            //int year = currentDate.Year;
-
-
-            //Console.WriteLine(currentDateString);
 
             //Select all VIN's that have been returned to a different branch and the return date has passed
-            //myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID and Year(Return_Date) = " + year +
-            //   "and Month(Return_Date) = " + month + " and Day(Return_Date) = " + (day - 1) + ";";
 
             myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID;";
 
@@ -1572,18 +1631,12 @@ namespace WindowsFormsApp1
                     }
 
 
-                    //Console.WriteLine((currentDate - returnDate).Days.ToString());
-
-                    //myCommand2.CommandText = "Update Car Set Branch_ID = " + branch_id + " Where VIN = " + vin + ";";
-                    //myCommand2.ExecuteNonQuery();
-
-
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while updating refreshing data", "Error");
             }
 
 
@@ -1593,8 +1646,6 @@ namespace WindowsFormsApp1
 
 
     }
-
-
 
 
 }
