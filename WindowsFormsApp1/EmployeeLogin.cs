@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    /**
+     * This is the EmployeeLogin form. It handles employee login for the application
+     * 
+     */
+
     public partial class EmployeeLogin : Form
     {
         public EmployeeLogin()
@@ -27,6 +32,7 @@ namespace WindowsFormsApp1
 
         }
 
+        //login button
         private void EmployeeBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -35,6 +41,7 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
+        //go back to start page
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
