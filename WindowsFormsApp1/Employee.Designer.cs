@@ -261,7 +261,7 @@
             this.Tabs.Controls.Add(this.tabPage3);
             this.Tabs.Controls.Add(this.tabPage2);
             this.Tabs.Location = new System.Drawing.Point(10, 11);
-            this.Tabs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tabs.Margin = new System.Windows.Forms.Padding(2);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
             this.Tabs.Size = new System.Drawing.Size(1383, 612);
@@ -301,9 +301,9 @@
             this.carsTab.Controls.Add(this.cars_vin_text);
             this.carsTab.Controls.Add(this.cars_branch_id_label);
             this.carsTab.Location = new System.Drawing.Point(4, 22);
-            this.carsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carsTab.Margin = new System.Windows.Forms.Padding(2);
             this.carsTab.Name = "carsTab";
-            this.carsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carsTab.Padding = new System.Windows.Forms.Padding(2);
             this.carsTab.Size = new System.Drawing.Size(1375, 586);
             this.carsTab.TabIndex = 0;
             this.carsTab.Text = "Cars";
@@ -755,9 +755,9 @@
             this.carTypeTab.Controls.Add(this.addTypeBut);
             this.carTypeTab.Controls.Add(this.carTypeView);
             this.carTypeTab.Location = new System.Drawing.Point(4, 22);
-            this.carTypeTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carTypeTab.Margin = new System.Windows.Forms.Padding(2);
             this.carTypeTab.Name = "carTypeTab";
-            this.carTypeTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.carTypeTab.Padding = new System.Windows.Forms.Padding(2);
             this.carTypeTab.Size = new System.Drawing.Size(1375, 586);
             this.carTypeTab.TabIndex = 1;
             this.carTypeTab.Text = "Car Type";
@@ -1241,7 +1241,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1375, 586);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Branches";
@@ -1620,9 +1620,9 @@
             this.tabPage3.Controls.Add(this.cust_f_name_label);
             this.tabPage3.Controls.Add(this.cust_custID_label);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(1375, 586);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Customers";
@@ -2104,7 +2104,7 @@
             this.tabPage2.Controls.Add(this.my_rentals_view);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1375, 586);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Rentals";
@@ -2114,7 +2114,7 @@
             // 
             this.late_tid_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.late_tid_box.Location = new System.Drawing.Point(258, 329);
-            this.late_tid_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.late_tid_box.Margin = new System.Windows.Forms.Padding(2);
             this.late_tid_box.Name = "late_tid_box";
             this.late_tid_box.Size = new System.Drawing.Size(80, 26);
             this.late_tid_box.TabIndex = 73;
@@ -2144,7 +2144,7 @@
             // 
             this.cancel_rental_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_rental_box.Location = new System.Drawing.Point(260, 491);
-            this.cancel_rental_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancel_rental_box.Margin = new System.Windows.Forms.Padding(2);
             this.cancel_rental_box.Name = "cancel_rental_box";
             this.cancel_rental_box.Size = new System.Drawing.Size(80, 26);
             this.cancel_rental_box.TabIndex = 70;
@@ -2153,7 +2153,7 @@
             // 
             this.search_id_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_id_box.Location = new System.Drawing.Point(258, 189);
-            this.search_id_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.search_id_box.Margin = new System.Windows.Forms.Padding(2);
             this.search_id_box.Name = "search_id_box";
             this.search_id_box.Size = new System.Drawing.Size(80, 26);
             this.search_id_box.TabIndex = 69;
@@ -2288,7 +2288,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(14, 637);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 52);
             this.button1.TabIndex = 4;
@@ -2300,11 +2300,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1401, 703);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Tabs);
             this.Controls.Add(this.CustomerBtn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Employee";
             this.Text = "Form1";
             this.Tabs.ResumeLayout(false);

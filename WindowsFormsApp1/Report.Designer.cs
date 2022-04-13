@@ -87,19 +87,19 @@
             // 
             this.ReportLabel.AutoSize = true;
             this.ReportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportLabel.Location = new System.Drawing.Point(323, 27);
+            this.ReportLabel.Location = new System.Drawing.Point(242, 22);
+            this.ReportLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ReportLabel.Name = "ReportLabel";
-            this.ReportLabel.Size = new System.Drawing.Size(98, 29);
+            this.ReportLabel.Size = new System.Drawing.Size(75, 24);
             this.ReportLabel.TabIndex = 2;
             this.ReportLabel.Text = "Reports";
             // 
             // backBtn
             // 
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.Location = new System.Drawing.Point(644, 671);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.backBtn.Location = new System.Drawing.Point(483, 545);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(103, 48);
+            this.backBtn.Size = new System.Drawing.Size(77, 39);
             this.backBtn.TabIndex = 4;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = true;
@@ -113,11 +113,10 @@
             this.report5.Controls.Add(this.tabPage4);
             this.report5.Controls.Add(this.tabPage5);
             this.report5.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.report5.Location = new System.Drawing.Point(16, 89);
-            this.report5.Margin = new System.Windows.Forms.Padding(4);
+            this.report5.Location = new System.Drawing.Point(12, 72);
             this.report5.Name = "report5";
             this.report5.SelectedIndex = 0;
-            this.report5.Size = new System.Drawing.Size(921, 575);
+            this.report5.Size = new System.Drawing.Size(907, 467);
             this.report5.TabIndex = 5;
             // 
             // tabPage1
@@ -125,11 +124,10 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.report1_btn);
             this.tabPage1.Controls.Add(this.reportgrid1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(913, 546);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(899, 441);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Report 1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -137,18 +135,20 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(645, 44);
+            this.label2.Location = new System.Drawing.Point(525, 128);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(215, 86);
+            this.label2.Size = new System.Drawing.Size(308, 52);
             this.label2.TabIndex = 2;
             this.label2.Text = "Find the popularity of rented car types from most popular to least popular.";
             // 
             // report1_btn
             // 
             this.report1_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report1_btn.Location = new System.Drawing.Point(687, 257);
+            this.report1_btn.Location = new System.Drawing.Point(628, 182);
+            this.report1_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.report1_btn.Name = "report1_btn";
-            this.report1_btn.Size = new System.Drawing.Size(109, 69);
+            this.report1_btn.Size = new System.Drawing.Size(82, 56);
             this.report1_btn.TabIndex = 1;
             this.report1_btn.Text = "Execute";
             this.report1_btn.UseVisualStyleBackColor = true;
@@ -162,10 +162,9 @@
             this.carTypeR1,
             this.countR1});
             this.reportgrid1.Location = new System.Drawing.Point(0, 0);
-            this.reportgrid1.Margin = new System.Windows.Forms.Padding(4);
             this.reportgrid1.Name = "reportgrid1";
             this.reportgrid1.RowHeadersWidth = 51;
-            this.reportgrid1.Size = new System.Drawing.Size(595, 521);
+            this.reportgrid1.Size = new System.Drawing.Size(446, 423);
             this.reportgrid1.TabIndex = 0;
             this.reportgrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportgrid1_CellContentClick);
             // 
@@ -198,11 +197,10 @@
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.report2_btn);
             this.tabPage2.Controls.Add(this.reportgrid2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(913, 546);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(899, 441);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Report 2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -210,9 +208,10 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(459, 36);
+            this.label3.Location = new System.Drawing.Point(397, 128);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(367, 161);
+            this.label3.Size = new System.Drawing.Size(405, 64);
             this.label3.TabIndex = 3;
             this.label3.Text = "Find the names of customers who have never returned a car to a branch in a city t" +
     "hat differs from their city.";
@@ -220,9 +219,10 @@
             // report2_btn
             // 
             this.report2_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report2_btn.Location = new System.Drawing.Point(556, 307);
+            this.report2_btn.Location = new System.Drawing.Point(547, 194);
+            this.report2_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.report2_btn.Name = "report2_btn";
-            this.report2_btn.Size = new System.Drawing.Size(136, 69);
+            this.report2_btn.Size = new System.Drawing.Size(102, 56);
             this.report2_btn.TabIndex = 1;
             this.report2_btn.Text = "Execute";
             this.report2_btn.UseVisualStyleBackColor = true;
@@ -235,10 +235,9 @@
             this.Column3,
             this.Column4});
             this.reportgrid2.Location = new System.Drawing.Point(0, 0);
-            this.reportgrid2.Margin = new System.Windows.Forms.Padding(4);
             this.reportgrid2.Name = "reportgrid2";
             this.reportgrid2.RowHeadersWidth = 51;
-            this.reportgrid2.Size = new System.Drawing.Size(413, 535);
+            this.reportgrid2.Size = new System.Drawing.Size(310, 435);
             this.reportgrid2.TabIndex = 0;
             // 
             // Column3
@@ -262,11 +261,10 @@
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.report3_btn);
             this.tabPage3.Controls.Add(this.reportgrid3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(913, 546);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(899, 441);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Report 3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -274,18 +272,20 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(655, 66);
+            this.label4.Location = new System.Drawing.Point(534, 118);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 91);
+            this.label4.Size = new System.Drawing.Size(284, 50);
             this.label4.TabIndex = 3;
             this.label4.Text = "Find the total amount of rentals made for each car type in each month.";
             // 
             // report3_btn
             // 
             this.report3_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report3_btn.Location = new System.Drawing.Point(691, 280);
+            this.report3_btn.Location = new System.Drawing.Point(628, 170);
+            this.report3_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.report3_btn.Name = "report3_btn";
-            this.report3_btn.Size = new System.Drawing.Size(108, 73);
+            this.report3_btn.Size = new System.Drawing.Size(81, 59);
             this.report3_btn.TabIndex = 1;
             this.report3_btn.Text = "Execute";
             this.report3_btn.UseVisualStyleBackColor = true;
@@ -299,10 +299,9 @@
             this.carTypeIDR3,
             this.totalR3});
             this.reportgrid3.Location = new System.Drawing.Point(0, 0);
-            this.reportgrid3.Margin = new System.Windows.Forms.Padding(4);
             this.reportgrid3.Name = "reportgrid3";
             this.reportgrid3.RowHeadersWidth = 51;
-            this.reportgrid3.Size = new System.Drawing.Size(596, 543);
+            this.reportgrid3.Size = new System.Drawing.Size(447, 441);
             this.reportgrid3.TabIndex = 0;
             // 
             // Column7
@@ -336,11 +335,10 @@
             this.tabPage4.Controls.Add(this.monthSelect);
             this.tabPage4.Controls.Add(this.report4_btn);
             this.tabPage4.Controls.Add(this.reportgrid4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage4.Size = new System.Drawing.Size(913, 546);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Size = new System.Drawing.Size(899, 441);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Report 4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -348,9 +346,10 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(568, 21);
+            this.label1.Location = new System.Drawing.Point(611, 74);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 131);
+            this.label1.Size = new System.Drawing.Size(264, 60);
             this.label1.TabIndex = 4;
             this.label1.Text = "Find all customers who have not rented in the selected month.";
             // 
@@ -358,15 +357,17 @@
             // 
             this.monthLabel.AutoSize = true;
             this.monthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthLabel.Location = new System.Drawing.Point(588, 173);
+            this.monthLabel.Location = new System.Drawing.Point(611, 149);
+            this.monthLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.monthLabel.Name = "monthLabel";
-            this.monthLabel.Size = new System.Drawing.Size(67, 25);
+            this.monthLabel.Size = new System.Drawing.Size(54, 20);
             this.monthLabel.TabIndex = 3;
             this.monthLabel.Text = "Month";
             this.monthLabel.Click += new System.EventHandler(this.monthLabel_Click);
             // 
             // monthSelect
             // 
+            this.monthSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.monthSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthSelect.FormattingEnabled = true;
             this.monthSelect.Items.AddRange(new object[] {
@@ -382,19 +383,19 @@
             "October",
             "November",
             "December"});
-            this.monthSelect.Location = new System.Drawing.Point(685, 170);
-            this.monthSelect.Margin = new System.Windows.Forms.Padding(4);
+            this.monthSelect.Location = new System.Drawing.Point(684, 146);
             this.monthSelect.Name = "monthSelect";
-            this.monthSelect.Size = new System.Drawing.Size(121, 33);
+            this.monthSelect.Size = new System.Drawing.Size(92, 28);
             this.monthSelect.TabIndex = 2;
             this.monthSelect.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // report4_btn
             // 
             this.report4_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report4_btn.Location = new System.Drawing.Point(658, 327);
+            this.report4_btn.Location = new System.Drawing.Point(664, 274);
+            this.report4_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.report4_btn.Name = "report4_btn";
-            this.report4_btn.Size = new System.Drawing.Size(108, 74);
+            this.report4_btn.Size = new System.Drawing.Size(81, 60);
             this.report4_btn.TabIndex = 1;
             this.report4_btn.Text = "Execute";
             this.report4_btn.UseVisualStyleBackColor = true;
@@ -409,10 +410,9 @@
             this.Column12,
             this.Column13});
             this.reportgrid4.Location = new System.Drawing.Point(0, 0);
-            this.reportgrid4.Margin = new System.Windows.Forms.Padding(4);
             this.reportgrid4.Name = "reportgrid4";
             this.reportgrid4.RowHeadersWidth = 51;
-            this.reportgrid4.Size = new System.Drawing.Size(557, 535);
+            this.reportgrid4.Size = new System.Drawing.Size(560, 435);
             this.reportgrid4.TabIndex = 0;
             this.reportgrid4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportgrid4_CellContentClick);
             // 
@@ -453,11 +453,10 @@
             this.tabPage5.Controls.Add(this.label5);
             this.tabPage5.Controls.Add(this.report5_btn);
             this.tabPage5.Controls.Add(this.reportgrid5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage5.Size = new System.Drawing.Size(913, 546);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Size = new System.Drawing.Size(899, 441);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Report 5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -465,18 +464,20 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(636, 77);
+            this.label5.Location = new System.Drawing.Point(521, 120);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(270, 112);
+            this.label5.Size = new System.Drawing.Size(304, 56);
             this.label5.TabIndex = 7;
             this.label5.Text = "Find the rental amount made monthly for each branch in each month and year.";
             // 
             // report5_btn
             // 
             this.report5_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report5_btn.Location = new System.Drawing.Point(693, 252);
+            this.report5_btn.Location = new System.Drawing.Point(632, 178);
+            this.report5_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.report5_btn.Name = "report5_btn";
-            this.report5_btn.Size = new System.Drawing.Size(114, 70);
+            this.report5_btn.Size = new System.Drawing.Size(86, 57);
             this.report5_btn.TabIndex = 6;
             this.report5_btn.Text = "Execute";
             this.report5_btn.UseVisualStyleBackColor = true;
@@ -493,10 +494,9 @@
             this.Column19,
             this.Column5});
             this.reportgrid5.Location = new System.Drawing.Point(0, 0);
-            this.reportgrid5.Margin = new System.Windows.Forms.Padding(4);
             this.reportgrid5.Name = "reportgrid5";
             this.reportgrid5.RowHeadersWidth = 51;
-            this.reportgrid5.Size = new System.Drawing.Size(615, 559);
+            this.reportgrid5.Size = new System.Drawing.Size(461, 454);
             this.reportgrid5.TabIndex = 0;
             // 
             // Column16
@@ -536,13 +536,13 @@
             // 
             // Report
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 609);
+            this.ClientSize = new System.Drawing.Size(1008, 606);
             this.Controls.Add(this.report5);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.ReportLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Report";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.Report_Load);

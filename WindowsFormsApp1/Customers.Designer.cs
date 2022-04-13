@@ -265,6 +265,7 @@
             // 
             // vehicle_type_dropdown
             // 
+            this.vehicle_type_dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vehicle_type_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehicle_type_dropdown.FormattingEnabled = true;
             this.vehicle_type_dropdown.Location = new System.Drawing.Point(163, 179);
@@ -358,10 +359,11 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(163, 87);
-            this.dateTimePicker1.MinDate = new System.DateTime(2022, 4, 8, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(2022, 4, 13, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(259, 26);
             this.dateTimePicker1.TabIndex = 25;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
             // 
             // label1
             // 
