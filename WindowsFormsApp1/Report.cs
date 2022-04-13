@@ -12,8 +12,15 @@ using System.Data.SqlClient;
 namespace WindowsFormsApp1
 {
 
+    /**
+     * This is the Report form. It handles report generation for the application. It supports
+     * five different reports which are detailed below.
+     */
+
     public partial class Report : Form
     {
+
+        //Database variables
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlDataReader myReader;
@@ -58,6 +65,7 @@ namespace WindowsFormsApp1
 
         }
 
+        //go back to Employee page
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -81,6 +89,7 @@ namespace WindowsFormsApp1
 
         }
 
+        //Generate report 1. Report 1 displays the most to least popular rented cars
         private void report1_btn_Click(object sender, EventArgs e)//Zachs report
         {
 
@@ -107,11 +116,12 @@ namespace WindowsFormsApp1
 
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error generating report", "Error");
             }
 
         }
         
+        //Generate report 2. Report 2 Finds customers who have never returned a car to a branch outside their city
         private void report2_btn_Click(object sender, EventArgs e)//Zachs report
         {
             myCommand.CommandText = "SELECT DISTINCT C.First_Name, C.Last_Name " +
@@ -137,10 +147,11 @@ namespace WindowsFormsApp1
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while generating report", "Error");
             }
         }
 
+        //Generate report 3. Report 3 finds the total amount of rentals per car type and month
         private void report3_btn_Click(object sender, EventArgs e)//Brandons report
         {
             myCommand.CommandText = "SELECT MONTH(R.Pick_Up_Date) AS M, C.Car_Type_ID, COUNT(R.Pick_Up_BID) as TOTAL " +
@@ -164,11 +175,12 @@ namespace WindowsFormsApp1
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error generating report", "Error");
             }
             
         }
 
+        //Generate report 4. Report 4 finds all customers who have not rented in a given month
         private void report4_btn_Click(object sender, EventArgs e)//Malcolms report
         {
 
@@ -254,10 +266,11 @@ namespace WindowsFormsApp1
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while generating report", "Error");
             }
         }
 
+        //generate report 5. Report 5 lists the monthly rental transaction per branch
         private void report5_btn_Click(object sender, EventArgs e)//Scotts report
         {
             myCommand.CommandText = "SELECT B.BID, B.Description, YEAR(R.Pick_Up_Date) AS Y, MONTH(R.Pick_Up_Date) AS M, " +

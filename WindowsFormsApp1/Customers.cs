@@ -11,16 +11,26 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
+    /**
+     * This is the Customers form. It handles all functions that relate to customer oriented features.
+     * It allows the booking of rental cars for a given employee.
+     * 
+     */
     public partial class Rentals : Form
     {
+        //database variables
         public SqlConnection myConnection;
         public SqlCommand myCommand;
         public SqlCommand myCommand2;
         public SqlDataReader myReader;
         public SqlDataReader myReader2;
         public SqlDataReader myReader3;
+
+        //constants for fees
         public Double LATE_FEE = 49.99; //this is the added cost for late rentals
         public Double DIFF_BRANCH_COST = 35.50; //this is the fee for returning to a different branch
+        
+        //used to track upgrade status
         public Double Gold_upgrade_D = -1;
         public Double Gold_upgrade_W = -1;
         public Double Gold_upgrade_M = -1;
@@ -32,8 +42,8 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             //Change the server here for your guys' own servers
-                //MultipleActiveResultsSets=True allows for multiple for multuple MyCommands open and accessing the database.
-                    //2 SQl commands running simultaneously required when updating the Branch_ID of cars returned to different branches.
+            //MultipleActiveResultsSets=True allows for multiple for multuple MyCommands open and accessing the database.
+            //2 SQl commands running simultaneously required when updating the Branch_ID of cars returned to different branches.
             String connectionString = "Server = LAPTOP-DSBFVL6U; Database = 291_RentalDatabase; Trusted_Connection = yes; MultipleActiveResultSets=True;";
 
             SqlConnection myConnection = new SqlConnection(connectionString); // Timeout in seconds
@@ -63,6 +73,7 @@ namespace WindowsFormsApp1
             update_car_branch();
         }
 
+        //switches from customer screen back to start screen
         private void CustomerBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -149,7 +160,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
 
         }
@@ -174,11 +185,11 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
         }
 
-
+        //Fill car types dropdown with all available car types to choose from
         void Fill_Vehicle_Types()
         {
             myCommand.CommandText = "select * from Car_Type";
@@ -197,7 +208,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while grabbing data from database", "Error");
             }
         }
 
@@ -211,11 +222,16 @@ namespace WindowsFormsApp1
 
         }
 
+        //search for selected car type from selected branch
+        //upgrade if needed
         private void searchButton_Click(object sender, EventArgs e)
         {
-            //int customerID = (int) customer_id_dropdown.SelectedValue;
+            
+            //reset upgrade status every search
             Gold_upgrade_D = -1;
             upgraded = "";
+
+            //grab info from fields
             String CarType = vehicle_type_dropdown.Text;
             String PickupB = pickup_branch_dropdown.Text;
             String ReturnB = return_branch_dropdown.Text;
@@ -246,6 +262,7 @@ namespace WindowsFormsApp1
                     "('" + selectedRDate + "' <= Return_Date and '" + selectedRDate + "' >= Pick_Up_Date ) or " +
                     "('" + selectedPDate + "' <= Pick_Up_Date and '" + selectedRDate + "' >= Return_Date)));";
 
+                //try searching
                 try
                 {
                     myReader = myCommand.ExecuteReader();
@@ -265,14 +282,18 @@ namespace WindowsFormsApp1
                     }
                     myReader.Close();
 
+                    //if no cars available, suggest upgrade
                     if (available_vehicles_view.Rows.Count == 1)
                     {
+                        //upgrade popup
                         var result = MessageBox.Show("No " + CarType + " vehichles available, would you like to upgrade?",
                             "Upgrade?", MessageBoxButtons.YesNo);
 
+                        
                         if (result == DialogResult.Yes)
                         {
 
+                            //grab previously queried car type for rates
                             myCommand.CommandText = "SELECT Daily_Rate, Weekly_Rate, Monthly_Rate FROM Car_Type WHERE Description = '" + CarType + "';";
                             myReader = myCommand.ExecuteReader();
                             myReader.Read();
@@ -282,6 +303,7 @@ namespace WindowsFormsApp1
 
                             myReader.Close();
 
+                            //if customer is gold member, store the old car type info
                             if (goldCheck(customer_id_dropdown.Text))
                             {
                                 Gold_upgrade_D = oldDaily;
@@ -289,8 +311,10 @@ namespace WindowsFormsApp1
                                 Gold_upgrade_M = oldMonthly;
                             }
 
+                            //find the next most expensive car type
                             String newDesc = findNextType(CarType, oldDaily);
 
+                            //if none, then there are no more expenesive cars to upgrade to
                             if (newDesc == "None")
                             {
                                 MessageBox.Show("Sorry, there is no upgrade available for your selected car type", "No upgrade available");
@@ -299,9 +323,10 @@ namespace WindowsFormsApp1
                             else
                             {
 
-                                Console.WriteLine(customer_id_dropdown.Text);
+                                //used to display appropriate rental cost if gold member
                                 var checkTemp = goldCheck(customer_id_dropdown.Text);
 
+                                //search for the new car type
                                 myCommand.CommandText = "select * from Car, Car_Type, Branch " +
                                "where Car.Car_Type_ID = Car_Type.Car_Type_ID and Branch.BID = Car.Branch_ID and " +
                                "Branch.Description = '" + PickupB + "' and Car_Type.Description = '" + newDesc + "' " +
@@ -316,7 +341,7 @@ namespace WindowsFormsApp1
                                 available_vehicles_view.Rows.Clear();
 
                                 
-
+                                //if gold member, display old price for new car type
                                 if (checkTemp)
                                 {
                                     while (myReader.Read())
@@ -332,6 +357,8 @@ namespace WindowsFormsApp1
                                         VIN_box.Items.Add(VIN_for_list);
                                     }
                                 }
+
+                                //if not gold member, display "correct" info
                                 else
                                 {
                                     while (myReader.Read())
@@ -350,6 +377,8 @@ namespace WindowsFormsApp1
 
                                 
                                 myReader.Close();
+
+                                //update the upgraded car type
                                 upgraded = newDesc;
                             }
                         }
@@ -357,7 +386,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error");
+                    MessageBox.Show("Error occurred while searching for cars", "Error");
                 }
             }
             else
@@ -368,19 +397,23 @@ namespace WindowsFormsApp1
 
         }
 
+        //find the amount that will be owed by the customer given pick up and drop off date
         private Double getCost(TimeSpan rentalSpan, String carType)
         {
+            
+            //initial declarations
             Double cost = 0;
             int days = rentalSpan.Days + 1;
             int months, weeks;
             String dCost, wCost, mCost;
 
+            //time arithmetic
             months = days / 30;
             days -= months * 30;
             weeks = days / 7;
             days -= weeks * 7;
 
-            Console.WriteLine(Gold_upgrade_D);
+            //if the customer is not recieving a gold member upgrade
             if (Gold_upgrade_D == -1)
             {
                 myCommand.CommandText = "Select Daily_Rate, Weekly_Rate, Monthly_Rate from Car_Type where Description = '" + carType + "';";
@@ -392,12 +425,16 @@ namespace WindowsFormsApp1
                 myReader2.Close();
             }
 
+            //if customer recieving gold member upgrade, fill in with appropriate costs
             else
             {
                 dCost = Gold_upgrade_D.ToString();
                 wCost = Gold_upgrade_W.ToString();
                 mCost = Gold_upgrade_M.ToString();
             }
+            
+
+            //calculate cost
             //REF: https://docs.microsoft.com/en-us/dotnet/api/system.double.parse?view=net-6.0
             cost += (months * (Double.Parse(mCost)));
             cost += (weeks * (Double.Parse(wCost)));
@@ -406,8 +443,12 @@ namespace WindowsFormsApp1
             return cost;
         }
 
+
+        // update member gold member status if third rental
         private void updateGold(String customerID)
         {
+
+            //find number of customer rentals
             String rentalCount;
             myCommand.CommandText = "Select count(*) as count from Rentals where Customer_ID = " + customerID + ";";
             myReader3 = myCommand.ExecuteReader();
@@ -426,8 +467,10 @@ namespace WindowsFormsApp1
 
         }
 
+        //check if given customer is a gold member or not
         private Boolean goldCheck(String customerID)
         {
+
             Boolean gold = false;
             String goldStatus;
 
@@ -437,6 +480,7 @@ namespace WindowsFormsApp1
             goldStatus = myReader3["Membership_Status"].ToString();
             myReader3.Close();
 
+            
             if (int.Parse(goldStatus) == 1)
             {
                 gold = true;
@@ -445,6 +489,7 @@ namespace WindowsFormsApp1
             return gold;
         }
 
+        //find next most expensive car type given a car type and its daily rental cost
         private String findNextType(String carType, Double Daily_Rate)
         {
 
@@ -455,6 +500,7 @@ namespace WindowsFormsApp1
                 "WHERE CT.Car_Type_ID = C.Car_Type_ID AND C.Branch_ID = B.BID AND CT.Daily_Rate > " + Daily_Rate +
                 " ORDER BY CT.Description DESC;";
 
+            //since we ordered it descending, grab the first entry
             myReader = myCommand.ExecuteReader();
             if (myReader.Read())
             {
@@ -490,10 +536,12 @@ namespace WindowsFormsApp1
             return TID;
         }
 
+        //book rental for customer
         private void bookButton_Click(object sender, EventArgs e)
         {
+
+            //grab customer info
             String PBID, RBID;
-            //String TID = transaction_id_txt.Text;
             String customerID = customer_id_dropdown.Text;
             String CarType = vehicle_type_dropdown.Text;
             String PickupB = pickup_branch_dropdown.Text;
@@ -505,6 +553,7 @@ namespace WindowsFormsApp1
             String returnDate = returnTime.ToString();
             String VIN = VIN_box.Text;
             
+            //check if customer is upgrading
             if (upgraded != "")
             {
                 CarType = upgraded;
@@ -560,7 +609,7 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception e2)
                 {
-                    MessageBox.Show(e2.ToString(), "Error");
+                    MessageBox.Show("Error occurred while booking rental", "Error");
                 }
                 //clear screen after renting
                 available_vehicles_view.Rows.Clear();
@@ -603,16 +652,10 @@ namespace WindowsFormsApp1
 
             //Get current date and format the same as SQL date type
             DateTime currentDate = DateTime.Now;
-            //int day = currentDate.Day;
-            //int month = currentDate.Month;
-            //int year = currentDate.Year;
-
-
-            //Console.WriteLine(currentDateString);
+            
 
             //Select all VIN's that have been returned to a different branch and the return date has passed
-            //myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID and Year(Return_Date) = " + year +
-            //   "and Month(Return_Date) = " + month + " and Day(Return_Date) = " + (day - 1) + ";";
+            
 
             myCommand.CommandText = "Select * From Rentals Where Pick_Up_BID != Return_BID;";
 
@@ -638,18 +681,12 @@ namespace WindowsFormsApp1
                     }
 
 
-                    //Console.WriteLine((currentDate - returnDate).Days.ToString());
-
-                    //myCommand2.CommandText = "Update Car Set Branch_ID = " + branch_id + " Where VIN = " + vin + ";";
-                    //myCommand2.ExecuteNonQuery();
-
-
                 }
 
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error");
+                MessageBox.Show("Error occurred while updating car being returned to differing branch", "Error");
             }
             
            
@@ -658,9 +695,5 @@ namespace WindowsFormsApp1
         }
            
     }
-
-    
-
-
 
 }

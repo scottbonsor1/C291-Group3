@@ -265,7 +265,6 @@
             // 
             // vehicle_type_dropdown
             // 
-            this.vehicle_type_dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vehicle_type_dropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehicle_type_dropdown.FormattingEnabled = true;
             this.vehicle_type_dropdown.Location = new System.Drawing.Point(163, 179);
